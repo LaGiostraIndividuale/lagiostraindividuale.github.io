@@ -19,7 +19,7 @@ $screen-md: 992px;
 $screen-lg: 1200px;
 $screen-xl: 1400px;
 $screen-xxl: 1600px;
-$margin-form: 0.5rem;
+
 
 
 // GENERAL
@@ -295,12 +295,12 @@ body{
   label {
     float: left;
  
-    margin-right: $margin-form;
+    margin-right: 0.5rem;
    
   }
   input {
     width: 100%;
-    margin: $margin-form 0;
+    margin: 0.5rem 0;
     border-radius: 3px;
   }
 
@@ -333,16 +333,16 @@ body{
   }
 
   .small{
-    width: calc(25% - $margin-form);
+    width: calc(25% - 0.5rem);
   }
   .mid{
-    width: calc(50% - $margin-form);
+    width: calc(50% - 0.5rem);
   }
   .big{
-    width: calc(75% - $margin-form);
+    width: calc(75% - 0.5rem);
   }
   .full{
-    width: calc(100% - $margin-form);
+    width: calc(100% - 0.5rem);
   }
   
 }
@@ -378,6 +378,7 @@ body{
 .footer-col-wrapper{
   color: inherit;
   text-align: center;
+  font-size: 75%;
 
   .svg-icon {
     fill: var(--color);

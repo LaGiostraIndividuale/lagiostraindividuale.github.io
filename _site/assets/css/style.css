@@ -949,6 +949,7 @@ body input {
 .footer-col-wrapper {
   color: inherit;
   text-align: center;
+  font-size: 75%;
 }
 .footer-col-wrapper .svg-icon {
   fill: var(--color);
