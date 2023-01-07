@@ -928,6 +928,12 @@ body input {
   width: calc(100% - 0.5rem);
 }
 
+.document-list li {
+  list-style-type: none;
+  background: url(/assets/img/strike.svg) no-repeat left center;
+  padding: 0 0 0.02rem 2rem;
+}
+
 .documents-img {
   width: 200px;
   background-color: var(--color);

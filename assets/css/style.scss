@@ -192,7 +192,6 @@ body{
 
 
 //HOME
-
 .star-home{
   width: 100px;
   margin-left: auto;
@@ -284,7 +283,6 @@ body{
 }
 
 //ISCRIZIONE
-
 .iscrizione{
   display: flex;
   flex-wrap: wrap;
@@ -349,6 +347,15 @@ body{
   
 }
 // DOCUMENTS
+.document-list{
+  li {
+      list-style-type: none;
+      background: url(/assets/img/strike.svg) no-repeat left center;
+      padding: 0 0 0.02rem 2rem;
+  }
+
+
+}
 
 .documents-img{
   width: 200px;
