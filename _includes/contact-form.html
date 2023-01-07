@@ -1,0 +1,74 @@
+<form class="iscrizione" action="https://mailthis.to/La Giostra Individuale" method="POST" encType="multipart/form-data">
+   
+    <div class="form-wrapper">
+        <h3>Dati anagrafici</h3>
+        <label class="mid"  for="name">Nome:
+            <input type="text" name="name" required placeholder="Nome">
+        </label> 
+
+        <label class="mid"  for="surname">Cognome:
+            <input type="text" name="surname" required placeholder="Cognome"> 
+        </label> 
+
+        <label class="mid" for="nickname">Nome da giocante: 
+            <input type="text" name="nickname" required placeholder="Nome da giocante">
+        </label> 
+
+        <label class="full form-control" for="nickname-true"> 
+            <input type="checkbox" name="nickname-true" value="OK" /> Desidero essere menzionatə solo con il mio Nome da Giocante.
+        </label> 
+        
+       
+        <label class="full" for="phone">Fotografia:
+            <input class="big" type="file" name="file" required placeholder="Fotografia">
+        </label> 
+    </div>
+
+    <div class="form-wrapper">
+        <h3>Residenza</h3>
+        <label class="mid" for="citta">Città:
+            <input type="text" name="citta" required placeholder="Città">
+        </label> 
+
+        <label class="small" for="provincia">Prov.:
+            <input type="text" name="provincia" required placeholder="Prov.">
+        </label> 
+
+        <label class="small" for="cap">Cap:
+            <input type="text" name="cap" required placeholder="Cap">
+        </label> 
+
+        <label class="big" for="via">Via:
+            <input type="text" name="via" required placeholder="Via">
+        </label> 
+
+        <label class="small" for="civico">Civivo:
+            <input type="text" name="civico" required placeholder="N.">
+        </label> 
+
+        <label class="big" for="conferenza">Desidero partecipare all’interno della Conferenza:
+            <input type="text" name="conferenza" required placeholder="">
+        </label> 
+    </div>
+
+    
+    <div class="form-wrapper">
+        <h3>Contatti</h3>
+        <label class="mid" for="phone">Telefono:
+            <input type="tel" name="phone" required placeholder="+39 555-5555555">
+        </label> 
+
+        <label class="mid"  for="_replyto">Email:
+            <input type="email" name="_replyto" required placeholder="Email">
+        </label> 
+    </div>
+
+    
+    
+    <input type="hidden" name="_subject" value="Iscrizione Giostra individuale">
+    <input type="hidden" name="_after" value="https://myhomepage.net/">
+    <input type="hidden" name="_honeypot" value="">
+    <input type="hidden" name="_confirmation" value="">
+
+    <input class="button-send" type="submit" value="Invia">
+</form>

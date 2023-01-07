@@ -1,0 +1,11 @@
+<div>
+    <ul>
+        {% for pdf in site.static_files %}    
+            {% if pdf.path contains '/assets/docs' %}
+            <li>
+                <a href="{{ site.baseurl }}{{ pdf.path }}" target="_blank"> {{ pdf.basename }}</a>
+            </li>    
+            {% endif %}   
+        {% endfor %}
+    </ul>
+</div>

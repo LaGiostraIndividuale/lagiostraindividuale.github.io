@@ -1,0 +1,17 @@
+current directory: /Users/luca/Documents/GitHub/lagiostraindividuale/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/opt/homebrew/opt/ruby@3.0/bin/ruby -I /opt/homebrew/Cellar/ruby@3.0/3.0.5/lib/ruby/3.0.0 extconf.rb
+creating Makefile
+
+current directory: /Users/luca/Documents/GitHub/lagiostraindividuale/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20230105-90654-3h06pe sitelibdir\=./.gem.20230105-90654-3h06pe clean
+
+current directory: /Users/luca/Documents/GitHub/lagiostraindividuale/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20230105-90654-3h06pe sitelibdir\=./.gem.20230105-90654-3h06pe
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/luca/Documents/GitHub/lagiostraindividuale/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20230105-90654-3h06pe sitelibdir\=./.gem.20230105-90654-3h06pe install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20230105-90654-3h06pe

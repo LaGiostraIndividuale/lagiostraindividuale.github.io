@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "it" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- if page.image -%}
+      <header class="main-header">
+        {%- include header.html -%}
+          {% if page.image contains 'http' %}
+            <img class="bg" src="{{page.image}}" alt="">
+            {% else %}
+            <img src="/assets/img/{{ page.image }}" alt="" />
+          {% endif %}      
+      </header>
+
+    {%- else -%}
+      {%- include header.html -%}
+    {%- endif -%}
+    
+    {%- if page.title == "La Giostra Individuale" -%}
+      
+      <!-- {%- include collision.html -%}-->
+
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </main>
+
+    {%- else -%}
+
+      <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+      </main>
+    {%- endif -%}
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

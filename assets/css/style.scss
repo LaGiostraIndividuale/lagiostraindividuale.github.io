@@ -1,0 +1,378 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@font-face {
+  font-family: "Gothic";
+  src: url("../fonts/serif-gothic-black-regular-webfont.ttf");
+  src: url("../fonts/serif-gothic-black-regular-webfont.eot");
+  src: url("../fonts/serif-gothic-black-regular-webfont.woff") format("woff"),
+  url("../fonts/serif-gothic-black-regular-webfont.otf") format("opentype"),
+  url("../fonts/serif-gothic-black-regular-webfont.svg") format("svg");
+}
+
+// VARIABLES
+$screen-xs:                                         480px;
+$screen-sm:                                         768px;
+$screen-md:                                         992px;
+$screen-lg:                                         1200px;
+$screen-xl:                                         1400px;
+$screen-xxl:                                        1600px;
+
+
+// GENERAL
+:root {
+  --background: white;
+  --color: black;
+  --box-shadow: 10px 10px 5px black;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --background: black;
+    --color: white;
+    --box-shadow: 10px 10px 5px black;
+  }
+}
+
+body{
+  background-color: var(--background);
+  color: var(--color);
+
+	hr{
+		color: var(--color);
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+	}
+  p {
+    font-weight: lighter
+  }
+	a{
+		color: inherit;
+		text-decoration: underline;
+	}
+	
+	a:hover{
+    color: inherit;
+    text-decoration: line-through;
+	}
+
+	a:visited{
+	    color: inherit;
+	}
+   
+   ul{
+    list-style-type:none !important;
+    margin: 0;
+    padding:0;
+
+    li{
+      list-style:none !important;
+    }
+   }
+    
+   button {
+      border: 2px solid var(--color); 
+      color:var(--color); 
+      background-color: var(--background); 
+      font-size: 120%; margin-left: 0px; 
+      margin-top: 30px; 
+      padding:0.5rem;
+      border-radius: 0 !important;
+    }
+
+    button:hover{
+       background-color: black;
+       color: white;
+    }
+    
+    button:visited {
+       border: 2px solid black;
+       background-color: transparent;
+       color: inherit;
+    }
+
+    input{
+      border: none;
+      height: 30px;
+      padding:3;
+      border-radius: 3 !important;
+      text-align: center !important;
+    }
+}
+
+
+//NAV
+.wrapper-header {
+ // max-width: -webkit-calc(1200px - (30px * 2));
+ // max-width: calc(1200px - (30px * 2));
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.site-nav {
+  background-color: var(--background);
+  color: inherit;
+  .page-link{
+    color: inherit;
+  }   
+  .menu-icon > svg {
+    fill: var(--color);
+  }
+}
+
+.site-header {
+  padding: 0.5rem 0;
+  padding-bottom: 1rem;
+  border-top:none;
+  border-bottom: 0px solid var(--color);
+  background-color: var(--background);
+  min-height: 55.95px;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  img{
+    width: 250px;
+    height: auto;
+  }
+
+}
+
+// HEADER
+.main-header{
+
+  .bg {
+    top: 0; 
+    left: 0; 
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  
+    img {
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      margin: auto; 
+      min-width: 50%;
+      min-height: 50%;
+     
+    }
+  }
+}
+
+
+//CONTACT
+.contact-wrapper{
+  display: flex;
+  justify-content: center;
+  a{
+    text-align: center;
+    font-weight:bold;
+    font-size: 7rem;
+    word-break: break-all;
+  }
+
+  img{
+    padding:0 0 3rem 3rem ;
+     width: 7rem;
+  }
+
+}
+
+
+//HOME
+
+.star-home{
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 0;
+}
+
+.has-dropcap:first-letter {
+  font-family:"Gothic";
+  float: left;
+  font-size: 8rem;
+  line-height: 0.65;
+  margin: 0.1em 0.25em 0.2em 0;
+}
+
+.dynamic-elements {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 550px;
+
+  .dinamic-2{
+    position:absolute;
+    padding:2rem;
+    height:150px;
+    .item-1{
+      height: 55.95px;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      fill:red;
+    }
+  }
+
+  .dinamic-3{
+    margin-top: 150px;
+    position:absolute;
+    padding:2rem;
+    height:300px;
+    .item-1{
+      height: 75px;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      fill:red;
+    }
+  }
+
+  .dinamic-4{
+    position:absolute;
+    padding:2rem;
+    height:500px;
+    .item-1{
+      height: 80px;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      fill:red;
+    }
+    
+  }
+  
+}
+
+
+.hided{
+  display: none;
+}
+.displayed{
+  display: block;
+}
+
+
+
+// POST
+.post-content{
+  min-height: 70vh;
+  hr{
+    margin: 2rem 0 ;
+  }
+}
+
+.footnotes{
+  font-size: 80%;
+}
+
+.reversefootnote{
+  text-decoration: none;
+}
+
+//ISCRIZIONE
+$margin-form: 0.5rem;
+
+.iscrizione{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between ;
+  .form-wrapper{
+    margin-top: 1rem;
+    width: 100%;
+  }
+  label {
+    float: left;
+ 
+    margin-right: $margin-form;
+   
+  }
+  input {
+    width: 100%;
+    margin: $margin-form 0;
+    border-radius: 3px;
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+    height: 18px;
+
+  }
+
+  .form-control {
+  
+  }
+  .button-send{
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color:var(--color);
+    border: 1px solid var(--color);
+    border-radius: 3px;
+    background-color: var(--background);
+    padding: 1.3rem 1.4rem;
+    line-height: 0.09rem;
+  }
+
+  .button-send:hover{
+    background-color: gray;
+  }
+
+  .small{
+    width: calc(25% - $margin-form);
+  }
+  .mid{
+    width: calc(50% - $margin-form);
+  }
+  .big{
+    width: calc(75% - $margin-form);
+  }
+  .full{
+    width: calc(100% - $margin-form);
+  }
+  
+}
+// DOCUMENTS
+
+.documents-img{
+  width: 200px;
+  background-color: var(--color);
+  padding: 0.3rem;
+  border: 1px solid var(--color);
+  border-radius: 3px;
+  img{
+   
+  }
+}
+
+
+// FOOTER
+.site-footer {
+  border-top: 1px solid var(--color);
+  padding: 1rem 0;
+}
+
+.footer-col-wrapper{
+  color: inherit;
+  text-align: center;
+
+  .svg-icon {
+    fill: var(--color);
+  }
+}

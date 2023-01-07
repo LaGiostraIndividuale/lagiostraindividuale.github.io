@@ -1,0 +1,48 @@
+<div class="dynamic-elements">
+
+    <div class="dinamic-2">
+      {%- include molkky.svg -%}
+    </div>
+
+    <div class="dinamic-3" id="ptag">
+      {%- include group.svg -%}
+    </div>
+
+    <div class="dinamic-4">
+      {%- include strike.svg -%}
+    </div>
+    
+  </div>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      
+      function getOffset(el) {
+        const rect = el.getBoundingClientRect();
+        return {
+          left: rect.left + window.scrollX,
+          top: rect.top + window.scrollY
+      };
+      }
+
+      console.log(getOffset(ptag));
+
+      $(function() {
+        var header = $(".dinamic-4");
+        var group = $(".dinamic-3");
+        $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+
+          if (scroll >= 1220) {
+            header.removeClass('hided').addClass("displayed");
+            group.removeClass('displayed').addClass("hided");
+          } else {
+            header.removeClass('displayed').addClass("hided");
+            group.removeClass('hided').addClass("displayed");
+          }
+        });
+      });
+
+    </script>

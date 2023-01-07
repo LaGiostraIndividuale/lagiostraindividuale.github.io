@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+    {%- if page.title == "Contatti" -%}
+      <div class="contact-wrapper">
+    {%- else -%}
+      <div class="post-content">
+    {%- endif -%}
+  
+    {{ content }}
+
+    {%- if page.title == "Iscrizione" -%}
+      {%- include contact-form.html -%}
+    {%- endif -%}
+
+    {%- if page.title == "Documenti di gara" -%}
+      {%- include documenti-di-gara.html -%}
+    {%- endif -%}
+
+  </div>
+
+</article>
