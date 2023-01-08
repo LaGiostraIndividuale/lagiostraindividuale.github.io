@@ -16,5 +16,5 @@ La Stagione Regolare durerà 5 mesi e vedrà passare lз **due solз giocanti** 
 La fase di **Spareggio** e la fase **Finale** si svolgeranno lo stesso giorno, iI **3 di Settembre**, ma per questo c’è ancora tempo e maggiori dettagli verranno trasmessi nel corso della Stagione Regolare.
 
 Come già menzionato ogni conferenza avrà unə Referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con La Giostra Individuale nonchè di raccogliere la **tariffa di iscrizione** che è di **20,00€ a testa**. Provvederemo a fornire l’elenco dei Referenti di Conferenza man mano che si andranno costituendo. Nel frattempo ti auguriamo una fantastica permanenza su questa piattaforma, per ogni dubbio o segnalazione non esitare a [contattarci](/contatti "Contatti").
-<figure><img class="star-home" src="/assets/img/strike.svg"></figure>
+<figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
 

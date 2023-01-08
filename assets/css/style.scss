@@ -184,8 +184,8 @@ body{
   }
 
   img{
-    padding:0 0 3rem 3rem ;
-     width: 7rem;
+    margin:0 0 3rem 3rem ;
+    width: 7rem;
   }
 
 }
@@ -385,4 +385,23 @@ body{
   .svg-icon {
     fill: var(--color);
   }
+}
+
+//SPIN ANIMATION
+.spin {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  transform-origin: 50% 50%;
+
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

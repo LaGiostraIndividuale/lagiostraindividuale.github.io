@@ -789,7 +789,7 @@ body input {
   word-break: break-all;
 }
 .contact-wrapper img {
-  padding: 0 0 3rem 3rem;
+  margin: 0 0 3rem 3rem;
   width: 7rem;
 }
 
@@ -955,6 +955,23 @@ body input {
 }
 .footer-col-wrapper .svg-icon {
   fill: var(--color);
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
