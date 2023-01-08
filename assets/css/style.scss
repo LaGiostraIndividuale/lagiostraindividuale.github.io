@@ -2,6 +2,13 @@
 ---
 
 @import "{{ site.theme }}";
+@import
+  "jotform",
+  "jotform-theme",
+  "jotform-payment-styles",
+  "jotform-payment-features"
+; 
+
 
 @font-face {
   font-family: "Gothic";
@@ -305,9 +312,6 @@ body{
   padding: 0.3rem;
   border: 1px solid var(--color);
   border-radius: 3px;
-  img{
-   
-  }
 }
 
 
@@ -324,6 +328,7 @@ body{
 
   .svg-icon {
     fill: var(--color);
+    padding-right: 0;
   }
 }
 
