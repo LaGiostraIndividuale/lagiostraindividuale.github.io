@@ -916,22 +916,23 @@ body input {
   background-color: gray;
 }
 .iscrizione .small {
-  width: calc(25% - 0.5rem);
+  width: 25%;
 }
 .iscrizione .mid {
-  width: calc(50% - 0.5rem);
+  width: 50%;
 }
 .iscrizione .big {
-  width: calc(75% - 0.5rem);
+  width: 75%;
 }
 .iscrizione .full {
-  width: calc(100% - 0.5rem);
+  width: 100%;
 }
 
 .document-list li {
   list-style-type: none;
   background: url(/assets/img/strike.svg) no-repeat left center;
   padding: 0 0 0.02rem 2rem;
+  width: 2rem;
 }
 
 .documents-img {

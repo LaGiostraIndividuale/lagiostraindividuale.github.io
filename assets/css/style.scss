@@ -333,16 +333,16 @@ body{
   }
 
   .small{
-    width: calc(25% - 0.5rem);
+    width: 25%;
   }
   .mid{
-    width: calc(50% - 0.5rem);
+    width: 50%;
   }
   .big{
-    width: calc(75% - 0.5rem);
+    width: 75%;
   }
   .full{
-    width: calc(100% - 0.5rem);
+    width: 100%;
   }
   
 }
@@ -352,6 +352,7 @@ body{
       list-style-type: none;
       background: url(/assets/img/strike.svg) no-repeat left center;
       padding: 0 0 0.02rem 2rem;
+      width: 2rem;
   }
 
 
