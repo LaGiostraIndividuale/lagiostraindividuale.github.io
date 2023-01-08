@@ -875,58 +875,8 @@ body input {
   text-decoration: none;
 }
 
-.iscrizione {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-}
-.iscrizione .form-wrapper {
-  margin-top: 1rem;
-  width: 100%;
-}
-.iscrizione label {
-  float: left;
-  margin-right: 0.9rem;
-}
-.iscrizione input {
-  width: 100%;
-  margin: 0.5rem 0;
-  border-radius: 3px;
-  border: 1px solid var(--color);
-}
-.iscrizione input[type=checkbox] {
-  width: auto;
-  height: 18px;
-}
-.iscrizione .button-send {
-  width: auto;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: var(--color);
-  border: 1px solid var(--color);
-  border-radius: 3px;
-  background-color: var(--background);
-  padding: 1.3rem 1.4rem;
-  line-height: 0.09rem;
-}
-.iscrizione .button-send:hover {
-  background-color: gray;
-}
-.iscrizione .small {
-  width: calc(25% - 0.9rem);
-}
-.iscrizione .mid {
-  width: calc(50% - 0.9rem);
-}
-.iscrizione .big {
-  width: calc(75% - 0.9rem);
-}
-.iscrizione .full {
-  width: calc(100% - 0.9rem);
+.form-product-container {
+  width: 250px;
 }
 
 .document-list li {

@@ -283,70 +283,10 @@ body{
 }
 
 //ISCRIZIONE
-.iscrizione{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between ;
-  .form-wrapper{
-    margin-top: 1rem;
-    width: 100%;
-  }
-  label {
-    float: left;
- 
-    margin-right: 0.9rem;
-   
-  }
-  input {
-    width: 100%;
-    margin: 0.5rem 0;
-    border-radius: 3px;
-    border: 1px solid var(--color);
-  }
-
-  input[type="checkbox"] {
-    width: auto;
-    height: 18px;
-
-  }
-
-  .form-control {
-  
-  }
-  .button-send{
-    width: auto;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    color:var(--color);
-    border: 1px solid var(--color);
-    border-radius: 3px;
-    background-color: var(--background);
-    padding: 1.3rem 1.4rem;
-    line-height: 0.09rem;
-  }
-
-  .button-send:hover{
-    background-color: gray;
-  }
-
-  .small{
-    width: calc(25% - 0.9rem);
-  }
-  .mid{
-    width: calc(50% - 0.9rem);
-  }
-  .big{
-    width: calc(75% - 0.9rem);
-  }
-  .full{
-    width: calc(100% - 0.9rem);
-  }
-  
+.form-product-container{
+  width: 250px;
 }
+
 // DOCUMENTS
 .document-list{
   li {
