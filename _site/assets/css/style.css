@@ -887,7 +887,7 @@ body input {
 }
 .iscrizione label {
   float: left;
-  margin-right: 0.5rem;
+  margin-right: 1.9rem;
 }
 .iscrizione input {
   width: 100%;
@@ -916,23 +916,22 @@ body input {
   background-color: gray;
 }
 .iscrizione .small {
-  width: 25%;
+  width: calc(25% - 0.9rem);
 }
 .iscrizione .mid {
-  width: 50%;
+  width: calc(50% - 0.9rem);
 }
 .iscrizione .big {
-  width: 75%;
+  width: calc(75% - 0.9rem);
 }
 .iscrizione .full {
-  width: 100%;
+  width: calc(100% - 0.9rem);
 }
 
 .document-list li {
   list-style-type: none;
   background: url(/assets/img/strike.svg) no-repeat left center;
   padding: 0 0 0.02rem 2rem;
-  width: 2rem;
 }
 
 .documents-img {

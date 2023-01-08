@@ -295,7 +295,7 @@ body{
   label {
     float: left;
  
-    margin-right: 0.5rem;
+    margin-right: 1.9rem;
    
   }
   input {
@@ -333,16 +333,16 @@ body{
   }
 
   .small{
-    width: 25%;
+    width: calc(25% - 0.9rem);
   }
   .mid{
-    width: 50%;
+    width: calc(50% - 0.9rem);
   }
   .big{
-    width: 75%;
+    width: calc(75% - 0.9rem);
   }
   .full{
-    width: 100%;
+    width: calc(100% - 0.9rem);
   }
   
 }
@@ -352,7 +352,6 @@ body{
       list-style-type: none;
       background: url(/assets/img/strike.svg) no-repeat left center;
       padding: 0 0 0.02rem 2rem;
-      width: 2rem;
   }
 
 
