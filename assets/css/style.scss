@@ -111,6 +111,7 @@ body{
 
 
 //NAV
+
 .wrapper-header {
  // max-width: -webkit-calc(1200px - (30px * 2));
  // max-width: calc(1200px - (30px * 2));
@@ -423,4 +424,8 @@ body{
     to {
         transform:rotate(360deg);
     }
+}
+
+.succes-emoji{
+  font-size: 12rem;
 }

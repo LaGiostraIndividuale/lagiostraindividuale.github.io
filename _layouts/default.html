@@ -19,11 +19,13 @@
     {%- else -%}
       {%- include header.html -%}
     {%- endif -%}
+    <div class="main-content">
       <main class="page-content" aria-label="Content">
           <div class="wrapper">
             {{ content }}
           </div>
       </main>
+    </div>
 
     {%- include footer.html -%}
 

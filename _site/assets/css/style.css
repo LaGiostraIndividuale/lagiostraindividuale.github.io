@@ -993,5 +993,8 @@ body input {
     transform: rotate(360deg);
   }
 }
+.succes-emoji {
+  font-size: 12rem;
+}
 
 /*# sourceMappingURL=style.css.map */

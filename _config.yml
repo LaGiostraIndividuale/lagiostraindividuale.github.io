@@ -23,7 +23,7 @@ email: lagiostraindividuale@gmail.com
 logo: assets/img/giostra-individuale-logo-black.svg
 logo-dark: assets/img/giostra-individuale-logo-white.svg
 description: >- # this means to ignore newlines until "baseurl:"
-  Ovvero il campionato nazionale di Mölkky uno contro uno
+  ovvero il campionato nazionale di Mölkky uno contro uno
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
