@@ -146,7 +146,19 @@ body{
     width: 250px;
     height: auto;
   }
+}
 
+@media only screen and (max-width: $screen-sm) {
+
+  .site-header {
+    padding: 0 0;
+    padding-bottom: 1rem;
+    background-color: var(--background);
+    img{
+      width: 150px;
+      height: auto;
+    }
+  }
 }
 
 // HEADER
@@ -171,6 +183,7 @@ body{
 @media only screen and (max-width: $screen-sm) {
   .main-header{
     padding: 2rem;
+    padding-top: 1rem;
     .bg-home {
       width: 100%;
     }

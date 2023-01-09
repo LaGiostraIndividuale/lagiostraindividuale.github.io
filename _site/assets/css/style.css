@@ -761,6 +761,17 @@ body input {
   height: auto;
 }
 
+@media only screen and (max-width: 768px) {
+  .site-header {
+    padding: 0 0;
+    padding-bottom: 1rem;
+    background-color: var(--background);
+  }
+  .site-header img {
+    width: 150px;
+    height: auto;
+  }
+}
 .main-header .bg {
   top: 0;
   left: 0;
@@ -778,6 +789,7 @@ body input {
 @media only screen and (max-width: 768px) {
   .main-header {
     padding: 2rem;
+    padding-top: 1rem;
   }
   .main-header .bg-home {
     width: 100%;
