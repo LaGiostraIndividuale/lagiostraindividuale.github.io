@@ -344,13 +344,14 @@ body{
 }
 
 .footer-col{
-  width: 30%;
+  margin-top: 1rem;
+  width: 40%;
   padding: 0;
 }
 
 .sponsor{
   flex-grow: 4; 
-  width: 30%;
+  width: 40%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -363,8 +364,8 @@ body{
 }
 
 .footer-bottom{
-  margin-top: 1rem;
-  text-align: center;
+  width: 20%;
+  text-align: right;
 }
 
 
@@ -376,7 +377,10 @@ body{
     display: block;
 
       .footer-col{
+        margin-top: 0;
         width: 100%;
+        font-size: 90%;
+        text-align: center;
       }
       
       .sponsor{
@@ -390,7 +394,13 @@ body{
           fill: var(--color);
       
         }
-      }      
+      }  
+      
+      .footer-bottom{
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+      }
     }
   }
 
