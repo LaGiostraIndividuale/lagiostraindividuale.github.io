@@ -884,10 +884,6 @@ body input {
   width: 250px;
 }
 
-.form-address-line-wrapper:has(.form-address-zip-line) {
-  width: 48%;
-}
-
 .document-list li {
   list-style-type: none;
   background: url(/assets/img/strike.svg) no-repeat left center;
