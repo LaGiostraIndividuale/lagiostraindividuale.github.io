@@ -8,35 +8,20 @@
     {%- if page.image -%}
       <header class="main-header">
         {%- include header.html -%}
-          {% if page.image contains 'http' %}
-            <img class="bg" src="{{page.image}}" alt="">
+           {%- if page.title == "La Giostra Individuale" -%}
+            <img class="bg-home" src="/assets/img/{{page.image}}" alt="{{page.title}}">
             {% else %}
-            <img src="/assets/img/{{ page.image }}" alt="" />
-          {% endif %}      
+            <img class="bg" src="/assets/img/{{ page.image }}" alt="{{page.title}}" />
+          {% endif %}        
       </header>
-
     {%- else -%}
       {%- include header.html -%}
     {%- endif -%}
-    
-    {%- if page.title == "La Giostra Individuale" -%}
-      
-      <!-- {%- include collision.html -%}-->
-
-      <main class="page-content" aria-label="Content">
-        <div class="wrapper">
-          {{ content }}
-        </div>
-      </main>
-
-    {%- else -%}
-
       <main class="page-content" aria-label="Content">
           <div class="wrapper">
             {{ content }}
           </div>
       </main>
-    {%- endif -%}
 
     {%- include footer.html -%}
 

@@ -768,16 +768,21 @@ body input {
   min-width: 100%;
   min-height: 100%;
 }
-.main-header .bg img {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
+.main-header .bg-home {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
+@media only screen and (max-width: 768px) {
+  .main-header {
+    padding: 2rem;
+  }
+  .main-header .bg-home {
+    width: 100%;
+  }
+}
 .contact-wrapper {
   display: flex;
   justify-content: center;
