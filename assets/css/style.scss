@@ -335,16 +335,66 @@ body{
 }
 
 .footer-col-wrapper{
+  padding: 0;
   color: inherit;
-  text-align: center;
   font-size: 75%;
-  margin-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .svg-icon {
+.footer-col{
+  width: 30%;
+  padding: 0;
+}
+
+.sponsor{
+  flex-grow: 4; 
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  svg {
+    width: 150px;
     fill: var(--color);
-    padding-right: 0;
+    margin-left:3rem;
   }
 }
+
+.footer-bottom{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: $screen-sm) {
+  .footer-col-wrapper{
+    padding: 0.8rem;
+    color: inherit;
+    font-size: 75%;
+    display: block;
+
+      .footer-col{
+        width: 100%;
+      }
+      
+      .sponsor{
+        width: 100%;
+     
+        
+        svg {
+          margin-left: auto;
+          margin-right: auto;
+          width: 150px;
+          fill: var(--color);
+      
+        }
+      }      
+    }
+  }
+
+
 
 //SPIN ANIMATION
 .spin {

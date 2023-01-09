@@ -916,16 +916,58 @@ body input {
 }
 
 .footer-col-wrapper {
+  padding: 0;
   color: inherit;
-  text-align: center;
   font-size: 75%;
-  margin-left: 0;
-}
-.footer-col-wrapper .svg-icon {
-  fill: var(--color);
-  padding-right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.footer-col {
+  width: 30%;
+  padding: 0;
+}
+
+.sponsor {
+  flex-grow: 4;
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.sponsor svg {
+  width: 150px;
+  fill: var(--color);
+  margin-left: 3rem;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-col-wrapper {
+    padding: 0.8rem;
+    color: inherit;
+    font-size: 75%;
+    display: block;
+  }
+  .footer-col-wrapper .footer-col {
+    width: 100%;
+  }
+  .footer-col-wrapper .sponsor {
+    width: 100%;
+  }
+  .footer-col-wrapper .sponsor svg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    fill: var(--color);
+  }
+}
 .spin {
   animation-name: spin;
   animation-duration: 5000ms;

@@ -29,7 +29,16 @@
 
     <div class="social-links">
       -->
-      <p>20{{ site.time | date: '%y' }}®  {{ site.title| escape }} {{ site.description | escape }}</p>
+
+      <div class="footer-col">
+        <p>20{{ site.time | date: '%y' }}®  {{ site.title| escape }} {{ site.description | escape }}</p>
+      </div>
+      <div class="sponsor">
+        {%- include tactic-logo.svg -%}
+        {%- include molkky-logo.svg -%}
+      </div>
+    </div>
+    <div class="footer-bottom">
       {%- include social.html -%}
     </div>
 
