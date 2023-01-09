@@ -787,11 +787,10 @@ body input {
 }
 
 @media only screen and (max-width: 768px) {
-  .main-header {
+  .header-container {
     padding: 2rem;
-    padding-top: 1rem;
   }
-  .main-header .bg-home {
+  .header-container .bg-home {
     width: 100%;
   }
 }

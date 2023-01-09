@@ -9,7 +9,9 @@
       <header class="main-header">
         {%- include header.html -%}
            {%- if page.title == "La Giostra Individuale" -%}
-            <img class="bg-home" src="/assets/img/{{page.image}}" alt="{{page.title}}">
+            <div class="header-container">
+              <img class="bg-home" src="/assets/img/{{page.image}}" alt="{{page.title}}">
+            </div>
             {% else %}
             <img class="bg" src="/assets/img/{{ page.image }}" alt="{{page.title}}" />
           {% endif %}        
