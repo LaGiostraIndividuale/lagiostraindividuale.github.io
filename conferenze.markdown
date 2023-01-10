@@ -26,6 +26,7 @@ Giocanti:
 4. Jonny Becchino
 5. Gigi_One
 6. Lo Störto russo
+7. C. Gremi
 
 --- 
 
