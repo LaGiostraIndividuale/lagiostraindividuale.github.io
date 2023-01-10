@@ -22,6 +22,7 @@ Giocanti:
 1. Mos
 2. Angio
 3. Luca
+4. Jonny Becchino
 
 --- 
 
@@ -29,6 +30,8 @@ Giocanti:
 **Zona di Gioco:** Bologna
 
 **Referente:** Marco [Marco](https://www.instagram.com/lemiliana_molkky/)
+
+Giocanti:
 
 1. Turi
 2. Lucia
