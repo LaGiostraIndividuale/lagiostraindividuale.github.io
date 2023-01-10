@@ -12,7 +12,7 @@ Il limite massimo di tempo per potersi registrare alla Giostra Individuale o per
 
 ---
 
-## Conferenza Adriatica 
+### Conferenza Adriatica 
 **Zona di Gioco:** Pesaro e dintorni
 
 **Referente:** [Andrea](https://www.instagram.com/adriatic_molkky/)
