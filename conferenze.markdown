@@ -12,7 +12,7 @@ Qui di seguito troverai l’elenco delle Conferenze che si stanno formando su va
 
 ---
 
-### Conferenza Adriatica 
+### Conferenza Adriatic Mölkky
 **Zona di Gioco:** Pesaro e dintorni
 
 **Referente:** [Andrea](https://www.instagram.com/adriatic_molkky/)
@@ -23,10 +23,12 @@ Giocanti:
 2. Angio
 3. Luca
 4. Jonny Becchino
+5. Gigi_One
+6. Lo Störto russo
 
 --- 
 
-### Conferenza Emiliana
+### Conferenza Emiliana Mölkky
 **Zona di Gioco:** Bologna
 
 **Referente:** Marco [Marco](https://www.instagram.com/lemiliana_molkky/)
@@ -43,7 +45,14 @@ Giocanti:
 
 --- 
 
-### Conferenza Lombarda
+### Conferenza Bello Molchi
+**Zona di Gioco:** Roma
+
+**Referenti:** [Simone](https://instagram.com/bellomolchi)
+
+--- 
+
+### Conferenza La Veritiera Mölkky
 **Zona di Gioco:** Milano
 
 **Referenti:** [Mino](https://www.instagram.com/minoluchena/), [Loris](https://www.instagram.com/loris.gentile/)
