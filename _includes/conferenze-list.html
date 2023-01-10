@@ -1,0 +1,23 @@
+{% for nav in site.data.conferenze.items %}
+    <hr>
+    <h3>Conferenza {{nav.conferenza}}</h3>
+    <p><strong>Zona di Gioco:</strong> {{nav.zona}}</p>
+
+    <p><strong>Referente:</strong> 
+        <a target="_blank" href="{{nav.contatto}}">{{nav.referente}}
+            {% if nav.referente_2 %}
+                , <a target="_blank" href="{{nav.contatto_2}}">{{nav.referente_2}}</a></p>
+            {% endif %}
+        </a>
+    </p>
+    
+    <p>Giocanti:</p>
+    {% if nav.giocanti %}
+        <ol>
+            {% for giocanti in nav.giocanti %}
+                <li>{{giocanti.nickname}}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    <!-- {% if forloop.last %}{% else %}{% endif %}-->
+{% endfor %}

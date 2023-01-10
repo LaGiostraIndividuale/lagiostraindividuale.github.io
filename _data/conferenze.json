@@ -1,0 +1,98 @@
+{
+    "attribute": "Conferenze 2023",
+    "items": [
+        
+        {
+           "conferenza": "Adriatic Mölkky",
+           "zona": "Pesaro e dintorni",
+           "referente": "Andrea",
+           "contatto": "https://www.instagram.com/adriatic_molkky/",
+           "giocanti": [
+                {
+                    "nickname": "Mos",
+                },
+                {
+                    "nickname": "Angio",
+                },
+                {
+                    "nickname": "Jonny Becchino",
+                },
+                {
+                    "nickname": "Gigi_One",
+                },
+                {
+                    "nickname": "Lo Störto russo",
+                },
+                {
+                    "nickname": "C. Gremi"
+                }
+           ]
+        },
+        {
+            "conferenza": "Emiliana Mölkky",
+            "zona": "Bologna",
+            "referente": "Marco",
+            "contatto": "https://www.instagram.com/lemiliana_molkky/",
+            "giocanti": [
+                 {
+                     "nickname": "Turi",
+                 },
+                 {
+                     "nickname": "Lucia",
+                 },
+                 {
+                     "nickname": "WDRW",
+                 },
+                 {
+                     "nickname": "Bestia",
+                 },
+                 {
+                     "nickname": "Brioche",
+                 },
+                 {
+                     "nickname": "Sevincinonvale"
+                 },
+                 {
+                    "nickname": "Eros"
+                }
+            ]
+         },
+         {
+            "conferenza": "Bello Molchi",
+            "zona": "Roma",
+            "referente": "Simone",
+            "contatto": "https://instagram.com/bellomolchi",
+            "giocanti": [
+                 {
+                     "nickname": "Ruco",
+                 },
+                 {
+                     "nickname": "Erminio",
+                 },
+                 {
+                     "nickname": "Gerri",
+                 },
+                 {
+                     "nickname": "Valentina",
+                 },
+                 {
+                     "nickname": "Brioche",
+                 },
+                 {
+                     "nickname": "Lo Sciamano"
+                 }
+            ]
+         },
+         {
+            "conferenza": "La Veritiera Mölkky",
+            "zona": "Milano",
+            "referente": "Mino",
+            "referente_2": "Loris",
+            "contatto": "https://www.instagram.com/minoluchena/",
+            "contatto_2": "https://www.instagram.com/loris.gentile/",
+            "giocanti": [
+                
+            ]
+         }
+    ]
+}
