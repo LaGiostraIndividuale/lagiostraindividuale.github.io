@@ -421,36 +421,44 @@ body{
 
 
 @media only screen and (max-width: $screen-sm) {
+
+
   .footer-col-wrapper{
     padding: 0.8rem;
     color: inherit;
     font-size: 75%;
-    display: block;
+    align-items: flex-start;
+   
 
       .footer-col{
-        margin-top: 0;
-        width: 100%;
+        align-self: center;
+       
+        width: 60%;
+        display: block;
         font-size: 90%;
-        text-align: center;
+        text-align: left;
       }
       
       .sponsor{
-        width: 100%;
+        align-self: center;
+        width: 30%;
+        display: block;
      
         
         svg {
-          margin-left: auto;
-          margin-right: auto;
-          width: 150px;
+
+          width: 80%;
+          margin: auto;
+
           fill: var(--color);
       
         }
       }  
       
       .footer-bottom{
-        width: 100%;
-        margin-top: 1rem;
+        width: 10%;
         text-align: center;
+        align-self: center;
       }
     }
   }
