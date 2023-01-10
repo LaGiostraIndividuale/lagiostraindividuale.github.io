@@ -50,6 +50,12 @@ Giocanti:
 
 **Referenti:** [Simone](https://instagram.com/bellomolchi)
 
+1. Ruco
+2. Erminio
+3. Gerri
+4. Valentina
+5. Lo Sciamano
+
 --- 
 
 ### Conferenza La Veritiera Mölkky
