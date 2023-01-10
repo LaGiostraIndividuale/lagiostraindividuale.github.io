@@ -2,6 +2,7 @@
 layout: page
 title: Contatti
 permalink: /contatti/
+description: Dubbi? Suggerimenti? Insulti? Scrivici tutto per Email!
 ---
 
 

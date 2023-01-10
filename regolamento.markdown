@@ -3,6 +3,8 @@ layout: page
 title: Regolamento
 permalink: /regolamento/
 image: regolamento.jpg
+description: Regolamento dell Giostra Individuale spiegato fase per fase.
+
 ---
 
 ### Fasi
