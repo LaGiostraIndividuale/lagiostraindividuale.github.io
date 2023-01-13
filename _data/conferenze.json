@@ -23,6 +23,15 @@
            ]
         },
         {
+            "conferenza": "Adriatic Mölkky II",
+            "zona": "Pesaro e dintorni",
+            "referente": "Andrea",
+            "contatto": "https://www.instagram.com/adriatic_molkky/",
+            "giocanti": [
+                 {"nickname": "Nefasto"}
+            ]
+         },
+        {
             "conferenza": "Emiliana Mölkky",
             "zona": "Bologna",
             "referente": "Marco",
