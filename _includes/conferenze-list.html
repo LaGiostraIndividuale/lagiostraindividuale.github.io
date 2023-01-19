@@ -4,11 +4,13 @@
     <p><strong>Zona di Gioco:</strong> {{nav.zona}}</p>
 
     <p><strong>Referente:</strong> 
-        <a target="_blank" href="{{nav.contatto}}">{{nav.referente}}
+        <a target="_blank" href="{{nav.contatto}}">{{nav.referente}}</a>
             {% if nav.referente_2 %}
-                , <a target="_blank" href="{{nav.contatto_2}}"> {{nav.referente_2}}</a></p>
+            ,
+                <a target="_blank" href="{{nav.contatto_2}}">
+                     {{nav.referente_2}}
+                </a>
             {% endif %}
-        </a>
     </p>
     
     <p>Giocanti:</p>
