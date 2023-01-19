@@ -55,13 +55,13 @@
             ]
          },
          {
-            "conferenza": "La Veritiera Mölkky",
-            "zona": "Milano",
-            "referente": "Mino",
-            "referente_2": "Loris",
-            "contatto": "https://www.instagram.com/minoluchena/",
-            "contatto_2": "https://www.instagram.com/loris.gentile/",
-            "giocanti": [
+             "conferenza": "La Veritiera Mölkky",
+             "zona": "Milano",
+             "referente": "Mino",
+             "referente_2": "Loris",
+             "contatto": "https://www.instagram.com/minoluchena/",
+             "contatto_2": "https://www.instagram.com/loris.gentile/",
+             "giocanti": [
                 {"nickname": "Il Mago Tony"},
                 {"nickname": "Loris Gentile"},
                 {"nickname": "Elisabetta 82"},
