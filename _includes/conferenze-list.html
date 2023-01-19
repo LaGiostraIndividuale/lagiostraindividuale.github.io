@@ -1,19 +1,19 @@
-{% for nav in site.data.conferenze.items %}
+{% for conferenze in site.data.conferenze.items %}
     <hr>
-    <h3>Conferenza {{nav.conferenza}}</h3>
-    <p><strong>Zona di Gioco:</strong> {{nav.zona}}</p>
+    <h3>Conferenza {{conferenze.conferenza}}</h3>
+    <p><strong>Zona di Gioco:</strong> {{conferenze.zona}}</p>
 
     <p><strong>Referente:</strong> 
-        <a target="_blank" href="{{nav.contatto}}">{{nav.referente}}</a>
-            {% if nav.referente_2 %}
-                ,<a target="_blank" href="{{nav.contatto_2}}">{{nav.referente_2}}</a>
+        <a target="_blank" href="{{conferenze.contatto}}">{{conferenze.referente}}</a>
+            {% if conferenze.referente_2 %}
+                ,<a target="_blank" href="{{conferenze.contatto_2}}">{{conferenze.referente_2}}</a>
             {% endif %}
     </p>
     
     <p>Giocanti:</p>
-    {% if nav.giocanti %}
+    {% if conferenze.giocanti %}
         <ol>
-            {% for giocanti in nav.giocanti %}
+            {% for giocanti in conferenze.giocanti %}
                 <li>{{giocanti.nickname}}</li>
             {% endfor %}
         </ol>
