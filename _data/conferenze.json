@@ -55,6 +55,16 @@
                 {"nickname": "Liam il Bugiardo"}
             ]
          },
+         {
+            "conferenza": "Dopolavoro Mölkky",
+            "zona": "Roma Est",
+            "referente": "James",
+            "email": "jd.barranger@gmail.com",
+            "contatto": "",
+            "giocanti": [
+                {"nickname": "Jimbo Limbo"}
+            ]
+         },
         {
             "conferenza": "Emiliana Mölkky",
             "zona": "Bologna",

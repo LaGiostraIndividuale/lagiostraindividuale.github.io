@@ -4,10 +4,14 @@
     <p><strong>Zona di Gioco:</strong> {{conferenze.zona}}</p>
 
     <p><strong>Referente:</strong> 
-        <a target="_blank" href="{{conferenze.contatto}}">{{conferenze.referente}}</a>
-            {% if conferenze.referente_2 %}
-                ,<a target="_blank" href="{{conferenze.contatto_2}}">{{conferenze.referente_2}}</a>
-            {% endif %}
+        {% if conferenze.email %}
+            <a  href="mailto:{{conferenze.email}}?subject=Info Conferenza Dopolavoro Mölkky">{{conferenze.referente}}</a>
+        {% else %}
+            <a target="_blank" href="{{conferenze.contatto}}">{{conferenze.referente}}</a>
+                {% if conferenze.referente_2 %}
+                    ,<a target="_blank" href="{{conferenze.contatto_2}}">{{conferenze.referente_2}}</a>
+                {% endif %}
+        {% endif %}
     </p>
     
     <p>Giocanti:</p>
