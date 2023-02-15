@@ -8,18 +8,17 @@
            "referente": "Andrea",
            "contatto": "https://www.instagram.com/adriatic_molkky/",
            "giocanti": [
-                {"nickname": "Mos"},
                 {"nickname": "Angio"},
-                {"nickname": "Jonny Becchino"},
-                {"nickname": "Gigi_One"},
-                {"nickname": "Lo Störto Russo"},
+                {"nickname": "Buio"},
                 {"nickname": "CRG7"},
-                {"nickname": "Baio"},
                 {"nickname": "Gianluchi"},
-                {"nickname": "Fileri"},
+                {"nickname": "Gigi_One"},
+                {"nickname": "Jonny Becchino"},
                 {"nickname": "Kedrega"},
-                {"nickname": "Ruddie Louie"},
-                {"nickname": "Armadilly"}
+                {"nickname": "LucⒶ"},
+                {"nickname": "Lo Störto Russo"},
+                {"nickname": "Moz"},
+                {"nickname": "Nefasto"}         
            ]
         },
         {
@@ -28,15 +27,16 @@
             "referente": "Andrea",
             "contatto": "https://www.instagram.com/adriatic_molkky/",
             "giocanti": [
-                {"nickname": "Nefasto"},
+                {"nickname": "Armadilly"},
+                {"nickname": "Baio"},
                 {"nickname": "Jonh Wind"},
-                {"nickname": "Valianth"},
-                {"nickname": "Rossano Schizzanti"},
+                {"nickname": "Fileri"},
                 {"nickname": "Malan"},
+                {"nickname": "Mos"},
                 {"nickname": "Nico Quasisenzatesta"},
-                {"nickname": "Moz"},
-                {"nickname": "Buio"},
-                {"nickname": "LucⒶ"}
+                {"nickname": "Rossano Schizzanti"},
+                {"nickname": "Ruddie Louie"},
+                {"nickname": "Valianth"}
             ]
          },
          {
@@ -45,18 +45,18 @@
             "referente": "Simone",
             "contatto": "https://instagram.com/bellomolchi",
             "giocanti": [
-                {"nickname": "Ruco"},
+                {"nickname": "Claudio"},
                 {"nickname": "Erminio"},
                 {"nickname": "Gerri"},
-                {"nickname": "Valentina"},
-                {"nickname": "Lo Sciamano"},
-                {"nickname": "Maestro di Cerimonia"},
-                {"nickname": "Slick Pistrela"},
                 {"nickname": "La First Lady di Bellomolchi"},
                 {"nickname": "Liam il Bugiardo"},
-                {"nickname": "Claudio"},
+                {"nickname": "Lo Sciamano"},
                 {"nickname": "Luca Brt"},
-                {"nickname": "Uno uno zero zero"}
+                {"nickname": "Maestro di Cerimonia"},    
+                {"nickname": "Ruco"},
+                {"nickname": "Slick Pistrela"},
+                {"nickname": "Uno uno zero zero"},
+                {"nickname": "Valentina"}
             ]
          },
          {
@@ -66,14 +66,14 @@
             "email": "jd.barranger@gmail.com",
             "contatto": "",
             "giocanti": [
-                {"nickname": "Jimbo Limbo"},
-                {"nickname": "Riccardo"},
-                {"nickname": "Giulia Meng"},
-                {"nickname": "Giovanni dell'Europea"},
-                {"nickname": "Marco"},
                 {"nickname": "Bender"},
                 {"nickname": "Botticelli"},
-                {"nickname": "Giuliezza"}
+                {"nickname": "Giovanni dell'Europea"},
+                {"nickname": "Giulia Meng"},
+                {"nickname": "Giuliezza"},
+                {"nickname": "Jimbo Limbo"},
+                {"nickname": "Marco"},
+                {"nickname": "Riccardo"}    
             ]
          },
         {
@@ -82,18 +82,18 @@
             "referente": "Marco",
             "contatto": "https://www.instagram.com/lemiliana_molkky/",
             "giocanti": [
-                {"nickname": "Turi"},
-                {"nickname": "Lucia"},
-                {"nickname": "WDRW"},
                 {"nickname": "Bestia"},
                 {"nickname": "Brioche"},
-                {"nickname": "Sevincinonvale"},
                 {"nickname": "Eros"},
-                {"nickname": "TigelloneBrutto"},
-                {"nickname": "Ili"},
+                {"nickname": "Giavo"},
+                {"nickname": "Ili"},        
+                {"nickname": "Lucia"},
                 {"nickname": "Nick Amoruso"},
+                {"nickname": "Sevincinonvale"},
+                {"nickname": "TigelloneBrutto"},
+                {"nickname": "Turi"},
                 {"nickname": "Vero"},
-                {"nickname": "Giavo"}
+                {"nickname": "WDRW"}
             ]
          },
          {
@@ -104,18 +104,18 @@
             "contatto": "https://www.instagram.com/minoluchena/",
             "contatto_2": "https://www.instagram.com/loris.gentile/",
             "giocanti": [
-               {"nickname": "Mino"},
+               {"nickname": "Annarella"},
+               {"nickname": "B"},
                {"nickname": "Bonba"},
-               {"nickname": "Il Mago Tony"},
+               {"nickname": "Chris"},
+               {"nickname": "Cogia"},
+               {"nickname": "Laconi"},
                {"nickname": "Loris Gentile"},
-               {"nickname": "Elisabetta 82"},
-               {"nickname": "Bacio di Cappella"},
-               {"nickname": "F. Sesa"},
-               {"nickname": "Arianna"},
+               {"nickname": "Miguel Basetta"},
+               {"nickname": "Morsy"},
                {"nickname": "Nico pezzato"},
-               {"nickname": "Olimpus"},
-               {"nickname": "Ciot"},
-               {"nickname": "Sam Bandicot"}
+               {"nickname": "Olimpus"}
+
            ]
         },
         {
@@ -126,15 +126,17 @@
            "contatto": "https://www.instagram.com/minoluchena/",
            "contatto_2": "https://www.instagram.com/loris.gentile/",
            "giocanti": [
-              {"nickname": "Cogia"},
-              {"nickname": "Miguel Basetta"},
-              {"nickname": "Steffy"},
-              {"nickname": "B"},
+              {"nickname": "Arianna"},
+              {"nickname": "Bacio di Cappella"},
+              {"nickname": "Ciot"},
+              {"nickname": "Mino"},
+              {"nickname": "Il Mago Tony"},
+              {"nickname": "Elisabetta 82"},
+              {"nickname": "F. Sesa"}, 
               {"nickname": "Plotter"},
-              {"nickname": "Chris"},
-              {"nickname": "Annarella"},
-              {"nickname": "Morsy"},
-              {"nickname": "Laconi"}
+              {"nickname": "Sam Bandicot"},
+              {"nickname": "Steffy"}
+ 
           ]
        }
     ]
