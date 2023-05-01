@@ -1,0 +1,125 @@
+<table>
+  <h3>Conferenza Adriatic Mölkky</h3>
+    {% for row in site.data.SSR-Adriatic %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>
+
+<table>
+  <h3>Conferenza Adriatic Mölkky II</h3>
+    {% for row in site.data.SSR-Adriatic-II %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>
+
+<table>
+  <h3>Conferenza Bellomolchi</h3>
+    {% for row in site.data.SSR-Bellomolchi %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>
+
+<table>
+  <h3>Conferenza Dopolavoro Mölkky</h3>
+    {% for row in site.data.SSR-Dopolavoro %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>
+
+<table>
+  <h3>Conferenza Emiliana Mölkky</h3>
+    {% for row in site.data.SSR-Emiliana %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>
+
+<table>
+  <h3>Conferenza La Veritiera Mölkky</h3>
+    {% for row in site.data.SSR-Veritiera %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>
+
+<table>
+  <h3>Conferenza La Veritiera Mölkky II</h3>
+    {% for row in site.data.SSR-Veritiera-II %}
+      
+      {% if forloop.first %}
+      <tr>
+        {% for pair in row %}
+          <th>{{ pair[0] }}</th>
+        {% endfor %}
+      </tr>
+      {% endif %}
+  
+      {% tablerow pair in row %}
+        {{ pair[1] }}
+      {% endtablerow %}
+    {% endfor %}
+</table>

@@ -13,7 +13,7 @@ Per poter partecipare la prima cosa che dovrai fare è unirti alla conferenza ch
 
 La Stagione Regolare durerà 5 mesi e vedrà passare lз **due solз giocanti** che avranno primeggiato all’interno di ogni conferenza. Durante questo periodo verrano qui riportati tutti punteggi che lз giocanti avranno totalizzato nei vari incontri e che dovranno esserci forniti dallз stessз tramite l’invio del [**Referto di Gara**](/assets/docs/La%20Giostra%20Individuale%20-%20Referto%20di%20gara.pdf "Referto di Gara") per email oppure per mano del Referente di Conferenza.
 
-La fase di **Spareggio** e la fase **Finale** si svolgeranno lo stesso giorno, iI **3 di Settembre**, ma per questo c’è ancora tempo e maggiori dettagli verranno trasmessi nel corso della Stagione Regolare.
+La fase di **Spareggio** e la fase **Finale** si svolgeranno lo stesso giorno, **Domenica 23 Settembre**, a Pesaro.
 
 Come già menzionato ogni conferenza avrà unə Referente che si farà carico di raccogliere le iscrizioni dellз giocanti, qualora non venissero fatte online e di comunicarle alla Giostra Individuale nonchè di raccogliere la tariffa di iscrizione. Provvederemo a fornire l’elenco dei Referenti di Conferenza man mano che si andranno costituendo. Nel frattempo ti auguriamo una fantastica permanenza su questa piattaforma, per ogni dubbio o segnalazione non esitare a [contattarci](/contatti "Contatti").
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>

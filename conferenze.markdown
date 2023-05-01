@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Conferenze
+title: Statistiche Stagione Regolare
 permalink: /conferenze/
 image: conferenze.jpg
 description: Elenco delle Conferenze, dei rispettivi Referenti e degli iscritti al campionato.

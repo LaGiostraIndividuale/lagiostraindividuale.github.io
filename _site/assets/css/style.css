@@ -1046,4 +1046,8 @@ body input {
   font-size: 12rem;
 }
 
+tr:nth-child(odd) {
+  color: #c7c7c7;
+}
+
 /*# sourceMappingURL=style.css.map */
