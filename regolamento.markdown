@@ -18,7 +18,7 @@ Passeranno questa fase lз due giocanti che avranno vinto più partite[^3].\\
 Quindi per ogni conferenza solo due giocanti passeranno alla fase successiva.
 
 ### Spareggio e Finale
-La fase di Spareggio e la fase Finale si svolgeranno lo stesso giorno, iI 3 di Settembre. Il luogo è da stabilire.\\
+La fase di Spareggio e la fase Finale si svolgeranno lo stesso giorno, Sabato 23 Settembre a Pesaro.\\
 Durante la fase di Spareggio tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro in un duello *alla meglio di tre*.
 Passeranno questa fase lз due giocanti che avranno vinto più partite[^4].\\
 Durante la fase Finale lз solз due giocanti dovranno affrontarsi uno contro uno fra loro in un duello alla meglio di tre per determinare chi vincerà il campionato.
