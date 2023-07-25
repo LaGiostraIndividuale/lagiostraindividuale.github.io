@@ -1047,7 +1047,16 @@ body input {
 }
 
 tbody {
-  word-break: break-all;
+  font-size: 55%;
+}
+
+table td {
+  color: white;
+  background-color: black;
+}
+
+table tr:nth-child(even) {
+  background-color: black;
 }
 
 table th {

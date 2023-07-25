@@ -490,13 +490,19 @@ body{
 
 //CONFERENZE
 tbody{
-  word-break: break-all;
+  font-size: 55%;
 }
 
 tr:nth-child(odd) {
 
 }
-
+table td {
+  color:white;
+  background-color: black;
+}
+table tr:nth-child(even) {
+  background-color: black;
+}
 table th{
 
   font-weight: bold;
