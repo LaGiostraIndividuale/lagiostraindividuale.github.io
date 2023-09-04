@@ -13,6 +13,6 @@ image: Spareggio-e-finale.png
 
 ### L'evento che decreterà lǝ campionǝ assolutǝ de **La Giostra Individuale** sarà <ins>gratuito e aperto a tuttз</ins>, inizierà alle 11:00 di mattina e si protrarrà fino a sera. Disponibili in loco: servizi igienici, bevande fresche e calde, <ins>PIZZA on demand</ins> e possibilità di dormire in tenda (la tua). Selezione musicale a cura di <ins>RAW Dj Set</ins>. Conduce: <ins>Il Maestro Di Cerimonia</ins>.
 
-Hai bisogno di altre info: [contattaci](/contatti "Contatti").
+Hai bisogno di altre info? [contattaci](/contatti "Contatti").
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
 
