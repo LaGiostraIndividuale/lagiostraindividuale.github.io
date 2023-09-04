@@ -1,20 +1,18 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 title: La Giostra Individuale
-image: homepage.svg
+image: spareggio-e-finale.png
 ---
-La Giostra Individuale, ovvero il campionato nazionale di Mölkky *uno contro uno* ti da il benvenutə! In questo sito potrai trovare tutte le info relative al campionato; dal [regolameto](/regolamento "Regolamento"), al [modulo di iscrizione](/iscrizione "Iscrizione"), nonchè tutti i [documenti](/documenti-di-gara "Documenti") relativi alla registrazione dei risultati delle partite. Questa **Stagione Regolare 2023** avrà inizio il **1* Marzo 2023** e terminerà il **31 Luglio 2023** svolgendosi simultaneamente in diverse **conferenze** suddivise in base al territorio.
-{:.has-dropcap}
+### Eccoci giuntз in prossimità delle fasi di <ins>Spareggio</ins> e <ins>Finale</ins> che si svolgeranno lo stesso giorno, <ins>Sabato 23 Settembre</ins>, a <ins>Pesaro</ins>.
 
-Per poter partecipare la prima cosa che dovrai fare è unirti alla conferenza che ti è più prossima oppure fondarne una tu stessә! Infatti chiunque potrà fondare la propria conferenza locale raccogliendo entro il **31 Gennaio 2023** un minimo di 8 iscrittз ed un massimo di 12. Subito dopo dovrai iscriverti ufficialmete alla Giostra Individuale compilando il [form di iscrizione su questo sito](/iscrizione "Iscrizione") e versando telematicamente la **tariffa di iscrizione** che è di **20,00€** a partecipante, oppure se preferisci puoi stampare [il suddetto modulo](/assets/docs/La%20Giostra%20Individuale%20-%20Iscrizione.pdf "Iscrizione") e inviarcelo redatto via [email](mailto:lagiostraindividuale@gmail.com "Mail") o consegnarlo direttamente nelle mani del **Referente di conferenza**. Una volta fatto ciò verrai registratə e riceverai la **Tessera dellə Giocante** valida per tutta la stagione 2023.
+### Il luogo prestabilito si trova presso <ins>Strada delle Fontanelle N.6</ins>, a Fiorenzuola di Focara, all’interno di una tenuta situata sulla strada panoramica del Monte San Bartolo in provincia di Pesaro e Urbino.
 
-La Stagione Regolare durerà 5 mesi e vedrà passare lз **due solз giocanti** che avranno primeggiato all’interno di ogni conferenza. Durante questo periodo verrano qui riportati tutti punteggi che lз giocanti avranno totalizzato nei vari incontri e che dovranno esserci forniti dallз stessз tramite l’invio del [**Referto di Gara**](/assets/docs/La%20Giostra%20Individuale%20-%20Referto%20di%20gara.pdf "Referto di Gara") per email oppure per mano del Referente di Conferenza.
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2872.5763287123573!2d12.824936476435736!3d43.94744113335007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d1fc814fe4205%3A0x3d2ab98f14ae4e13!2sstrada%20della%20fontanelle%2C%206%2C%2061121%20Pesaro%20PU!5e0!3m2!1sit!2sit!4v1693808242774!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-La fase di **Spareggio** e la fase **Finale** si svolgeranno lo stesso giorno, **Sabato 23 Settembre**, a Pesaro.
+### L'evento che decreterà lǝ campionǝ assolutǝ de **La Giostra Individuale** sarà <ins>gratuito e aperto a tuttз</ins>, inizierà alle 11:00 di mattina e si protrarrà fino a sera. Disponibili in loco: servizi igienici, bevande fresche e calde, <ins>PIZZA on demand</ins> e possibilità di dormire in tenda (la tua). Selezione musicale a cura di <ins>RAW Dj Set</ins>. Conduce: <ins>Il Maestro Di Cerimonia</ins>.
 
-Come già menzionato ogni conferenza avrà unə Referente che si farà carico di raccogliere le iscrizioni dellз giocanti, qualora non venissero fatte online e di comunicarle alla Giostra Individuale nonchè di raccogliere la tariffa di iscrizione. Provvederemo a fornire l’elenco dei Referenti di Conferenza man mano che si andranno costituendo. Nel frattempo ti auguriamo una fantastica permanenza su questa piattaforma, per ogni dubbio o segnalazione non esitare a [contattarci](/contatti "Contatti").
+Hai bisogno di altre info: [contattaci](/contatti "Contatti").
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
 
