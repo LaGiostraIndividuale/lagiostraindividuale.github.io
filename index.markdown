@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: La Giostra Individuale
-image: spareggio-e-finale.png
+image: Spareggio-e-finale.png
 ---
 ### Eccoci giuntз in prossimità delle fasi di <ins>Spareggio</ins> e <ins>Finale</ins> che si svolgeranno lo stesso giorno, <ins>Sabato 23 Settembre</ins>, a <ins>Pesaro</ins>.
 
