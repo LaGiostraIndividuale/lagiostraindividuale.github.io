@@ -1,36 +1,24 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+## To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: La Giostra Individuale
-image: Spareggio-e-finale.png
+image: winner-23.jpg
 ---
 
-Eccoci giuntз in prossimità delle fasi di **Spareggio** e **Finale** che si svolgeranno lo stesso giorno, **Sabato 23 Settembre**, a **Pesaro**.
+Uno sport fatto solo di amichevoli non si è mai visto. Ci sono i campionati di Briscola, i campionati di Hobbyhorse, i campionati di Air Guitar, e addirittura i campionati di Fumo Lento. E allora perché non un campionato di Mölkky? E infatti c'è, lo sapete tutti, ma si chiama **La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno**; non il Campionato Nazionale di Mölkky e basta. Chiamarlo così sarebbe stato un imperdonabile errore.
+ 
+Essere una Giostra evoca un sentimento cavalleresco fatto di solennità e fair play, qualcosa che non puoi trovare altrove. Essere una Giostra-Individuale fa risuonare l'eco fanciullesco di quando si roteava soli in sella ad un cavalluccio, soli eppure in compagnia di altri, vicini e lontani. Questo bel mix di sensazioni rende la Giostra Individuale un progetto unico disegnato per stare insieme, per condividere un'esperienza e si, per scontrarsi e vincere possibilmente evitando inutili sfoggi di muscoli. Infatti la Giostra Individuale è anche un campionato, una scusa ufficiale per incontrarsi e giocare. 
 
-### **Dove si svolgerà l'evento?**
-Il luogo prestabilito si trova presso **[Strada delle Fontanelle N.6](https://www.google.com/maps/dir/43.9025664,12.8876544/strada+della+fontanelle,+6,+61121+Pesaro+PU/@43.924299,12.7883237,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x132d1fc814fe4205:0x3d2ab98f14ae4e13!2m2!1d12.8275114!2d43.9474373?entry=ttu "Mappa per Strada delle Fontanelle N.6")**, a Fiorenzuola di Focara, all’interno di una tenuta sulla strada panoramica del Monte San Bartolo (PU).
+Dopo interminabili occhiate, match all'ultimo sangue, inutili critiche su un logo più che perfetto, “scontri sovrumani, duelli decisivi che decideranno chi l'armatura indosserà”, i dieci pupilli, gli intoccabili sono stati nominati. Quante sorprese, troppe per parlarne. 
+E, scusatemi, ma devo finire la strofa: *“É un torneo micidiale, è uno scontro fratricida il più forte dovrà infine tra tutti trionfar! Chi sarà mai? Chi sarà mai? Chi sarà mai?”*
 
-### **In cosa consiste l'evento?**
-In un torneo di Mölkky riservato allз 10 giocanti che hanno primeggiato durante la **Stagione Regolare** de **La Giostra Individuale**.
+La finale de La Giostra Individuale non è stato un evento teso, è stato il campo scuola, il prediciottesimo e, contemporaneamente, la laurea del Mölkky italiano, non ce ne vogliano i cari amici di Sabbio Bergamasco. La finale della Giostra è stata (mi ripeto) soprattutto stare insieme giocando a Mölkky, bene. Perché smaltire tanti incontri in poco tempo richiede giocatori di livello. 
 
-### **L'evento è aperto a tuttз?**
-Si, potrete assistere al torneo ed intrattenervi nei modi più disparati.
+Le esperienze internazionali, gli Erasmus del Mölkky, hanno probabilmente ripagato e la mano, guidata dalla strategia, ha portato **Ruco** alla vittoria. Un plauso a **Turi** (grandioso finalista) e a tuttə le altrə giocantə che riporto in ordine alfabetico: **Angio**, **Bender**, **Botticelli**, **Eros**, **Fileri**, **Gianluchi**, **Luca BRT** e **Ruddie Louie**.
+Un ringraziamento anche a tuttə coloro che hanno partecipato alla Giostra, agli spettatori presenti durante la finale e a quelli che gravitano con passione attorno al pianeta Mölkky; siete delle persone estremamente civili. 
+Infine, proprio come si confà ad uno sport essenzialmente monodimensionale, non c'è stato un podio, solo dei numeri impressi al laser su di un orologio che segna sempre l'ora esatta, l'ora di giocare al Mölkky.
 
-### **Posso partecipare agli incontri?**
-No, non è possibile. Però puoi assistere a **Spareggio** e **Finale** dando supporto allƏ tuƏ giocante favoritƏ oppure giocare delle partite amichevoli con chi preferisci. Lo spazio non manca.
 
-### **Quanto costa l'evento?**
-L’ingresso è **gratuito** ma cibo (**Pizza on demand**) e bevande avranno un umano prezzo.
-
-### **Quanto durerà l'evento?**
-Inizierà alle 11:00 di mattina e si protrarrà fino a sera. 
-
-### **Posso dormire nel luogo dell'evento?**
-Si, gratuitamente. Abbiamo 35 posti letto disponibili al chiuso, ed un vasto campo pianeggiante su cui parcheggiare camper e piantare tende... contattaci se sei interessatƏ.  
-
-### **Bisognerà rispettare un rigoroso silenzio?**
-Ovviamente no! La giornata sarà accompagnata dalla selezione musicale a cura di **RAW Dj Set** e condotta dal **Maestro Di Cerimonia**.
-
-Hai bisogno di altre info? [ Non esitare a contattarci.](/contatti "Contatti").
+<figure><img src="/assets/img/banner.jpg"></figure>
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>

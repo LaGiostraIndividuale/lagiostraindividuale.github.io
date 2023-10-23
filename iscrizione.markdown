@@ -13,6 +13,6 @@ description: Iscriviti qui alla Giostra Individuale, la scadenza per le iscrizio
 
 A breve usciranno i gironi delle Conferenze e tutte le info del caso, nel frattempo non possiamo fare altro che augurare a tuttз lз partecipanti *Buona Fortuna!*
 
-
+Hai bisogno di altre info? [ Non esitare a contattarci.](/contatti "Contatti").
 🤞
 {:.succes-emoji}
