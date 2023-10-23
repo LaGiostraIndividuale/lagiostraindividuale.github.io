@@ -24,7 +24,7 @@ Infine, proprio come si confà ad uno sport essenzialmente monodimensionale, non
 
 *Testo: Il Maestro di cerimonia*
 
-*Ph: Luca BRT e LucⒶ*
+*Ph: Luca BRT & LucⒶ*
 
 
 <figure><img src="/assets/img/banner.jpg" alt="Il banner ufficiale de La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno"></figure>
