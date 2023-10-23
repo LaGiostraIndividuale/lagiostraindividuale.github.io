@@ -7,8 +7,7 @@ image:
 ---
 
 
-<figure><img src="/assets/img/winner-23.jpg"></figure>
-*Ph: Luca BRT*
+<figure><img src="/assets/img/winner-23.jpg" alt="Ruco il vincitore dell’edizione 2023 de La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno"></figure>
 
 Uno sport fatto solo di amichevoli non si è mai visto. Ci sono i campionati di Briscola, i campionati di Hobbyhorse, i campionati di Air Guitar, e addirittura i campionati di Fumo Lento. E allora perché non un campionato di Mölkky? E infatti c'è, lo sapete tutti, ma si chiama **La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno**; non il Campionato Nazionale di Mölkky e basta. Chiamarlo così sarebbe stato un imperdonabile errore.
  
@@ -23,6 +22,10 @@ Le esperienze internazionali, gli Erasmus del Mölkky, hanno probabilmente ripag
 Un ringraziamento anche a tuttə coloro che hanno partecipato alla Giostra, agli spettatori presenti durante la finale e a quelli che gravitano con passione attorno al pianeta Mölkky; siete delle persone estremamente civili. 
 Infine, proprio come si confà ad uno sport essenzialmente monodimensionale, non c'è stato un podio, solo dei numeri impressi al laser su di un orologio che segna sempre l'ora esatta, l'ora di giocare al Mölkky.
 
+*Testo: Il Maestro di cerimonia*
 
-<figure><img src="/assets/img/banner.jpg"></figure>
+*Ph: Luca BRT e LucⒶ*
+
+
+<figure><img src="/assets/img/banner.jpg" alt="Il banner ufficiale de La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno"></figure>
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
