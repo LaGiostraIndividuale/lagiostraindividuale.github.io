@@ -8,6 +8,8 @@ image:
 
 
 <figure><img src="/assets/img/winner-23.jpg"></figure>
+*Ph: Luca BRT*
+
 Uno sport fatto solo di amichevoli non si è mai visto. Ci sono i campionati di Briscola, i campionati di Hobbyhorse, i campionati di Air Guitar, e addirittura i campionati di Fumo Lento. E allora perché non un campionato di Mölkky? E infatti c'è, lo sapete tutti, ma si chiama **La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno**; non il Campionato Nazionale di Mölkky e basta. Chiamarlo così sarebbe stato un imperdonabile errore.
  
 Essere una Giostra evoca un sentimento cavalleresco fatto di solennità e fair play, qualcosa che non puoi trovare altrove. Essere una Giostra-Individuale fa risuonare l'eco fanciullesco di quando si roteava soli in sella ad un cavalluccio, soli eppure in compagnia di altri, vicini e lontani. Questo bel mix di sensazioni rende la Giostra Individuale un progetto unico disegnato per stare insieme, per condividere un'esperienza e si, per scontrarsi e vincere possibilmente evitando inutili sfoggi di muscoli. Infatti la Giostra Individuale è anche un campionato, una scusa ufficiale per incontrarsi e giocare. 
