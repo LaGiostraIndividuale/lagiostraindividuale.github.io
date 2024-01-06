@@ -1,4 +1,5 @@
-{% for conferenze in site.data.conferenze.items %}
+<div>
+  {% for conferenze in site.data.conferenze.items %}
     <hr>
     <h3>Conferenza {{conferenze.conferenza}}</h3>
     <p><strong>Zona di Gioco:</strong> {{conferenze.zona}}</p>
@@ -26,7 +27,7 @@
 {% endfor %}
 
 
-{{ site.data.SSR }}
+<!-- {{ site.data.SSR }}
 
 {% assign row = site.SSR[0] %}
 {{ row | inspect }}
@@ -46,5 +47,5 @@
         {{ pair[1] }}
       {% endtablerow %}
     {% endfor %}
-  </table>
-  
+</table>-->
+</div>

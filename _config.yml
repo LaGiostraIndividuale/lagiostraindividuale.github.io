@@ -35,6 +35,7 @@ plugins:
   - jekyll-feed
 header_pages:
     - regolamento.markdown
+    - iscrizione.markdown
     - conferenze.markdown
     - documenti-di-gara.markdown
     - contatti.markdown
@@ -63,3 +64,5 @@ minima:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+include:
+  - node_modules
