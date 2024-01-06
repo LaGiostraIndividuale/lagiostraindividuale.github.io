@@ -23,8 +23,8 @@ Durante la fase di Spareggio tuttз lз giocanti dovranno affrontarsi uno contro
 Durante la fase Finale lз solз due giocanti dovranno affrontarsi uno contro uno fra loro in un duello alla meglio di tre per determinare chi vincerà il campionato.
 
 ### Iscrizioni
-Ogni conferenza avrà unə referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con LA GIOSTRA INDIVIDUALE.
-La tariffa dell’iscrizione è di 20,00 € a testa. Questo costo include la Tessera dellə Giocante e un piccolo omaggio.
+Ogni conferenza avrà unə referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con **LA GIOSTRA INDIVIDUALE**.
+La tariffa dell’iscrizione è di 20,00€ a testa. Questo costo include la Tessera dellə Giocante e un piccolo omaggio.
 
 ### Premio
 Il premio consisterà in un trofeo esclusivo.
