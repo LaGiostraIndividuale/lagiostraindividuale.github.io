@@ -8,136 +8,17 @@
            "referente": "Andrea",
            "contatto": "https://www.instagram.com/adriatic_molkky/",
            "giocanti": [
-                {"nickname": "Angio"},
-                {"nickname": "Buio"},
-                {"nickname": "CRG7"},
-                {"nickname": "Gianluchi"},
-                {"nickname": "Gigi_One"},
-                {"nickname": "Jonny Becchino"},
-                {"nickname": "Kedrega"},
-                {"nickname": "Lo Störto Russo"},
-                {"nickname": "LucⒶ"},
-                {"nickname": "Moz"},
-                {"nickname": "Nefasto"}         
+                {"nickname": "Mos"}     
            ]
         },
         {
-            "conferenza": "Adriatic Mölkky II",
-            "zona": "Pesaro e dintorni",
-            "referente": "Andrea",
-            "contatto": "https://www.instagram.com/adriatic_molkky/",
-            "giocanti": [
-                {"nickname": "Armadilly"},
-                {"nickname": "Baio"},
-                {"nickname": "Fileri"},
-                {"nickname": "Jonh Wind"},
-                {"nickname": "Malan"},
-                {"nickname": "Mos"},
-                {"nickname": "Nico Quasisenzatesta"},
-                {"nickname": "Rossano Schizzanti"},
-                {"nickname": "Ruddie Louie"},
-                {"nickname": "Valianth"}
-            ]
-         },
-         {
             "conferenza": "Bellomolchi",
             "zona": "Roma",
             "referente": "Simone",
             "contatto": "https://instagram.com/bellomolchi",
             "giocanti": [
-                {"nickname": "Claudio"},
-                {"nickname": "Erminio"},
-                {"nickname": "Gerri"},
-                {"nickname": "La First Lady di Bellomolchi"},
-                {"nickname": "Liam il Bugiardo"},
-                {"nickname": "Lo Sciamano"},
-                {"nickname": "Luca Brt"},
                 {"nickname": "Maestro di Cerimonia"},    
-                {"nickname": "Ruco"},
-                {"nickname": "Slick Pistrela"},
-                {"nickname": "Uno uno zero zero"},
-                {"nickname": "Valentina"}
             ]
-         },
-         {
-            "conferenza": "Dopolavoro Mölkky",
-            "zona": "Roma Est",
-            "referente": "James",
-            "email": "jd.barranger@gmail.com",
-            "contatto": "",
-            "giocanti": [
-                {"nickname": "Bender"},
-                {"nickname": "Botticelli"},
-                {"nickname": "Giovanni dell'Europea"},
-                {"nickname": "Giulia Meng"},
-                {"nickname": "Giuliezza"},
-                {"nickname": "Jimbo Limbo"},
-                {"nickname": "Marco"},
-                {"nickname": "Riccardo"}    
-            ]
-         },
-        {
-            "conferenza": "Emiliana Mölkky",
-            "zona": "Bologna",
-            "referente": "Marco",
-            "contatto": "https://www.instagram.com/lemiliana_molkky/",
-            "giocanti": [
-                {"nickname": "Bestia"},
-                {"nickname": "Brioche"},
-                {"nickname": "Eros"},
-                {"nickname": "Giavo"},
-                {"nickname": "Ili"},        
-                {"nickname": "Lucia"},
-                {"nickname": "Nick Amoruso"},
-                {"nickname": "Sevincinonvale"},
-                {"nickname": "TigelloneBrutto"},
-                {"nickname": "Turi"},
-                {"nickname": "Vero"},
-                {"nickname": "WDRW"}
-            ]
-         },
-         {
-            "conferenza": "La Veritiera Mölkky",
-            "zona": "Milano",
-            "referente": "Mino",
-            "referente_2": "Loris",
-            "contatto": "https://www.instagram.com/minoluchena/",
-            "contatto_2": "https://www.instagram.com/loris.gentile/",
-            "giocanti": [
-               {"nickname": "Annarella"},
-               {"nickname": "B"},
-               {"nickname": "Bonba"},
-               {"nickname": "Chris"},
-               {"nickname": "Cogia"},
-               {"nickname": "Laconi"},
-               {"nickname": "Loris Gentile"},
-               {"nickname": "Miguel Basetta"},
-               {"nickname": "Morsy"},
-               {"nickname": "Nico pezzato"},
-               {"nickname": "Olimpus"}
-
-           ]
-        },
-        {
-           "conferenza": "La Veritiera Mölkky II",
-           "zona": "Milano",
-           "referente": "Mino",
-           "referente_2": "Loris",
-           "contatto": "https://www.instagram.com/minoluchena/",
-           "contatto_2": "https://www.instagram.com/loris.gentile/",
-           "giocanti": [
-              {"nickname": "Arianna"},
-              {"nickname": "Bacio di Cappella"},
-              {"nickname": "Ciot"},
-              {"nickname": "Mino"},
-              {"nickname": "Il Mago Tony"},
-              {"nickname": "Elisabetta 82"},
-              {"nickname": "F. Sesa"}, 
-              {"nickname": "Plotter"},
-              {"nickname": "Sam Bandicot"},
-              {"nickname": "Steffy"}
- 
-          ]
-       }
+         }
     ]
 }

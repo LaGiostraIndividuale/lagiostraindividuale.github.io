@@ -10,10 +10,19 @@
   <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Elenco delle Conferenze, e statistiche della Stagione Regolare."><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Statistiche Stagione Regolare | La Giostra Individuale</title>
+  <meta name="description" content="Elenco delle Conferenze, e statistiche della Stagione Regolare.">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Conferenze | La Giostra Individuale</title>
 <meta name="generator" content="Jekyll v4.3.1" />
-<meta property="og:title" content="Statistiche Stagione Regolare" />
+<meta property="og:title" content="Conferenze" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Elenco delle Conferenze, e statistiche della Stagione Regolare." />
 <meta property="og:description" content="Elenco delle Conferenze, e statistiche della Stagione Regolare." />
@@ -24,9 +33,9 @@
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://localhost:4000/conferenze.jpg" />
-<meta property="twitter:title" content="Statistiche Stagione Regolare" />
+<meta property="twitter:title" content="Conferenze" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Elenco delle Conferenze, e statistiche della Stagione Regolare.","headline":"Statistiche Stagione Regolare","image":"http://localhost:4000/conferenze.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/giostra-individuale-logo-black.svg"}},"url":"http://localhost:4000/conferenze/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Elenco delle Conferenze, e statistiche della Stagione Regolare.","headline":"Conferenze","image":"http://localhost:4000/conferenze.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/giostra-individuale-logo-black.svg"}},"url":"http://localhost:4000/conferenze/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="La Giostra Individuale" />
 </head>
@@ -45,11 +54,11 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/regolamento/">Regolamento</a><a class="page-link" href="/iscrizione/">Iscrizione</a><a class="page-link" href="/conferenze/">Statistiche Stagione Regolare</a><a class="page-link" href="/documenti-di-gara/">Documenti di gara</a><a class="page-link" href="/contatti/">Contatti</a></div>
+        <div class="trigger"><a class="page-link" href="/regolamento/">Regolamento</a><a class="page-link" href="/iscrizione/">Iscrizione</a><a class="page-link" href="/conferenze/">Conferenze</a><a class="page-link" href="/documenti-di-gara/">Documenti di gara</a><a class="page-link" href="/contatti/">Contatti</a></div>
       </nav></div>
 </header>
 
-            <img class="bg" src="/assets/img/conferenze.jpg" alt="Statistiche Stagione Regolare" />
+            <img class="bg" src="/assets/img/conferenze.jpg" alt="Conferenze" />
                   
       </header><div class="main-content">
       <main class="page-content" aria-label="Content">
@@ -57,263 +66,76 @@
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Statistiche Stagione Regolare</h1>
-  </header><div class="post-content"><!--Qui di seguito troverai l’elenco delle Conferenze che si stanno formando su varie province del paese. Ti ricordiamo che una conferenza è composta da un **minimo di 8 Giocanti** ed un **massimo di 12**. Non esiste invece un limite al numero di conferenze che si possono formare sullo stesso territorio. Troverai in questa pagina anche i link per metterti in contatto direttamente con i vari Referenti di Conferenza che potranno farsi carico della tua iscrizione alla Giostra Individuale e di raccogliere la **tariffa di iscrizione**, qualora non avessi modo di [registrarti attraverso il nostro form online](/iscrizione "Iscrizione"). Inoltre questi ultimi avranno un importante ruolo logistico durante tutta la fase della Stagione Regolare garantendo lo svolgimento di tutte le patite e registrandone i punteggi, ti invitiamo pertanto a prendere contatto con loro il prima possibile attraverso i Messaggi Diretti su Instagram (se preferisci puoi richiederci via [email](mailto:lagiostraindividuale@gmail.com "Mail") di essere messə in contatto in altro modo). Se la tua Conferenza di riferimento non dovesse avere posti liberi potrai fondarne una semplicemente inviandoci una richiesta via [email](mailto:lagiostraindividuale@gmail.com "Mail"); provvederemo noi ad inserirla nell’elenco delle Conferenze disponibili.
-{:.has-dropcap}
+    <h1 class="post-title">Conferenze</h1>
+  </header><div class="post-content"><p class="has-dropcap">Qui di seguito troverai l’elenco delle Conferenze che si stanno formando su varie province del paese. Ti ricordiamo che una conferenza è composta da un <strong>minimo di 8 Giocanti</strong> ed un <strong>massimo di 12</strong>. Non esiste invece un limite al numero di conferenze che si possono formare sullo stesso territorio. Troverai in questa pagina anche i link per metterti in contatto direttamente con i vari Referenti di Conferenza che potranno farsi carico della tua iscrizione alla Giostra Individuale e di raccogliere la <strong>tariffa di iscrizione</strong>, qualora non avessi modo di <a href="/iscrizione" title="Iscrizione">registrarti attraverso il nostro form online</a>. Inoltre questi ultimi avranno un importante ruolo logistico durante tutta la fase della Stagione Regolare garantendo lo svolgimento di tutte le patite e registrandone i punteggi, ti invitiamo pertanto a prendere contatto con loro il prima possibile attraverso i Messaggi Diretti su Instagram (se preferisci puoi richiederci via <a href="mailto:lagiostraindividuale@gmail.com" title="Mail">email</a> di essere messə in contatto in altro modo). Se la tua Conferenza di riferimento non dovesse avere posti liberi potrai fondarne una semplicemente inviandoci una richiesta via <a href="mailto:lagiostraindividuale@gmail.com" title="Mail">email</a>; provvederemo noi ad inserirla nell’elenco delle Conferenze disponibili.</p>
 
-**Il limite massimo di tempo per potersi registrare alla Giostra Individuale o per formare una Conferenza è il 31 Gennaio 2023, [Iscriviti ora](/iscrizione "Iscrizione") se non l’hai ancora fatto!**-->
+<p><strong>Il limite massimo di tempo per potersi registrare alla Giostra Individuale o per formare una Conferenza è il 14 Febbraio 2024, <a href="/iscrizione" title="Iscrizione">Iscriviti ora</a> se non l’hai ancora fatto!</strong></p>
 
-<p>Qui di seguito troverai l’elenco dellз giocanti che hanno passato la fase di Stagione Regolare all’interno delle rispettive Conferenze:</p>
-<table>
-  <h3>Conferenza Adriatic Mölkky</h3>
-    
-      
-      
-      <tr>
-        
-          <th>Giocante</th>
-        
-          <th>Partite giocate</th>
-        
-          <th>Partite vinte</th>
-        
-          <th>Set vinti</th>
-        
-      </tr>
-      
+<div>
   
-      <tr class="row1">
-<td class="col1">
-        Gianluchi
-      </td><td class="col2">
-        9/10
-      </td><td class="col3">
-        7
-      </td><td class="col4">
-        21
-      </td></tr>
+    <hr />
+    <h3>Conferenza Adriatic Mölkky</h3>
+    <p><strong>Zona di Gioco:</strong> Pesaro e dintorni</p>
 
+    <p><strong>Referente:</strong> 
+        
+            <a target="_blank" href="https://www.instagram.com/adriatic_molkky/">Andrea</a>
+                
+        
+    </p>
     
-      
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Angio
-      </td><td class="col2">
-        9/10
-      </td><td class="col3">
-        6
-      </td><td class="col4">
-        18
-      </td></tr>
+    <p>Giocanti:</p>
+    
+        <ol>
+            
+                <li>Mos</li>
+            
+        </ol>
+    
+    <!-- -->
 
-    
-</table>
+    <hr />
+    <h3>Conferenza Bellomolchi</h3>
+    <p><strong>Zona di Gioco:</strong> Roma</p>
 
-<table>
-  <h3>Conferenza Adriatic Mölkky II</h3>
+    <p><strong>Referente:</strong> 
+        
+            <a target="_blank" href="https://instagram.com/bellomolchi">Simone</a>
+                
+        
+    </p>
     
-      
-      
-      <tr>
-        
-          <th>Giocante</th>
-        
-          <th>Part. giocate</th>
-        
-          <th>Part. vinte</th>
-        
-          <th>Set vinti</th>
-        
-      </tr>
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Fileri
-      </td><td class="col2">
-        8/9
-      </td><td class="col3">
-        6
-      </td><td class="col4">
-        17
-      </td></tr>
+    <p>Giocanti:</p>
+    
+        <ol>
+            
+                <li>Maestro di Cerimonia</li>
+            
+        </ol>
+    
+    <!-- -->
 
-    
-      
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Ruddie Louie
-      </td><td class="col2">
-        8/9
-      </td><td class="col3">
-        6
-      </td><td class="col4">
-        13
-      </td></tr>
 
-    
-</table>
+
+<!-- 
+
+
+nil
+
 
 <table>
-  <h3>Conferenza Bellomolchi</h3>
     
-      
-      
-      <tr>
-        
-          <th>Giocante</th>
-        
-          <th>Part. giocate</th>
-        
-          <th>Part. vinte</th>
-        
-          <th>Set vinti</th>
-        
-      </tr>
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Ruco
-      </td><td class="col2">
-        11/11
-      </td><td class="col3">
-        10
-      </td><td class="col4">
-        29
-      </td></tr>
-
-    
-      
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Luca Brt
-      </td><td class="col2">
-        11/11
-      </td><td class="col3">
-        9
-      </td><td class="col4">
-        20
-      </td></tr>
-
-    
-</table>
-
-<table>
-  <h3>Conferenza Dopolavoro Mölkky</h3>
-    
-      
-      
-      <tr>
-        
-          <th>Giocante</th>
-        
-          <th>Partite giocate</th>
-        
-          <th>Partite vinte</th>
-        
-          <th>Set vinti</th>
-        
-      </tr>
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Botticelli
-      </td><td class="col2">
-        7/7
-      </td><td class="col3">
-        7
-      </td><td class="col4">
-        16
-      </td></tr>
-
-    
-      
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Bender
-      </td><td class="col2">
-        7/7
-      </td><td class="col3">
-        4
-      </td><td class="col4">
-        11
-      </td></tr>
-
-    
-</table>
-
-<table>
-  <h3>Conferenza Emiliana Mölkky</h3>
-    
-      
-      
-      <tr>
-        
-          <th>Giocante</th>
-        
-          <th>Partite giocate</th>
-        
-          <th>Partite vinte</th>
-        
-          <th>Set vinti</th>
-        
-      </tr>
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Turi
-      </td><td class="col2">
-        9/11
-      </td><td class="col3">
-        7
-      </td><td class="col4">
-        20
-      </td></tr>
-
-    
-      
-      
-  
-      <tr class="row1">
-<td class="col1">
-        Eros
-      </td><td class="col2">
-        9/11
-      </td><td class="col3">
-        7
-      </td><td class="col4">
-        18
-      </td></tr>
-
-    
-</table>
-
-<!--<table>
-  <h3>Conferenza La Veritiera Mölkky</h3>
-    
-</table>
-
-<table>
-  <h3>Conferenza La Veritiera Mölkky II</h3>
-    
-</table>--></div>
+</table>-->
+</div>
+<!--Qui di seguito troverai l’elenco dellз giocanti che hanno passato la fase di Stagione Regolare all’interno delle rispettive Conferenze:-->
+</div>
 
 </article>
 
           </div>
-          <div id="csvDatas"></div>
+        
       </main>
+      
     </div><footer class="site-footer h-card">
 
   <div class="wrapper">
