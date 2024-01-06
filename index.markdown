@@ -22,7 +22,7 @@ Infine, proprio come si confà ad uno sport essenzialmente monodimensionale, non
 *Ph: Luca BRT & LucⒶ*
 -->
 
-# Sono aperte le iscrizioni per l’edizione 2024 de la Giostra Individuale
+# Sono aperte le iscrizioni per l’edizione 2024 de La Giostra Individuale
 ### 📣 Novità: il Ripescaggio!
 Consulta il nuovo [Regolamento](/regolamento "Regolamento")
 
