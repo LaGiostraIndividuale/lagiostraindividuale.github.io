@@ -36,4 +36,5 @@ Le esperienze internazionali, gli Erasmus del Mölkky, hanno probabilmente ripag
 Un ringraziamento anche a tuttə coloro che hanno partecipato alla Giostra, agli spettatori presenti durante la finale e a quelli che gravitano con passione attorno al pianeta Mölkky; siete delle persone estremamente civili. 
 
 Infine, proprio come si confà ad uno sport essenzialmente monodimensionale, non c'è stato un podio, solo dei numeri impressi al laser su di un orologio che segna sempre l'ora esatta, l'ora di giocare al Mölkky.
+
 *Testo: Il Maestro di cerimonia*
