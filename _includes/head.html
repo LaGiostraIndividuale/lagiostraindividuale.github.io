@@ -31,5 +31,12 @@
   {%- endif -%}
 
   {%- include custom-head.html -%}
+
+  {% if page.layout == 'archive' %} 
+    <link rel="stylesheet" href="/plugin/components/Font Awesome/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="/plugin/components/Fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="/plugin/css/mediaBoxes.css">
+  {% endif %}
+
   
 </head>

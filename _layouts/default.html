@@ -30,6 +30,33 @@
     </div>
 
     {%- include footer.html -%}
+    
+    {% if page.layout == 'archive' %}
+     <!-- jQuery 1.8+ -->
+    	<script src="/plugin/components/jQuery/jquery-1.11.3.min.js"></script>
+	
+     <!-- Media Boxes JS files -->
+
+    <script src="/plugin/components/Isotope/jquery.isotope.min.js"></script>
+    <script src="/plugin/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
+    <script src="/plugin/components/Transit/jquery.transit.min.js"></script>
+    <script src="/plugin/components/jQuery Easing/jquery.easing.js"></script>
+    <script src="/plugin/components/jQuery Visible/jquery.visible.min.js"></script>
+    <script src="/plugin/components/Modernizr/modernizr.custom.min.js"></script>
+    <script src="/plugin/components/Fancybox/jquery.fancybox.min.js"></script> <!-- only if you use Fancybox -->
+    <script src="/plugin/js/jquery.mediaBoxes.dropdown.js"></script>
+    <script src="/plugin/js/jquery.mediaBoxes.js"></script>
+
+    	<script>
+        $('#grid').mediaBoxes({
+          filterContainer: '#filter',
+          columns: 3,
+          boxesToLoadStart: 16,
+          horizontalSpaceBetweenBoxes: 20,
+          verticalSpaceBetweenBoxes: 20,
+        }); 
+      </script>
+    {% endif %}
 
   </body>
 

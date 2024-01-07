@@ -20,7 +20,7 @@ Lз due giocanti che avranno vinto più partite[^3] si qualificheranno automatic
 Le fasi di Ripescaggio, di Spareggio e Finale si svolgeranno lo stesso giorno, Sabato 21 Settembre in luogo da stabilire.\\
 Durante la fase di Ripescaggio tuttз lз giocanti che sono statз sorteggiatз al termine della Stagione Regolare dovranno affrontarsi uno contro uno fra loro[^4], solo a chi vincerà più set[^5] verrà consentito l’accesso alla fase di Spareggio.\\
 Durante la fase di Spareggio tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro[^4], solo a chi vincerà più set[^5] verrà consentito l’accesso alla fase Finale.\\
-Durante la fase Finale lз solз due giocanti dovranno affrontarsi uno contro uno fra loro in un duello alla meglio di tre per determinare chi vincerà il campionato.
+Durante la fase Finale lз solз due giocanti dovranno affrontarsi uno contro uno fra loro in un duello alla meglio delle cinque per determinare chi vincerà il campionato.
 
 ### Iscrizioni
 Ogni conferenza avrà unə referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con **LA GIOSTRA INDIVIDUALE**.
