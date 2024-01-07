@@ -3,23 +3,6 @@ layout: archive
 title: Archivio
 permalink: /archivio/
 description: Archivio edizioni passare della Giostra Individuale.
-images:
-  - image_path: /assets/img/gallery/01.jpg
-    title: Apple Pie
-  - image_path: /assets/img/gallery/02.jpg
-    title: Birthday Cake
-  - image_path: /assets/img/gallery/01.jpg
-    title: Apple Pie
-  - image_path: /assets/img/gallery/02.jpg
-    title: Birthday Cake
-  - image_path: /assets/img/gallery/01.jpg
-    title: Apple Pie
-  - image_path: /assets/img/gallery/02.jpg
-    title: Birthday Cake
-  - image_path: /assets/img/gallery/01.jpg
-    title: Apple Pie
-  - image_path: /assets/img/gallery/02.jpg
-    title: Birthday Cake
 ---
 
 
