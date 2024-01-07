@@ -1,15 +1,22 @@
 ---
 layout: default
 ---
-<header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-    <h3 class="post-title">Edizione 2023</h3>
-  </header>
+<div class="centered-tite">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <h3 class="post-title">Edizione 2023</h3>
+    </header>
+</div>
 
 <div class="content grid-container">
+    <div class="main-content">
+        <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+              {{ content }}
+            </div>
+        </main>
+    </div>
 
-    {{ content }}
-    
 <div id="grid">
 
 <!-- -------------------------- BOX MARKUP -------------------------- -->     

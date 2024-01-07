@@ -19,6 +19,15 @@
             "giocanti": [
                 {"nickname": "Maestro di Cerimonia"}
             ]
+         },
+         {
+            "conferenza": "L’Emiliana Mölkky",
+            "zona": "Bologna",
+            "referente": "Marco",
+            "contatto": "https://www.instagram.com/lemiliana_molkky/",
+            "giocanti": [
+                
+            ]
          }
     ]
 }

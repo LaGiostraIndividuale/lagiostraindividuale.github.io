@@ -19,15 +19,20 @@
     {%- else -%}
       {%- include header.html -%}
     {%- endif -%}
+
+    {%- if page.title == "Archivio" -%}
+      <div class="archive">
+        {{ content }}
+      </div>
+    {%- else -%}
     <div class="main-content">
       <main class="page-content" aria-label="Content">
           <div class="wrapper">
             {{ content }}
           </div>
-        
       </main>
-      
     </div>
+    {%- endif -%}
 
     {%- include footer.html -%}
     
@@ -50,10 +55,27 @@
     	<script>
         $('#grid').mediaBoxes({
           filterContainer: '#filter',
-          columns: 3,
+          columns: 4,
           boxesToLoadStart: 16,
           horizontalSpaceBetweenBoxes: 20,
           verticalSpaceBetweenBoxes: 20,
+          resolutions: [
+            {
+                maxWidth: 960,
+                columnWidth: 'auto',
+                columns: 4,
+            },
+            {
+                maxWidth: 650,
+                columnWidth: 'auto',
+                columns: 3,
+            },
+            {
+                maxWidth: 450,
+                columnWidth: 'auto',
+                columns: 2,
+            },
+        ],
         }); 
       </script>
     {% endif %}

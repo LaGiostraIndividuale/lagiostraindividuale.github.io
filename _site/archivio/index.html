@@ -62,17 +62,19 @@
         <div class="trigger"><a class="page-link" href="/regolamento/">Regolamento</a><a class="page-link" href="/iscrizione/">Iscrizione</a><a class="page-link" href="/conferenze/">Conferenze</a><a class="page-link" href="/documenti-di-gara/">Documenti di gara</a><a class="page-link" href="/archivio/">Archivio</a><a class="page-link" href="/contatti/">Contatti</a></div>
       </nav></div>
 </header>
-<div class="main-content">
-      <main class="page-content" aria-label="Content">
-          <div class="wrapper">
-            <header class="post-header">
-    <h1 class="post-title">Archivio</h1>
-    <h3 class="post-title">Edizione 2023</h3>
-  </header>
+<div class="archive">
+        <div class="centered-tite">
+    <header class="post-header">
+        <h1 class="post-title">Archivio</h1>
+        <h3 class="post-title">Edizione 2023</h3>
+    </header>
+</div>
 
 <div class="content grid-container">
-
-    <p class="has-dropcap">Uno sport fatto solo di amichevoli non si è mai visto. Ci sono i campionati di Briscola, i campionati di Hobbyhorse, i campionati di Air Guitar, e addirittura i campionati di Fumo Lento. E allora perché non un campionato di Mölkky? E infatti c’è, lo sapete tutti, ma si chiama <strong>La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno</strong>; non il Campionato Nazionale di Mölkky e basta. Chiamarlo così sarebbe stato un imperdonabile errore.
+    <div class="main-content">
+        <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+              <p class="has-dropcap">Uno sport fatto solo di amichevoli non si è mai visto. Ci sono i campionati di Briscola, i campionati di Hobbyhorse, i campionati di Air Guitar, e addirittura i campionati di Fumo Lento. E allora perché non un campionato di Mölkky? E infatti c’è, lo sapete tutti, ma si chiama <strong>La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno</strong>; non il Campionato Nazionale di Mölkky e basta. Chiamarlo così sarebbe stato un imperdonabile errore.
 Essere una Giostra evoca un sentimento cavalleresco fatto di solennità e fair play, qualcosa che non puoi trovare altrove. Essere una Giostra-Individuale fa risuonare l’eco fanciullesco di quando si roteava soli in sella ad un cavalluccio, soli eppure in compagnia di altri, vicini e lontani. Questo bel mix di sensazioni rende la Giostra Individuale un progetto unico disegnato per stare insieme, per condividere un’esperienza e si, per scontrarsi e vincere possibilmente evitando inutili sfoggi di muscoli. Infatti la Giostra Individuale è anche un campionato, una scusa ufficiale per incontrarsi e giocare. 
 Dopo interminabili occhiate, match all’ultimo sangue, inutili critiche su un logo più che perfetto, <em>“scontri sovrumani, duelli decisivi che decideranno chi l’armatura indosserà”</em>, i dieci pupilli, gli intoccabili sono stati nominati. Quante sorprese, troppe per parlarne. 
 E, scusatemi, ma devo finire la strofa: <em>“É un torneo micidiale, è uno scontro fratricida il più forte dovrà infine tra tutti trionfar! Chi sarà mai? Chi sarà mai? Chi sarà mai?”</em></p>
@@ -87,7 +89,10 @@ E, scusatemi, ma devo finire la strofa: <em>“É un torneo micidiale, è uno sc
 
 <p><em>Testo: Il Maestro di cerimonia</em></p>
 
-    
+            </div>
+        </main>
+    </div>
+
 <div id="grid">
 
 <!-- -------------------------- BOX MARKUP -------------------------- -->     
@@ -3061,11 +3066,7 @@ E, scusatemi, ma devo finire la strofa: <em>“É un torneo micidiale, è uno sc
 <!--  ================== END MEDIA BOXES ================== -->
 
 </div> <!-- #grid-container -->
-          </div>
-        
-      </main>
-      
-    </div><footer class="site-footer h-card">
+      </div><footer class="site-footer h-card">
 
   <div class="wrapper">
 
@@ -3159,10 +3160,27 @@ E, scusatemi, ma devo finire la strofa: <em>“É un torneo micidiale, è uno sc
     	<script>
         $('#grid').mediaBoxes({
           filterContainer: '#filter',
-          columns: 3,
+          columns: 4,
           boxesToLoadStart: 16,
           horizontalSpaceBetweenBoxes: 20,
           verticalSpaceBetweenBoxes: 20,
+          resolutions: [
+            {
+                maxWidth: 960,
+                columnWidth: 'auto',
+                columns: 4,
+            },
+            {
+                maxWidth: 650,
+                columnWidth: 'auto',
+                columns: 3,
+            },
+            {
+                maxWidth: 450,
+                columnWidth: 'auto',
+                columns: 2,
+            },
+        ],
         }); 
       </script>
     
