@@ -26,7 +26,7 @@ Infine, proprio come si confà ad uno sport essenzialmente monodimensionale, non
 ### 📣 Novità: il Ripescaggio!
 Consulta il nuovo [Regolamento](/regolamento "Regolamento")
 
-Il limite massimo di tempo per potersi iscrivere alla Giostra Individuale o per formare una Conferenza è il 14 Febbraio 2024, [Iscriviti ora](/iscrizione "Iscrizione") se non l’hai ancora fatto!
+Il limite massimo di tempo per potersi iscrivere a La Giostra Individuale o per formare una Conferenza è il 14 Febbraio 2024, [Iscriviti ora](/iscrizione "Iscrizione") se non l’hai ancora fatto!
 
 <!--<figure><img src="/assets/img/banner.jpg" alt="Il banner ufficiale de La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno"></figure>-->
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
