@@ -8,7 +8,16 @@
            "referente": "Andrea",
            "contatto": "https://www.instagram.com/adriatic_molkky/",
            "giocanti": [
-                {"nickname": "Mos"}     
+                {"nickname": "Mos"},
+                {"nickname": "LucaⒶ"},
+                {"nickname": "Fileri"},
+                {"nickname": "The Real Lally"},
+                {"nickname": "Moz"},
+                {"nickname": "Cioppy"},
+                {"nickname": "Armadilly"},
+                {"nickname": "Màlan"},
+                {"nickname": "Jonny Becchino"}
+
            ]
         },
         {
@@ -17,7 +26,8 @@
             "referente": "Simone",
             "contatto": "https://instagram.com/bellomolchi",
             "giocanti": [
-                {"nickname": "Maestro di Cerimonia"}
+                {"nickname": "Maestro di Cerimonia"},
+                {"nickname": "Brt"}
             ]
          },
          {
@@ -26,7 +36,7 @@
             "referente": "Marco",
             "contatto": "https://www.instagram.com/lemiliana_molkky/",
             "giocanti": [
-                
+                {"nickname": "Bonny"}
             ]
          }
     ]
