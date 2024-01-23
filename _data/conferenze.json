@@ -23,13 +23,27 @@
            ]
         },
         {
+            "conferenza": "Adriatic Mölkky II",
+            "zona": "Pesaro e dintorni",
+            "referente": "Andrea",
+            "contatto": "https://www.instagram.com/adriatic_molkky/",
+            "giocanti": [
+                 {"nickname": "Buio"},
+                 {"nickname": "Gigione"}
+ 
+            ]
+         },
+        {
             "conferenza": "Bellomolchi",
             "zona": "Roma",
             "referente": "Simone",
             "contatto": "https://instagram.com/bellomolchi",
             "giocanti": [
                 {"nickname": "Maestro di Cerimonia"},
-                {"nickname": "Brt"}
+                {"nickname": "Brt"},
+                {"nickname": "Solo Franz"},
+                {"nickname": "Coach"},
+                {"nickname": "La First Lady di Bellomolchi"}
             ]
          },
          {
