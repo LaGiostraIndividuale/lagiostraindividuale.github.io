@@ -43,7 +43,9 @@
                 {"nickname": "Brt"},
                 {"nickname": "Solo Franz"},
                 {"nickname": "Coach"},
-                {"nickname": "La First Lady di Bellomolchi"}
+                {"nickname": "La First Lady di Bellomolchi"},
+                {"nickname": "Lo Sciamano"},
+                {"nickname": "Erminio"}
             ]
          },
          {
@@ -53,7 +55,8 @@
             "contatto": "https://www.instagram.com/lemiliana_molkky/",
             "giocanti": [
                 {"nickname": "Eros"},
-                {"nickname": "Bonny"}
+                {"nickname": "Bonny"},
+                {"nickname": "WDRW"}
             ]
          }
     ]
