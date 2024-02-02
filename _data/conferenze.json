@@ -64,6 +64,17 @@
                 {"nickname": "CiccioPanzo"},
                 {"nickname": "Codroipo"}
             ]
+         },
+         {
+            "conferenza": "Balera Mölkky",
+            "zona": "Ravenna",
+            "referente": "Jacopo",
+            "contatto": "https://www.instagram.com/luogo_comune_/",
+            "giocanti": [
+                {"nickname": "Olivia"},
+                {"nickname": "Jacopo"},
+                {"nickname": "Sarina"}
+            ]
          }
     ]
 }
