@@ -18,7 +18,8 @@
                 {"nickname": "Màlan"},
                 {"nickname": "Jonny Becchino"},
                 {"nickname": "Dilegno"},
-                {"nickname": "Gianluchi"}
+                {"nickname": "Gianluchi"},
+                {"nickname": "Buio"}
 
            ]
         },
@@ -28,7 +29,6 @@
             "referente": "Andrea",
             "contatto": "https://www.instagram.com/adriatic_molkky/",
             "giocanti": [
-                 {"nickname": "Buio"},
                  {"nickname": "Gigi One 88"},
                  {"nickname": "Bobby Solo"}
  
