@@ -19,24 +19,16 @@
                 {"nickname": "Jonny Becchino"},
                 {"nickname": "Dilegno"},
                 {"nickname": "Gianluchi"},
-                {"nickname": "Buio"}
+                {"nickname": "Buio"},
+                {"nickname": "Gigi One 88"},
+                {"nickname": "Bobby Solo"},
+                {"nickname": "Sancho"},
+                {"nickname": "7m"},
+                {"nickname": "Ruddie Louie"}
 
            ]
         },
-        {
-            "conferenza": "Adriatic Mölkky II",
-            "zona": "Pesaro e dintorni",
-            "referente": "Andrea",
-            "contatto": "https://www.instagram.com/adriatic_molkky/",
-            "giocanti": [
-                 {"nickname": "Gigi One 88"},
-                 {"nickname": "Bobby Solo"},
-                 {"nickname": "Sancho"},
-                 {"nickname": "7m"},
-                 {"nickname": "Ruddie Louie"}
- 
-            ]
-         },
+        
         {
             "conferenza": "Bellomolchi",
             "zona": "Roma",
