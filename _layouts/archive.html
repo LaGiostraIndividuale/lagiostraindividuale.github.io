@@ -1,11 +1,17 @@
 ---
 layout: default
 ---
-<div class="centered-tite">
-    <header class="post-header">
-        <h1 class="post-title">{{ page.title | escape }}</h1>
-        <h3 class="post-title">Edizione 2023</h3>
-    </header>
+<div class="main-content">
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <div class="centered-tite">
+                <header class="post-header">
+                    <h1 class="post-title">{{ page.title | escape }}</h1>
+                    <h3 class="post-title">Edizione 2023</h3>
+                </header>
+            </div>
+        </div>
+    </main>
 </div>
 
 <div class="content grid-container">
@@ -17,28 +23,28 @@ layout: default
         </main>
     </div>
 
-<div id="grid">
+<div class="archive">
+    <div id="grid">
 
-<!-- -------------------------- BOX MARKUP -------------------------- -->     
+    <!-- -------------------------- BOX MARKUP -------------------------- -->     
 
-{% for image in site.static_files %}    
-    {% if image.path contains '/assets/img/gallery' %}
+    {% for image in site.static_files %}    
+        {% if image.path contains '/assets/img/gallery' %}
 
-    <div class="media-box">
-        <div class="media-box-image mb-open-popup" data-src="{{ site.baseurl }}{{ image.path }}">
-            <div data-width="480" data-height="318" data-thumbnail="{{ site.baseurl }}{{ image.path }}" ></div>
+        <div class="media-box">
+            <div class="media-box-image mb-open-popup" data-src="{{ site.baseurl }}{{ image.path }}">
+                <div data-width="480" data-height="318" data-thumbnail="{{ site.baseurl }}{{ image.path }}" ></div>
 
-            <div class="thumbnail-overlay">
-                <div class="media-box-title"></div>
+                <div class="thumbnail-overlay">
+                    <div class="media-box-title"></div>
+                </div>
             </div>
         </div>
+        {% endif %}   
+    {% endfor %}
 
-    </div>
-    {% endif %}   
-{% endfor %}
-
-</div> <!-- #grid -->
+    </div> <!-- #grid -->
 
 <!--  ================== END MEDIA BOXES ================== -->
-
+</div>
 </div> <!-- #grid-container -->
