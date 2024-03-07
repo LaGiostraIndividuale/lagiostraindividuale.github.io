@@ -3,7 +3,7 @@
     "items": [
         
         {
-           "conferenza": "Adriatic Mölkky",
+           "conferenza": "Adriatic Mölkky A",
            "zona": "Pesaro e dintorni",
            "referente": "Andrea",
            "contatto": "https://www.instagram.com/adriatic_molkky/",
@@ -11,24 +11,31 @@
                 {"nickname": "Mos"},
                 {"nickname": "LucaⒶ"},
                 {"nickname": "Fileri"},
-                {"nickname": "The Real Lally"},
                 {"nickname": "Moz"},
-                {"nickname": "Cioppy"},
-                {"nickname": "Armadilly"},
                 {"nickname": "Màlan"},
                 {"nickname": "Jonny Becchino"},
-                {"nickname": "Dilegno"},
-                {"nickname": "Gianluchi"},
                 {"nickname": "Buio"},
                 {"nickname": "Gigi One 88"},
-                {"nickname": "Bobby Solo"},
-                {"nickname": "Sancho"},
-                {"nickname": "mmmmmmm"},
-                {"nickname": "Ruddie Louie"},
                 {"nickname": "Mucho Micio"}
-
            ]
         },
+        {
+            "conferenza": "Adriatic Mölkky B",
+            "zona": "Pesaro e dintorni",
+            "referente": "Andrea",
+            "contatto": "https://www.instagram.com/adriatic_molkky/",
+            "giocanti": [
+                 {"nickname": "The Real Lally"},
+                 {"nickname": "Moz"},
+                 {"nickname": "Cioppy"},
+                 {"nickname": "Gianluchi"},
+                 {"nickname": "Armadilly"},
+                 {"nickname": "Dilegno"},
+                 {"nickname": "Sancho"},
+                 {"nickname": "mmmmmmm"},
+                 {"nickname": "Ruddie Louie"}
+            ]
+         },
         
         {
             "conferenza": "Bellomolchi",
