@@ -10,8 +10,10 @@ description: Elenco delle Conferenze, e statistiche della Stagione Regolare.
 
 **Il limite massimo di tempo per potersi registrare alla Giostra Individuale o per formare una Conferenza è il 14 Febbraio 2024, [Iscriviti ora](/iscrizione "Iscrizione") se non l’hai ancora fatto!**-->
 
-Qui di seguito troverai l’elenco delle Conferenze e i punteggi relativi allo svolgimento della **Stagione Regolare** che si protrattà del 15 Marzo al 31 Luglio. Durante questi 5 mesi tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro all’interno della propria conferenza. Lз due giocanti che avranno vinto più partite si qualificheranno automaticamente alla fase di Spareggio. Al termine della Stagione Regolare si sorteggerà inoltre unə giocante per ogni conferenza che passerà invece alla fase di **Ripescaggio**.
+Qui di seguito troverai l’elenco delle Conferenze e i punteggi relativi allo svolgimento della **Stagione Regolare** che si protrarrà del 15 Marzo al 31 Luglio. Durante questi 5 mesi tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro all’interno della propria conferenza. Lз due giocanti che avranno vinto più partite si qualificheranno automaticamente alla fase di Spareggio. Al termine della Stagione Regolare si sorteggerà inoltre unə giocante per ogni conferenza che passerà invece alla fase di **Ripescaggio**.
 {:.has-dropcap}
+
+Le fasi di Ripescaggio, di Spareggio e Finale si svolgeranno lo stesso giorno, Sabato 21 Settembre in luogo da stabilire.
 
 
 
