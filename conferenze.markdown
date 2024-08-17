@@ -13,7 +13,7 @@ description: Elenco delle Conferenze, e statistiche della Stagione Regolare.
 Qui di seguito troverai l’elenco dellз giocanti giocanti che hanno nella **Stagione Regolare** nonche lз fortunatз che estrattз nel **Ripescaggio**.
 {:.has-dropcap}
 
-Le fasi di Spareggio e Finale preceduti dal **Torneo dellз Ripescatз** si svolgeranno lo stesso giorno, Sabato 21 Settembre a Pesaro presso la Casa del Boncio.
+Le fasi di **Spareggio e Finale** preceduti dal **Torneo dellз Ripescatз** si svolgeranno lo stesso giorno, Sabato 21 Settembre a Pesaro presso la Casa del Boncio.
 
 
 
