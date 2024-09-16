@@ -19,25 +19,24 @@ Inoltre quest’anno abbiamo organizzato una festicciola per intrattenersi la se
 🛏️ Si, gratuitamente. Abbiamo 40 posti letto disponibili al chiuso (eventualmente porta il sacco a pelo), ed un vasto campo pianeggiante su cui parcheggiare camper e piantare tende. Contattaci se sei interessatƏ.
 
 **In cosa consiste l’evento di venerdì 20 settembre?**
-📻A partire dalle ore 19:00 si terrà il Tiro con l’Hardware, si vince un ricco premio.
-🎵 Musica live di @
-🥖 Amichevoli di Mölkky
+📻 si inizia alle 18:00 🥖 Amichevoli di Mölkky, ristoro, Dj-Set, dalle 20:30 🎵 Musica live di [@Booleant](https://www.instagram.com/b00leant_/) 
+Alle 22:00 si terrà il *Tiro con l’Hardware*, si vince un ricco premio. Poi a mezzanotte spuntino attorno al fuoco.
 
 **In cosa consiste l’evento di sabato 21 settembre?**
-🏁 Alle 10:30 si terrà il mini-torneo riservato allз Giocanti fortunatз che sono statз ripescatз (vedi post precedente) dopo la Stagione Regolare.
-🏁 Alle ore 13:00 inizieranno le fasi di Spareggio e Finale che si protrarranno finché è necessario.
+🏁 Alle 9:45 si terrà il *Torneo dellз Ripescatз* riservato allз Giocanti fortunatз che sono statз ripescatз dopo la Stagione Regolare.
+🏁 Alle ore 10:30 inizieranno le fasi di Spareggio e Finale che si protrarranno finché è necessario.
 🏆 Seguirà la premiazione.
 🥖 Amichevoli di Mölkky tutto il giorno.
 🎁 Lotteria.
-🍕 Pizza di Geremia espressa.
-🔊 Cobra dj set.
+🍕 Pizza di Geremia espressa (dalle 18:00).
+🔊 Bobby Solo dj set.
 🍿 Altre sorprese.
 
 **Quanto costa l’evento?**
 💰 L’ingresso è gratuito ma cibo (Pizza on demand e altro) e bevande avranno un umano prezzo.
 
 **Bisognerà rispettare un rigoroso silenzio?**
-📣 Ovviamente no! La giornata sarà condotta dal Maestro Di Cerimonia @
+📣 Ovviamente no! La giornata sarà condotta dal [Maestro Di Cerimonia](https://www.instagram.com/its_my_stance/)
 
 
 <!--<figure><img src="/assets/img/banner.jpg" alt="Il banner ufficiale de La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno"></figure>-->
