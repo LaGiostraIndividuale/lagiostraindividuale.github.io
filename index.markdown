@@ -7,37 +7,23 @@ image:
 ---
 
 
-<figure><img src="/assets/img/Spareggio-e-finale-2024.png" alt="Locandina con i dettagli dell'evento di due giorni Spareggiogio e Finale dell'edizione 2024 de La Giostra Individuale"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024.jpg" alt="Ha vinto Turi"></figure>
 
-Eccoci giuntз in prossimità delle fasi di **Spareggio e Finale** che si svolgeranno lo stesso giorno, Sabato 21 Settembre, a Pesaro.
-Inoltre quest’anno abbiamo organizzato una festicciola per intrattenersi la sera prima, Venerdì 20 Settembre.
+Esistono numerosi universi paralleli in cui **La Giostra Individuale** si svolge regolarmente, ma nulla è incentrato sul Mölkky. In un universo si gioca solo al *Tiro con l’Arto*, in un altro a *Guts*, in un altro ancora si fa solo a *Bocce*. Ma allora, senza limitarci a questo piano di realtà, la domanda sorge spontanea: se alla Giostra togliessimo il Mölkky, cosa rimarrebbe? E se al Mölkky togliessimo la Giostra? Dalla prima equazione Giostra - Mölkky otterremmo una ruota senza perno. Rimarrebbero la voglia di incontrarsi, di viaggiare, di passare il tempo con gli amici, di aprirsi a incontri e realtà diverse; rimarrebbe la voglia di ballare senza un fuoco attorno a cui farlo. In sintesi, rimarrebbero solo le buone intenzioni. Se invece al Mölkky togliessimo la Giostra, il Mölkky rimarrebbe ciò che è: un bel gioco praticato nei migliori parchetti d’Italia. Un ottimo passatempo, bello come la nostra bicicletta, come la macchina che abbiamo tirato a lucido, come quella maglietta che laviamo sempre a 30 gradi. È certo che la magia nasca dal connubio, ma, in fondo: siamo venuti qui solo per giocare? Noi no, ma anche se fosse, non ci sarebbe nulla di male.
+{:.has-dropcap}
 
-**Dove si svolgerà l’evento?**
-🏡 Il luogo prestabilito è Casa del Boncio, Str. del Boncio, 61122 Pesaro (PU).
+**La Giostra Individuale** vi saluta e vi dà appuntamento alla prossima *Stagione Regolare*.
 
-**Posso dormire nel luogo dell’evento?**
-🛏️ Si, gratuitamente. Abbiamo 40 posti letto disponibili al chiuso (eventualmente porta il sacco a pelo), ed un vasto campo pianeggiante su cui parcheggiare camper e piantare tende. Contattaci se sei interessatƏ.
-
-**In cosa consiste l’evento di venerdì 20 settembre?**
-📻 si inizia alle 18:00 🥖 Amichevoli di Mölkky, ristoro, Dj-Set, dalle 20:30 🎵 Musica live di [@Booleant](https://www.instagram.com/b00leant_/) 
-Alle 22:00 si terrà il *Tiro con l’Hardware*, si vince un ricco premio. Poi a mezzanotte spuntino attorno al fuoco.
-
-**In cosa consiste l’evento di sabato 21 settembre?**
-🏁 Alle 9:45 si terrà il *Torneo dellз Ripescatз* riservato allз Giocanti fortunatз che sono statз ripescatз dopo la Stagione Regolare.
-🏁 Alle ore 10:30 inizieranno le fasi di Spareggio e Finale che si protrarranno finché è necessario.
-🏆 Seguirà la premiazione.
-🥖 Amichevoli di Mölkky tutto il giorno.
-🎁 Lotteria.
-🍕 Pizza di Geremia espressa (dalle 18:00).
-🔊 Bobby Solo dj set.
-🍿 Altre sorprese.
-
-**Quanto costa l’evento?**
-💰 L’ingresso è gratuito ma cibo (Pizza on demand e altro) e bevande avranno un umano prezzo.
-
-**Bisognerà rispettare un rigoroso silenzio?**
-📣 Ovviamente no! La giornata sarà condotta dal [Maestro Di Cerimonia](https://www.instagram.com/its_my_stance/)
-
+*Testo: Il Maestro di cerimonia*
 
 <!--<figure><img src="/assets/img/banner.jpg" alt="Il banner ufficiale de La Giostra Individuale Ovvero il Campionato Nazionale di Mölkky Uno contro Uno"></figure>-->
+
+<figure><img src="/assets/img/la-giostra-individuale-2024-1.jpg" alt="Tramonto"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024-2.jpg" alt="Gran Bel Tiro"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024-3.jpg" alt="Auguri Elena"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024-5.jpg" alt="Scala"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024-6.jpg" alt="Personale Autorizzato"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024-7.jpg" alt="Booleant e il papa"></figure>
+<figure><img src="/assets/img/la-giostra-individuale-2024-8.jpg" alt="Dj Bobby Solo"></figure>
+
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
