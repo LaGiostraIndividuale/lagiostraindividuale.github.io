@@ -8,38 +8,31 @@ description: Regolamento dell Giostra Individuale spiegato fase per fase.
 ---
 
 ### Fasi
-Il campionato sarà diviso in quattro fasi: Stagione Regolare, Ripescaggio, Spareggio e Finale.
+Il campionato sarà diviso in tre fasi: Stagione Regolare, Ripescaggio e Torneo Finale.
 
 ### Stagione Regolare
-La Stagione Regolare avrà inizio il 15 Marzo e terminerà il 31 Luglio.\\
-Quest’ultima si svolgerà simultaneamente in diverse conferenze suddivise in base al territorio (per esempio: Conferenza Lombarda, Conferenza Emiliana, Conferenza Tirrenica, Conferenza Adriatica, ecc.[^1])\\
-Durante questi 5 mesi tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro all’interno della propria conferenza[^2].\\
-Lз due giocanti che avranno vinto più partite[^3] si qualificheranno automaticamente alla fase di Spareggio. Al termine della Stagione Regolare si sorteggerà inoltre unə giocante per ogni conferenza che passerà invece alla fase di **Ripescaggio**.
+La Stagione Regolare avrà inizio il 15 Marzo e terminerà il 31 Luglio.
+Quest’ultima si svolgerà simultaneamente in diverse conferenze suddivise in base al territorio.
+Durante questi 5 mesi tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro[^1] all’interno della propria conferenza.
+Lз due giocanti che avranno vinto più set[^2] si qualificheranno automaticamente alla fase di Torneo Finale.
+Lǝ terzǝ classificatǝ di ogni conferenza passerà invece alla fase di Ripescaggio.
 
-### Ripescaggio, Spareggio e Finale
-Le fasi di Ripescaggio, di Spareggio e Finale si svolgeranno lo stesso giorno, **Sabato 21 Settembre a Pesaro presso la Casa del Boncio (Strada del Boncio, 61122 Pesaro PU).**\\
-Durante la fase di Ripescaggio tuttз lз giocanti che sono statз sorteggiatз al termine della Stagione Regolare dovranno affrontarsi nel *Torneo dellз Ripescatз*, chi vincerà avrà accesso alla fase di Spareggio.\\
-Durante la fase di Spareggio tuttз lз giocanti dovranno affrontarsi uno contro uno fra loro[^4], solo a chi vincerà più set[^5] verrà consentito l’accesso alla fase Finale.\\
-Durante la fase Finale lз solз due giocanti dovranno affrontarsi uno contro uno fra loro in un duello alla meglio delle cinque per determinare chi vincerà il campionato.
+### Ripescaggio
+Nota: Le fasi di Ripescaggio e Torneo Finale si svolgeranno lo stesso giorno, Sabato 20 Settembre in luogo da stabilire.
+Durante la fase di Ripescaggio tuttз lз giocanti dovranno affrontarsi in un torneo (regolamento da stabilire in base al numero di giocanti), l’unicǝ che vincerà avrà accesso alla fase del Torneo Finale come ripescatǝ.
+
+
+### Torneo Finale
+Durante la fase del Torneo Finale lз giocanti che si sono qualificatз si scontreranno tra loro[^1] suddivisз casualmente in quattro gironi. Per ogni girone passerà unǝ solǝ giocante[^2] al turno della semifinale. Lз quattro giocanti in semifinale si batteranno in un’incontro alla meglio di tre. Soltanto due giocanti passeranno al turno finale per battersi in un’incontro alla meglio di cinque, determinando così chi vincerà il campionato 2025.
 
 ### Iscrizioni
-Ogni conferenza avrà unə referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con **LA GIOSTRA INDIVIDUALE**.
-La tariffa dell’iscrizione è di 20,00€ a testa. Questo costo include la Tessera dellə Giocante e un piccolo omaggio.
+Chiunque potrà fondare la propria conferenza locale raccogliendo entro il 15 Febbraio un minimo di 8 iscrittз, massimo 10. Ogni conferenza avrà unə referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con LA GIOSTRA INDIVIDUALE. La tariffa dell’iscrizione è di 20,00€ a testa. Questo costo include la Tessera dellə Giocante e un piccolo omaggio.
 
 ### Premio
 Il premio consisterà in un trofeo esclusivo.
 
-
-
 --- 
 
-[^1]: Chiunque potrà fondare la propria conferenza locale raccogliendo entro il 14 Febbraio un minimo di 8 iscrittз. Il numero massimo di iscrittз per ogni conferenza è di 12.
+[^1]:⁠ ⁠Ogni partita uno contro uno sarà composta da due set. Perché la partita sia valida è necessario che il Referto di Gara venga compilato a regola d’arte e firmato da entrambe le parti. 
 
-[^2]: Ogni partita uno contro uno sarà composta da tre set. Perché la partita sia valida è necessario che il Referto di Gara venga compilato a regola d’arte e firmato da entrambe le parti.
-
-[^3]: In caso di equivalenza si conterà chi ha vinto più set nel corso di questa fase. In caso di ulteriore equivalenza si conterà chi ha totalizzato più punti nel corso di questa fase.
-
-[^4]: Ogni partita uno contro uno sarà composta da due set.
-
-[^5]: In caso di equivalenza si conterà chi ha totalizzato più punti nel corso di questa fase.
-
+[^2]:⁠ ⁠In caso di equivalenza si conterà chi totalizzato più punti nel corso di questa fase.

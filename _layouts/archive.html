@@ -4,47 +4,30 @@ layout: default
 <div class="main-content">
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <div class="centered-tite">
+            <header class="post-header">
+                <h1 class="post-title centered-tite">{{ page.title | escape }}</h1>
+            </header>
+            {% for post in site.posts %}   
                 <header class="post-header">
-                    <h1 class="post-title">{{ page.title | escape }}</h1>
-                    <h3 class="post-title">Edizione 2023</h3>
+                    <h3 class="post-title centered-tite">{{ post.title | escape }}</h3>
                 </header>
-            </div>
+                <div class="main-content">
+                    <main class="page-content" aria-label="Content">
+                        <div class="wrapper">
+                            {% if post.video %}
+                                <div class="rwd-video">
+                                    <iframe width="560" height="315" src="{{ post.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            {% endif %} 
+                            {{ post.content }}
+                        </div>
+                    </main>
+                </div>
+                <hr>
+                <br>
+            {% endfor %} 
+           
         </div>
     </main>
 </div>
 
-<div class="content grid-container">
-    <div class="main-content">
-        <main class="page-content" aria-label="Content">
-            <div class="wrapper">
-              {{ content }}
-            </div>
-        </main>
-    </div>
-
-<div class="archive">
-    <div id="grid">
-
-    <!-- -------------------------- BOX MARKUP -------------------------- -->     
-
-    {% for image in site.static_files %}    
-        {% if image.path contains '/assets/img/gallery' %}
-
-        <div class="media-box">
-            <div class="media-box-image mb-open-popup" data-src="{{ site.baseurl }}{{ image.path }}">
-                <div data-width="480" data-height="318" data-thumbnail="{{ site.baseurl }}{{ image.path }}" ></div>
-
-                <div class="thumbnail-overlay">
-                    <div class="media-box-title"></div>
-                </div>
-            </div>
-        </div>
-        {% endif %}   
-    {% endfor %}
-
-    </div> <!-- #grid -->
-
-<!--  ================== END MEDIA BOXES ================== -->
-</div>
-</div> <!-- #grid-container -->
