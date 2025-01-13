@@ -7,6 +7,6 @@ image:
 ---
 
 
-
+!["stagione 2025"](/assets/img/stagione-2025/la-giostra-individuale-stagione2025.jpg)
 
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
