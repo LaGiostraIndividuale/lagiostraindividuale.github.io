@@ -29,8 +29,14 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
 
 Di seguito trovi l'elenco delle Conferenze che hanno già confermato la partecipazione:
 
-**Conferenza Adriatic Mölkky** Zona di gioco: Pesaro e dintorni, referente: [Andrea](https://www.instagram.com/adriatic_molkky/)
+**Conferenza Adriatic Mölkky** Zona di gioco: Pesaro, referente: [Andrea](https://www.instagram.com/adriatic_molkky/)
 
 **Conferenza Bellomolchi** Zona di gioco: Roma, referente: [Simone](https://instagram.com/bellomolchi)
 
+**Conferenza Jättälavoro Mölkky** Zona di gioco: Roma e dintoni, referente: [Riccardo](https://www.instagram.com/dopolavoro_molkky/)
+
 **Conferenza L'Emiliana Mölkky** Zona di gioco: Bologna, referente: [Marco](https://www.instagram.com/lemiliana_molkky/)
+
+**Conferenza Balera Mölkky** Zona di gioco: Ravenna, referente: [Iacopo](https://www.instagram.com/lemiliana_molkky/)
+
+**Conferenza Tiferno Mölkky** Zona di gioco: Città di Castello, referente: [Camillo](https://www.instagram.com/lemiliana_molkky/)
