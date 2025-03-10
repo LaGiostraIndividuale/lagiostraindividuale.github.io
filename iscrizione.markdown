@@ -41,4 +41,4 @@ Di seguito trovi l'elenco delle Conferenze che hanno già confermato la partecip
 
 **Conferenza Tiferno Mölkky** Zona di gioco: Città di Castello, referente: [Camillo](https://www.instagram.com/tiferno_molkky_team/)
 
-**Mölkky e Fuggi** Zona di gioco: tra Bari e la Basilicata: [Dario](mailto:molkkyefuggi@gmail.com)
+**Mölkky e Fuggi** Zona di gioco: tra Bari e la Basilicata: [Dario](https://www.instagram.com/molkkyefuggi/)
