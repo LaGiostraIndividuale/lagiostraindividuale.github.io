@@ -9,13 +9,7 @@ image:
 
 <!-- !["stagione 2025"](/assets/img/stagione-2025/la-giostra-individuale-stagione2025.png)-->
 
-
-!["APP icon"](/assets/img/giostra-APP.png){:.glowing}
-[!["APP download Apple"](/assets/img/app-store.png){:.icon-app}](https://apps.apple.com/it/app/la-giostra-individuale/id6741768625)
-[!["APP download google"](/assets/img/g-play.png){:.icon-app}](#)
-{:.icon-box}
-
-
+{%- include giostrra-app.markdown -%}
 
 Cari players e care playeresse, il 15 Marzo è iniziata la stagione regolare della Giostra Individuale ovvero il Campionato Nazionale di Mölkky Uno Contro Uno! 🏆  
 {:.has-dropcap}
