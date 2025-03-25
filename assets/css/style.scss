@@ -110,6 +110,33 @@ body{
 }
 
 
+.glowing {
+  width:205px;
+  display:block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: 0 0 33px #fff;
+  -webkit-box-shadow: 0 0 33px #fff;
+  box-shadow: 0px 0px 33px #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-box{
+  width:205px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.icon-app{
+  display:inline;
+  width:100px;
+  margin-bottom: 30px;
+}
+
 //NAV
 
 .wrapper-header {

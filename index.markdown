@@ -7,9 +7,24 @@ image:
 ---
 
 
-!["stagione 2025"](/assets/img/stagione-2025/la-giostra-individuale-stagione2025.png)
+<!-- !["stagione 2025"](/assets/img/stagione-2025/la-giostra-individuale-stagione2025.png)-->
 
-Sono iniziate le iscrizioni per la **Stagione Regolare 2025** de **La Giostra Individuale**! Hai dato un'occhiata al [Regolamento aggiornato](/regolamento)? Vuoi sapere quali sono le modalità di [Iscrizione](/iscrizione) per questa nuova scoppiettante terza edizione? In ogni caso sei nel posto giusto. Ti ricordiamo che hai tempo fino al **15 Febbraio** per [iscriverti](/iscrizione) in una delle Conferenze oppure per [fondarne una nuova](/contatti).
+
+!["APP icon"](/assets/img/giostra-APP.png){:.glowing}
+[!["APP download Apple"](/assets/img/app-store.png){:.icon-app}](https://apps.apple.com/it/app/la-giostra-individuale/id6741768625)
+[!["APP download google"](/assets/img/g-play.png){:.icon-app}](#)
+{:.icon-box}
+
+
+
+Cari players e care playeresse, il 15 Marzo è iniziata la stagione regolare della Giostra Individuale ovvero il Campionato Nazionale di Mölkky Uno Contro Uno! 🏆  
 {:.has-dropcap}
+Quest’anno si sfideranno ben XX conferenze tra cui due nuove entrate, **Mölkky e Fuggi** e **Tiferno Mölkky**, a cui riserviamo un caldo benvenuto 🌋!
+
+Scaldate il braccio con una partita di riscaldamento, spruzzate la vostra fragranza preferita (meglio se qualcosa di savage), scrutate l’orizzonte e lanciatevi nella mischia! 
+
+🌟 La stagione regolare vi accompagnerà fino a al 31 Luglio, poi si festeggerà tutti insieme con l'evento di spareggio e la grande finale. 🌟
+Divertitevi! 
+
 
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
