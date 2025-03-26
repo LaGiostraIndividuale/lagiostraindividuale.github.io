@@ -17,7 +17,7 @@ Quest’anno si sfideranno ben XX conferenze tra cui due nuove entrate, **Mölkk
 
 Scaldate il braccio con una partita di riscaldamento, spruzzate la vostra fragranza preferita (meglio se qualcosa di savage), scrutate l’orizzonte e lanciatevi nella mischia! 
 
-🌟 La stagione regolare vi accompagnerà fino a al 31 Luglio, poi si festeggerà tutti insieme con l'evento di spareggio e la grande finale. 🌟
+🌟 La **Stagione Regolare** vi accompagnerà fino a al 31 Luglio, poi si festeggerà tutti insieme con l'evento di **Spareggio** e la **Grande Finale**. 🌟
 Divertitevi! 
 
 
