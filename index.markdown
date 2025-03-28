@@ -13,7 +13,7 @@ image:
 
 Cari players e care playeresse, il 15 Marzo è iniziata la stagione regolare della Giostra Individuale ovvero il Campionato Nazionale di Mölkky Uno Contro Uno! 🏆  
 {:.has-dropcap}
-Quest’anno si sfideranno ben XX conferenze tra cui due nuove entrate, **Mölkky e Fuggi** e **Tiferno Mölkky**, a cui riserviamo un caldo benvenuto 🌋!
+Quest’anno si sfideranno ben 9 conferenze tra cui due nuove entrate, **Mölkky e Fuggi** e **Tiferno Mölkky**, a cui riserviamo un caldo benvenuto 🌋!
 
 Scaldate il braccio con una partita di riscaldamento, spruzzate la vostra fragranza preferita (meglio se qualcosa di savage), scrutate l’orizzonte e lanciatevi nella mischia! 
 

@@ -35,4 +35,4 @@ Il premio consisterà in un trofeo esclusivo.
 
 [^1]:⁠ ⁠Ogni partita uno contro uno sarà composta da due set. Perché la partita sia valida è necessario che il Referto di Gara venga compilato a regola d’arte e firmato da entrambe le parti. 
 
-[^2]:⁠ ⁠In caso di equivalenza si conterà chi totalizzato più punti nel corso di questa fase.
+[^2]:⁠ ⁠In caso di equivalenza si conterà chi totalizzato più punti nel corso di questa fase. Nb: Tre falli consecutivi comporteranno l’assegnazione di zero punti in totale per lǝ Giocante che ha perso. La vittoria comporterà in ogni caso l’assegnazione di 50 

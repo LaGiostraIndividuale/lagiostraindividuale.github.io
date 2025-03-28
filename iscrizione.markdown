@@ -20,7 +20,7 @@ Se non l'hai già fatto scarica l'**App de La Giostra**, disponibile per [iOS](h
 
 Per ora non possiamo fare altro che augurare a tuttз lз partecipanti *Buona Fortuna!*
 
-Hai bisogno di altre info? [ Non esitare a contattarci.](/contatti "Contatti").
+Hai bisogno di altre info? [ Non esitare a contattarci](/contatti "Contatti").
 
 🤞
 {:.succes-emoji}
