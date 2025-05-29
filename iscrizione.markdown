@@ -16,7 +16,7 @@ published: true
 
 **Grazie di cuore a tuttз gli iscrittз, ora siete ufficialmente dellз Giocanti**!
 
-Se non l'hai già fatto scarica l'**App de La Giostra**, disponibile per [iOS](https://apps.apple.com/it/app/la-giostra-individuale/id6741768625) e [Android](#), su cui potrai seguire l'intero sviluppo dell'edizione 2025 della **Stagione Regolare**. 
+Se non l'hai già fatto scarica l'**App de La Giostra**, disponibile per [iOS](https://apps.apple.com/it/app/la-giostra-individuale/id6741768625) e [Android](https://play.google.com/store/apps/details?id=it.giostraindividuale.app&pcampaignid=web_share), su cui potrai seguire l'intero sviluppo dell'edizione 2025 della **Stagione Regolare**. 
 
 Per ora non possiamo fare altro che augurare a tuttз lз partecipanti *Buona Fortuna!*
 
