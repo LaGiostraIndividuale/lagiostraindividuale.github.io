@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Stagione 2024"
-date:   2023-01-01 16:07:09 +0100
+date:   2023-01-01 16:08:09 +0100
 categories:
 video: https://www.youtube.com/embed/AuAUmliBNPY?si=qhC5oYVw3_2hSNri&amp;controls=0
 ---

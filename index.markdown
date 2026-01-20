@@ -15,7 +15,7 @@ Ciao persone! È il momento di saltare giù dalla sedia (del bar) perché aprono
 I più astuti di voi diranno: “Ma CoMe MI PoSsO IsCRivErE?”
 Bè iniziate consultando il [regolamento](/regolamento "Regolamento") aggiornato! 🗒️
 
-Avete tempo fino al **20 Febbraio** per iscrivervi in una delle Conferenze oppure per fondarne una nuova.
+Avete tempo fino al **20 Febbraio** per iscrivervi in una delle [Conferenze](/conferenze "Conferenze") oppure per fondarne una nuova.
 Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso il Referente di Conferenza che si farà carico di raccogliere i dati e la quota di partecipazione. 
 Vuoi fondare una tua conferenza? Non esitare a contattarci! 
 
