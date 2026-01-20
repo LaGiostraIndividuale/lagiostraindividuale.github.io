@@ -7,18 +7,24 @@ image:
 ---
 
 
-<!-- !["stagione 2025"](/assets/img/stagione-2025/la-giostra-individuale-stagione2025.png)-->
+!["stagione 2025"](/assets/img/stagione-2026/la-giostra-individuale-stagione2026.png)
 
+
+
+Ciao persone! È il momento di saltare giù dalla sedia (del bar) perché aprono le iscrizioni per la **Stagione Regolare 2026** de La Giostra Individuale!! 🥖
+{:.has-dropcap}
+
+I più astuti di voi diranno: “Ma CoMe MI PoSsO IsCRivErE?”
+Bè iniziate consultando il regolamento aggiornato tramite il link in bio! 🗒️
+
+Avete tempo fino al **20 Febbraio** per iscrivervi in una delle Conferenze oppure per fondarne una nuova.
+Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso il Referente di Conferenza che si farà carico di raccogliere i dati e la quota di partecipazione. 
+Vuoi fondare una tua conferenza? Non esitare a contattarci! 
+
+---
 {%- include giostrra-app.markdown -%}
 
-Cari players e care playeresse, il 15 Marzo è iniziata la stagione regolare della Giostra Individuale ovvero il Campionato Nazionale di Mölkky Uno Contro Uno! 🏆  
-{:.has-dropcap}
-Quest’anno si sfideranno ben 9 conferenze tra cui due nuove entrate, **Mölkky e Fuggi** e **Tiferno Mölkky**, a cui riserviamo un caldo benvenuto 🌋!
 
-Scaldate il braccio con una partita di riscaldamento, spruzzate la vostra fragranza preferita (meglio se qualcosa di savage), scrutate l’orizzonte e lanciatevi nella mischia! 
-
-🌟 La **Stagione Regolare** vi accompagnerà fino a al 31 Luglio, poi si festeggerà tutti insieme con l'evento di **Spareggio** e la **Grande Finale**. 🌟
-Divertitevi! 
 
 
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
