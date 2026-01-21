@@ -25,7 +25,7 @@ Hai bisogno di altre info? [ Non esitare a contattarci](/contatti "Contatti").
 🤞
 {:.succes-emoji}-->
 
-### Hai tempo fino al 20 Febbraio per iscriverti alle terza edizione de La Giostra Individuale.
+### Hai tempo fino al 20 Febbraio per iscriverti alle Quarta edizione de La Giostra Individuale.
 
 Quest'anno le iscrizioni avverrano esclusivamente attraverso il **Referente di Conferenza** che si farà carico di raccogliere i dati e la quota di partecipazione che è di **20,00€** per ogni giocante.
 
