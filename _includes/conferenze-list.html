@@ -6,7 +6,7 @@
 
     <p><strong>Referente:</strong> 
         {% if conferenze.email %}
-            <a  href="mailto:{{conferenze.email}}?subject=Info Conferenza Dopolavoro Mölkky">{{conferenze.referente}}</a>
+            <a  href="mailto:{{conferenze.email}}?subject=''">{{conferenze.referente}}</a>
         {% else %}
             <a target="_blank" href="{{conferenze.contatto}}">{{conferenze.referente}}</a>
                 {% if conferenze.referente_2 %}
