@@ -18,7 +18,7 @@ Lз due giocanti che avranno vinto più set[^2] si qualificheranno automaticame
 **Lǝ terzǝ classificatǝ** di ogni conferenza passerà invece alla fase di **Ripescaggio**.
 
 ### Ripescaggio
-Le fasi di Ripescaggio e Torneo Finale si svolgeranno lo stesso giorno, Sabato 20 Settembre in luogo da stabilire.
+Le fasi di Ripescaggio e Torneo Finale si svolgeranno lo stesso giorno, Sabato 19 Settembre a Pesaro.
 Durante la fase di Ripescaggio tuttз lз giocanti dovranno affrontarsi in un torneo (regolamento da stabilire in base al numero di giocanti), l’unicǝ che vincerà avrà accesso alla fase del **Torneo Finale** come ripescatǝ.
 
 ### Torneo Finale
