@@ -22,7 +22,7 @@ Le fasi di Ripescaggio e Torneo Finale si svolgeranno lo stesso giorno, **Sabat
 Durante la fase di Ripescaggio tuttз lз giocanti dovranno affrontarsi in un torneo (regolamento da stabilire in base al numero di giocanti), l’unicǝ che vincerà avrà accesso alla fase del **Torneo Finale** come ripescatǝ.
 
 ### Torneo Finale
-Durante la fase del Torneo Finale lз giocanti che si sono qualificatз si scontreranno tra loro[^1] **suddivisз casualmente in quattro gironi**. Per ogni girone passerà unǝ solǝ giocante[^2] al turno della semifinale. Lз quattro giocanti in semifinale si batteranno in un’incontro alla meglio di tre. Soltanto due giocanti passeranno al turno finale per battersi in un’incontro alla meglio di cinque, determinando così chi vincerà il **Campionato 2025**.
+Durante la fase del Torneo Finale lз giocanti che si sono qualificatз si scontreranno tra loro[^1] **suddivisз casualmente in quattro gironi**. Per ogni girone passerà unǝ solǝ giocante[^2] al turno della semifinale. Lз quattro giocanti in semifinale si batteranno in un’incontro alla meglio di tre. Soltanto due giocanti passeranno al turno finale per battersi in un’incontro alla meglio di cinque, determinando così chi vincerà il **Campionato 2026**.
 
 ### Iscrizioni
 Chiunque potrà fondare la propria conferenza locale raccogliendo entro il **20 Febbraio** un minimo di **8 iscrittз, massimo 10**. Ogni conferenza avrà unə referente che si farà carico di raccogliere le iscrizioni dellз giocanti e di comunicare con La Giostra Individuale. La tariffa dell’iscrizione è di **20,00€** a testa. Questo costo include la Tessera dellə Giocante e un piccolo omaggio.
