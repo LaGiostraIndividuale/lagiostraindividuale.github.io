@@ -50,25 +50,25 @@
   {
     "posizione": 7,
     "giocante_id": "sanjibbone",
-    "sv": 2,
-    "punti": 100,
-    "partite_giocate": 2,
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
     "partite_totali": 8
   },
   {
     "posizione": 8,
     "giocante_id": "ka",
-    "sv": 1,
-    "punti": 50,
-    "partite_giocate": 1,
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
     "partite_totali": 8
   },
   {
     "posizione": 9,
     "giocante_id": "sempre",
-    "sv": 1,
-    "punti": 50,
-    "partite_giocate": 1,
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
     "partite_totali": 8
   }
 ]
