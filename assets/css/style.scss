@@ -1,7 +1,11 @@
 ---
 ---
 
+/* Theme (Minima) */
 @import "{{ site.theme }}";
+
+/* Ensure our local Minima hook is included in output */
+@import "minima/custom-styles";
 
 
 @font-face {
@@ -28,6 +32,13 @@ $screen-xxl: 1600px;
   --background: white;
   --color: black;
   --box-shadow: 10px 10px 5px black;
+  --surface: #f4f4f4;
+  --surface-2: #ffffff;
+  --border: #d6d6d6;
+  --muted: #5f5f5f;
+  --muted-2: #7a7a7a;
+  --accent: #ffcc00;
+  --accent-contrast: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +47,13 @@ $screen-xxl: 1600px;
     --background: black;
     --color: white;
     --box-shadow: 10px 10px 5px black;
+    --surface: #0b0b0b;
+    --surface-2: #111111;
+    --border: #2a2a2a;
+    --muted: #bdbdbd;
+    --muted-2: #9f9f9f;
+    --accent: #ffcc00;
+    --accent-contrast: #000000;
   }
 }
 
@@ -79,7 +97,7 @@ body{
     }
    }
     
-   button {
+   .post-content button {
       border: 2px solid var(--color); 
       color:var(--color); 
       background-color: var(--background); 
@@ -89,12 +107,12 @@ body{
       border-radius: 0 !important;
     }
 
-    button:hover{
-       background-color: black;
-       color: white;
+    .post-content button:hover{
+       background-color: var(--color);
+       color: var(--background);
     }
     
-    button:visited {
+    .post-content button:visited {
        border: 2px solid black;
        background-color: transparent;
        color: inherit;
@@ -110,6 +128,7 @@ body{
 }
 
 
+
 .glowing {
   width:205px;
   display:block;
@@ -118,9 +137,9 @@ body{
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  -moz-box-shadow: 0 0 33px #fff;
-  -webkit-box-shadow: 0 0 33px #fff;
-  box-shadow: 0px 0px 33px #fff;
+  -moz-box-shadow: 0 0 33px var(--color);
+  -webkit-box-shadow: 0 0 33px var(--color);
+  box-shadow: 0px 0px 33px var(--color);
   margin-left: auto;
   margin-right: auto;
 }
@@ -543,15 +562,12 @@ tbody{
   font-size: 55%;
 }
 
-tr:nth-child(odd) {
-
-}
 table td {
-  color:white;
-  background-color: black;
+  color: var(--color);
+  background-color: var(--background);
 }
 table tr:nth-child(even) {
-  background-color: black;
+  background-color: var(--background);
 }
 table th{
 
