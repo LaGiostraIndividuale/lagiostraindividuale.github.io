@@ -30,6 +30,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
+          # Non eseguire `bundle install`: il validator usa solo stdlib; il Gemfile Jekyll qui romperebbe/sprecerebbe tempo.
+          bundler: none
 
       - name: Import CSV -> JSON
         env:
@@ -47,9 +49,14 @@ jobs:
           YEAR="${INPUT_YEAR:-2026}"
           ruby scripts/validate_stagione_regolare.rb "$YEAR"
 
+      - name: Git diff (debug)
+        run: git status && git diff --stat
+
       - name: Commit generated JSON
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(data): sync JSON from Sheets CSV"
           file_pattern: "assets/data/stagione-regolare/**"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
 
