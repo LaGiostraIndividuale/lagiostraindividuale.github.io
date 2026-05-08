@@ -1,7 +1,7 @@
 conferenza_id,id,giocante_a_id,giocante_b_id,set_a,set_b,punti_a_set_1,punti_b_set_1,punti_a_set_2,punti_b_set_2,stato
 adriatic-a,ada-001,anubi,ka,,,,,,,da_giocare
 adriatic-a,ada-002,anubi,kenzu,1,1,50,47,42,50,giocata
-adriatic-a,ada-003,sanjibbone,sempre,,,,,,,da_giocare
+adriatic-a,ada-003,sanjibbone,sempre,2,0,50,0,50,0,da_giocare
 adriatic-a,ada-004,sanjibbone,ka,,,,,,,da_giocare
 adriatic-a,ada-005,sanjibbone,kenzu,,,,,,,da_giocare
 adriatic-a,ada-006,sempre,ka,,,,,,,da_giocare
