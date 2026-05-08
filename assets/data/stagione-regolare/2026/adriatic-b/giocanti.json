@@ -1,0 +1,82 @@
+[
+    {
+      "id": "plastilino",
+      "nome": "Plastilino",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "P",
+      "colore_avatar": "#5b4500",
+      "motto": "tocco tutto"
+    },
+    {
+      "id": "fileri",
+      "nome": "Fileri",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "F",
+      "colore_avatar": "#5b4500",
+      "motto": "Se ti allunghi lo tocchi!"
+    },
+    {
+      "id": "el-diton",
+      "nome": "El diton",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky A",
+      "foto_url": "",
+      "iniziale": "E",
+      "colore_avatar": "#5b4500",
+      "motto": "El diton del diton del diton"
+    },
+    {
+      "id": "la-megghy",
+      "nome": "La Megghy",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "L",
+      "colore_avatar": "#5b4500",
+      "motto": "Motto matto faccio il botto"
+    },
+    {
+      "id": "moz",
+      "nome": "Moz",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "M",
+      "colore_avatar": "#5b4500",
+      "motto": "Se lo tiravo io lo prendevo"
+    },
+    {
+      "id": "nick-lo-squartatore",
+      "nome": "Nick \"Lo squartatore\"",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "N",
+      "colore_avatar": "#5b4500",
+      "motto": "Ti sbudello come una maiala"
+    },
+    {
+      "id": "luca",
+      "nome": "Luca",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "L",
+      "colore_avatar": "#5b4500",
+      "motto": "Sentimento Caprese"
+    },
+    {
+      "id": "lalelale",
+      "nome": "Lalelale",
+      "conferenza": "Adriatic B",
+      "squadra": "Adriatic Mölkky",
+      "foto_url": "",
+      "iniziale": "L",
+      "colore_avatar": "#5b4500",
+      "motto": "Te salut Minghin"
+    }
+  ]
