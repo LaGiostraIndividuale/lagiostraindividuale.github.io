@@ -12,7 +12,7 @@
   {
     "id": "kenzu",
     "nome": "Kenzu",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "K",
@@ -22,7 +22,7 @@
   {
     "id": "anubi",
     "nome": "Anubi",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "A",
@@ -32,7 +32,7 @@
   {
     "id": "dilegno",
     "nome": "DileGno",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "D",
@@ -42,7 +42,7 @@
   {
     "id": "armadilly",
     "nome": "Armadilly",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "A",
@@ -52,7 +52,7 @@
   {
     "id": "jonnino",
     "nome": "Jonnino",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "J",
@@ -62,7 +62,7 @@
   {
     "id": "sanjibbone",
     "nome": "Sanjibbone",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "S",
@@ -72,17 +72,17 @@
   {
     "id": "ka",
     "nome": "Ka",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "K",
     "colore_avatar": "#5b4500",
-    "motto": "sto ka!"
+    "motto": "ka!"
   },
   {
     "id": "sempre",
     "nome": "Sempre",
-    "conferenza": "Adriatic A",
+    "conferenza": "Adriatic Mölkky A",
     "squadra": "Adriatic Mölkky",
     "foto_url": "",
     "iniziale": "S",
@@ -90,4 +90,3 @@
     "motto": "Meglio a te che a me"
   }
 ]
-

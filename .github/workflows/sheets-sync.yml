@@ -1,0 +1,42 @@
+name: Sheets CSV -> JSON
+
+on:
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Anno (es. 2026)"
+        required: true
+        default: "2026"
+  push:
+    paths:
+      - "data/csv/**"
+      - "scripts/sheets_sync/**"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Import CSV -> JSON
+        run: |
+          python3 scripts/sheets_sync/import_csv_to_json.py "${{ inputs.year || '2026' }}"
+
+      - name: Validate 2026 data (warning-only)
+        run: |
+          ruby scripts/validate_stagione_regolare.rb "${{ inputs.year || '2026' }}"
+
+      - name: Commit generated JSON
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): sync JSON from Sheets CSV"
+          file_pattern: "assets/data/stagione-regolare/**"
+
