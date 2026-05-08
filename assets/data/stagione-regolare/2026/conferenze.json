@@ -1,0 +1,50 @@
+[
+    {
+      "id": "adriatic-a",
+      "nome": "Adriatic Mölkky A",
+      "nome_breve": "Adriatic A",
+      "area": "Adriatic Mölkky",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "adriatic-b",
+      "nome": "Adriatic Mölkky B",
+      "nome_breve": "Adriatic B",
+      "area": "Adriatic Mölkky",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "bellomolchi",
+      "nome": "Bellomolchi",
+      "nome_breve": "Bellomolchi",
+      "area": "Bellomolchi",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "jattalavoro",
+      "nome": "Jättälavoro Mölkky",
+      "nome_breve": "Jättälavoro",
+      "area": "Jättälavoro Mölkky",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "emiliana",
+      "nome": "Emiliana Mölkky",
+      "nome_breve": "Emiliana",
+      "area": "Emiliana Mölkky",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "balera",
+      "nome": "Balera Mölkky",
+      "nome_breve": "Balera",
+      "area": "Balera Mölkky",
+      "logo_url": "",
+      "attiva": true
+    }
+  ]
