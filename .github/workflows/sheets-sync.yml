@@ -49,6 +49,13 @@ jobs:
           YEAR="${INPUT_YEAR:-2026}"
           ruby scripts/validate_stagione_regolare.rb "$YEAR"
 
+      # Se nel frattempo qualcuno ha pushato su main (o altro run in parallelo), senza rebase il push del commit JSON fallisce (non-fast-forward).
+      - name: Rebase su branch remoto (auto-stash modifiche JSON)
+        run: |
+          git config rebase.autoStash true
+          git fetch origin "${{ github.ref_name }}"
+          git rebase "origin/${{ github.ref_name }}"
+
       - name: Git diff (debug)
         run: git status && git diff --stat
 
