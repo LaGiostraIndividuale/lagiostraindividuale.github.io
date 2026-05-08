@@ -26,13 +26,26 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Import CSV -> JSON
-        run: |
-          python3 scripts/sheets_sync/import_csv_to_json.py "${{ inputs.year || '2026' }}"
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
 
-      - name: Validate 2026 data (warning-only)
+      - name: Import CSV -> JSON
+        env:
+          # workflow_dispatch: github.event.inputs.year; push: vuoto → default 2026
+          INPUT_YEAR: ${{ github.event.inputs.year }}
         run: |
-          ruby scripts/validate_stagione_regolare.rb "${{ inputs.year || '2026' }}"
+          YEAR="${INPUT_YEAR:-2026}"
+          echo "Using year=$YEAR"
+          python3 scripts/sheets_sync/import_csv_to_json.py "$YEAR"
+
+      - name: Validate stagione-regolare data
+        env:
+          INPUT_YEAR: ${{ github.event.inputs.year }}
+        run: |
+          YEAR="${INPUT_YEAR:-2026}"
+          ruby scripts/validate_stagione_regolare.rb "$YEAR"
 
       - name: Commit generated JSON
         uses: stefanzweifel/git-auto-commit-action@v5

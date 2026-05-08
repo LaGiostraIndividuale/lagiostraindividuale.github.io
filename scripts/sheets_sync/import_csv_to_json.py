@@ -41,10 +41,29 @@ def _read_csv_rows(path: Path) -> List[Dict[str, str]]:
         return [{k: (v or "") for k, v in row.items()} for row in reader]
 
 
+def _parse_int_strict(s: str, field: str) -> int:
+    """Intero da cella Fogli (IT): accetta '8', '8,0', '8.0', spazi."""
+    raw = (s or "").strip().replace(" ", "")
+    if raw == "":
+        raise ValueError(f"Campo obbligatorio vuoto: {field}")
+    # Decimali export IT/US: prendi la parte intera prima di , o .
+    if "," in raw:
+        raw = raw.split(",")[0]
+    elif "." in raw:
+        raw = raw.split(".")[0]
+    if not RE_INT.match(raw):
+        raise ValueError(f"{field}: valore non intero: {s!r}")
+    return int(raw)
+
+
 def _to_int_or_none(s: str) -> Optional[int]:
     s = (s or "").strip()
     if s == "":
         return None
+    if "," in s and "." not in s:
+        s = s.split(",")[0]
+    elif "." in s:
+        s = s.split(".")[0]
     if not RE_INT.match(s):
         raise ValueError(f"Valore non intero: {s!r}")
     return int(s)
@@ -95,12 +114,12 @@ def _convert_classifica(rows: List[Dict[str, str]]) -> List[Dict[str, Any]]:
     for r in rows:
         out.append(
             {
-                "posizione": int(_required(r, "posizione")),
+                "posizione": _parse_int_strict(r.get("posizione", ""), "posizione"),
                 "giocante_id": _required(r, "giocante_id"),
-                "sv": int(_required(r, "sv")),
-                "punti": int(_required(r, "punti")),
-                "partite_giocate": int(_required(r, "partite_giocate")),
-                "partite_totali": int(_required(r, "partite_totali")),
+                "sv": _parse_int_strict(r.get("sv", ""), "sv"),
+                "punti": _parse_int_strict(r.get("punti", ""), "punti"),
+                "partite_giocate": _parse_int_strict(r.get("partite_giocate", ""), "partite_giocate"),
+                "partite_totali": _parse_int_strict(r.get("partite_totali", ""), "partite_totali"),
             }
         )
     return out
@@ -179,5 +198,9 @@ def main(argv: List[str]) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main(sys.argv))
+    try:
+        raise SystemExit(main(sys.argv))
+    except ValueError as e:
+        print(f"ERRORE import CSV: {e}", file=sys.stderr)
+        raise SystemExit(1)
 
