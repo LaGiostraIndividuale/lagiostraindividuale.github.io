@@ -3,30 +3,31 @@ layout: default
 ---
 <div class="main-content">
     <main class="page-content" aria-label="Content">
-        <div class="wrapper">
+        <div class="wrapper archive-wrapper" data-layout="archive">
             <header class="post-header">
                 <h1 class="post-title centered-tite">{{ page.title | escape }}</h1>
             </header>
-            {% for post in site.posts %}   
+            {% for post in site.posts %}
+              <article class="archive-entry" data-archive-entry>
                 <header class="post-header">
-                    <h3 class="post-title centered-tite">{{ post.title | escape }}</h3>
+                  <h3 class="post-title centered-tite">{{ post.title | escape }}</h3>
                 </header>
-                <div class="main-content">
-                    <main class="page-content" aria-label="Content">
-                        <div class="wrapper">
-                            {% if post.video %}
-                                <div class="rwd-video">
-                                    <iframe width="560" height="315" src="{{ post.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            {% endif %} 
-                            {{ post.content }}
-                        </div>
-                    </main>
+
+                {% if post.video %}
+                  <div class="rwd-video">
+                    <iframe width="560" height="315" src="{{ post.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                {% endif %}
+
+                <div class="archive-entry-content js-archive-gallery">
+                  {{ post.content }}
                 </div>
-                <br>
-            {% endfor %} 
+              </article>
+            {% endfor %}
            
         </div>
     </main>
 </div>
+
+<script src="{{ '/assets/js/archive-gallery.js' | relative_url }}"></script>
 
