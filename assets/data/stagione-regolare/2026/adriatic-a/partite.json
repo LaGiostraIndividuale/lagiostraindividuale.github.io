@@ -27,13 +27,13 @@
     "id": "ada-003",
     "giocante_a_id": "sanjibbone",
     "giocante_b_id": "sempre",
-    "set_a": 2,
-    "set_b": 0,
+    "set_a": 1,
+    "set_b": 1,
     "punti_a_set_1": 50,
     "punti_b_set_1": 0,
-    "punti_a_set_2": 50,
-    "punti_b_set_2": 0,
-    "stato": "da_giocare"
+    "punti_a_set_2": 0,
+    "punti_b_set_2": 50,
+    "stato": "giocata"
   },
   {
     "id": "ada-004",
