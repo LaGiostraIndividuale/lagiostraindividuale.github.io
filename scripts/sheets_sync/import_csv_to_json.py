@@ -76,6 +76,21 @@ def _required(row: Dict[str, str], key: str) -> str:
     return v
 
 
+def _strip_key(row: Dict[str, str]) -> Dict[str, str]:
+    """Normalizza chiavi CSV (es. BOM su prima colonna) e valori."""
+    out: Dict[str, str] = {}
+    for k, v in row.items():
+        if k is None:
+            continue
+        nk = k.lstrip("\ufeff").strip()
+        out[nk] = v if v is None else str(v).strip()
+    return out
+
+
+def _normalize_rows(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    return [_strip_key(r) for r in rows]
+
+
 @dataclass(frozen=True)
 class Conference:
     id: str
@@ -94,6 +109,8 @@ def _load_conferences(conferenze_json_path: Path) -> Dict[str, Conference]:
 def _convert_giocanti(rows: List[Dict[str, str]], conference_name: str) -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
     for r in rows:
+        if not (r.get("id") or "").strip():
+            continue
         out.append(
             {
                 "id": _required(r, "id"),
@@ -112,6 +129,11 @@ def _convert_giocanti(rows: List[Dict[str, str]], conference_name: str) -> List[
 def _convert_classifica(rows: List[Dict[str, str]]) -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
     for r in rows:
+        # Fogli esporta spesso righe vuote in coda (ARRAYFORMULA / righe extra).
+        if not (r.get("giocante_id") or "").strip():
+            continue
+        if not (r.get("posizione") or "").strip():
+            continue
         out.append(
             {
                 "posizione": _parse_int_strict(r.get("posizione", ""), "posizione"),
@@ -128,6 +150,8 @@ def _convert_classifica(rows: List[Dict[str, str]]) -> List[Dict[str, Any]]:
 def _convert_partite(rows: List[Dict[str, str]]) -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
     for r in rows:
+        if not (r.get("id") or "").strip():
+            continue
         out.append(
             {
                 "id": _required(r, "id"),
@@ -179,17 +203,17 @@ def main(argv: List[str]) -> int:
         partite_csv = conf_dir / "partite.csv"
 
         if giocanti_csv.exists():
-            giocanti_rows = _read_csv_rows(giocanti_csv)
+            giocanti_rows = _normalize_rows(_read_csv_rows(giocanti_csv))
             _write_json(out_dir / "giocanti.json", _convert_giocanti(giocanti_rows, conf_name))
             written += 1
 
         if classifica_csv.exists():
-            classifica_rows = _read_csv_rows(classifica_csv)
+            classifica_rows = _normalize_rows(_read_csv_rows(classifica_csv))
             _write_json(out_dir / "classifica.json", _convert_classifica(classifica_rows))
             written += 1
 
         if partite_csv.exists():
-            partite_rows = _read_csv_rows(partite_csv)
+            partite_rows = _normalize_rows(_read_csv_rows(partite_csv))
             _write_json(out_dir / "partite.json", _convert_partite(partite_rows))
             written += 1
 
