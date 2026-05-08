@@ -1,0 +1,83 @@
+[
+  {
+    "posizione": 1,
+    "giocante_id": "eros",
+    "sv": 2,
+    "punti": 100,
+    "partite_giocate": 1,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 2,
+    "giocante_id": "despota",
+    "sv": 2,
+    "punti": 100,
+    "partite_giocate": 1,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "pier",
+    "sv": 0,
+    "punti": 73,
+    "partite_giocate": 1,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "stuglola",
+    "sv": 0,
+    "punti": 72,
+    "partite_giocate": 1,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "ahi-maria",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "fioreincoma",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "codroipo",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "lucia",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 9,
+    "giocante_id": "edo",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 10,
+    "giocante_id": "kamunia-paranoica",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  }
+]
+

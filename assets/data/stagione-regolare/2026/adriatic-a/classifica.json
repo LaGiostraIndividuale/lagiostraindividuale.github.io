@@ -1,0 +1,75 @@
+[
+  {
+    "posizione": 1,
+    "giocante_id": "barbara",
+    "sv": 2,
+    "punti": 100,
+    "partite_giocate": 1,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 2,
+    "giocante_id": "kenzu",
+    "sv": 1,
+    "punti": 112,
+    "partite_giocate": 2,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "anubi",
+    "sv": 1,
+    "punti": 92,
+    "partite_giocate": 1,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "dilegno",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "armadilly",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "jonnino",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "sanjibbone",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "ka",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 9,
+    "giocante_id": "sempre",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  }
+]
+

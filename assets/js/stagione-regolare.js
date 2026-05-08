@@ -5,7 +5,11 @@ function getSeasonBaseFromPage() {
 }
 
 async function loadJson(path) {
-  const response = await fetch(path);
+  const url = new URL(path, window.location.origin);
+  // Cache-busting for local dev + GitHub Pages edge caches
+  url.searchParams.set("_", String(Date.now()));
+
+  const response = await fetch(url.toString(), { cache: "no-store" });
   if (!response.ok) throw new Error(`Errore caricamento: ${path}`);
   return response.json();
 }
@@ -62,13 +66,23 @@ async function loadConferenceData(base, conferenzaId) {
   return { giocanti, classifica, partite, giocantiMap };
 }
 
+function hasUsableConferenceData({ giocanti, classifica, partite }) {
+  return Array.isArray(giocanti) &&
+    Array.isArray(classifica) &&
+    Array.isArray(partite) &&
+    giocanti.length > 0 &&
+    classifica.length > 0 &&
+    partite.length > 0;
+}
+
 async function renderConferenceCards(conferenze, base) {
   const cardsData = await Promise.all(
     conferenze.map(async conferenza => {
       try {
-        const { classifica, partite, giocantiMap } = await loadConferenceData(base, conferenza.id);
+        const data = await loadConferenceData(base, conferenza.id);
+        const { classifica, partite, giocantiMap } = data;
         const stats = getStats(classifica, partite, giocantiMap);
-        return { conferenza, stats, available: true };
+        return { conferenza, stats, available: hasUsableConferenceData(data) };
       } catch {
         return {
           conferenza,

@@ -1,0 +1,83 @@
+[
+  {
+    "posizione": 1,
+    "giocante_id": "ricbardo",
+    "sv": 5,
+    "punti": 289,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 2,
+    "giocante_id": "santo",
+    "sv": 5,
+    "punti": 280,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "jimbo-limbo",
+    "sv": 4,
+    "punti": 258,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "craxi666",
+    "sv": 3,
+    "punti": 218,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "pacmark",
+    "sv": 2,
+    "punti": 263,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "jimmy",
+    "sv": 2,
+    "punti": 244,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "lordus",
+    "sv": 2,
+    "punti": 229,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "buffalmacco",
+    "sv": 1,
+    "punti": 192,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 9,
+    "giocante_id": "jihadista-dadaista",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 10,
+    "giocante_id": "giuliezza",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  }
+]
+

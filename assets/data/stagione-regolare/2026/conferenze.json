@@ -16,9 +16,17 @@
       "attiva": true
     },
     {
-      "id": "bellomolchi",
-      "nome": "Bellomolchi",
-      "nome_breve": "Bellomolchi",
+      "id": "bellomolchi-a",
+      "nome": "Bellomolchi A",
+      "nome_breve": "Bellomolchi A",
+      "area": "Bellomolchi",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "bellomolchi-b",
+      "nome": "Bellomolchi B",
+      "nome_breve": "Bellomolchi B",
       "area": "Bellomolchi",
       "logo_url": "",
       "attiva": true
@@ -36,6 +44,38 @@
       "nome": "Emiliana Mölkky",
       "nome_breve": "Emiliana",
       "area": "Emiliana Mölkky",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "flus",
+      "nome": "FLuS",
+      "nome_breve": "FLuS",
+      "area": "FLuS",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "molkky-e-fuggi",
+      "nome": "Mölkky e Fuggi",
+      "nome_breve": "Mölkky e Fuggi",
+      "area": "Mölkky e Fuggi",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "satania",
+      "nome": "Sàtania",
+      "nome_breve": "Sàtania",
+      "area": "Sàtania Mölkky",
+      "logo_url": "",
+      "attiva": true
+    },
+    {
+      "id": "tiferno",
+      "nome": "Tiferno",
+      "nome_breve": "Tiferno",
+      "area": "Tiferno Mölkky",
       "logo_url": "",
       "attiva": true
     },

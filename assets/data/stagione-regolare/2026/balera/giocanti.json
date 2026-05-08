@@ -1,0 +1,103 @@
+[
+  {
+    "id": "dinamitarda",
+    "nome": "Dinamitarda",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "D",
+    "colore_avatar": "#5b4500",
+    "motto": "Fuoco alle polveri!"
+  },
+  {
+    "id": "antide",
+    "nome": "Antide",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "Un lancio alla volta, un molkky alla volta, un dodici alla volta"
+  },
+  {
+    "id": "pravda",
+    "nome": "Pravda",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "Ssssssfumeggiante!"
+  },
+  {
+    "id": "uliano",
+    "nome": "Uliano",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "U",
+    "colore_avatar": "#5b4500",
+    "motto": "Per fare una frittata bisogna rompere delle uova"
+  },
+  {
+    "id": "johnny-the-great",
+    "nome": "Johnny The Great",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "JT",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "ferra",
+    "nome": "Ferra",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "F",
+    "colore_avatar": "#5b4500",
+    "motto": "Ma io cosa ne so"
+  },
+  {
+    "id": "trapstar",
+    "nome": "Trapstar",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "T",
+    "colore_avatar": "#5b4500",
+    "motto": "/"
+  },
+  {
+    "id": "adnan",
+    "nome": "Adnan",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "/"
+  },
+  {
+    "id": "gujar",
+    "nome": "GuJar",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "G",
+    "colore_avatar": "#5b4500",
+    "motto": "/"
+  },
+  {
+    "id": "polita",
+    "nome": "Polita",
+    "conferenza": "Balera",
+    "squadra": "Balera Mölkky",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "fake it 'till you make it"
+  }
+]
+

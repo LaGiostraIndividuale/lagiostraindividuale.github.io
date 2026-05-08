@@ -1,0 +1,111 @@
+[
+  {
+    "id": "ada-001",
+    "giocante_a_id": "anubi",
+    "giocante_b_id": "ka",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-002",
+    "giocante_a_id": "anubi",
+    "giocante_b_id": "kenzu",
+    "set_a": 1,
+    "set_b": 1,
+    "punti_a_set_1": 50,
+    "punti_b_set_1": 47,
+    "punti_a_set_2": 42,
+    "punti_b_set_2": 50,
+    "stato": "giocata"
+  },
+  {
+    "id": "ada-003",
+    "giocante_a_id": "sanjibbone",
+    "giocante_b_id": "sempre",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-004",
+    "giocante_a_id": "sanjibbone",
+    "giocante_b_id": "ka",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-005",
+    "giocante_a_id": "sanjibbone",
+    "giocante_b_id": "kenzu",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-006",
+    "giocante_a_id": "sempre",
+    "giocante_b_id": "ka",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-007",
+    "giocante_a_id": "sempre",
+    "giocante_b_id": "kenzu",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-008",
+    "giocante_a_id": "ka",
+    "giocante_b_id": "kenzu",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "ada-009",
+    "giocante_a_id": "barbara",
+    "giocante_b_id": "kenzu",
+    "set_a": 2,
+    "set_b": 0,
+    "punti_a_set_1": 50,
+    "punti_b_set_1": 0,
+    "punti_a_set_2": 50,
+    "punti_b_set_2": 15,
+    "stato": "giocata"
+  }
+]
+

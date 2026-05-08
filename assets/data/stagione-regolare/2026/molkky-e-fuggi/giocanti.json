@@ -1,0 +1,103 @@
+[
+  {
+    "id": "cola",
+    "nome": "Cola",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": "Campagna contro la droga. Città favorevolissima!"
+  },
+  {
+    "id": "latomo",
+    "nome": "Latomo",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "L",
+    "colore_avatar": "#5b4500",
+    "motto": "Colpire, abbattere, ricostruire!"
+  },
+  {
+    "id": "nardu",
+    "nome": "Nardu",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "N",
+    "colore_avatar": "#5b4500",
+    "motto": "Do the right thing"
+  },
+  {
+    "id": "bang",
+    "nome": "Bang",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "B",
+    "colore_avatar": "#5b4500",
+    "motto": "Va bèn va bèn,...l'han truàd tirènt."
+  },
+  {
+    "id": "maic",
+    "nome": "Maic",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "M",
+    "colore_avatar": "#5b4500",
+    "motto": "Daje!"
+  },
+  {
+    "id": "selvaggiosud",
+    "nome": "SelvaggioSud",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "S",
+    "colore_avatar": "#5b4500",
+    "motto": "Il selvaggio incontra la vittoria nell’eternità"
+  },
+  {
+    "id": "ale-chieppa",
+    "nome": "Ale_Chieppa",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "Vita Violenta"
+  },
+  {
+    "id": "pascale",
+    "nome": "Pascale",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "Tecnica segreta: sperare"
+  },
+  {
+    "id": "tiroalvolo",
+    "nome": "TiroAlVolo",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "T",
+    "colore_avatar": "#5b4500",
+    "motto": "Se cade un birillo... è strategia"
+  },
+  {
+    "id": "vinz",
+    "nome": "Vinz",
+    "conferenza": "Mölkky e Fuggi",
+    "squadra": "Mölkky e Fuggi",
+    "foto_url": "",
+    "iniziale": "V",
+    "colore_avatar": "#5b4500",
+    "motto": "Molkky smo è baldoria!"
+  }
+]
+

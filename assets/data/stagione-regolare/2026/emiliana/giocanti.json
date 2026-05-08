@@ -1,0 +1,103 @@
+[
+  {
+    "id": "eros",
+    "nome": "Eros",
+    "conferenza": "L'Emiliana Mölkky A",
+    "squadra": "L'Emiliana Mölkky",
+    "foto_url": "",
+    "iniziale": "E",
+    "colore_avatar": "#5b4500",
+    "motto": "Se non puoi convincere, sparaglia!"
+  },
+  {
+    "id": "despota",
+    "nome": "DespotA",
+    "conferenza": "L'Emiliana Mölkky B",
+    "squadra": "L'Emiliana Mölkky",
+    "foto_url": "",
+    "iniziale": "D",
+    "colore_avatar": "#5b4500",
+    "motto": "Spakka tutto!"
+  },
+  {
+    "id": "pier",
+    "nome": "Pier",
+    "conferenza": "L'Emiliana Mölkky A",
+    "squadra": "L'Emiliana Mölkky",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "Non ho un motto!"
+  },
+  {
+    "id": "stuglola",
+    "nome": "Stuglola",
+    "conferenza": "L'Emiliana Mölkky A",
+    "squadra": "L'Emiliana Mölkky A",
+    "foto_url": "",
+    "iniziale": "S",
+    "colore_avatar": "#5b4500",
+    "motto": "..."
+  },
+  {
+    "id": "ahi-maria",
+    "nome": "ahi.maria",
+    "conferenza": "L'Emiliana Mölkky A",
+    "squadra": "L'Emiliana Mölkky A",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "Daje"
+  },
+  {
+    "id": "fioreincoma",
+    "nome": "Fioreincoma",
+    "conferenza": "L'Emiliana Mölkky B",
+    "squadra": "L'Emiliana Mölkky B",
+    "foto_url": "",
+    "iniziale": "F",
+    "colore_avatar": "#5b4500",
+    "motto": "Rimani così che lo sei"
+  },
+  {
+    "id": "codroipo",
+    "nome": "Codroipo",
+    "conferenza": "L'Emiliana Mölkky B",
+    "squadra": "L'Emiliana Mölkky B",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": "Avanti sempre fino alla leggerezza dei giorni sereni!"
+  },
+  {
+    "id": "lucia",
+    "nome": "Lucia",
+    "conferenza": "L'Emiliana",
+    "squadra": "L'Emiliana Mölkky",
+    "foto_url": "",
+    "iniziale": "L",
+    "colore_avatar": "#5b4500",
+    "motto": "sono troppo didascalica per i motti"
+  },
+  {
+    "id": "edo",
+    "nome": "Edo",
+    "conferenza": "L'Emiliana",
+    "squadra": "L'Emiliana Mölkky",
+    "foto_url": "",
+    "iniziale": "E",
+    "colore_avatar": "#5b4500",
+    "motto": "Tiro a Campari"
+  },
+  {
+    "id": "kamunia-paranoica",
+    "nome": "Kamunia Paranoica",
+    "conferenza": "L'Emiliana",
+    "squadra": "L'Emiliana Mölkky",
+    "foto_url": "",
+    "iniziale": "K",
+    "colore_avatar": "#5b4500",
+    "motto": "Al pòm piò bël, al và an'boca al porsël"
+  }
+]
+

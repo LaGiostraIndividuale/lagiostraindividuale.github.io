@@ -1,0 +1,103 @@
+[
+  {
+    "id": "njko",
+    "nome": "Njko",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "N",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "malvasia",
+    "nome": "Malvasia",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "M",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "chardonnay",
+    "nome": "Chardonnay",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "barnag",
+    "nome": "Barnag",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "B",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "utopia",
+    "nome": "Utopia",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "U",
+    "colore_avatar": "#5b4500",
+    "motto": "Ogni mês si fâs la lune, ogni dì s'impare une"
+  },
+  {
+    "id": "spagna",
+    "nome": "Spagna",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "S",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "davide",
+    "nome": "Davide",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "D",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "criu",
+    "nome": "CRIU",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": "A mali estremi, bevi e rimedi"
+  },
+  {
+    "id": "marshall",
+    "nome": "Marshall",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "M",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "ciaci",
+    "nome": "Ciaci",
+    "conferenza": "FLuS",
+    "squadra": "FLuS",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  }
+]
+

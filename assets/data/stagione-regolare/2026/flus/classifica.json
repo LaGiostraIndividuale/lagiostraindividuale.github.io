@@ -1,0 +1,83 @@
+[
+  {
+    "posizione": 1,
+    "giocante_id": "njko",
+    "sv": 3,
+    "punti": 221,
+    "partite_giocate": 3,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 2,
+    "giocante_id": "malvasia",
+    "sv": 2,
+    "punti": 179,
+    "partite_giocate": 2,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "chardonnay",
+    "sv": 2,
+    "punti": 135,
+    "partite_giocate": 2,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "barnag",
+    "sv": 2,
+    "punti": 125,
+    "partite_giocate": 2,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "utopia",
+    "sv": 1,
+    "punti": 96,
+    "partite_giocate": 1,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "spagna",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "davide",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "criu",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 9,
+    "giocante_id": "marshall",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 10,
+    "giocante_id": "ciaci",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 9
+  }
+]
+

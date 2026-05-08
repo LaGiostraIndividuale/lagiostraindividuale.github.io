@@ -1,0 +1,148 @@
+[
+  {
+    "id": "bma-001",
+    "giocante_a_id": "brt",
+    "giocante_b_id": "erminio",
+    "set_a": 1,
+    "set_b": 1,
+    "punti_a_set_1": 50,
+    "punti_b_set_1": 7,
+    "punti_a_set_2": 27,
+    "punti_b_set_2": 50,
+    "stato": "giocata"
+  },
+  {
+    "id": "bma-002",
+    "giocante_a_id": "ruco",
+    "giocante_b_id": "jakpotpot",
+    "set_a": 2,
+    "set_b": 0,
+    "punti_a_set_1": 50,
+    "punti_b_set_1": 0,
+    "punti_a_set_2": 50,
+    "punti_b_set_2": 0,
+    "stato": "giocata"
+  },
+  {
+    "id": "bma-003",
+    "giocante_a_id": "ruco",
+    "giocante_b_id": "gabrisky-point",
+    "set_a": 2,
+    "set_b": 0,
+    "punti_a_set_1": 50,
+    "punti_b_set_1": 22,
+    "punti_a_set_2": 50,
+    "punti_b_set_2": 18,
+    "stato": "giocata"
+  },
+  {
+    "id": "bma-004",
+    "giocante_a_id": "ruco",
+    "giocante_b_id": "erminio",
+    "set_a": 1,
+    "set_b": 1,
+    "punti_a_set_1": 16,
+    "punti_b_set_1": 50,
+    "punti_a_set_2": 50,
+    "punti_b_set_2": 30,
+    "stato": "giocata"
+  },
+  {
+    "id": "bma-005",
+    "giocante_a_id": "brt",
+    "giocante_b_id": "ruco",
+    "set_a": 0,
+    "set_b": 2,
+    "punti_a_set_1": 41,
+    "punti_b_set_1": 50,
+    "punti_a_set_2": 44,
+    "punti_b_set_2": 50,
+    "stato": "giocata"
+  },
+  {
+    "id": "bma-006",
+    "giocante_a_id": "jakpotpot",
+    "giocante_b_id": "erminio",
+    "set_a": 1,
+    "set_b": 1,
+    "punti_a_set_1": 50,
+    "punti_b_set_1": 47,
+    "punti_a_set_2": 30,
+    "punti_b_set_2": 50,
+    "stato": "giocata"
+  },
+  {
+    "id": "bma-007",
+    "giocante_a_id": "gabrisky-point",
+    "giocante_b_id": "erminio",
+    "set_a": 0,
+    "set_b": 2,
+    "punti_a_set_1": 45,
+    "punti_b_set_1": 50,
+    "punti_a_set_2": 17,
+    "punti_b_set_2": 50,
+    "stato": "giocata"
+  },
+
+  {
+    "id": "bma-008",
+    "giocante_a_id": "gerri",
+    "giocante_b_id": "ruco",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "bma-009",
+    "giocante_a_id": "gerri",
+    "giocante_b_id": "bender",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "bma-010",
+    "giocante_a_id": "gerri",
+    "giocante_b_id": "solo-franz",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "bma-011",
+    "giocante_a_id": "gerri",
+    "giocante_b_id": "jakpotpot",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  },
+  {
+    "id": "bma-012",
+    "giocante_a_id": "gerri",
+    "giocante_b_id": "nicola-crivis",
+    "set_a": null,
+    "set_b": null,
+    "punti_a_set_1": null,
+    "punti_b_set_1": null,
+    "punti_a_set_2": null,
+    "punti_b_set_2": null,
+    "stato": "da_giocare"
+  }
+]
+

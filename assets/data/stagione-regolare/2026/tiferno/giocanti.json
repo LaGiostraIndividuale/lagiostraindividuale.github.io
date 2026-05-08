@@ -1,0 +1,103 @@
+[
+  {
+    "id": "il-presidente",
+    "nome": "Il Presidente",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "I",
+    "colore_avatar": "#5b4500",
+    "motto": "Articolo 1: Iniziativa!"
+  },
+  {
+    "id": "l-indiano",
+    "nome": "L Indiano",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "L",
+    "colore_avatar": "#5b4500",
+    "motto": "Inquilab Zindabad"
+  },
+  {
+    "id": "britanniko",
+    "nome": "Britanniko",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "B",
+    "colore_avatar": "#5b4500",
+    "motto": "Calma calma, molkiappo"
+  },
+  {
+    "id": "melkka",
+    "nome": "Melkka",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "M",
+    "colore_avatar": "#5b4500",
+    "motto": "E così giochi a molkky? si ma niente di serio"
+  },
+  {
+    "id": "lo-straniero",
+    "nome": "Lo Straniero",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "L",
+    "colore_avatar": "#5b4500",
+    "motto": "Antani-Zeppiluva"
+  },
+  {
+    "id": "pincanaglia",
+    "nome": "Pincanaglia",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "Smazza e mazzia"
+  },
+  {
+    "id": "cip-il-molkkysano",
+    "nome": "Cip il molkkysano",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": "mita Vittu Perkele Molkky"
+  },
+  {
+    "id": "pino-pal",
+    "nome": "Pino Pal",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "Citius Altius Molkkyus"
+  },
+  {
+    "id": "hank-scorpio",
+    "nome": "Hank Scorpio",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "H",
+    "colore_avatar": "#5b4500",
+    "motto": "Non gettate oggetti dai finestrini"
+  },
+  {
+    "id": "pandu",
+    "nome": "Pandu",
+    "conferenza": "Tiferno",
+    "squadra": "Tiferno Mölkky",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": "so il più forte"
+  }
+]
+

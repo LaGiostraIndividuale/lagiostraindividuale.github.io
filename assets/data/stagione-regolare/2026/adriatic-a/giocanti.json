@@ -1,0 +1,93 @@
+[
+  {
+    "id": "barbara",
+    "nome": "Barbara",
+    "conferenza": "Adriatic Mölkky A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "B",
+    "colore_avatar": "#5b4500",
+    "motto": "Fiera, Forte, Barbara!"
+  },
+  {
+    "id": "kenzu",
+    "nome": "Kenzu",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "K",
+    "colore_avatar": "#5b4500",
+    "motto": "Cosa ci la polizia?"
+  },
+  {
+    "id": "anubi",
+    "nome": "Anubi",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "non lo so"
+  },
+  {
+    "id": "dilegno",
+    "nome": "DileGno",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "D",
+    "colore_avatar": "#5b4500",
+    "motto": "Chi la dura la vince"
+  },
+  {
+    "id": "armadilly",
+    "nome": "Armadilly",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "Basta, non gioco più a questo gioco di merda!"
+  },
+  {
+    "id": "jonnino",
+    "nome": "Jonnino",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "J",
+    "colore_avatar": "#5b4500",
+    "motto": "La viennetta è un piatto che va gustato freddo"
+  },
+  {
+    "id": "sanjibbone",
+    "nome": "Sanjibbone",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "S",
+    "colore_avatar": "#5b4500",
+    "motto": "molkkyzza et impara"
+  },
+  {
+    "id": "ka",
+    "nome": "Ka",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "K",
+    "colore_avatar": "#5b4500",
+    "motto": "sto ka!"
+  },
+  {
+    "id": "sempre",
+    "nome": "Sempre",
+    "conferenza": "Adriatic A",
+    "squadra": "Adriatic Mölkky",
+    "foto_url": "",
+    "iniziale": "S",
+    "colore_avatar": "#5b4500",
+    "motto": "Meglio a te che a me"
+  }
+]
+

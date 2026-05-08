@@ -1,0 +1,93 @@
+[
+  {
+    "id": "toth",
+    "nome": "Toth",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "T",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "coach",
+    "nome": "Coach",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "C",
+    "colore_avatar": "#5b4500",
+    "motto": "Picchia bene chi picchia ultimo"
+  },
+  {
+    "id": "danny",
+    "nome": "Danny",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "D",
+    "colore_avatar": "#5b4500",
+    "motto": "Stay 12, stay foolish!"
+  },
+  {
+    "id": "lo-sciamanosss",
+    "nome": "Lo Sciamanosss",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "L",
+    "colore_avatar": "#5b4500",
+    "motto": "E allora...Daje"
+  },
+  {
+    "id": "first-lady-bellomolchi",
+    "nome": "1st Lady Bellomolchi",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "1",
+    "colore_avatar": "#5b4500",
+    "motto": "Stavolta si!"
+  },
+  {
+    "id": "antonello",
+    "nome": "Antonello",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "A",
+    "colore_avatar": "#5b4500",
+    "motto": "Mölkky poiché bello sempre ma specialmente la sera, Si!"
+  },
+  {
+    "id": "lip4z",
+    "nome": "Lip4Z",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi B",
+    "foto_url": "",
+    "iniziale": "L",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "rosbu",
+    "nome": "Rosbu",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "R",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  },
+  {
+    "id": "pipa",
+    "nome": "Pipa",
+    "conferenza": "Bellomolchi B",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "P",
+    "colore_avatar": "#5b4500",
+    "motto": ""
+  }
+]
+

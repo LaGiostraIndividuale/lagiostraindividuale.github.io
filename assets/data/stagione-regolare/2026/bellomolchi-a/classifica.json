@@ -1,0 +1,75 @@
+[
+  {
+    "posizione": 1,
+    "giocante_id": "ruco",
+    "sv": 7,
+    "punti": 366,
+    "partite_giocate": 4,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 2,
+    "giocante_id": "erminio",
+    "sv": 5,
+    "punti": 334,
+    "partite_giocate": 4,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "brt",
+    "sv": 1,
+    "punti": 162,
+    "partite_giocate": 2,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "jakpotpot",
+    "sv": 1,
+    "punti": 80,
+    "partite_giocate": 2,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "gabrisky-point",
+    "sv": 0,
+    "punti": 102,
+    "partite_giocate": 2,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "gerri",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "nicola-crivis",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "bender",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 9,
+    "giocante_id": "solo-franz",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  }
+]
+

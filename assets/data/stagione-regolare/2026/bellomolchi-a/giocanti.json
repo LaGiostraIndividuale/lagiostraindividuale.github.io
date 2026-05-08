@@ -1,0 +1,93 @@
+[
+  {
+    "id": "ruco",
+    "nome": "Ruco",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "R",
+    "colore_avatar": "#5b4500",
+    "motto": "La salma è la virtù dei morti"
+  },
+  {
+    "id": "erminio",
+    "nome": "Erminio",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "E",
+    "colore_avatar": "#5b4500",
+    "motto": "Maracaibo"
+  },
+  {
+    "id": "brt",
+    "nome": "Brt",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "B",
+    "colore_avatar": "#5b4500",
+    "motto": "La barca è la virtù dei porti"
+  },
+  {
+    "id": "jakpotpot",
+    "nome": "Jakpotpot",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "J",
+    "colore_avatar": "#5b4500",
+    "motto": "?"
+  },
+  {
+    "id": "gabrisky-point",
+    "nome": "Gabrisky Point",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "GP",
+    "colore_avatar": "#5b4500",
+    "motto": "Brillo birilli"
+  },
+  {
+    "id": "gerri",
+    "nome": "Gerri",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "G",
+    "colore_avatar": "#5b4500",
+    "motto": "Abbi fede, è regolare"
+  },
+  {
+    "id": "nicola-crivis",
+    "nome": "Nicola Crivis",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "N",
+    "colore_avatar": "#5b4500",
+    "motto": "Dammi qualunque cosa e io te la faccio leggermente peggio"
+  },
+  {
+    "id": "bender",
+    "nome": "Bender",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Dopolavoro Mölkky",
+    "foto_url": "",
+    "iniziale": "B",
+    "colore_avatar": "#5b4500",
+    "motto": "Non è mai abbastanza"
+  },
+  {
+    "id": "solo-franz",
+    "nome": "Solo Franz",
+    "conferenza": "Bellomolchi A",
+    "squadra": "Bellomolchi",
+    "foto_url": "",
+    "iniziale": "S",
+    "colore_avatar": "#5b4500",
+    "motto": "Oddio.. adesso il motto..."
+  }
+]
+
