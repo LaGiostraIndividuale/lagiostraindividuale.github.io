@@ -1,0 +1,13 @@
+conferenza_id,id,giocante_a_id,giocante_b_id,set_a,set_b,punti_a_set_1,punti_b_set_1,punti_a_set_2,punti_b_set_2,stato
+bellomolchi-a,bma-001,brt,erminio,1,1,50,7,27,50,giocata
+bellomolchi-a,bma-002,ruco,jakpotpot,2,0,50,0,50,0,giocata
+bellomolchi-a,bma-003,ruco,gabrisky-point,2,0,50,22,50,18,giocata
+bellomolchi-a,bma-004,ruco,erminio,1,1,16,50,50,30,giocata
+bellomolchi-a,bma-005,brt,ruco,0,2,41,50,44,50,giocata
+bellomolchi-a,bma-006,jakpotpot,erminio,1,1,50,47,30,50,giocata
+bellomolchi-a,bma-007,gabrisky-point,erminio,0,2,45,50,17,50,giocata
+bellomolchi-a,bma-008,gerri,ruco,,,,,,,da_giocare
+bellomolchi-a,bma-009,gerri,bender,,,,,,,da_giocare
+bellomolchi-a,bma-010,gerri,solo-franz,,,,,,,da_giocare
+bellomolchi-a,bma-011,gerri,jakpotpot,,,,,,,da_giocare
+bellomolchi-a,bma-012,gerri,nicola-crivis,,,,,,,da_giocare
