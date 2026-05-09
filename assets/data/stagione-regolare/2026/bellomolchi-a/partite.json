@@ -83,7 +83,6 @@
     "punti_b_set_2": 50,
     "stato": "giocata"
   },
-
   {
     "id": "bma-008",
     "giocante_a_id": "gerri",
@@ -145,4 +144,3 @@
     "stato": "da_giocare"
   }
 ]
-
