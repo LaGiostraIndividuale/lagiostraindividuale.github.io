@@ -21,9 +21,11 @@
     {%- endif -%}
 
     <div class="main-content">
-      <main class="page-content" aria-label="Content">
-        <div class="wrapper sr-wrapper" data-layout="stagione-regolare">
-          {{ content }}
+      <main class="page-content page-content--stagione-regolare" aria-label="Content">
+        <div class="sr-layout">
+          <div class="sr-layout__inner" data-layout="stagione-regolare">
+            {{ content }}
+          </div>
         </div>
       </main>
     </div>

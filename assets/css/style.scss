@@ -127,8 +127,6 @@ body{
     }
 }
 
-
-
 .glowing {
   width:205px;
   display:block;
@@ -517,7 +515,9 @@ body{
         svg {
 
           width: 80%;
-          margin: auto;
+          max-width: 120px;
+          height: auto;
+          margin: 0.35rem auto 0;
 
           fill: var(--color);
       
@@ -596,9 +596,42 @@ table th{
 }
 
 /* Archivio: galleria immagini + lightbox */
+/* Body Minima è flex: senza min-width:0 .main-content può allargarsi col contenuto */
+body > .main-content:has([data-layout="archive"]) {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body > .main-content:has([data-layout="archive"]) .page-content {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 [data-layout="archive"].archive-wrapper {
-  max-width: 1320px;
+  max-width: min(1320px, 100%);
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+[data-layout="archive"] .archive-entry,
+[data-layout="archive"] .archive-entry-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+[data-layout="archive"] .archive-entry .rwd-video {
+  max-width: 100%;
+}
+
+/* Immagini nel markdown (fuori dalla grid generata da JS); no iframe generico (YouTube = .rwd-video) */
+[data-layout="archive"] .archive-entry-content img,
+[data-layout="archive"] .archive-entry-content video {
+  max-width: 100%;
+  height: auto;
 }
 
 [data-layout="archive"] .archive-gallery {
@@ -606,6 +639,17 @@ table th{
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
   margin: 16px 0 28px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Su telefono: 2 colonne fisse (evita 3–4 colonne da 160px che superano il viewport) */
+@media screen and (max-width: 480px) {
+  [data-layout="archive"] .archive-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
 }
 
 [data-layout="archive"] .archive-thumb {

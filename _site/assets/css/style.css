@@ -652,6 +652,53 @@ table td {
 /* Custom overrides on top of Minima.
    Keep this file small and page-scoped. */
 /* STAGIONE REGOLARE (riusabile ogni anno) */
+/* Body (Minima) è flex column: .main-content senza min-width:0 si allarga con i figli */
+body > .main-content:has(.sr-layout) {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.page-content--stagione-regolare {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/*
+ * Template dedicato SR: colonna a larghezza viewport, contenuto centrato e limitato.
+ * overflow-x: clip evita sbordo orizzontale senza interferire con overflow-x: auto dei figli.
+ */
+.sr-layout {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.sr-layout__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 28px);
+  min-width: 0;
+}
+
+.sr-layout__inner .sr-page,
+.sr-layout__inner #stagione-regolare-app {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.sr-layout__inner .sr-card {
+  max-width: 100%;
+  min-width: 0;
+}
+
 .sr-page {
   --sr-bg: var(--background, #000);
   --sr-fg: var(--color, #fff);
@@ -664,14 +711,15 @@ table td {
   --sr-accent-contrast: var(--accent-contrast, #000);
   background: var(--sr-bg);
   color: var(--sr-fg);
-  min-height: 100vh;
-  padding: 48px 16px 80px;
+  min-height: 0;
+  /* margini orizzontali: solo .sr-layout__inner */
+  padding: 48px 0 80px;
 }
 
-.wrapper.sr-wrapper {
-  max-width: 1320px;
+/* Contenitore pagina (layout) */
+[data-layout=stagione-regolare] {
+  max-width: 100%;
   width: 100%;
-  padding-inline: 24px;
 }
 
 .sr-page * {
@@ -717,6 +765,19 @@ table td {
   display: grid;
   gap: 24px;
   width: 100%;
+  min-width: 0;
+}
+
+/*
+ * Colonne grid con min-width: auto si allargano col carousel: forziamo larghezza = contenitore
+ * (equivalente al “440px” provato in DevTools, ma responsivo).
+ */
+#sr-conference-selector,
+#sr-conference-detail {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .sr-card {
@@ -724,6 +785,23 @@ table td {
   border: 1px solid var(--sr-border);
   border-radius: 24px;
   padding: 22px;
+  box-sizing: border-box;
+}
+
+/* Card che contiene il carousel conferenze: deve “tagliare” dentro il bordo */
+.sr-card-carousel {
+  overflow: hidden;
+  padding-inline: 0;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.sr-card-carousel .sr-section-title {
+  padding-inline: 22px;
+}
+
+.sr-card-carousel .sr-carousel {
+  padding-inline: 22px;
 }
 
 .sr-section-title {
@@ -752,11 +830,38 @@ table td {
   gap: 18px;
   align-items: stretch;
   grid-auto-rows: 320px;
+  max-width: 100%;
 }
 
-/* Reset only what breaks the cards (global button margins) */
-.sr-page button {
+/* Viewport del carousel (clipping + fade) */
+.sr-carousel {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Solo componenti “card”: NON includere .sr-row (classifica) o si rompe header + padding righe */
+.sr-page .sr-conference-card,
+.sr-page .sr-podio-player,
+.sr-page .sr-back-button {
   margin-top: 0 !important;
+  margin-left: 0 !important;
+  border-radius: 22px !important;
+  background: var(--sr-surface-2) !important;
+  color: var(--sr-fg) !important;
+  border-color: var(--sr-border) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  padding: 0 !important;
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sr-page .sr-podio-player.is-winner {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--sr-accent) 18%, var(--sr-bg) 82%), var(--sr-bg)) !important;
+  border-color: var(--sr-accent) !important;
 }
 
 .sr-page .sr-conference-card {
@@ -815,14 +920,12 @@ table td {
 
 .sr-conference-card h2 {
   margin: 0;
-  font-size: 30px;
-  line-height: 0.95;
+  font-size: 28px;
+  line-height: 1;
   text-transform: uppercase;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sr-conference-card p {
@@ -915,10 +1018,18 @@ table td {
   color: var(--sr-muted-2);
 }
 
+.sr-empty {
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed var(--sr-border);
+  border-radius: 18px;
+  color: var(--sr-muted-2);
+}
+
 /* PODIO */
 .sr-podio {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
   align-items: end;
 }
@@ -929,10 +1040,31 @@ table td {
   background: var(--sr-surface-2);
   color: var(--sr-fg);
   border-radius: 22px;
-  padding: 22px 14px;
+  padding: 22px 14px !important;
   cursor: pointer;
   text-align: center;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 12px;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  opacity: 1;
+  visibility: visible;
+  width: 100%;
+  min-width: 0;
+  /* Defensive: alcuni reset WebKit possono rendere il testo “trasparente” */
+  -webkit-text-fill-color: currentColor;
+  filter: none;
+}
+
+/* Ultima difesa contro override tema su mobile */
+.sr-podio-player *,
+.sr-podio-player::before,
+.sr-podio-player::after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
 }
 
 .sr-podio-player:hover {
@@ -949,7 +1081,7 @@ table td {
 .sr-medal {
   width: 34px;
   height: 34px;
-  margin: 0 auto 12px;
+  margin: 0;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -970,7 +1102,7 @@ table td {
 }
 
 .sr-podio-player h3 {
-  margin: 14px 0;
+  margin: 0;
   font-size: 22px;
   line-height: 1.05;
 }
@@ -980,6 +1112,7 @@ table td {
   gap: 6px;
   color: var(--sr-muted);
   font-size: 14px;
+  width: 100%;
 }
 
 .sr-podio-stats strong {
@@ -1035,8 +1168,8 @@ table td {
 
 .sr-row {
   display: grid;
-  grid-template-columns: 46px 1fr 70px 90px 70px;
-  gap: 12px;
+  grid-template-columns: 44px minmax(0, 1fr) 58px 76px 58px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -1048,6 +1181,17 @@ table td {
   padding: 0 12px 10px;
 }
 
+/* Mobile stretto: tabella scrollabile dentro la card (comportamento prevedibile) */
+@media (max-width: 640px) {
+  .sr-page .sr-card:has(.sr-table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  .sr-page .sr-table {
+    min-width: 500px;
+  }
+}
 .sr-player-row {
   appearance: none;
   border: 0;
@@ -1339,8 +1483,47 @@ table td {
 }
 
 @media (max-width: 900px) {
+  /* Niente mask: su mobile sembra “taglio” a sinistra/destra e rompe la percezione dello scroll */
+  .sr-carousel {
+    overflow: visible;
+    border-radius: 0;
+  }
   .sr-conference-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    /* padding + scroll-padding allineati: prima/ultima card non attaccate al bordo, scroll fino in fondo */
+    padding: 6px 12px 14px;
+    scroll-padding-inline: 12px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  /* Spazio dopo l’ultima card così scrollMax non “manca” l’ultimo snap */
+  .sr-conference-grid::after {
+    content: "";
+    flex: 0 0 12px;
+    height: 1px;
+  }
+  .sr-conference-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .sr-page .sr-conference-card {
+    flex: 0 0 85%;
+    min-width: 0;
+    max-width: 300px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .sr-page .sr-conference-card:hover {
+    transform: none;
   }
 }
 @media (min-width: 1280px) {
@@ -1357,6 +1540,12 @@ table td {
     padding: 16px;
     border-radius: 20px;
   }
+  .sr-card-carousel .sr-section-title {
+    padding-inline: 16px;
+  }
+  .sr-card-carousel .sr-carousel {
+    padding-inline: 16px;
+  }
   .sr-section-title {
     display: block;
   }
@@ -1365,10 +1554,7 @@ table td {
     margin-top: 4px;
   }
   .sr-conference-grid {
-    /* Mobile: evita “mattoni” impilati, usa 2 colonne quando possibile */
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    grid-auto-rows: 230px;
+    scroll-padding-inline: 12px;
   }
   .sr-page .sr-conference-card {
     padding: 16px !important;
@@ -1382,8 +1568,6 @@ table td {
   }
   .sr-conference-card h2 {
     font-size: 22px;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
   }
   .sr-conference-card p {
     font-size: 14px;
@@ -1394,31 +1578,35 @@ table td {
     padding: 6px 9px;
     font-size: 12px;
   }
-}
-@media (max-width: 760px) and (max-width: 380px) {
-  .sr-conference-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 240px;
-  }
-}
-@media (max-width: 760px) {
   .sr-selected-heading {
     display: grid;
     gap: 14px;
   }
   .sr-podio {
-    grid-template-columns: 1fr;
+    /* Mobile: niente “effetto podio” → contenuti sempre visibili */
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
   }
   .sr-podio-player.is-winner {
     order: -1;
   }
-  .sr-row {
-    grid-template-columns: 32px 1fr 42px 58px 48px;
-    gap: 8px;
+  .sr-podio-player.is-winner {
+    padding-top: 18px;
   }
-  .sr-row-head {
-    font-size: 11px;
-    padding-inline: 6px;
+  .sr-podio-player {
+    padding: 18px 14px;
+    gap: 10px;
+  }
+  .sr-avatar-medium,
+  .sr-avatar-large {
+    width: 86px;
+    height: 86px;
+    font-size: 34px;
+  }
+  .sr-podio-player h3 {
+    font-size: 20px;
   }
   .sr-player-row {
     padding: 10px 6px;
@@ -1890,7 +2078,9 @@ body input {
   }
   .footer-col-wrapper .sponsor svg {
     width: 80%;
-    margin: auto;
+    max-width: 120px;
+    height: auto;
+    margin: 0.35rem auto 0;
     fill: var(--color);
   }
   .footer-col-wrapper .footer-bottom {
@@ -1956,9 +2146,42 @@ table th {
 }
 
 /* Archivio: galleria immagini + lightbox */
+/* Body Minima è flex: senza min-width:0 .main-content può allargarsi col contenuto */
+body > .main-content:has([data-layout=archive]) {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body > .main-content:has([data-layout=archive]) .page-content {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 [data-layout=archive].archive-wrapper {
-  max-width: 1320px;
+  max-width: min(1320px, 100%);
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+[data-layout=archive] .archive-entry,
+[data-layout=archive] .archive-entry-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+[data-layout=archive] .archive-entry .rwd-video {
+  max-width: 100%;
+}
+
+/* Immagini nel markdown (fuori dalla grid generata da JS); no iframe generico (YouTube = .rwd-video) */
+[data-layout=archive] .archive-entry-content img,
+[data-layout=archive] .archive-entry-content video {
+  max-width: 100%;
+  height: auto;
 }
 
 [data-layout=archive] .archive-gallery {
@@ -1966,8 +2189,18 @@ table th {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
   margin: 16px 0 28px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
+/* Su telefono: 2 colonne fisse (evita 3–4 colonne da 160px che superano il viewport) */
+@media screen and (max-width: 480px) {
+  [data-layout=archive] .archive-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
 [data-layout=archive] .archive-thumb {
   appearance: none;
   border: 1px solid rgba(255, 255, 255, 0.14);

@@ -94,33 +94,35 @@ async function renderConferenceCards(conferenze, base) {
   );
 
   return `
-    <section class="sr-card">
+    <section class="sr-card sr-card-carousel">
       <div class="sr-section-title">
         <span>Seleziona conferenza</span>
         <strong>Campionato</strong>
       </div>
 
-      <div class="sr-conference-grid">
-        ${cardsData.map(({ conferenza, stats, available }) => `
-          <button class="sr-conference-card" data-conference="${conferenza.id}" ${available ? "" : "disabled"}>
-            ${conferenceLogo(conferenza)}
+      <div class="sr-carousel" aria-label="Conferenze">
+        <div class="sr-conference-grid">
+          ${cardsData.map(({ conferenza, stats, available }) => `
+            <button class="sr-conference-card" data-conference="${conferenza.id}" ${available ? "" : "disabled"}>
+              ${conferenceLogo(conferenza)}
 
-            <div class="sr-conference-card-body">
-              <h2>${conferenza.nome_breve}</h2>
-              <p>${conferenza.area}</p>
+              <div class="sr-conference-card-body">
+                <h2>${conferenza.nome_breve}</h2>
+                <p>${conferenza.area}</p>
 
-              <div class="sr-conference-stats">
-                <span>${stats.giocanti} giocanti</span>
-                <span>${stats.giocate}/${stats.totali} partite</span>
+                <div class="sr-conference-stats">
+                  <span>${stats.giocanti} giocanti</span>
+                  <span>${stats.giocate}/${stats.totali} partite</span>
+                </div>
+
+                <div class="sr-conference-leader">
+                  <small>Leader</small>
+                  <strong>${stats.leader ? stats.leader.nome : "In attesa dati"}</strong>
+                </div>
               </div>
-
-              <div class="sr-conference-leader">
-                <small>Leader</small>
-                <strong>${stats.leader ? stats.leader.nome : "In attesa dati"}</strong>
-              </div>
-            </div>
-          </button>
-        `).join("")}
+            </button>
+          `).join("")}
+        </div>
       </div>
     </section>
   `;
@@ -128,7 +130,9 @@ async function renderConferenceCards(conferenze, base) {
 
 function renderPodio(conferenza, classifica, giocantiMap) {
   const top3 = classifica.slice(0, 3);
-  const ordinePodio = [top3[1], top3[0], top3[2]].filter(Boolean);
+  const ordinePodio = [top3[1], top3[0], top3[2]]
+    .filter(Boolean)
+    .filter(item => giocantiMap[item.giocante_id]);
 
   return `
     <section class="sr-card">
@@ -138,23 +142,23 @@ function renderPodio(conferenza, classifica, giocantiMap) {
       </div>
 
       <div class="sr-podio">
-        ${ordinePodio.map(item => {
-          const giocante = giocantiMap[item.giocante_id];
-          const isWinner = item.posizione === 1;
+        ${ordinePodio.length ? ordinePodio.map(item => {
+            const giocante = giocantiMap[item.giocante_id];
+            const isWinner = item.posizione === 1;
 
-          return `
-            <button class="sr-podio-player ${isWinner ? "is-winner" : ""}" data-player="${giocante.id}">
-              <div class="sr-medal sr-medal-${item.posizione}">${item.posizione}</div>
-              ${avatar(giocante, isWinner ? "large" : "medium")}
-              <h3>${giocante.nome}</h3>
-              <div class="sr-podio-stats">
-                <span><strong>${item.sv}</strong> SV</span>
-                <span><strong>${item.punti}</strong> punti</span>
-                <span><strong>${item.partite_giocate}/${item.partite_totali}</strong> PG</span>
-              </div>
-            </button>
-          `;
-        }).join("")}
+            return `
+              <button class="sr-podio-player ${isWinner ? "is-winner" : ""}" data-player="${giocante.id}">
+                <div class="sr-medal sr-medal-${item.posizione}">${item.posizione}</div>
+                ${avatar(giocante, isWinner ? "large" : "medium")}
+                <h3>${giocante.nome}</h3>
+                <div class="sr-podio-stats">
+                  <span><strong>${item.sv}</strong> SV</span>
+                  <span><strong>${item.punti}</strong> punti</span>
+                  <span><strong>${item.partite_giocate}/${item.partite_totali}</strong> PG</span>
+                </div>
+              </button>
+            `;
+          }).join("") : `<p class="sr-empty">Podio non disponibile.</p>`}
       </div>
     </section>
   `;
