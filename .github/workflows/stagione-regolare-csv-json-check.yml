@@ -1,0 +1,28 @@
+# Fallisce se i JSON serviti dal sito non coincidono con la conversione dai CSV
+# (stesso algoritmo di import_csv_to_json.py). Evita drift Sheets ↔ sito dopo merge o push parziali.
+name: Stagione regolare — CSV vs JSON
+
+on:
+  push:
+    paths:
+      - "data/csv/**"
+      - "assets/data/stagione-regolare/**"
+      - "scripts/sheets_sync/**"
+  pull_request:
+    paths:
+      - "data/csv/**"
+      - "assets/data/stagione-regolare/**"
+      - "scripts/sheets_sync/**"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Confronta CSV con JSON (anno 2026)
+        run: python3 scripts/sheets_sync/check_csv_json_sync.py 2026

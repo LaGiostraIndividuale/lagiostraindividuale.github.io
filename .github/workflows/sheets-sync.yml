@@ -52,6 +52,13 @@ jobs:
           YEAR="${INPUT_YEAR:-2026}"
           ruby scripts/validate_stagione_regolare.rb "$YEAR"
 
+      - name: Verifica allineamento CSV → JSON (stesso algoritmo dell’import)
+        env:
+          INPUT_YEAR: ${{ github.event.inputs.year }}
+        run: |
+          YEAR="${INPUT_YEAR:-2026}"
+          python3 scripts/sheets_sync/check_csv_json_sync.py "$YEAR"
+
       # Se nel frattempo qualcuno ha pushato su main (o altro run in parallelo), senza rebase il push del commit JSON fallisce (non-fast-forward).
       - name: Rebase su branch remoto (auto-stash modifiche JSON)
         run: |
