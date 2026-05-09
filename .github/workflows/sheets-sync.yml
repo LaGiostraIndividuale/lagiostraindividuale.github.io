@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Storia completa: evita rebase/push incoerenti con clone shallow (fetch-depth: 1 di default).
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -59,11 +62,19 @@ jobs:
       - name: Git diff (debug)
         run: git status && git diff --stat
 
-      - name: Commit generated JSON
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(data): sync JSON from Sheets CSV"
-          file_pattern: "assets/data/stagione-regolare/**"
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+      # git-auto-commit-action non fa pull prima del push: se main si muove (force-push,
+      # altro commit, due run in parallelo) il push fallisce (non-fast-forward).
+      - name: Commit and push generated JSON
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "assets/data/stagione-regolare/"
+          if git diff --cached --quiet; then
+            echo "No JSON changes; skipping commit."
+            exit 0
+          fi
+          git commit -m "chore(data): sync JSON from Sheets CSV"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "${GITHUB_REF_NAME}"
 
