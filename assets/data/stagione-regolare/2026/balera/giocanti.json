@@ -2,7 +2,7 @@
   {
     "id": "dinamitarda",
     "nome": "Dinamitarda",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "D",
@@ -12,7 +12,7 @@
   {
     "id": "antide",
     "nome": "Antide",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "A",
@@ -22,7 +22,7 @@
   {
     "id": "pravda",
     "nome": "Pravda",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "P",
@@ -32,7 +32,7 @@
   {
     "id": "uliano",
     "nome": "Uliano",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "U",
@@ -42,7 +42,7 @@
   {
     "id": "johnny-the-great",
     "nome": "Johnny The Great",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "JT",
@@ -52,7 +52,7 @@
   {
     "id": "ferra",
     "nome": "Ferra",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "F",
@@ -62,7 +62,7 @@
   {
     "id": "trapstar",
     "nome": "Trapstar",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "T",
@@ -72,7 +72,7 @@
   {
     "id": "adnan",
     "nome": "Adnan",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "A",
@@ -82,7 +82,7 @@
   {
     "id": "gujar",
     "nome": "GuJar",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "G",
@@ -92,7 +92,7 @@
   {
     "id": "polita",
     "nome": "Polita",
-    "conferenza": "Balera",
+    "conferenza": "Balera Mölkky",
     "squadra": "Balera Mölkky",
     "foto_url": "",
     "iniziale": "P",
@@ -100,4 +100,3 @@
     "motto": "fake it 'till you make it"
   }
 ]
-

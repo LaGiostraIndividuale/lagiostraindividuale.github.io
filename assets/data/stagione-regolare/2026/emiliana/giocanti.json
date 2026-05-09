@@ -2,7 +2,7 @@
   {
     "id": "eros",
     "nome": "Eros",
-    "conferenza": "L'Emiliana Mölkky A",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky",
     "foto_url": "",
     "iniziale": "E",
@@ -12,7 +12,7 @@
   {
     "id": "despota",
     "nome": "DespotA",
-    "conferenza": "L'Emiliana Mölkky B",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky",
     "foto_url": "",
     "iniziale": "D",
@@ -22,7 +22,7 @@
   {
     "id": "pier",
     "nome": "Pier",
-    "conferenza": "L'Emiliana Mölkky A",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky",
     "foto_url": "",
     "iniziale": "P",
@@ -32,7 +32,7 @@
   {
     "id": "stuglola",
     "nome": "Stuglola",
-    "conferenza": "L'Emiliana Mölkky A",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky A",
     "foto_url": "",
     "iniziale": "S",
@@ -42,7 +42,7 @@
   {
     "id": "ahi-maria",
     "nome": "ahi.maria",
-    "conferenza": "L'Emiliana Mölkky A",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky A",
     "foto_url": "",
     "iniziale": "A",
@@ -52,7 +52,7 @@
   {
     "id": "fioreincoma",
     "nome": "Fioreincoma",
-    "conferenza": "L'Emiliana Mölkky B",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky B",
     "foto_url": "",
     "iniziale": "F",
@@ -62,7 +62,7 @@
   {
     "id": "codroipo",
     "nome": "Codroipo",
-    "conferenza": "L'Emiliana Mölkky B",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky B",
     "foto_url": "",
     "iniziale": "C",
@@ -72,7 +72,7 @@
   {
     "id": "lucia",
     "nome": "Lucia",
-    "conferenza": "L'Emiliana",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky",
     "foto_url": "",
     "iniziale": "L",
@@ -82,7 +82,7 @@
   {
     "id": "edo",
     "nome": "Edo",
-    "conferenza": "L'Emiliana",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky",
     "foto_url": "",
     "iniziale": "E",
@@ -92,7 +92,7 @@
   {
     "id": "kamunia-paranoica",
     "nome": "Kamunia Paranoica",
-    "conferenza": "L'Emiliana",
+    "conferenza": "Emiliana Mölkky",
     "squadra": "L'Emiliana Mölkky",
     "foto_url": "",
     "iniziale": "K",
@@ -100,4 +100,3 @@
     "motto": "Al pòm piò bël, al và an'boca al porsël"
   }
 ]
-

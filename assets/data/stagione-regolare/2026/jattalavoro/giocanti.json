@@ -42,7 +42,7 @@
   {
     "id": "pacmark",
     "nome": "pacmark",
-    "conferenza": "Jättälavoro",
+    "conferenza": "Jättälavoro Mölkky",
     "squadra": "Pappamölkky",
     "foto_url": "",
     "iniziale": "P",
@@ -62,7 +62,7 @@
   {
     "id": "lordus",
     "nome": "Lordus",
-    "conferenza": "Jättälavoro",
+    "conferenza": "Jättälavoro Mölkky",
     "squadra": "Dopolavoro Mölkky",
     "foto_url": "",
     "iniziale": "L",
@@ -92,7 +92,7 @@
   {
     "id": "giuliezza",
     "nome": "Giuliezza",
-    "conferenza": "Jättälavoro",
+    "conferenza": "Jättälavoro Mölkky",
     "squadra": "Dopolavoro Mölkky",
     "foto_url": "",
     "iniziale": "G",
@@ -100,4 +100,3 @@
     "motto": "È arrivato il Papa nero!"
   }
 ]
-

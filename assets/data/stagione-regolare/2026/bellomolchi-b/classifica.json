@@ -1,12 +1,74 @@
 [
-  { "posizione": 1, "giocante_id": "toth", "sv": 3, "punti": 184, "partite_giocate": 2, "partite_totali": 8 },
-  { "posizione": 2, "giocante_id": "coach", "sv": 2, "punti": 260, "partite_giocate": 3, "partite_totali": 8 },
-  { "posizione": 3, "giocante_id": "danny", "sv": 2, "punti": 100, "partite_giocate": 2, "partite_totali": 8 },
-  { "posizione": 4, "giocante_id": "lo-sciamanosss", "sv": 1, "punti": 74, "partite_giocate": 1, "partite_totali": 8 },
-  { "posizione": 5, "giocante_id": "first-lady-bellomolchi", "sv": 0, "punti": 0, "partite_giocate": 0, "partite_totali": 8 },
-  { "posizione": 6, "giocante_id": "antonello", "sv": 0, "punti": 0, "partite_giocate": 0, "partite_totali": 8 },
-  { "posizione": 7, "giocante_id": "lip4z", "sv": 0, "punti": 0, "partite_giocate": 0, "partite_totali": 8 },
-  { "posizione": 8, "giocante_id": "rosbu", "sv": 0, "punti": 0, "partite_giocate": 0, "partite_totali": 8 },
-  { "posizione": 9, "giocante_id": "pipa", "sv": 0, "punti": 0, "partite_giocate": 0, "partite_totali": 8 }
+  {
+    "posizione": 1,
+    "giocante_id": "toth",
+    "sv": 3,
+    "punti": 184,
+    "partite_giocate": 2,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 2,
+    "giocante_id": "coach",
+    "sv": 2,
+    "punti": 260,
+    "partite_giocate": 3,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "danny",
+    "sv": 2,
+    "punti": 100,
+    "partite_giocate": 2,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "lo-sciamanosss",
+    "sv": 1,
+    "punti": 74,
+    "partite_giocate": 1,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "first-lady-bellomolchi",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "antonello",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "lip4z",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "rosbu",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 9,
+    "giocante_id": "pipa",
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
+    "partite_totali": 8
+  }
 ]
-
