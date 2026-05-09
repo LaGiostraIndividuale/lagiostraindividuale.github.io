@@ -1861,12 +1861,40 @@ body input {
     margin-right: 0;
   }
 }
+.main-header {
+  /* layout: page + page.image — contenitore alto fisso, immagine cover + parallasse via --hero-parallax-y */
+}
 .main-header .bg {
   top: 0;
   left: 0;
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
+}
+.main-header.main-header--page-hero {
+  display: flex;
+  flex-direction: column;
+}
+.main-header .page-hero-parallax {
+  --hero-parallax-y: 0px;
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 42vh, 480px);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.main-header .page-hero-parallax__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 118%;
+  min-width: 100%;
+  min-height: 118%;
+  object-fit: cover;
+  object-position: center;
+  transform: translate3d(-50%, calc(-50% + var(--hero-parallax-y, 0px)), 0);
+  will-change: transform;
 }
 .main-header .bg-home {
   display: block;

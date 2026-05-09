@@ -6,14 +6,18 @@
   <body>
 
     {%- if page.image -%}
-      <header class="main-header">
+      <header class="main-header{% if page.layout == 'page' %} main-header--page-hero{% endif %}">
         {%- include header.html -%}
            {%- if page.title == "La Giostra Individuale" -%}
             <div class="header-container">
               <img class="bg-home" src="/assets/img/{{page.image}}" alt="{{page.title}}">
             </div>
+            {%- elsif page.layout == "page" -%}
+            <div class="page-hero-parallax js-page-hero-parallax">
+              <img class="bg page-hero-parallax__img" src="/assets/img/{{ page.image }}" alt="{{ page.title | escape }}" decoding="async" />
+            </div>
             {% else %}
-            <img class="bg" src="/assets/img/{{ page.image }}" alt="{{page.title}}" />
+            <img class="bg" src="/assets/img/{{ page.image }}" alt="{{ page.title | escape }}" />
           {% endif %}        
       </header>
     {%- else -%}
@@ -33,6 +37,10 @@
     {%- endif -%}
 
     {%- include footer.html -%}
+
+    {%- if page.image and page.layout == "page" -%}
+    <script src="{{ '/assets/js/page-hero-parallax.js' | relative_url }}" defer></script>
+    {%- endif -%}
     
     </body>
 
