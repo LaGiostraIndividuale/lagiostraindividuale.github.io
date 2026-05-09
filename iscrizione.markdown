@@ -8,24 +8,21 @@ published: true
 ---
 
 
-{%- include giostrra-app.markdown -%}
-
-
-<!--### Le iscrizioni per la Stagione 2026 della Giostra Individuale sono terminate.
+### Le iscrizioni per la Stagione 2026 della Giostra Individuale sono terminate.
 
 
 **Grazie di cuore a tuttз gli iscrittз, ora siete ufficialmente dellз Giocanti**!
 
-Se non l'hai già fatto scarica l'**App de La Giostra**, disponibile per [iOS](https://apps.apple.com/it/app/la-giostra-individuale/id6741768625) e [Android](https://play.google.com/store/apps/details?id=it.giostraindividuale.app&pcampaignid=web_share), su cui potrai seguire l'intero sviluppo dell'edizione 2025 della **Stagione Regolare**. 
+Se non l'hai già fatto scarica l'**App de La Giostra**, disponibile per [iOS](https://apps.apple.com/it/app/la-giostra-individuale/id6741768625) e [Android](https://play.google.com/store/apps/details?id=it.giostraindividuale.app&pcampaignid=web_share), su cui potrai seguire l'intero sviluppo dell'edizione corrente della **Stagione Regolare**. 
 
 Per ora non possiamo fare altro che augurare a tuttз lз partecipanti *Buona Fortuna!*
 
 Hai bisogno di altre info? [ Non esitare a contattarci](/contatti "Contatti").
 
 🤞
-{:.succes-emoji}-->
+{:.succes-emoji}
 
-### Hai tempo fino al 20 Febbraio per iscriverti alle Quarta edizione de La Giostra Individuale.
+<!--### Hai tempo fino al 20 Febbraio per iscriverti alle Quarta edizione de La Giostra Individuale.
 
 Quest'anno le iscrizioni avverrano esclusivamente attraverso il **Referente di Conferenza** che si farà carico di raccogliere i dati e la quota di partecipazione che è di **20,00€** per ogni giocante.
 
@@ -47,4 +44,4 @@ Di seguito trovi l'elenco delle Conferenze che hanno già confermato la partecip
 
 **Mölkky e Fuggi** Zona di gioco: tra Bari e la Basilicata, referente: [Dario](https://www.instagram.com/molkkyefuggi/)
 
-**FLuS** Zona di gioco: Spilimbergo/Pinzano, referente: [Lucio](https://www.instagram.com/lucio.piva/)
+**FLuS** Zona di gioco: Spilimbergo/Pinzano, referente: [Lucio](https://www.instagram.com/lucio.piva/)-->
