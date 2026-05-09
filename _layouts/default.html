@@ -5,21 +5,41 @@
 
   <body>
 
-    {%- if page.image -%}
-      <header class="main-header{% if page.layout == 'page' %} main-header--page-hero{% endif %}">
+    {%- assign hero_img = page.image | default: "" | strip -%}
+    {%- assign is_post = false -%}
+    {%- assign src_path = page.path | default: "" -%}
+    {%- if src_path contains "_posts/" -%}
+      {%- assign is_post = true -%}
+    {%- endif -%}
+    {%- comment -%}
+      Hero parallax + titolo overlay: tutte le pagine (non post) con immagine hero,
+      tranne la home “La Giostra Individuale” (blocco bg-home). Non dipendere solo da
+      page.layout == "page" così il titolo non sparisce se il layout non è valorizzato come previsto.
+    {%- endcomment -%}
+    {%- assign use_page_hero_parallax = false -%}
+    {%- if hero_img != "" and is_post == false and page.title != "La Giostra Individuale" -%}
+      {%- assign use_page_hero_parallax = true -%}
+    {%- endif -%}
+
+    {%- if hero_img != "" -%}
+      {%- comment -%} <div> e non <header>: dentro c’è già <header class="site-header"> (header annidato in header è HTML invalido e in alcuni browser rompe il layout) {%- endcomment -%}
+      <div class="main-header{% if use_page_hero_parallax %} main-header--page-hero{% endif %}" role="banner">
         {%- include header.html -%}
            {%- if page.title == "La Giostra Individuale" -%}
             <div class="header-container">
-              <img class="bg-home" src="/assets/img/{{page.image}}" alt="{{page.title}}">
+              <img class="bg-home" src="/assets/img/{{ hero_img }}" alt="{{ page.title }}">
             </div>
-            {%- elsif page.layout == "page" -%}
+            {%- elsif use_page_hero_parallax -%}
             <div class="page-hero-parallax js-page-hero-parallax">
-              <img class="bg page-hero-parallax__img" src="/assets/img/{{ page.image }}" alt="{{ page.title | escape }}" decoding="async" />
+              <img class="bg page-hero-parallax__img" src="/assets/img/{{ hero_img }}" alt="" decoding="async" />
+              <div class="page-hero-parallax__overlay">
+                <h1 class="page-hero-parallax__title" id="page-hero-title">{{ page.title | escape }}</h1>
+              </div>
             </div>
             {% else %}
-            <img class="bg" src="/assets/img/{{ page.image }}" alt="{{ page.title | escape }}" />
+            <img class="bg" src="/assets/img/{{ hero_img }}" alt="{{ page.title | escape }}" />
           {% endif %}        
-      </header>
+      </div>
     {%- else -%}
       {%- include header.html -%}
     {%- endif -%}
@@ -38,7 +58,7 @@
 
     {%- include footer.html -%}
 
-    {%- if page.image and page.layout == "page" -%}
+    {%- if use_page_hero_parallax -%}
     <script src="{{ '/assets/js/page-hero-parallax.js' | relative_url }}" defer></script>
     {%- endif -%}
     

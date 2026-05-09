@@ -20,6 +20,9 @@
     const maxPx = Math.min(56, h * 0.14);
     const y = (p - 0.5) * 2 * maxPx;
     root.style.setProperty("--hero-parallax-y", `${y.toFixed(2)}px`);
+    /* Titolo con movimento più contenuto → leggera profondità rispetto all’immagine */
+    const yTitle = (p - 0.5) * 2 * maxPx * 0.42;
+    root.style.setProperty("--hero-title-parallax-y", `${yTitle.toFixed(2)}px`);
   }
 
   function onScrollOrResize() {
