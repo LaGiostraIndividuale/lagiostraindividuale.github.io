@@ -6,10 +6,9 @@ published: true
 ---
 
 <section class="sr-page" data-season="2026">
-  <header class="sr-hero">
-    <p class="sr-kicker">La Giostra Individuale</p>
-    <h1>Stagione Regolare 2026</h1>
-    <p>Classifiche, podi e dettagli giocanti delle conferenze.</p>
+      <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <p>Classifiche, podi e dettagli giocanti delle conferenze.</p>
   </header>
 
   <div id="stagione-regolare-app"></div>
