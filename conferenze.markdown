@@ -4,7 +4,7 @@ title: Conferenze
 permalink: /conferenze/
 image: conferenze.jpg
 description: Elenco delle Conferenze, e statistiche della Stagione Regolare.
-published: true
+published: false
 ---
 
 <!--A breve sarà possibile iscr4iversi alla **Stagione Regolare 2025**

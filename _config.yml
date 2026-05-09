@@ -36,11 +36,10 @@ plugins:
 header_pages:
     - regolamento.markdown
     - iscrizione.markdown
+    - stagione-regolare-2026.md
     - conferenze.markdown
     - documenti-di-gara.markdown
     - archivio.markdown
-    - contatti.markdown
-
 
 minima:
   social_links:

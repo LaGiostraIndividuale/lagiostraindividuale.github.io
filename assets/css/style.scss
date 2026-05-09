@@ -537,88 +537,105 @@ body{
 // FOOTER
 .site-footer {
   border-top: 1px solid var(--color);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
-.footer-col-wrapper{
+.footer-col-wrapper {
   padding: 0;
   color: inherit;
   font-size: 75%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  gap: 2rem;
 }
 
-.footer-col{
-  margin-top: 1rem;
-  width: 40%;
+.footer-col {
+  margin: 0;
   padding: 0;
 }
 
-.sponsor{
-  flex-grow: 4; 
-  width: 40%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  svg {
-    width: 150px;
-    fill: var(--color);
-    margin-left:3rem;
+.footer-col--info {
+  text-align: left;
+
+  p {
+    margin: 0;
   }
 }
 
-.footer-bottom{
-  width: 20%;
-  text-align: right;
+.footer-col--nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.footer-link {
+  text-decoration: underline;
+}
+
+.sponsor {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  .sponsor-credits {
+    margin: 0;
+  }
+
+  .sponsor-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  svg {
+    width: 130px;
+    fill: var(--color);
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
 }
 
 
 @media only screen and (max-width: $screen-sm) {
 
-
-  .footer-col-wrapper{
+  .footer-col-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
     padding: 0.8rem;
-    color: inherit;
-    font-size: 75%;
-    align-items: flex-start;
-   
+    text-align: center;
+  }
 
-      .footer-col{
-        align-self: center;
-       
-        width: 60%;
-        display: block;
-        font-size: 90%;
-        text-align: left;
-      }
-      
-      .sponsor{
-        align-self: center;
-        width: 30%;
-        display: block;
-     
-        
-        svg {
+  .footer-col--info {
+    text-align: center;
+    font-size: 90%;
+  }
 
-          width: 80%;
-          max-width: 120px;
-          height: auto;
-          margin: 0.35rem auto 0;
+  .footer-col--nav {
+    justify-content: center;
+  }
 
-          fill: var(--color);
-      
-        }
-      }  
-      
-      .footer-bottom{
-        width: 10%;
-        text-align: center;
-        align-self: center;
-      }
+  .sponsor {
+
+    .sponsor-logos {
+      gap: 1.5rem;
+    }
+
+    svg {
+      width: auto;
+      max-width: 110px;
+      height: auto;
     }
   }
+}
 
 
 

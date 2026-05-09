@@ -2,6 +2,7 @@
 layout: stagione-regolare
 title: Stagione Regolare 2026
 permalink: /stagione-regolare-2026/
+published: true
 ---
 
 <section class="sr-page" data-season="2026">

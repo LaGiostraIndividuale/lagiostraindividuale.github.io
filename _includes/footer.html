@@ -1,49 +1,26 @@
 <footer class="site-footer h-card">
-
   <div class="wrapper">
-
     <div class="footer-col-wrapper">
-      <!--<div class="footer-col">
-        <p class="feed-subscribe">
-          <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
-            <svg class="svg-icon orange">
-              <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-            </svg><span>Subscribe</span>
-          </a>
-        </p>
-      {%- if site.author %}
-        <ul class="contact-list">
-          {% if site.author.name -%}
-            <li class="p-name">{{ site.author.name | escape }}</li>
-          {% endif -%}
-          {% if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-          {%- endif %}
-        </ul>
-      {%- endif %}
-      </div>
-      <div class="footer-col">
-        <p>{{ site.description | escape }}</p>
-      </div>
-    </div>
 
-    <div class="social-links">
-      -->
-
-      <div class="footer-col">
-        <p>20{{ site.time | date: '%y' }}®  {{ site.title| escape }} {{ site.description | escape }}</p>
+      <div class="footer-col footer-col--info">
+        <p>20{{ site.time | date: '%y' }}® {{ site.title | escape }} {{ site.description | escape }}</p>
       </div>
+
       <div class="sponsor">
-        {%- include tactic-logo.svg -%}
-        {%- include molkky-logo.svg -%}
+        <p class="sponsor-credits">Powered by <a href="https://www.tactic.it" target="_blank" rel="noopener">Tactic</a></p>
+        <div class="sponsor-logos">
+          {%- include tactic-logo.svg -%}
+          {%- include molkky-logo.svg -%}
+        </div>
       </div>
 
-      <div class="footer-bottom">
-        {%- include social.html -%}
+      <div class="footer-col footer-col--nav">
+        <a class="footer-link" href="/contatti">contatti</a>
+        <div class="footer-bottom">
+          {%- include social.html -%}
+        </div>
       </div>
+
     </div>
-    
-
   </div>
-
 </footer>
