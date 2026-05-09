@@ -50,9 +50,9 @@
   {
     "posizione": 7,
     "giocante_id": "sanjibbone",
-    "sv": 2,
-    "punti": 100,
-    "partite_giocate": 1,
+    "sv": 0,
+    "punti": 0,
+    "partite_giocate": 0,
     "partite_totali": 8
   },
   {
@@ -68,7 +68,7 @@
     "giocante_id": "sempre",
     "sv": 0,
     "punti": 0,
-    "partite_giocate": 1,
+    "partite_giocate": 0,
     "partite_totali": 8
   }
 ]
