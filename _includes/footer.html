@@ -3,7 +3,8 @@
     <div class="footer-col-wrapper">
 
       <div class="footer-col footer-col--info">
-        <p>20{{ site.time | date: '%y' }}® {{ site.title | escape }} {{ site.description | escape }}</p>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }} — {{ site.description | escape }}</p>
+        <a class="footer-link" href="{{ '/contatti/' | relative_url }}">Contatti</a>
       </div>
 
       <div class="sponsor">
@@ -14,11 +15,8 @@
         </div>
       </div>
 
-      <div class="footer-col footer-col--nav">
-        <a class="footer-link" href="/contatti">contatti</a>
-        <div class="footer-bottom">
-          {%- include social.html -%}
-        </div>
+      <div class="footer-col footer-col--social">
+        {%- include social.html -%}
       </div>
 
     </div>

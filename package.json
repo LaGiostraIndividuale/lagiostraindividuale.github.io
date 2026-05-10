@@ -1,6 +1,12 @@
 {
   "name": "lagiostraindividuale.github.io",
   "private": true,
-  "description": "La Giostra Individuale — Jekyll site. Three.js è caricato via importmap (CDN unpkg) solo nelle pagine che dichiarano `molkky_simulator: true` nel front matter.",
-  "dependencies": {}
+  "description": "La Giostra Individuale — sito Jekyll. Three.js è servito localmente da assets/js/vendor per il simulatore (pagine con molkky_simulator: true).",
+  "scripts": {
+    "minify": "node scripts/minify-js.mjs",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build && npm run minify"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2"
+  }
 }

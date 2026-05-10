@@ -2,5 +2,5 @@
 layout: archive
 title: Archivio
 permalink: /archivio/
-description: Archivio edizioni passare della Giostra Individuale.
+description: Archivio delle edizioni passate della Giostra Individuale.
 ---

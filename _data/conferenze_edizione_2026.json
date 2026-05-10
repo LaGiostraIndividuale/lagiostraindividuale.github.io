@@ -1,0 +1,59 @@
+{
+  "edizione": 2026,
+  "conferenze": [
+    {
+      "nome": "Adriatic Mölkky",
+      "zona": "Pesaro",
+      "referente": "Andrea",
+      "instagram_url": "https://www.instagram.com/adriatic_molkky/"
+    },
+    {
+      "nome": "Bellomolchi",
+      "zona": "Roma",
+      "referente": "Simone",
+      "instagram_url": "https://instagram.com/bellomolchi"
+    },
+    {
+      "nome": "Jättälavoro Mölkky",
+      "zona": "Roma e dintorni",
+      "referente": "Riccardo",
+      "instagram_url": "https://www.instagram.com/dopolavoro_molkky/"
+    },
+    {
+      "nome": "L'Emiliana Mölkky",
+      "zona": "Bologna",
+      "referente": "Marco",
+      "instagram_url": "https://www.instagram.com/lemiliana_molkky/"
+    },
+    {
+      "nome": "Balera Mölkky",
+      "zona": "Ravenna",
+      "referente": "Iacopo",
+      "instagram_url": "https://www.instagram.com/baleramolkky/"
+    },
+    {
+      "nome": "Tiferno Mölkky",
+      "zona": "Città di Castello",
+      "referente": "Camillo",
+      "instagram_url": "https://www.instagram.com/tiferno_molkky_team/"
+    },
+    {
+      "nome": "Mölkky e Fuggi",
+      "zona": "tra Bari e la Basilicata",
+      "referente": "Dario",
+      "instagram_url": "https://www.instagram.com/molkkyefuggi/"
+    },
+    {
+      "nome": "FLuS",
+      "zona": "Spilimbergo/Pinzano",
+      "referente": "Lucio",
+      "instagram_url": "https://www.instagram.com/lucio.piva/"
+    },
+    {
+      "nome": "SÅTANIA MÖLKKY",
+      "zona": "Palermo",
+      "referente": "Flavia",
+      "instagram_url": "https://www.instagram.com/teknowledge_/"
+    }
+  ]
+}

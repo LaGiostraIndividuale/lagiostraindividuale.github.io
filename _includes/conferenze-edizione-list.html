@@ -1,0 +1,18 @@
+{% assign ce = site.data.conferenze_edizione_2026 %}
+
+<div class="conferenze-grid" role="list">
+  {% for c in ce.conferenze %}
+  <article class="conferenza-card" role="listitem">
+    <h2 class="conferenza-card__title">Conferenza {{ c.nome | escape }}</h2>
+    <p class="conferenza-card__meta"><span class="conferenza-card__label">Zona di gioco</span> {{ c.zona | escape }}</p>
+    <p class="conferenza-card__meta">
+      <span class="conferenza-card__label">Referente</span>
+      {% if c.instagram_url != '' %}
+      <a href="{{ c.instagram_url }}" rel="noopener noreferrer">{{ c.referente | escape }}</a>
+      {% else %}
+      {{ c.referente | escape }}
+      {% endif %}
+    </p>
+  </article>
+  {% endfor %}
+</div>

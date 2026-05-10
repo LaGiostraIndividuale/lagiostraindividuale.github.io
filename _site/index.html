@@ -9,14 +9,14 @@
   <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
   <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>La Giostra Individuale | ovvero il campionato nazionale di Mölkky uno contro uno</title>
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="La Giostra Individuale" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="ovvero il campionato nazionale di Mölkky uno contro uno" />
-<meta property="og:description" content="ovvero il campionato nazionale di Mölkky uno contro uno" />
+<meta name="author" content="La Giostra Individuale" />
+<meta property="og:locale" content="it" />
+<meta name="description" content="Campionato nazionale di Mölkky uno contro uno — stagione regolare, riepiloghi e app ufficiale." />
+<meta property="og:description" content="Campionato nazionale di Mölkky uno contro uno — stagione regolare, riepiloghi e app ufficiale." />
 <link rel="canonical" href="http://0.0.0.0:4000/" />
 <meta property="og:url" content="http://0.0.0.0:4000/" />
 <meta property="og:site_name" content="La Giostra Individuale" />
@@ -24,24 +24,59 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="La Giostra Individuale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"ovvero il campionato nazionale di Mölkky uno contro uno","headline":"La Giostra Individuale","name":"La Giostra Individuale","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/assets/img/giostra-individuale-logo-black.svg"}},"url":"http://0.0.0.0:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"La Giostra Individuale"},"description":"Campionato nazionale di Mölkky uno contro uno — stagione regolare, riepiloghi e app ufficiale.","headline":"La Giostra Individuale","name":"La Giostra Individuale","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/assets/img/giostra-individuale-logo-black.svg"},"name":"La Giostra Individuale"},"url":"http://0.0.0.0:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="La Giostra Individuale" />
-<link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <link rel="stylesheet" href="/assets/css/molkky-throw-simulator.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Ripescaggio e Torneo Finale — La Giostra Individuale 2026",
+  "sport": "Mölkky",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "startDate": "2026-09-19",
+  "endDate": "2026-09-19",
+  "description": "Fasi di Ripescaggio e Torneo Finale del campionato La Giostra Individuale.",
+  "location": {
+    "@type": "Place",
+    "name": "Pesaro",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pesaro",
+      "addressCountry": "IT"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "La Giostra Individuale",
+    "url": "http://0.0.0.0:4000/"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/molkky-throw-simulator.css">
     <script type="importmap">
       {
         "imports": {
-          "three": "https://unpkg.com/three@0.158.0/build/three.module.js"
+          "three": "/assets/js/vendor/three.module.min.js"
         }
       }
     </script></head>
-<body><header class="site-header">
+<body>
+    <a class="skip-link" href="#main-content">Vai al contenuto principale</a><header class="site-header">
 
   <div class="wrapper-header"><a class="site-title" rel="author" href="/"><picture>
-    <source srcset="http://0.0.0.0:4000/assets/img/giostra-individuale-logo-white.svg" media="(prefers-color-scheme: dark)">
-    <img src="http://0.0.0.0:4000/assets/img/giostra-individuale-logo-black.svg">
-</picture></a><nav class="site-nav">
+  <source srcset="http://0.0.0.0:4000/assets/img/giostra-individuale-logo-white.svg" media="(prefers-color-scheme: dark)">
+  <img
+    src="http://0.0.0.0:4000/assets/img/giostra-individuale-logo-black.svg"
+    alt="La Giostra Individuale — logo"
+    width="250"
+    height="61"
+    decoding="async"
+    fetchpriority="high">
+</picture>
+</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -51,14 +86,14 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/regolamento/">Regolamento</a><a class="page-link" href="/stagione-regolare-2026/">Stagione Regolare 2026</a><a class="page-link" href="/documenti-di-gara/">Documenti di gara</a><a class="page-link" href="/archivio/">Archivio</a></div>
+        <div class="trigger"><a class="page-link" href="/regolamento/">Regolamento</a><a class="page-link" href="/iscrizione/">Iscrizione</a><a class="page-link" href="/stagione-regolare-2026/">Stagione Regolare 2026</a><a class="page-link" href="/documenti-di-gara/">Documenti di gara</a><a class="page-link" href="/archivio/">Archivio</a></div>
       </nav></div>
 </header>
 <div class="main-content">
-      <main class="page-content" aria-label="Content">
+      <main id="main-content" class="page-content" aria-label="Content">
           <div class="wrapper">
             <div class="home" id="home">
-  <p><img src="/assets/img/stagione-2026/la-giostra-individuale-stagione2026.png" alt="&quot;stagione 2025&quot;" /></p>
+  <p><img src="/assets/img/stagione-2026/la-giostra-individuale-stagione2026.png" alt="La Giostra Individuale — stagione regolare 2026" width="1500" height="1475" loading="eager" decoding="async" fetchpriority="high" /></p>
 
 <!-- Ciao persone! È il momento di saltare giù dalla sedia (del bar) perché aprono le iscrizioni per la **Stagione Regolare 2026** de **La Giostra Individuale!** 🥖
 {:.has-dropcap}
@@ -72,13 +107,16 @@ Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso Lǝ
 
 Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contatti")-->
 
-<p class="has-dropcap">La Stagione Regolare 2026 de <strong>La Giostra individuale</strong> è officialmente iniziata! Segui l’andamento del campionato sull’App oppure consulata la sezione dedicata su questo sito.</p>
+<h2 id="aggiornamenti">Aggiornamenti</h2>
 
-<p>Presto tutte le info relative all’evento in cui si svolgeranno le fasi di Ripescaggio e Torneo Finale che avrà luogo <strong>Sabato 19 Settembre</strong> a Pesaro.</p>
+<p class="has-dropcap">La Stagione Regolare 2026 de <strong>La Giostra individuale</strong> è ufficialmente iniziata! Segui l’andamento del campionato sull’App oppure consulta la sezione dedicata su questo sito.</p>
+
+<p>Presto tutte le info relative all’evento in cui si svolgeranno le fasi di Ripescaggio e Torneo Finale che avrà luogo <strong>Sabato 19 Settembre</strong> a Pesaro.</p>
 
 <p>Per ora non possiamo fare altro che augurare a tuttз lз partecipanti <em>Buona Fortuna!</em></p>
 
-<p>Hai bisogno di altre info? <a href="/contatti" title="Contatti"> Non esitare a contattarci</a>.</p>
+<p>Hai bisogno di altre info? <a href="/contatti" title="Contatti"> Non esitare a contattarci</a>.<br />
+🙈 🙉 🙊</p>
 
 <hr />
 
@@ -179,11 +217,13 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
   </p>
 </section>
 
-<p class="icon-box"><img src="/assets/img/giostra-APP.png" alt="&quot;APP icon&quot;" class="glowing" />
-<a href="https://apps.apple.com/it/app/la-giostra-individuale/id6741768625"><img src="/assets/img/app-store.png" alt="&quot;APP download Apple&quot;" class="icon-app" /></a>
-<a href="https://play.google.com/store/apps/details?id=it.giostraindividuale.app&amp;pcampaignid=web_share"><img src="/assets/img/g-play.png" alt="&quot;APP download google&quot;" class="icon-app" /></a></p>
+<p class="icon-box"><img src="/assets/img/giostra-APP.png" alt="&quot;Icona dell'app de La Giostra Individuale&quot;" class="glowing" width="249" height="252" loading="lazy" decoding="async" />
+<a href="https://apps.apple.com/it/app/la-giostra-individuale/id6741768625"><img src="/assets/img/app-store.png" alt="&quot;Scarica su App Store&quot;" class="icon-app" width="200" height="66" loading="lazy" decoding="async" /></a>
+<a href="https://play.google.com/store/apps/details?id=it.giostraindividuale.app&amp;pcampaignid=web_share"><img src="/assets/img/g-play.png" alt="&quot;Disponibile su Google Play&quot;" class="icon-app" width="200" height="66" loading="lazy" decoding="async" /></a></p>
 
-<figure><img class="star-home spin" src="/assets/img/strike.svg" /></figure>
+<figure>
+  <img class="star-home spin" src="/assets/img/strike.svg" alt="" width="100" height="100" loading="lazy" decoding="async" />
+</figure>
 
 </div>
 
@@ -194,7 +234,8 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
     <div class="footer-col-wrapper">
 
       <div class="footer-col footer-col--info">
-        <p>2026® La Giostra Individuale ovvero il campionato nazionale di Mölkky uno contro uno</p>
+        <p>&copy; 2026 La Giostra Individuale — ovvero il campionato nazionale di Mölkky uno contro uno</p>
+        <a class="footer-link" href="/contatti/">Contatti</a>
       </div>
 
       <div class="sponsor">
@@ -235,9 +276,7 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
 </div>
       </div>
 
-      <div class="footer-col footer-col--nav">
-        <a class="footer-link" href="/contatti">contatti</a>
-        <div class="footer-bottom"><ul class="social-media-list"><li>
+      <div class="footer-col footer-col--social"><ul class="social-media-list"><li>
   <a rel="me" href="https://www.instagram.com/la_giostra_individuale/" target="_blank" title="instagram">
     <svg class="svg-icon grey">
       <use xlink:href="/assets/minima-social-icons.svg#instagram"></use>
@@ -246,11 +285,10 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
 </li>
 </ul>
 </div>
-      </div>
 
     </div>
   </div>
 </footer>
-<script type="module" src="/assets/js/molkky-throw-simulator.js"></script></body>
+<script src="/assets/js/site-header.js" defer></script><script type="module" src="/assets/js/molkky-throw-simulator.js"></script></body>
 
 </html>

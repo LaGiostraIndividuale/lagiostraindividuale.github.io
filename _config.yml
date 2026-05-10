@@ -20,24 +20,30 @@
 
 title: La Giostra Individuale
 email: lagiostraindividuale@gmail.com
+lang: it
+author:
+  name: La Giostra Individuale
 logo: assets/img/giostra-individuale-logo-black.svg
 logo-dark: assets/img/giostra-individuale-logo-white.svg
 description: >- # this means to ignore newlines until "baseurl:"
   ovvero il campionato nazionale di Mölkky uno contro uno
+# Default Open Graph image (jekyll-seo-tag): usata su tutte le pagine senza un proprio `image`.
+image: /assets/img/stagione-2026/la-giostra-individuale-stagione2026.png
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.lagiostraindividuale.com" # canonical URL (SEO, feed, Open Graph)
 twitter_username:
-github_username: 
+github_username:
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 header_pages:
     - regolamento.markdown
     - iscrizione.markdown
     - stagione-regolare-2026.md
-    - conferenze.markdown
     - documenti-di-gara.markdown
     - archivio.markdown
 

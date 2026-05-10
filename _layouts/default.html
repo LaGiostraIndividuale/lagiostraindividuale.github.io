@@ -4,8 +4,22 @@
   {%- include head.html -%}
 
   <body>
+    <a class="skip-link" href="#main-content">Vai al contenuto principale</a>
 
     {%- assign hero_img = page.image | default: "" | strip -%}
+    {%- comment -%}
+      Supporta sia `image: regolamento.jpg` (path relativo a /assets/img/) sia
+      `image: /assets/img/...` (path assoluto, formato preferito perché coerente
+      con jekyll-seo-tag per og:image). Risolviamo a un singolo `hero_src`.
+    {%- endcomment -%}
+    {%- if hero_img == "" -%}
+      {%- assign hero_src = "" -%}
+    {%- elsif hero_img contains "/" -%}
+      {%- assign hero_src = hero_img -%}
+    {%- else -%}
+      {%- assign hero_src = "/assets/img/" | append: hero_img -%}
+    {%- endif -%}
+
     {%- assign is_post = false -%}
     {%- assign src_path = page.path | default: "" -%}
     {%- if src_path contains "_posts/" -%}
@@ -13,32 +27,31 @@
     {%- endif -%}
     {%- comment -%}
       Hero parallax + titolo overlay: tutte le pagine (non post) con immagine hero,
-      tranne la home “La Giostra Individuale” (blocco bg-home). Non dipendere solo da
-      page.layout == "page" così il titolo non sparisce se il layout non è valorizzato come previsto.
+      tranne la home “La Giostra Individuale” (blocco bg-home).
     {%- endcomment -%}
     {%- assign use_page_hero_parallax = false -%}
-    {%- if hero_img != "" and is_post == false and page.title != "La Giostra Individuale" -%}
+    {%- if hero_src != "" and is_post == false and page.title != "La Giostra Individuale" -%}
       {%- assign use_page_hero_parallax = true -%}
     {%- endif -%}
 
-    {%- if hero_img != "" -%}
+    {%- if hero_src != "" -%}
       {%- comment -%} <div> e non <header>: dentro c’è già <header class="site-header"> (header annidato in header è HTML invalido e in alcuni browser rompe il layout) {%- endcomment -%}
       <div class="main-header{% if use_page_hero_parallax %} main-header--page-hero{% endif %}" role="banner">
         {%- include header.html -%}
            {%- if page.title == "La Giostra Individuale" -%}
             <div class="header-container">
-              <img class="bg-home" src="/assets/img/{{ hero_img }}" alt="{{ page.title }}">
+              <img class="bg-home" src="{{ hero_src }}" alt="La Giostra Individuale — immagine di stagione" fetchpriority="high" loading="eager" decoding="async">
             </div>
             {%- elsif use_page_hero_parallax -%}
             <div class="page-hero-parallax js-page-hero-parallax">
-              <img class="bg page-hero-parallax__img" src="/assets/img/{{ hero_img }}" alt="" decoding="async" />
+              <img class="bg page-hero-parallax__img" src="{{ hero_src }}" alt="" fetchpriority="high" loading="eager" decoding="async" />
               <div class="page-hero-parallax__overlay">
                 <h1 class="page-hero-parallax__title" id="page-hero-title">{{ page.title | escape }}</h1>
               </div>
             </div>
             {% else %}
-            <img class="bg" src="/assets/img/{{ hero_img }}" alt="{{ page.title | escape }}" />
-          {% endif %}        
+            <img class="bg" src="{{ hero_src }}" alt="{{ page.title | escape }}" loading="eager" decoding="async" />
+          {% endif %}
       </div>
     {%- else -%}
       {%- include header.html -%}
@@ -48,7 +61,7 @@
         {{ content }}
     {%- else -%}
     <div class="main-content">
-      <main class="page-content" aria-label="Content">
+      <main id="main-content" class="page-content" aria-label="Content">
           <div class="wrapper">
             {{ content }}
           </div>
@@ -58,12 +71,24 @@
 
     {%- include footer.html -%}
 
+    {%- comment -%}
+      In produzione carichiamo i bundle minificati (`*.min.js`); in dev gli originali per debug.
+      Genera/rigenera i .min.js con `npm run minify` (esbuild).
+    {%- endcomment -%}
+    {%- if jekyll.environment == 'production' -%}
+      {%- assign js_ext = '.min.js' -%}
+    {%- else -%}
+      {%- assign js_ext = '.js' -%}
+    {%- endif -%}
+
+    <script src="{{ '/assets/js/site-header' | append: js_ext | relative_url }}" defer></script>
+
     {%- if use_page_hero_parallax -%}
-    <script src="{{ '/assets/js/page-hero-parallax.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/page-hero-parallax' | append: js_ext | relative_url }}" defer></script>
     {%- endif -%}
 
     {%- if page.molkky_simulator -%}
-    <script type="module" src="{{ '/assets/js/molkky-throw-simulator.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/molkky-throw-simulator' | append: js_ext | relative_url }}"></script>
     {%- endif -%}
 
     </body>

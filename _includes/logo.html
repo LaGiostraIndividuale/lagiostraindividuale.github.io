@@ -1,4 +1,10 @@
 <picture>
-    <source srcset="{{ site.logo-dark | absolute_url }}" media="(prefers-color-scheme: dark)">
-    <img src="{{ site.logo | absolute_url }}">
+  <source srcset="{{ site.logo-dark | absolute_url }}" media="(prefers-color-scheme: dark)">
+  <img
+    src="{{ site.logo | absolute_url }}"
+    alt="{{ site.title | escape }} — logo"
+    width="250"
+    height="61"
+    decoding="async"
+    fetchpriority="high">
 </picture>

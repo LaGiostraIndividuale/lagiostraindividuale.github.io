@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="main-content">
-    <main class="page-content" aria-label="Content">
+    <main id="main-content" class="page-content" aria-label="Content">
         <div class="wrapper archive-wrapper" data-layout="archive">
             <header class="post-header">
                 <h1 class="post-title centered-tite">{{ page.title | escape }}</h1>
@@ -29,5 +29,9 @@ layout: default
     </main>
 </div>
 
-<script src="{{ '/assets/js/archive-gallery.js' | relative_url }}"></script>
+{%- if jekyll.environment == 'production' -%}
+<script src="{{ '/assets/js/archive-gallery.min.js' | relative_url }}" defer></script>
+{%- else -%}
+<script src="{{ '/assets/js/archive-gallery.js' | relative_url }}" defer></script>
+{%- endif -%}
 

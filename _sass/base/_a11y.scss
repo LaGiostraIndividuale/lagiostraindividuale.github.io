@@ -1,0 +1,49 @@
+/* =====================================================
+ * ACCESSIBILITY BASICS
+ *  - Skip link tastiera-friendly
+ *  - Focus visibile globale (sovrascrive il reset di Minima)
+ *  - Soppressione animazioni decorative quando l'utente
+ *    preferisce muoversi meno
+ * ===================================================== */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100000;
+  padding: 0.65rem 1rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+  outline: 3px solid var(--color);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+/* Anello di focus accent uniforme. Non viene mostrato col mouse, solo da
+   tastiera/AT, quindi non rovina l'estetica per chi usa il puntatore. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Rispetta prefers-reduced-motion: ferma le animazioni decorative. */
+@media (prefers-reduced-motion: reduce) {
+  .spin,
+  .glowing {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+  }
+}

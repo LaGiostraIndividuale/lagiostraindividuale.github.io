@@ -1,12 +1,16 @@
 ---
 layout: home
 title: La Giostra Individuale
+description: Campionato nazionale di Mölkky uno contro uno — stagione regolare, riepiloghi e app ufficiale.
+# `image:` lasciato vuoto per non renderizzare l'hero `.bg-home` (il poster è
+# già nel corpo del markdown qui sotto). L'og:image è coperto dal default
+# globale `site.image` in `_config.yml`.
 image:
 molkky_simulator: true
 ---
 
 
-!["stagione 2025"](/assets/img/stagione-2026/la-giostra-individuale-stagione2026.png)
+![La Giostra Individuale — stagione regolare 2026](/assets/img/stagione-2026/la-giostra-individuale-stagione2026.png){: width="1500" height="1475" loading="eager" decoding="async" fetchpriority="high"}
 
 <!-- Ciao persone! È il momento di saltare giù dalla sedia (del bar) perché aprono le iscrizioni per la **Stagione Regolare 2026** de **La Giostra Individuale!** 🥖
 {:.has-dropcap}
@@ -20,25 +24,27 @@ Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso Lǝ
 
 Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contatti")-->
 
-La Stagione Regolare 2026 de **La Giostra individuale** è officialmente iniziata! Segui l'andamento del campionato sull'App oppure consulata la sezione dedicata su questo sito. 
+## Aggiornamenti
+
+La Stagione Regolare 2026 de **La Giostra individuale** è ufficialmente iniziata! Segui l'andamento del campionato sull'App oppure consulta la sezione dedicata su questo sito.
 {:.has-dropcap}
 
-Presto tutte le info relative all'evento in cui si svolgeranno le fasi di Ripescaggio e Torneo Finale che avrà luogo **Sabato 19 Settembre** a Pesaro.
+Presto tutte le info relative all'evento in cui si svolgeranno le fasi di Ripescaggio e Torneo Finale che avrà luogo **Sabato 19 Settembre** a Pesaro.
 
 
 Per ora non possiamo fare altro che augurare a tuttз lз partecipanti *Buona Fortuna!*
 
-Hai bisogno di altre info? [ Non esitare a contattarci](/contatti "Contatti").
-
-
+Hai bisogno di altre info? [ Non esitare a contattarci](/contatti "Contatti").\
+🙈 🙉 🙊
 
 ---
-
 
 {% include molkky-throw-simulator.html %}
 
 
-{%- include giostrra-app.markdown -%}
+{%- include giostra-app.markdown -%}
 
 
-<figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>
+<figure>
+  <img class="star-home spin" src="/assets/img/strike.svg" alt="" width="100" height="100" loading="lazy" decoding="async">
+</figure>

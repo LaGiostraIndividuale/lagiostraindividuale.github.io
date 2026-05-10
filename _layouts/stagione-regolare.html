@@ -4,24 +4,34 @@
   {%- include head.html -%}
 
   <body>
+    <a class="skip-link" href="#main-content">Vai al contenuto principale</a>
 
-    {%- if page.image -%}
+    {%- assign hero_img = page.image | default: "" | strip -%}
+    {%- if hero_img == "" -%}
+      {%- assign hero_src = "" -%}
+    {%- elsif hero_img contains "/" -%}
+      {%- assign hero_src = hero_img -%}
+    {%- else -%}
+      {%- assign hero_src = "/assets/img/" | append: hero_img -%}
+    {%- endif -%}
+
+    {%- if hero_src != "" -%}
       <header class="main-header">
         {%- include header.html -%}
            {%- if page.title == "La Giostra Individuale" -%}
             <div class="header-container">
-              <img class="bg-home" src="/assets/img/{{page.image}}" alt="{{page.title}}">
+              <img class="bg-home" src="{{ hero_src }}" alt="{{ page.title | escape }}" loading="eager" decoding="async" fetchpriority="high">
             </div>
             {% else %}
-            <img class="bg" src="/assets/img/{{ page.image }}" alt="{{page.title}}" />
-          {% endif %}        
+            <img class="bg" src="{{ hero_src }}" alt="{{ page.title | escape }}" loading="eager" decoding="async" fetchpriority="high" />
+          {% endif %}
       </header>
     {%- else -%}
       {%- include header.html -%}
     {%- endif -%}
 
     <div class="main-content">
-      <main class="page-content page-content--stagione-regolare" aria-label="Content">
+      <main id="main-content" class="page-content page-content--stagione-regolare" aria-label="Content">
         <div class="sr-layout">
           <div class="sr-layout__inner" data-layout="stagione-regolare">
             {{ content }}

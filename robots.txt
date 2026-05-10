@@ -1,0 +1,5 @@
+# https://www.lagiostraindividuale.com
+User-agent: *
+Allow: /
+
+Sitemap: https://www.lagiostraindividuale.com/sitemap.xml

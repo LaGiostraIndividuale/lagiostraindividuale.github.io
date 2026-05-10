@@ -2,9 +2,9 @@
 layout: page
 title: Iscrizione
 permalink: /iscrizione/
-image: iscrizione.jpg
+image: /assets/img/iscrizione.jpg
 description: Iscriviti qui alla Giostra Individuale.
-published: false
+published: true
 ---
 
 

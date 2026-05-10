@@ -1,6 +1,29 @@
-{% comment %}
-  Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
-
-  1. Head over to https://realfavicongenerator.net/ to add your own favicons.
-  2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
-{% endcomment %}
+{% comment %} JSON-LD sulla home per evento / organizzatore (richiede `url` valorizzato in _config.yml). {% endcomment %}
+{% if page.layout == 'home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Ripescaggio e Torneo Finale — La Giostra Individuale 2026",
+  "sport": "Mölkky",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "startDate": "2026-09-19",
+  "endDate": "2026-09-19",
+  "description": "Fasi di Ripescaggio e Torneo Finale del campionato La Giostra Individuale.",
+  "location": {
+    "@type": "Place",
+    "name": "Pesaro",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pesaro",
+      "addressCountry": "IT"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }}
+  }
+}
+</script>
+{% endif %}
