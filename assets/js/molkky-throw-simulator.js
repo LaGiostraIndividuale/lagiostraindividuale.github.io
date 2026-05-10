@@ -38,6 +38,9 @@ const PIN_INERTIA_AXIAL = (PIN_RADIUS * PIN_RADIUS) / 2;
 const RESTITUTION_GROUND = 0.18;
 const RESTITUTION_PIN_PIN = 0.32;
 const RESTITUTION_MOLKKY_PIN = 0.28;
+/** Raggio di hit leggermente maggiore del contatto fisico: evita che colpi di
+ *  striscio passino tra un frame e l’altro (tunneling su sweep corto). */
+const MOLKKY_PIN_CONTACT_SKIN = 0.055;
 /** Attrito di Coulomb (limite tangenziale = mu * |Jn|). */
 const FRICTION_GROUND = 0.55;
 const FRICTION_PIN_PIN = 0.25;
@@ -388,6 +391,25 @@ class MolkkySimulator {
 
     this.throwInProgress = false;
     this.collisionCooldown = 0;
+
+    /** Sweep collision mölkky↔birilli (no allocazioni nel loop caldo). */
+    this._molkkyPrev = new THREE.Vector3();
+    this._colCapA = new THREE.Vector3();
+    this._colCapB = new THREE.Vector3();
+    this._colClosestM = new THREE.Vector3();
+    this._colClosestP = new THREE.Vector3();
+    this._colDiff = new THREE.Vector3();
+    this._colN = new THREE.Vector3();
+    this._colRPin = new THREE.Vector3();
+    this._colVPinAt = new THREE.Vector3();
+    this._colVMolAt = new THREE.Vector3();
+    this._colRel = new THREE.Vector3();
+    this._colRxn = new THREE.Vector3();
+    this._colImpulse = new THREE.Vector3();
+    this._colPinUp = new THREE.Vector3();
+    this._colTipAxis = new THREE.Vector3();
+    this._colOmegaCrossR = new THREE.Vector3();
+    this._colAngKick = new THREE.Vector3();
 
     /** playing | won_exact | lost_misses */
     this.gamePhase = "playing";
@@ -1083,6 +1105,10 @@ class MolkkySimulator {
     const ud = m.userData;
     if (ud.settled) return;
 
+    // Segmento di sweep per collisioni: segmento [prev,curr] vs capsula birillo
+    // intercetta gli impatti periferici che col solo centro saltano un frame.
+    this._molkkyPrev.copy(m.position);
+
     if (ud.inFlight) {
       ud.velocity.y += GRAVITY * dt;
     }
@@ -1142,70 +1168,76 @@ class MolkkySimulator {
     const ud = m.userData;
     if (ud.settled) return;
 
-    const collisionRadius = MOLKKY_RADIUS + PIN_RADIUS;
-    const sqRadius = collisionRadius * collisionRadius;
+    const resolveR = MOLKKY_RADIUS + PIN_RADIUS;
+    const detectR = resolveR + MOLKKY_PIN_CONTACT_SKIN;
+    const sqDetect = detectR * detectR;
 
-    const segA = new THREE.Vector3();
-    const segB = new THREE.Vector3();
-    const closestM = new THREE.Vector3();
-    const closestP = new THREE.Vector3();
-    const n = new THREE.Vector3();
+    const segA = this._colCapA;
+    const segB = this._colCapB;
+    const closestM = this._colClosestM;
+    const closestP = this._colClosestP;
+    const diff = this._colDiff;
+    const n = this._colN;
+    const prev = this._molkkyPrev;
+    const curr = m.position;
 
     for (const pin of this.pins) {
       getPinCapsuleEnds(pin, segA, segB);
-      const mA = m.position.clone().add(new THREE.Vector3(0, 0, 0));
-      const mB = m.position.clone();
-      closestPointsOnSegments(mA, mB, segA, segB, closestM, closestP);
-      const diff = closestP.clone().sub(closestM);
+      closestPointsOnSegments(prev, curr, segA, segB, closestM, closestP);
+      diff.copy(closestP).sub(closestM);
       const d2 = diff.lengthSq();
-      if (d2 >= sqRadius || d2 < 1e-8) continue;
+      if (d2 >= sqDetect || d2 < 1e-14) continue;
 
       const dist = Math.sqrt(d2);
       n.copy(diff).divideScalar(dist);
 
-      const overlap = collisionRadius - dist;
+      let overlap = resolveR - dist;
+      if (overlap < 0.015) {
+        overlap = Math.max(overlap, (detectR - dist) * 0.5);
+      }
+
       pin.position.addScaledVector(n, overlap * (MOLKKY_MASS / (MOLKKY_MASS + PIN_MASS)));
       m.position.addScaledVector(n, -overlap * (PIN_MASS / (MOLKKY_MASS + PIN_MASS)));
 
-      const rPin = closestP.clone().sub(pin.position);
-      const vPinAt = pin.userData.velocity.clone()
-        .add(new THREE.Vector3().crossVectors(pin.userData.angularVelocity, rPin));
-      const vMolAt = ud.velocity.clone();
-      const rel = vMolAt.clone().sub(vPinAt);
-      const vn = rel.dot(n);
-      if (vn > 0) continue;
+      this._colRPin.copy(closestP).sub(pin.position);
+      this._colOmegaCrossR.crossVectors(pin.userData.angularVelocity, this._colRPin);
+      this._colVPinAt.copy(pin.userData.velocity).add(this._colOmegaCrossR);
+      this._colVMolAt.copy(ud.velocity);
+      this._colRel.copy(this._colVMolAt).sub(this._colVPinAt);
+      const vn = this._colRel.dot(n);
+      // Urto ravvicinato / di striscio: vn può essere ~0 — non saltare l’impulso
+      if (vn > 0.03) continue;
 
-      const rxn = new THREE.Vector3().crossVectors(rPin, n);
+      this._colRxn.crossVectors(this._colRPin, n);
       const denom =
         1 / MOLKKY_MASS +
         1 / PIN_MASS +
-        rxn.lengthSq() / PIN_INERTIA_PERP;
-      const Jn = -(1 + RESTITUTION_MOLKKY_PIN) * vn / denom;
-      const impulse = n.clone().multiplyScalar(Jn);
+        this._colRxn.lengthSq() / PIN_INERTIA_PERP;
+      let effVn = Math.min(vn, 0);
+      if (effVn > -0.12 && effVn <= 0 && dist < detectR - 0.02) {
+        effVn -= 0.14;
+      }
+      const Jn = -(1 + RESTITUTION_MOLKKY_PIN) * effVn / denom;
+      this._colImpulse.copy(n).multiplyScalar(Jn);
 
-      ud.velocity.addScaledVector(impulse, 1 / MOLKKY_MASS);
-      pin.userData.velocity.addScaledVector(impulse, -1 / PIN_MASS);
-      pin.userData.angularVelocity.add(
-        new THREE.Vector3().crossVectors(rPin, impulse).multiplyScalar(-1 / PIN_INERTIA_PERP),
-      );
+      ud.velocity.addScaledVector(this._colImpulse, 1 / MOLKKY_MASS);
+      pin.userData.velocity.addScaledVector(this._colImpulse, -1 / PIN_MASS);
+      this._colAngKick.crossVectors(this._colRPin, this._colImpulse).multiplyScalar(-1 / PIN_INERTIA_PERP);
+      pin.userData.angularVelocity.add(this._colAngKick);
 
-      // Tip-assist: se il birillo è ancora dritto (o quasi) e viene toccato,
-      // diamo un piccolo impulso angolare extra attorno all'asse orizzontale
-      // perpendicolare alla direzione d'urto. Così “toccato = inclinato”
-      // diventa la norma anche per contatti morbidi.
-      const pinUp = new THREE.Vector3(0, 1, 0).applyQuaternion(pin.quaternion);
-      if (pinUp.y > 0.92) {
-        const tipAxis = new THREE.Vector3().crossVectors(pinUp, n);
-        const tipMag = tipAxis.length();
+      this._colPinUp.set(0, 1, 0).applyQuaternion(pin.quaternion);
+      if (this._colPinUp.y > 0.92) {
+        this._colTipAxis.crossVectors(this._colPinUp, n);
+        const tipMag = this._colTipAxis.length();
         if (tipMag > 1e-6) {
-          tipAxis.divideScalar(tipMag);
+          this._colTipAxis.divideScalar(tipMag);
           const boost = Math.min(Math.abs(Jn) * 1.4, 6.0);
-          pin.userData.angularVelocity.addScaledVector(tipAxis, boost);
+          pin.userData.angularVelocity.addScaledVector(this._colTipAxis, boost);
         }
       }
 
       pin.userData.resting = false;
-      this.collisionCooldown = 0.02;
+      this.collisionCooldown = 0.006;
     }
   }
 
