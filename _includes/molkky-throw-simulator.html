@@ -1,0 +1,124 @@
+<section
+  class="molkky-simulator"
+  data-component="molkky-throw-simulator"
+  aria-label="Partita di Mölkky in solitaria"
+>
+  <header class="molkky-simulator__intro">
+    <h2 class="molkky-simulator__title">Mölkky — partita in solitaria</h2>
+    <p class="molkky-simulator__lead">
+      Vinci raggiungendo esattamente <strong>50 punti</strong>: se sfori, torni a 25.
+      Dopo ogni tiro i birilli abbattuti si rialzano sul campo e il birillo di lancio esce dal campo
+      (tornerà al prossimo tiro). Tre tiri consecutivi senza birilli e la partita finisce. Conferma in tre tempi:
+      <strong>potenza</strong>, <strong>direzione</strong> e <strong>palombella</strong> (alza l’arco per
+      scavalcare i birilli davanti).
+    </p>
+  </header>
+
+  <div class="molkky-simulator__hud" data-role="hud" aria-live="polite" aria-atomic="true">
+    <div class="molkky-simulator__hud-stat">
+      <span class="molkky-simulator__hud-label">Punteggio</span>
+      <span class="molkky-simulator__hud-value" data-role="hud-score">0</span>
+      <span class="molkky-simulator__hud-sub">/ 50</span>
+    </div>
+    <div class="molkky-simulator__hud-stat">
+      <span class="molkky-simulator__hud-label">Tiri</span>
+      <span class="molkky-simulator__hud-value" data-role="hud-throws">0</span>
+    </div>
+    <div class="molkky-simulator__hud-stat" data-role="hud-misses-wrap">
+      <span class="molkky-simulator__hud-label">Mancati</span>
+      <span class="molkky-simulator__hud-value" data-role="hud-misses">0</span>
+      <span class="molkky-simulator__hud-sub">/ 3</span>
+    </div>
+  </div>
+
+  <div class="molkky-simulator__stage" data-role="stage">
+    <canvas class="molkky-simulator__canvas" data-role="canvas" aria-hidden="true"></canvas>
+
+    <noscript>
+      <p class="molkky-simulator__fallback">
+        Questa simulazione richiede JavaScript. Resta da bordo campo e divertiti.
+      </p>
+    </noscript>
+
+    <p class="molkky-simulator__fallback" data-role="fallback">
+      Il tuo browser non supporta WebGL: niente simulazione, ma il Mölkky vero ti aspetta in conferenza.
+    </p>
+
+    <div
+      class="molkky-simulator__overlay"
+      data-role="overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="molkky-overlay-title"
+      hidden
+    >
+      <div class="molkky-simulator__overlay-card">
+        <h3 class="molkky-simulator__overlay-title" id="molkky-overlay-title" data-role="overlay-title">Fine partita</h3>
+        <p class="molkky-simulator__overlay-text" data-role="overlay-text"></p>
+        <p class="molkky-simulator__overlay-stats" data-role="overlay-stats"></p>
+        <button type="button" class="molkky-simulator__btn molkky-simulator__btn--primary" data-role="overlay-action">
+          Nuova partita
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="molkky-simulator__controls" role="group" aria-label="Controlli lancio">
+    <div class="molkky-simulator__meters" data-role="meters">
+      <div class="molkky-simulator__meter molkky-simulator__meter--power" data-role="meter-power-wrap">
+        <span class="molkky-simulator__meter-label">Potenza</span>
+        <div
+          class="molkky-simulator__meter-track molkky-simulator__meter-track--vertical"
+          role="img"
+          aria-label="Barra potenza: conferma mentre l’indicatore oscilla"
+          data-role="meter-power-track"
+        >
+          <span class="molkky-simulator__meter-zone molkky-simulator__meter-zone--sweet" aria-hidden="true"></span>
+          <span class="molkky-simulator__meter-needle molkky-simulator__meter-needle--h" data-role="meter-power-needle"></span>
+        </div>
+        <span class="molkky-simulator__meter-hint" data-role="meter-power-hint">Inizia il tiro per far oscillare l’indicatore.</span>
+      </div>
+
+      <div class="molkky-simulator__meter molkky-simulator__meter--aim" data-role="meter-aim-wrap" hidden>
+        <span class="molkky-simulator__meter-label">Direzione</span>
+        <div
+          class="molkky-simulator__meter-track molkky-simulator__meter-track--horizontal"
+          role="img"
+          aria-label="Barra direzione: sinistra e destra"
+          data-role="meter-aim-track"
+        >
+          <span class="molkky-simulator__meter-zone molkky-simulator__meter-zone--sweet" aria-hidden="true"></span>
+          <span class="molkky-simulator__meter-needle molkky-simulator__meter-needle--v" data-role="meter-aim-needle"></span>
+        </div>
+        <span class="molkky-simulator__meter-hint" data-role="meter-aim-hint">—</span>
+      </div>
+
+      <div class="molkky-simulator__meter molkky-simulator__meter--lob" data-role="meter-lob-wrap" hidden>
+        <span class="molkky-simulator__meter-label">Palombella</span>
+        <div
+          class="molkky-simulator__meter-track molkky-simulator__meter-track--vertical"
+          role="img"
+          aria-label="Barra palombella: arco del tiro"
+          data-role="meter-lob-track"
+        >
+          <span class="molkky-simulator__meter-zone molkky-simulator__meter-zone--sweet" aria-hidden="true"></span>
+          <span class="molkky-simulator__meter-needle molkky-simulator__meter-needle--lob" data-role="meter-lob-needle"></span>
+        </div>
+        <span class="molkky-simulator__meter-hint" data-role="meter-lob-hint">—</span>
+      </div>
+    </div>
+
+    <div class="molkky-simulator__buttons">
+      <button type="button" class="molkky-simulator__btn molkky-simulator__btn--primary" data-role="throw">
+        Inizia tiro
+      </button>
+      <button type="button" class="molkky-simulator__btn" data-role="reset">
+        Nuova partita
+      </button>
+    </div>
+  </div>
+
+  <p class="molkky-simulator__result" data-role="result" aria-live="polite" aria-atomic="true">
+    Pronto al primo lancio.
+  </p>
+</section>

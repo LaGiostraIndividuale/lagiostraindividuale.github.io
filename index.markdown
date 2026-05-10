@@ -1,9 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-## To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: La Giostra Individuale
 image:
+molkky_simulator: true
 ---
 
 
@@ -17,7 +16,7 @@ Bè iniziate consultando il [regolamento](/regolamento "Regolamento") aggiornato
 
 Avete tempo fino al **20 Febbraio** per iscrivervi in una delle [Conferenze](/conferenze "Conferenze") oppure per fondarne una nuova.
 
-Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso Lǝ Referente di Conferenza che si farà carico di raccogliere i dati e la quota di partecipazione. 
+Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso Lǝ Referente di Conferenza che si farà carico di raccogliere i dati e la quota di partecipazione.
 
 Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contatti")
 
@@ -25,9 +24,10 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
 ---
 
 
+{% include molkky-throw-simulator.html %}
+
+
 {%- include giostrra-app.markdown -%}
-
-
 
 
 <figure><img class="star-home spin" src="/assets/img/strike.svg"></figure>

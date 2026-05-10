@@ -1,7 +1,6 @@
 {
-  "dependencies": {
-    "gsap": "3.12",
-    "lil-gui": "^0.19.1",
-    "three": "^0.159.0"
-  }
+  "name": "lagiostraindividuale.github.io",
+  "private": true,
+  "description": "La Giostra Individuale — Jekyll site. Three.js è caricato via importmap (CDN unpkg) solo nelle pagine che dichiarano `molkky_simulator: true` nel front matter.",
+  "dependencies": {}
 }

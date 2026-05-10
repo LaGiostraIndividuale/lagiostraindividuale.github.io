@@ -10,18 +10,6 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
-      }
-    }
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
-
-
-  
 
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
@@ -32,11 +20,25 @@
 
   {%- include custom-head.html -%}
 
-  {% if page.layout == 'archive' %} 
+  {% if page.layout == 'archive' %}
     <link rel="stylesheet" href="/plugin/components/Font Awesome/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="/plugin/components/Fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/plugin/components/Fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" type="text/css" href="/plugin/css/mediaBoxes.css">
   {% endif %}
 
-  
+  {%- comment -%}
+    Asset del simulatore Mölkky 3D: caricati SOLO sulle pagine che hanno
+    `molkky_simulator: true` nel front matter. Tieni Three.js fuori dalle altre pagine.
+  {%- endcomment -%}
+  {%- if page.molkky_simulator -%}
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="stylesheet" href="{{ '/assets/css/molkky-throw-simulator.css' | relative_url }}">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.158.0/build/three.module.js"
+        }
+      }
+    </script>
+  {%- endif -%}
 </head>

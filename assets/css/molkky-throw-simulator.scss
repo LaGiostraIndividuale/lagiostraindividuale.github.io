@@ -1,0 +1,407 @@
+---
+# Stagione regolare 2026 — simulatore Mölkky 3D.
+# Tutto è namespaced sotto .molkky-simulator per evitare collisioni col tema.
+---
+
+.molkky-simulator {
+  /* Contrasto WCAG-friendly su fondo chiaro */
+  --molkky-bg: #faf7f2;
+  --molkky-surface: #ffffff;
+  --molkky-text: #141414;
+  --molkky-text-muted: #3d3d3d;
+  --molkky-text-subtle: #5c5c5c;
+  --molkky-border: rgba(20, 20, 20, 0.12);
+  --molkky-fg: var(--color, var(--molkky-text));
+  --molkky-accent: #8b6914;
+  --molkky-accent-strong: #3d2f08;
+  --molkky-meter-fill: #e8e6e1;
+  --molkky-meter-needle: #1a1a1a;
+  --molkky-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  --molkky-radius: 12px;
+
+  display: grid;
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.35rem;
+  background: var(--molkky-bg);
+  color: var(--molkky-text);
+  border-radius: var(--molkky-radius);
+  border: 1px solid var(--molkky-border);
+  box-shadow: var(--molkky-shadow);
+  font-size: 1rem;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  &__intro {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0;
+  }
+
+  &__title {
+    font-family: "Gothic", inherit;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    margin: 0;
+    line-height: 1.12;
+    color: var(--molkky-text);
+    letter-spacing: -0.02em;
+  }
+
+  &__lead {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--molkky-text-muted);
+    line-height: 1.55;
+    font-size: 0.97rem;
+
+    strong {
+      color: var(--molkky-text);
+      font-weight: 700;
+    }
+  }
+
+  // HUD partita: punteggio / tiri / mancati
+  &__hud {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 10px;
+    background: var(--molkky-surface);
+    border: 1px solid var(--molkky-border);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    color: var(--molkky-text);
+  }
+
+  &__hud-stat {
+    display: grid;
+    gap: 0.1rem;
+    justify-items: center;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  &__hud-label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    color: var(--molkky-text-subtle);
+  }
+
+  &__hud-value {
+    font-family: "Gothic", inherit;
+    font-size: clamp(1.45rem, 2.8vw, 2rem);
+    font-variant-numeric: tabular-nums;
+    color: var(--molkky-text);
+    font-weight: 700;
+  }
+
+  &__hud-sub {
+    font-size: 0.68rem;
+    color: var(--molkky-text-subtle);
+    letter-spacing: 0.02em;
+  }
+
+  &__hud-stat.is-warning &__hud-value {
+    color: #b3380e;
+  }
+
+  &__stage {
+    position: relative;
+    width: 100%;
+    height: clamp(360px, 60vh, 680px);
+    border-radius: var(--molkky-radius);
+    overflow: hidden;
+    background: linear-gradient(180deg, #efe1c3 0%, #d8b986 100%);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+
+  // Overlay finale (vittoria / sconfitta)
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(250, 247, 242, 0.94);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+  }
+
+  &__overlay-card {
+    display: grid;
+    gap: 0.85rem;
+    justify-items: center;
+    text-align: center;
+    max-width: 32rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--molkky-surface);
+    border: 1px solid var(--molkky-border);
+    border-radius: var(--molkky-radius);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  &__overlay-title {
+    margin: 0;
+    font-family: "Gothic", inherit;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--molkky-text);
+    line-height: 1.1;
+  }
+
+  &__overlay-text {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: var(--molkky-text-muted);
+  }
+
+  &__overlay-stats {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--molkky-text-subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+  }
+
+  &__fallback {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: none; // visibile solo su .molkky-simulator--fallback
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(250, 247, 242, 0.97);
+    color: var(--molkky-text);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  &--fallback &__fallback {
+    display: flex;
+  }
+
+  &--fallback &__canvas {
+    display: none;
+  }
+
+  // Priorità su [hidden] in caso di toggle programmatico.
+  [hidden] {
+    display: none !important;
+  }
+
+  &__controls {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+
+    @media (min-width: 640px) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+    }
+  }
+
+  /* Metri compatti: binario sottile + ago lineare (minimal, alta leggibilità) */
+  &__meters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: flex-end;
+    padding: 0.65rem 0.75rem;
+    background: var(--molkky-surface);
+    border: 1px solid var(--molkky-border);
+    border-radius: 10px;
+  }
+
+  &__meter {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.35rem;
+    justify-items: center;
+    text-align: center;
+    min-width: 0;
+    flex: 1 1 6.5rem;
+    max-width: 100%;
+
+    &.is-active &__meter-label {
+      color: var(--molkky-text);
+      font-weight: 700;
+    }
+
+    &.is-active &__meter-track {
+      border-color: rgba(20, 20, 20, 0.22);
+      background: linear-gradient(180deg, #f3f2ef 0%, var(--molkky-meter-fill) 100%);
+    }
+
+    &.is-active &__meter-needle {
+      background: var(--molkky-meter-needle);
+    }
+  }
+
+  &__meter-label {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 0.7rem;
+    color: var(--molkky-text-subtle);
+    text-transform: none;
+  }
+
+  &__meter-track {
+    position: relative;
+    background: var(--molkky-meter-fill);
+    border-radius: 999px;
+    border: 1px solid rgba(20, 20, 20, 0.14);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65);
+
+    &--vertical {
+      width: 10px;
+      height: 7rem;
+      margin: 0 auto;
+    }
+
+    &--horizontal {
+      width: 100%;
+      max-width: 11rem;
+      height: 10px;
+    }
+  }
+
+  /* Zona “sweet” disattivata visivamente per UI più pulita */
+  &__meter-zone--sweet {
+    display: none;
+  }
+
+  &__meter-needle {
+    position: absolute;
+    background: var(--molkky-meter-needle);
+    border-radius: 999px;
+    transition: none;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+
+    &--h {
+      left: 2px;
+      right: 2px;
+      height: 4px;
+      bottom: var(--molkky-needle-power, 50%);
+      transform: translateY(50%);
+    }
+
+    &--v {
+      top: 2px;
+      bottom: 2px;
+      width: 4px;
+      left: var(--molkky-needle-aim, 50%);
+      transform: translateX(-50%);
+    }
+
+    &--lob {
+      left: 2px;
+      right: 2px;
+      height: 4px;
+      bottom: var(--molkky-needle-lob, 0%);
+      transform: translateY(50%);
+    }
+  }
+
+  &__meter-hint {
+    font-size: 0.72rem;
+    max-width: 14rem;
+    text-align: center;
+    line-height: 1.4;
+    color: var(--molkky-text-subtle);
+    min-height: 2.5em;
+    margin: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    appearance: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid var(--molkky-text);
+    background: transparent;
+    color: var(--molkky-text);
+    transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--molkky-text);
+      color: var(--molkky-surface);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--molkky-text);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    &--primary {
+      background: var(--molkky-text);
+      color: var(--molkky-surface);
+      border-color: var(--molkky-text);
+
+      &:hover,
+      &:focus-visible {
+        background: #000;
+        border-color: #000;
+      }
+    }
+  }
+
+  &__result {
+    margin: 0;
+    font-size: 0.9rem;
+    min-height: 1.45em;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+    color: var(--molkky-text-muted);
+    padding: 0.35rem 0;
+    border-top: 1px solid var(--molkky-border);
+
+    @media (min-width: 640px) {
+      text-align: right;
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__btn {
+      transition: none;
+    }
+  }
+}
