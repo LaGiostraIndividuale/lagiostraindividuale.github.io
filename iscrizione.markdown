@@ -4,7 +4,7 @@ title: Iscrizione
 permalink: /iscrizione/
 image: iscrizione.jpg
 description: Iscriviti qui alla Giostra Individuale.
-published: true
+published: false
 ---
 
 

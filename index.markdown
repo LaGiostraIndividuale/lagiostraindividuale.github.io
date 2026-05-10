@@ -8,7 +8,7 @@ molkky_simulator: true
 
 !["stagione 2025"](/assets/img/stagione-2026/la-giostra-individuale-stagione2026.png)
 
-Ciao persone! È il momento di saltare giù dalla sedia (del bar) perché aprono le iscrizioni per la **Stagione Regolare 2026** de **La Giostra Individuale!** 🥖
+<!-- Ciao persone! È il momento di saltare giù dalla sedia (del bar) perché aprono le iscrizioni per la **Stagione Regolare 2026** de **La Giostra Individuale!** 🥖
 {:.has-dropcap}
 
 Lз più astutз di voi diranno: “Ma CoMe MI PoSsO IsCRivErE?”
@@ -18,7 +18,18 @@ Avete tempo fino al **20 Febbraio** per iscrivervi in una delle [Conferenze](/co
 
 Vi ricordiamo inoltre, che le iscrizioni avverrano esclusivamente attraverso Lǝ Referente di Conferenza che si farà carico di raccogliere i dati e la quota di partecipazione.
 
-Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contatti")
+Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contatti")-->
+
+La Stagione Regolare 2026 de **La Giostra individuale** è officialmente iniziata! Segui l'andamento del campionato sull'App oppure consulata la sezione dedicata su questo sito. 
+{:.has-dropcap}
+
+Presto tutte le info relative all'evento in cui si svolgeranno le fasi di Ripescaggio e Torneo Finale che avrà luogo **Sabato 19 Settembre** a Pesaro.
+
+
+Per ora non possiamo fare altro che augurare a tuttз lз partecipanti *Buona Fortuna!*
+
+Hai bisogno di altre info? [ Non esitare a contattarci](/contatti "Contatti").
+
 
 
 ---
