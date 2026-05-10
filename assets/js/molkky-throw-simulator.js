@@ -814,10 +814,10 @@ class MolkkySimulator {
     if (this.throwInProgress) return;
     if (!this.molkky.userData.settled || this.molkky.userData.inFlight) return;
 
-    if (this.reducedMotion) {
-      this._executeThrow(0.65, 0, 0.25);
-      return;
-    }
+    // La sequenza potenza → direzione → palombella è il cuore del gioco:
+    // va eseguita sempre, anche con `prefers-reduced-motion` attivo (su mobile
+    // è spesso ON per via della Modalità Risparmio Energia). Per l'accessibilità
+    // riduciamo l'animazione altrove, non saltiamo il gameplay.
 
     if (this.shotPhase === "idle") {
       this._lockedPower = 0.7;
@@ -934,10 +934,6 @@ class MolkkySimulator {
     this._updateHud();
     this.resultEl.textContent = "Lancio in corso…";
     this._updateShotUi();
-
-    if (this.reducedMotion) {
-      this._simulateInstant();
-    }
   }
 
   /** Forza l'arresto immediato di tutti i corpi (timeout o reduced motion). */
