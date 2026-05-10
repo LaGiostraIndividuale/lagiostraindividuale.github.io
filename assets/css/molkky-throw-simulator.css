@@ -313,6 +313,14 @@
   gap: 0.5rem;
   justify-content: flex-end;
 }
+@media (max-width: 640px) {
+  .molkky-simulator__buttons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+}
 .molkky-simulator__btn {
   appearance: none;
   cursor: pointer;
@@ -352,6 +360,13 @@
 .molkky-simulator__btn--primary:focus-visible {
   background: #000;
   border-color: #000;
+}
+@media (max-width: 640px) {
+  .molkky-simulator__btn--primary {
+    width: 100%;
+    padding-block: 0.85rem;
+    font-size: 1.05rem;
+  }
 }
 .molkky-simulator__result {
   margin: 0;

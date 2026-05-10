@@ -371,6 +371,16 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     justify-content: flex-end;
+
+    /* Mobile: pulsante d'azione (Inizia tiro / Ferma potenza / Lancia!) a
+     * tutta larghezza per ridurre i tap mancati mentre l'occhio è sul campo;
+     * "Nuova partita" su una riga separata, larghezza naturale. */
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.6rem;
+    }
   }
 
   &__btn {
@@ -416,6 +426,12 @@
       &:focus-visible {
         background: #000;
         border-color: #000;
+      }
+
+      @media (max-width: 640px) {
+        width: 100%;
+        padding-block: 0.85rem;
+        font-size: 1.05rem;
       }
     }
   }
