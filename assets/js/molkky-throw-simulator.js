@@ -22,8 +22,11 @@ const PIN_TOP_SLOPE = 0.6;
 const PIN_HALF_LEN = PIN_HEIGHT / 2 - PIN_RADIUS;
 /** Regola stringente originale (~45°). */
 const PIN_FALL_THRESHOLD_STRICT = Math.PI / 4;
-/** Regola “rilassata” richiesta: inclinazione marcata = caduto. */
-const PIN_LEAN_THRESHOLD = 0.42;
+/** Regola “rilassata” richiesta: inclinazione marcata = caduto.
+ *  ~17° (0.30 rad): un pin chiaramente piegato vale come abbattuto, così
+ *  i contatti non vengono più “mangiati” da un settle troppo presto.
+ */
+const PIN_LEAN_THRESHOLD = 0.30;
 
 /** Massa = 1 (relativa). Momento d'inerzia per asse trasversale (cilindro pieno). */
 const PIN_MASS = 1;
@@ -34,7 +37,7 @@ const PIN_INERTIA_AXIAL = (PIN_RADIUS * PIN_RADIUS) / 2;
 /** Coefficienti di restituzione: legno su sabbia/erba = molto basso. */
 const RESTITUTION_GROUND = 0.18;
 const RESTITUTION_PIN_PIN = 0.32;
-const RESTITUTION_MOLKKY_PIN = 0.18;
+const RESTITUTION_MOLKKY_PIN = 0.28;
 /** Attrito di Coulomb (limite tangenziale = mu * |Jn|). */
 const FRICTION_GROUND = 0.55;
 const FRICTION_PIN_PIN = 0.25;
@@ -54,7 +57,7 @@ const GRAVITY = -22;
 const GROUND_EPS = 0.008;
 
 const POWER_METER_OMEGA = 3.85;
-const AIM_METER_OMEGA = 4.65;
+const AIM_METER_OMEGA = 3.30;
 const LOB_METER_OMEGA = 3.25;
 
 /** Bersaglio z-target in funzione della potenza (start = mölkkyHome.z). */
@@ -1100,6 +1103,21 @@ class MolkkySimulator {
       pin.userData.angularVelocity.add(
         new THREE.Vector3().crossVectors(rPin, impulse).multiplyScalar(-1 / PIN_INERTIA_PERP),
       );
+
+      // Tip-assist: se il birillo è ancora dritto (o quasi) e viene toccato,
+      // diamo un piccolo impulso angolare extra attorno all'asse orizzontale
+      // perpendicolare alla direzione d'urto. Così “toccato = inclinato”
+      // diventa la norma anche per contatti morbidi.
+      const pinUp = new THREE.Vector3(0, 1, 0).applyQuaternion(pin.quaternion);
+      if (pinUp.y > 0.92) {
+        const tipAxis = new THREE.Vector3().crossVectors(pinUp, n);
+        const tipMag = tipAxis.length();
+        if (tipMag > 1e-6) {
+          tipAxis.divideScalar(tipMag);
+          const boost = Math.min(Math.abs(Jn) * 1.4, 6.0);
+          pin.userData.angularVelocity.addScaledVector(tipAxis, boost);
+        }
+      }
 
       pin.userData.resting = false;
       this.collisionCooldown = 0.02;
