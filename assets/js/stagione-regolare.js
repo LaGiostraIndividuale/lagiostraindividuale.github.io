@@ -75,6 +75,15 @@ function hasUsableConferenceData({ giocanti, classifica, partite }) {
     partite.length > 0;
 }
 
+/** Card cliccabile solo se esiste almeno una partita già disputata (non solo calendario da giocare). */
+function hasPlayedMatch(partite) {
+  return Array.isArray(partite) && partite.some(p => p.stato === "giocata");
+}
+
+function isConferenceCardAvailable(data) {
+  return hasUsableConferenceData(data) && hasPlayedMatch(data.partite);
+}
+
 async function renderConferenceCards(conferenze, base) {
   const cardsData = await Promise.all(
     conferenze.map(async conferenza => {
@@ -82,7 +91,7 @@ async function renderConferenceCards(conferenze, base) {
         const data = await loadConferenceData(base, conferenza.id);
         const { classifica, partite, giocantiMap } = data;
         const stats = getStats(classifica, partite, giocantiMap);
-        return { conferenza, stats, available: hasUsableConferenceData(data) };
+        return { conferenza, stats, available: isConferenceCardAvailable(data) };
       } catch {
         return {
           conferenza,
