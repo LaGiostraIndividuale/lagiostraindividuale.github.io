@@ -155,6 +155,24 @@ function getPinCapsuleEnds(pin, outTop, outBot) {
   outBot.copy(pin.position).addScaledVector(_capsuleAxis, -PIN_HALF_LEN);
 }
 
+const _molkkyAxis = new THREE.Vector3();
+/** Lunghezza dal centro del mölkky a una delle due "spalle" della capsula. */
+const MOLKKY_HALF_LEN = MOLKKY_LENGTH / 2 - MOLKKY_RADIUS;
+
+/**
+ * Estremità della capsula del mölkky in world.
+ * La geometria del cilindro nasce con asse +Y; la rotazione del mesh
+ * (mantenuta in quaternion da Three.js anche se modifichiamo `rotation`)
+ * orienta l'asse nel mondo. Tratta il mölkky come capsula vera, NON come
+ * sfera al suo centro: senza questo i tiri a palombella che colpiscono il
+ * birillo sulla punta non vengono rilevati (centro troppo lontano).
+ */
+function getMolkkyCapsuleEnds(molkky, outA, outB) {
+  _molkkyAxis.set(0, 1, 0).applyQuaternion(molkky.quaternion);
+  outA.copy(molkky.position).addScaledVector(_molkkyAxis, MOLKKY_HALF_LEN);
+  outB.copy(molkky.position).addScaledVector(_molkkyAxis, -MOLKKY_HALF_LEN);
+}
+
 // --- Helpers DOM -------------------------------------------------------------
 
 function hasWebGLSupport() {
@@ -393,7 +411,6 @@ class MolkkySimulator {
     this.collisionCooldown = 0;
 
     /** Sweep collision mölkky↔birilli (no allocazioni nel loop caldo). */
-    this._molkkyPrev = new THREE.Vector3();
     this._colCapA = new THREE.Vector3();
     this._colCapB = new THREE.Vector3();
     this._colClosestM = new THREE.Vector3();
@@ -415,6 +432,8 @@ class MolkkySimulator {
     this._colLxN = new THREE.Vector3();
     this._colBaseOffset = new THREE.Vector3();
     this._colCenterDv = new THREE.Vector3();
+    this._colMolEndA = new THREE.Vector3();
+    this._colMolEndB = new THREE.Vector3();
 
     /** playing | won_exact | lost_misses */
     this.gamePhase = "playing";
@@ -1132,10 +1151,6 @@ class MolkkySimulator {
     const ud = m.userData;
     if (ud.settled) return;
 
-    // Segmento di sweep per collisioni: segmento [prev,curr] vs capsula birillo
-    // intercetta gli impatti periferici che col solo centro saltano un frame.
-    this._molkkyPrev.copy(m.position);
-
     if (ud.inFlight) {
       ud.velocity.y += GRAVITY * dt;
     }
@@ -1205,12 +1220,16 @@ class MolkkySimulator {
     const closestP = this._colClosestP;
     const diff = this._colDiff;
     const n = this._colN;
-    const prev = this._molkkyPrev;
-    const curr = m.position;
+    // Estremità della capsula del mölkky (corrente): la collisione è
+    // capsula-vs-capsula, così TUTTA la superficie del mölkky può colpire
+    // qualsiasi punto del birillo (incluse cima e spigoli).
+    const molEndA = this._colMolEndA;
+    const molEndB = this._colMolEndB;
+    getMolkkyCapsuleEnds(m, molEndA, molEndB);
 
     for (const pin of this.pins) {
       getPinCapsuleEnds(pin, segA, segB);
-      closestPointsOnSegments(prev, curr, segA, segB, closestM, closestP);
+      closestPointsOnSegments(molEndA, molEndB, segA, segB, closestM, closestP);
       diff.copy(closestP).sub(closestM);
       const d2 = diff.lengthSq();
       if (d2 >= sqDetect) continue;
@@ -1218,10 +1237,10 @@ class MolkkySimulator {
       let dist;
       let overlap;
       if (d2 < 1e-10) {
-        // Segmenti che si intersecano: i due percorsi si sono incrociati.
-        // Costruiamo n (mölkky→pin) come componente orizzontale della velocità
-        // del mölkky perpendicolare all'asse del birillo: è l'impulso fisicamente
-        // più sensato per un contatto attraverso.
+        // Le due capsule si compenetrano: niente direzione utile da `diff`.
+        // Costruiamo n (mölkky→pin) come componente perpendicolare all'asse
+        // del birillo della velocità del mölkky (direzione fisicamente sensata
+        // per un contatto frontale o passante).
         const pinAx = this._colPinAxis.copy(segB).sub(segA);
         const pinLen = pinAx.length();
         if (pinLen > 1e-6) pinAx.divideScalar(pinLen); else pinAx.set(0, 1, 0);
@@ -1230,7 +1249,7 @@ class MolkkySimulator {
         if (nLen > 1e-4) {
           n.divideScalar(nLen);
         } else {
-          n.set(pin.position.x - curr.x, 0, pin.position.z - curr.z);
+          n.set(pin.position.x - m.position.x, 0, pin.position.z - m.position.z);
           const nh = n.length();
           if (nh > 1e-4) n.divideScalar(nh); else n.set(0, 0, 1);
         }
