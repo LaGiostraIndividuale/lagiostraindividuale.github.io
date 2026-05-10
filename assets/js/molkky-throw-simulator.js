@@ -63,8 +63,15 @@ const LOB_METER_OMEGA = 3.25;
 /** Bersaglio z-target in funzione della potenza (start = mölkkyHome.z). */
 const TARGET_Z_NEAR = -1.0;
 const TARGET_Z_FAR = 11.5;
-/** Spostamento laterale a aim=±1. */
-const TARGET_X_RANGE = 3.6;
+/** Estremo world-space di `targetX` a aim = ±1: forbice ampia (boost)
+ *  così il fader Direzione copre quasi tutto il campo; il bersaglio può
+ *  superare leggermente il bordo nominale — la fisica limita comunque i corpi.
+ */
+const AIM_TARGET_X_BOOST = 1.32;
+const AIM_TARGET_X_EXTENT = Math.min(
+  PLAY_AREA.x + 0.95,
+  (PLAY_AREA.x - PIN_RADIUS - 0.06) * AIM_TARGET_X_BOOST,
+);
 /** Apice della parabola: lob 0 = teso e radente, lob 1 = scavalca tutti i birilli. */
 const APEX_Y_MIN = 0.45;
 const APEX_Y_MAX = 4.0;
@@ -426,6 +433,16 @@ class MolkkySimulator {
     this.camera.position.set(0, 4.8, -8.5);
     this.camera.lookAt(0, 0.6, 4);
 
+    this._groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+    this._raycaster = new THREE.Raycaster();
+    this._groundRayHit = new THREE.Vector3();
+    /** Mezza larghezza sul piano y=0 visibile dal canvas (NDC ±1, y=0). */
+    this._visibleGroundHalfX = PLAY_AREA.x;
+    /** Limiti laterali centro birillo / mölkky (sempre ≤ PLAY_AREA). */
+    this._pinClampHalfX = PLAY_AREA.x - PIN_RADIUS;
+    this._molkkyClampHalfX = PLAY_AREA.x - MOLKKY_RADIUS;
+    this._fitCameraAndUpdateClampBounds();
+
     const ambient = new THREE.AmbientLight(0xfff2d6, 0.55);
     this.scene.add(ambient);
 
@@ -537,7 +554,7 @@ class MolkkySimulator {
 
     const start = this.molkkyHome;
     const targetZ = TARGET_Z_NEAR + p * (TARGET_Z_FAR - TARGET_Z_NEAR);
-    const targetX = a * TARGET_X_RANGE;
+    const targetX = a * AIM_TARGET_X_EXTENT;
     const apexY = APEX_Y_MIN + l * (APEX_Y_MAX - APEX_Y_MIN);
 
     const g = Math.abs(GRAVITY);
@@ -632,6 +649,70 @@ class MolkkySimulator {
     this.renderer.setSize(width, height, false);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
+    this._fitCameraAndUpdateClampBounds();
+  }
+
+  /**
+   * Mezza larghezza sul terreno (y=0) coperta dai bordi sinistro/destro del canvas,
+   * al centro verticale dello schermo. Serve a limitare birilli/mölkky alla zona visibile.
+   */
+  _visibleGroundHalfWidthAtScreenCenter() {
+    if (!this.camera) return PLAY_AREA.x;
+    const plane = this._groundPlane;
+    const hit = this._groundRayHit;
+    const rc = this._raycaster;
+    rc.setFromCamera(new THREE.Vector2(-1, 0), this.camera);
+    const okL = rc.ray.intersectPlane(plane, hit);
+    const xL = okL ? hit.x : -PLAY_AREA.x;
+    rc.setFromCamera(new THREE.Vector2(1, 0), this.camera);
+    const okR = rc.ray.intersectPlane(plane, hit);
+    const xR = okR ? hit.x : PLAY_AREA.x;
+    return Math.abs(xR - xL) * 0.5;
+  }
+
+  /**
+   * Su viewport stretti (mobile portrait) il FOV di default non copre tutta la larghezza
+   * del campo: aumentiamo il FOV finché sul terreno è visibile almeno ~PLAY_AREA.x,
+   * così i birilli agli angoli restano nel canvas. Poi aggiorna i clamp laterali.
+   */
+  _fitCameraAndUpdateClampBounds() {
+    if (!this.camera) return;
+
+    const targetHalf = PLAY_AREA.x - 0.05;
+    const maxFov = 72;
+    const baseFov = 45;
+
+    this.camera.fov = baseFov;
+    this.camera.updateProjectionMatrix();
+
+    let vis = this._visibleGroundHalfWidthAtScreenCenter();
+    if (vis < targetHalf) {
+      for (let fov = baseFov + 1; fov <= maxFov; fov++) {
+        this.camera.fov = fov;
+        this.camera.updateProjectionMatrix();
+        vis = this._visibleGroundHalfWidthAtScreenCenter();
+        if (vis >= targetHalf) break;
+      }
+    }
+
+    if (!Number.isFinite(vis) || vis < 1) {
+      vis = PLAY_AREA.x;
+    }
+
+    this._visibleGroundHalfX = vis;
+
+    const pinEdge = 0.14;
+    const molEdge = 0.14;
+    this._pinClampHalfX = THREE.MathUtils.clamp(
+      Math.min(PLAY_AREA.x - PIN_RADIUS, vis - PIN_RADIUS - pinEdge),
+      2.0,
+      PLAY_AREA.x - PIN_RADIUS,
+    );
+    this._molkkyClampHalfX = THREE.MathUtils.clamp(
+      Math.min(PLAY_AREA.x - MOLKKY_RADIUS, vis - MOLKKY_RADIUS - molEdge),
+      2.0,
+      PLAY_AREA.x - MOLKKY_RADIUS,
+    );
   }
 
   _start() {
@@ -892,7 +973,8 @@ class MolkkySimulator {
     for (const pin of pinList) {
       pin.quaternion.identity();
       pin.position.y = half;
-      pin.position.x = THREE.MathUtils.clamp(pin.position.x, -PLAY_AREA.x + PIN_RADIUS, PLAY_AREA.x - PIN_RADIUS);
+      const limX = this._pinClampHalfX;
+      pin.position.x = THREE.MathUtils.clamp(pin.position.x, -limX, limX);
       if (pin.position.z > PLAY_AREA.z - PIN_RADIUS) {
         pin.position.z = PLAY_AREA.z - PIN_RADIUS;
       }
@@ -1038,7 +1120,14 @@ class MolkkySimulator {
       }
     }
 
-    m.position.x = THREE.MathUtils.clamp(m.position.x, -PLAY_AREA.x + MOLKKY_RADIUS, PLAY_AREA.x - MOLKKY_RADIUS);
+    const limMX = this._molkkyClampHalfX;
+    if (m.position.x > limMX) {
+      m.position.x = limMX;
+      if (ud.velocity.x > 0) ud.velocity.x = -ud.velocity.x * 0.35;
+    } else if (m.position.x < -limMX) {
+      m.position.x = -limMX;
+      if (ud.velocity.x < 0) ud.velocity.x = -ud.velocity.x * 0.35;
+    }
     if (m.position.z > PLAY_AREA.z - MOLKKY_RADIUS) {
       m.position.z = PLAY_AREA.z - MOLKKY_RADIUS;
       ud.velocity.z *= -0.35;
@@ -1319,7 +1408,14 @@ class MolkkySimulator {
         }
       }
 
-      pin.position.x = THREE.MathUtils.clamp(pin.position.x, -PLAY_AREA.x + PIN_RADIUS, PLAY_AREA.x - PIN_RADIUS);
+      const limPX = this._pinClampHalfX;
+      if (pin.position.x > limPX) {
+        pin.position.x = limPX;
+        if (ud.velocity.x > 0) ud.velocity.x = -ud.velocity.x * 0.4;
+      } else if (pin.position.x < -limPX) {
+        pin.position.x = -limPX;
+        if (ud.velocity.x < 0) ud.velocity.x = -ud.velocity.x * 0.4;
+      }
       if (pin.position.z > PLAY_AREA.z - PIN_RADIUS) {
         pin.position.z = PLAY_AREA.z - PIN_RADIUS;
         if (ud.velocity.z > 0) ud.velocity.z = -ud.velocity.z * 0.4;
