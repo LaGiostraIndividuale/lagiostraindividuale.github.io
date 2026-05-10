@@ -410,6 +410,11 @@ class MolkkySimulator {
     this._colTipAxis = new THREE.Vector3();
     this._colOmegaCrossR = new THREE.Vector3();
     this._colAngKick = new THREE.Vector3();
+    this._colPinAxis = new THREE.Vector3();
+    this._colLContact = new THREE.Vector3();
+    this._colLxN = new THREE.Vector3();
+    this._colBaseOffset = new THREE.Vector3();
+    this._colCenterDv = new THREE.Vector3();
 
     /** playing | won_exact | lost_misses */
     this.gamePhase = "playing";
@@ -989,13 +994,21 @@ class MolkkySimulator {
     m.userData.settled = true;
   }
 
-  /** Dopo il calcolo del tiro: birilli abbattuti si rialzano sul posto (stessi x,z). */
+  /**
+   * Dopo il calcolo del tiro: tutti i birilli vengono raddrizzati sul posto.
+   * - Birilli abbattuti (oltre soglia): si rialzano dove sono caduti.
+   * - Birilli rimasti in bilico / leggermente inclinati ma non considerati
+   *   caduti: vengono comunque ri-allineati per partire dalla configurazione
+   *   pulita al lancio successivo.
+   * - I birilli ancora perfettamente in piedi vengono toccati pochissimo
+   *   (snap di y/quaternion) senza spostamenti percepibili.
+   */
   _risePinsAfterScoring(pinList) {
     const half = PIN_HEIGHT / 2;
+    const limX = this._pinClampHalfX;
     for (const pin of pinList) {
       pin.quaternion.identity();
       pin.position.y = half;
-      const limX = this._pinClampHalfX;
       pin.position.x = THREE.MathUtils.clamp(pin.position.x, -limX, limX);
       if (pin.position.z > PLAY_AREA.z - PIN_RADIUS) {
         pin.position.z = PLAY_AREA.z - PIN_RADIUS;
@@ -1076,11 +1089,25 @@ class MolkkySimulator {
 
   // --- Fisica -----------------------------------------------------------------
 
+  /**
+   * Integrazione con sub-stepping: mantiene lo spostamento del mölkky per
+   * sotto-passo ≤ MAX_SUBSTEP_LEN (≈ raggio del birillo). Senza questo, sui
+   * lanci forti il mölkky può saltare oltre la capsula tra un frame e l’altro
+   * (segmenti che si incrociano = distanza minima ≈ 0 → falso negativo).
+   */
   _physicsStep(dt) {
-    this._updateMolkky(dt);
-    this._updatePins(dt);
-    this._resolvePinPinCollisions();
-    if (this.collisionCooldown > 0) this.collisionCooldown -= dt;
+    const mv = this.molkky.userData.velocity;
+    const speed = Math.hypot(mv.x, mv.y, mv.z);
+    const MAX_SUBSTEP_LEN = 0.12; // m per sub-step
+    const need = Math.max(1, Math.ceil((speed * dt) / MAX_SUBSTEP_LEN));
+    const sub = Math.min(need, 24);
+    const subDt = dt / sub;
+    for (let i = 0; i < sub; i++) {
+      this._updateMolkky(subDt);
+      this._updatePins(subDt);
+      this._resolvePinPinCollisions();
+      if (this.collisionCooldown > 0) this.collisionCooldown -= subDt;
+    }
   }
 
   _update(dt) {
@@ -1186,14 +1213,36 @@ class MolkkySimulator {
       closestPointsOnSegments(prev, curr, segA, segB, closestM, closestP);
       diff.copy(closestP).sub(closestM);
       const d2 = diff.lengthSq();
-      if (d2 >= sqDetect || d2 < 1e-14) continue;
+      if (d2 >= sqDetect) continue;
 
-      const dist = Math.sqrt(d2);
-      n.copy(diff).divideScalar(dist);
-
-      let overlap = resolveR - dist;
-      if (overlap < 0.015) {
-        overlap = Math.max(overlap, (detectR - dist) * 0.5);
+      let dist;
+      let overlap;
+      if (d2 < 1e-10) {
+        // Segmenti che si intersecano: i due percorsi si sono incrociati.
+        // Costruiamo n (mölkky→pin) come componente orizzontale della velocità
+        // del mölkky perpendicolare all'asse del birillo: è l'impulso fisicamente
+        // più sensato per un contatto attraverso.
+        const pinAx = this._colPinAxis.copy(segB).sub(segA);
+        const pinLen = pinAx.length();
+        if (pinLen > 1e-6) pinAx.divideScalar(pinLen); else pinAx.set(0, 1, 0);
+        n.copy(ud.velocity).addScaledVector(pinAx, -ud.velocity.dot(pinAx));
+        const nLen = n.length();
+        if (nLen > 1e-4) {
+          n.divideScalar(nLen);
+        } else {
+          n.set(pin.position.x - curr.x, 0, pin.position.z - curr.z);
+          const nh = n.length();
+          if (nh > 1e-4) n.divideScalar(nh); else n.set(0, 0, 1);
+        }
+        dist = 0;
+        overlap = resolveR;
+      } else {
+        dist = Math.sqrt(d2);
+        n.copy(diff).divideScalar(dist);
+        overlap = resolveR - dist;
+        if (overlap < 0.015) {
+          overlap = Math.max(overlap, (detectR - dist) * 0.5);
+        }
       }
 
       pin.position.addScaledVector(n, overlap * (MOLKKY_MASS / (MOLKKY_MASS + PIN_MASS)));
@@ -1204,19 +1253,57 @@ class MolkkySimulator {
       this._colVPinAt.copy(pin.userData.velocity).add(this._colOmegaCrossR);
       this._colVMolAt.copy(ud.velocity);
       this._colRel.copy(this._colVMolAt).sub(this._colVPinAt);
+      // n punta dal mölkky verso il pin (diff = closestP - closestM): se il
+      // mölkky si avvicina, la sua velocità ha componente +n e vn > 0.
       const vn = this._colRel.dot(n);
-      // Urto ravvicinato / di striscio: vn può essere ~0 — non saltare l’impulso
-      if (vn > 0.03) continue;
+      if (vn < 0.02) continue;
 
+      // Boost minimo per i rasenti (velocità di approccio piccola ma reale):
+      let effVn = vn;
+      if (effVn < 0.18 && dist < detectR - 0.02) {
+        effVn += 0.18;
+      }
+
+      this._colPinUp.set(0, 1, 0).applyQuaternion(pin.quaternion);
+      const isUprightStanding =
+        this._colPinUp.y > 0.95 && pin.position.y < PIN_HEIGHT * 0.6;
+
+      if (isUprightStanding) {
+        // Pivot-around-base: la base del birillo è "ancorata" dall'attrito
+        // statico col terreno. Una spinta orizzontale a qualsiasi altezza
+        // positiva genera rotazione del top nella direzione del mölkky
+        // (caduta in avanti, niente scivolata indietro).
+        // Riferimenti: regolamento Mölkky → "i birilli si scontrano e cadono".
+        this._colLContact.copy(this._colRPin);
+        this._colLContact.y += PIN_HEIGHT * 0.5; // dal centro alla base
+        this._colLxN.crossVectors(this._colLContact, n);
+        const lxnSq = this._colLxN.lengthSq();
+        const halfH = PIN_HEIGHT * 0.5;
+        const I_pivot = PIN_INERTIA_PERP + PIN_MASS * halfH * halfH;
+        const denomP = 1 / MOLKKY_MASS + lxnSq / I_pivot;
+        const Jp = (1 + RESTITUTION_MOLKKY_PIN) * effVn / denomP; // > 0
+
+        // mol: riceve −Jp·n (decelerazione/rimbalzo)
+        ud.velocity.addScaledVector(n, -Jp / MOLKKY_MASS);
+        // pin angolare: Δω = Jp · (l × n) / I_pivot (top tipping in avanti)
+        const wScale = Jp / I_pivot;
+        pin.userData.angularVelocity.addScaledVector(this._colLxN, wScale);
+        // pin lineare: per mantenere la base ferma, v_center = ω × (0, H/2, 0)
+        this._colBaseOffset.set(0, halfH, 0);
+        this._colCenterDv.crossVectors(this._colLxN, this._colBaseOffset);
+        pin.userData.velocity.addScaledVector(this._colCenterDv, wScale);
+
+        pin.userData.resting = false;
+        this.collisionCooldown = 0.006;
+        continue;
+      }
+
+      // Free-body (birillo già inclinato / sollevato): convenzione standard.
       this._colRxn.crossVectors(this._colRPin, n);
       const denom =
         1 / MOLKKY_MASS +
         1 / PIN_MASS +
         this._colRxn.lengthSq() / PIN_INERTIA_PERP;
-      let effVn = Math.min(vn, 0);
-      if (effVn > -0.12 && effVn <= 0 && dist < detectR - 0.02) {
-        effVn -= 0.14;
-      }
       const Jn = -(1 + RESTITUTION_MOLKKY_PIN) * effVn / denom;
       this._colImpulse.copy(n).multiplyScalar(Jn);
 
@@ -1225,13 +1312,13 @@ class MolkkySimulator {
       this._colAngKick.crossVectors(this._colRPin, this._colImpulse).multiplyScalar(-1 / PIN_INERTIA_PERP);
       pin.userData.angularVelocity.add(this._colAngKick);
 
-      this._colPinUp.set(0, 1, 0).applyQuaternion(pin.quaternion);
-      if (this._colPinUp.y > 0.92) {
+      // Tip-assist piccolo se il birillo è ancora vicino alla verticale.
+      if (this._colPinUp.y > 0.85) {
         this._colTipAxis.crossVectors(this._colPinUp, n);
         const tipMag = this._colTipAxis.length();
         if (tipMag > 1e-6) {
           this._colTipAxis.divideScalar(tipMag);
-          const boost = Math.min(Math.abs(Jn) * 1.4, 6.0);
+          const boost = Math.min(Math.abs(Jn) * 1.2, 5.0);
           pin.userData.angularVelocity.addScaledVector(this._colTipAxis, boost);
         }
       }
@@ -1560,7 +1647,9 @@ class MolkkySimulator {
 
       this.resultEl.textContent = `${msg} Totale: ${this.score}.`;
     } finally {
-      this._risePinsAfterScoring(newlyDown);
+      // Raddrizza TUTTI i birilli (caduti, in bilico, leggermente inclinati):
+      // il prossimo tiro parte sempre da una configurazione pulita.
+      this._risePinsAfterScoring(this.pins);
       this._stashMolkkyAfterThrow();
     }
   }
