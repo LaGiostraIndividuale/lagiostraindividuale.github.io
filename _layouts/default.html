@@ -46,7 +46,20 @@
             <div class="page-hero-parallax js-page-hero-parallax">
               <img class="bg page-hero-parallax__img" src="{{ hero_src }}" alt="" fetchpriority="high" loading="eager" decoding="async" />
               <div class="page-hero-parallax__overlay">
-                <h1 class="page-hero-parallax__title" id="page-hero-title">{{ page.title | escape }}</h1>
+                {%- comment -%}
+                  Titolo "logo-style": ogni carattere è un <span> separato. Così
+                  `-webkit-text-stroke` viene dipinto per ciascuna lettera in
+                  sequenza (stroke L1 → fill L1 → stroke L2 → fill L2…) e il
+                  bordo nero resta visibile anche tra glifi sovrapposti.
+                  `aria-label` mantiene l’accessibilità: gli screen reader leggono
+                  il titolo intero, non le singole lettere.
+                {%- endcomment -%}
+                <h1 class="page-hero-parallax__title" id="page-hero-title" aria-label="{{ page.title | escape }}">
+                  {%- assign hero_title_chars = page.title | escape | split: "" -%}
+                  {%- for c in hero_title_chars -%}
+                  {%- if c == " " -%}<span class="page-hero-parallax__char page-hero-parallax__char--space" aria-hidden="true">&nbsp;</span>{%- else -%}<span class="page-hero-parallax__char" aria-hidden="true">{{ c }}</span>{%- endif -%}
+                  {%- endfor -%}
+                </h1>
               </div>
             </div>
             {% else %}

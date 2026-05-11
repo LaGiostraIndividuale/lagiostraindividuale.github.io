@@ -1,54 +1,11 @@
 /* Custom overrides on top of Minima.
    Keep this file small and page-scoped. */
 
-/* STAGIONE REGOLARE (riusabile ogni anno) */
-
-/* Body (Minima) è flex column: .main-content senza min-width:0 si allarga con i figli */
-body > .main-content:has(.sr-layout) {
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.page-content--stagione-regolare {
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/*
- * Template dedicato SR: colonna a larghezza viewport, contenuto centrato e limitato.
- * overflow-x: clip evita sbordo orizzontale senza interferire con overflow-x: auto dei figli.
- */
-.sr-layout {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  overflow-x: clip;
-}
-
-.sr-layout__inner {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1320px;
-  margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 28px);
-  min-width: 0;
-}
-
-.sr-layout__inner .sr-page,
-.sr-layout__inner #stagione-regolare-app {
-  min-width: 0;
-  max-width: 100%;
-}
-
-.sr-layout__inner .sr-card {
-  max-width: 100%;
-  min-width: 0;
-}
+/* =========================================================
+ *  STAGIONE REGOLARE (riusabile ogni anno)
+ *  La pagina usa `layout: page` standard: la `.sr-page` vive
+ *  dentro `.wrapper` di Minima (vedi style.scss → WRAPPER).
+ * ========================================================= */
 
 .sr-page {
   --sr-bg: var(--background, #000);
@@ -63,52 +20,23 @@ body > .main-content:has(.sr-layout) {
 
   background: var(--sr-bg);
   color: var(--sr-fg);
-  min-height: 0;
-  /* margini orizzontali: solo .sr-layout__inner */
-  padding: 48px 0 80px;
-}
-
-/* Contenitore pagina (layout) */
-[data-layout="stagione-regolare"] {
-  max-width: 100%;
-  width: 100%;
+  min-width: 0;
+  padding: 24px 0 80px;
 }
 
 .sr-page * {
   box-sizing: border-box;
 }
 
+.sr-intro {
+  color: var(--sr-muted);
+  font-size: var(--fs-2, 1.0625rem);
+  margin: 0 0 24px;
+}
+
 .sr-page :focus-visible {
   outline: 3px solid var(--sr-accent);
   outline-offset: 3px;
-}
-
-.sr-hero {
-  max-width: 100%;
-  margin: 0 auto 40px;
-  text-align: center;
-}
-
-.sr-kicker {
-  color: var(--sr-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.sr-hero h1 {
-  font-size: clamp(40px, 7vw, 86px);
-  line-height: 0.95;
-  margin: 0;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
-.sr-hero p {
-  color: var(--sr-muted);
-  font-size: 18px;
-  margin-top: 16px;
 }
 
 #stagione-regolare-app {
@@ -900,13 +828,6 @@ body > .main-content:has(.sr-layout) {
 
   .sr-page .sr-conference-card:hover {
     transform: none;
-  }
-}
-
-@media (min-width: 1280px) {
-  .sr-conference-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 340px;
   }
 }
 

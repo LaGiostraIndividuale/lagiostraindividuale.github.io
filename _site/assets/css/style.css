@@ -650,54 +650,11 @@ table td {
 
 /* Custom overrides on top of Minima.
    Keep this file small and page-scoped. */
-/* STAGIONE REGOLARE (riusabile ogni anno) */
-/* Body (Minima) è flex column: .main-content senza min-width:0 si allarga con i figli */
-body > .main-content:has(.sr-layout) {
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.page-content--stagione-regolare {
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/*
- * Template dedicato SR: colonna a larghezza viewport, contenuto centrato e limitato.
- * overflow-x: clip evita sbordo orizzontale senza interferire con overflow-x: auto dei figli.
- */
-.sr-layout {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  overflow-x: clip;
-}
-
-.sr-layout__inner {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1320px;
-  margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 28px);
-  min-width: 0;
-}
-
-.sr-layout__inner .sr-page,
-.sr-layout__inner #stagione-regolare-app {
-  min-width: 0;
-  max-width: 100%;
-}
-
-.sr-layout__inner .sr-card {
-  max-width: 100%;
-  min-width: 0;
-}
-
+/* =========================================================
+ *  STAGIONE REGOLARE (riusabile ogni anno)
+ *  La pagina usa `layout: page` standard: la `.sr-page` vive
+ *  dentro `.wrapper` di Minima (vedi style.scss → WRAPPER).
+ * ========================================================= */
 .sr-page {
   --sr-bg: var(--background, #000);
   --sr-fg: var(--color, #fff);
@@ -710,52 +667,23 @@ body > .main-content:has(.sr-layout) {
   --sr-accent-contrast: var(--accent-contrast, #000);
   background: var(--sr-bg);
   color: var(--sr-fg);
-  min-height: 0;
-  /* margini orizzontali: solo .sr-layout__inner */
-  padding: 48px 0 80px;
-}
-
-/* Contenitore pagina (layout) */
-[data-layout=stagione-regolare] {
-  max-width: 100%;
-  width: 100%;
+  min-width: 0;
+  padding: 24px 0 80px;
 }
 
 .sr-page * {
   box-sizing: border-box;
 }
 
+.sr-intro {
+  color: var(--sr-muted);
+  font-size: var(--fs-2, 1.0625rem);
+  margin: 0 0 24px;
+}
+
 .sr-page :focus-visible {
   outline: 3px solid var(--sr-accent);
   outline-offset: 3px;
-}
-
-.sr-hero {
-  max-width: 100%;
-  margin: 0 auto 40px;
-  text-align: center;
-}
-
-.sr-kicker {
-  color: var(--sr-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.sr-hero h1 {
-  font-size: clamp(40px, 7vw, 86px);
-  line-height: 0.95;
-  margin: 0;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
-.sr-hero p {
-  color: var(--sr-muted);
-  font-size: 18px;
-  margin-top: 16px;
 }
 
 #stagione-regolare-app {
@@ -1525,12 +1453,6 @@ body > .main-content:has(.sr-layout) {
     transform: none;
   }
 }
-@media (min-width: 1280px) {
-  .sr-conference-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 340px;
-  }
-}
 @media (max-width: 760px) {
   .sr-page {
     padding-top: 32px;
@@ -2010,6 +1932,26 @@ input {
 }
 
 /* =========================================================
+ *  WRAPPER (larghezza contenuto pagina + footer)
+ *
+ *  Minima usa `.wrapper` sia in `_layouts/default.html` (attorno
+ *  al contenuto delle pagine con `layout: page`) sia in
+ *  `_includes/footer.html`. Allargandolo qui i due crescono
+ *  insieme della stessa misura, come richiesto.
+ *
+ *  Default Minima su desktop: max-width 740px + 30px×2 padding
+ *  ⇒ box visibile ~800px. Lo portiamo a ~1020px (=960+60),
+ *  così la prosa, le card grid e il footer respirano di più
+ *  senza sacrificare la leggibilità (≈75–85ch).
+ * ========================================================= */
+@media screen and (min-width: 992px) {
+  .wrapper {
+    max-width: 960px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+/* =========================================================
  *  HEADER + NAV
  * ========================================================= */
 .wrapper-header {
@@ -2118,6 +2060,18 @@ input {
 /* =========================================================
  *  HERO
  * ========================================================= */
+.main-header {
+  /*
+   * Titolo hero — stile "logo": Gothic, maiuscolo, lettere ravvicinate
+   * (anche sovrapposte) con contorno nero visibile su ogni glifo.
+   * Per ottenere il bordo per OGNI lettera anche quando si sovrappongono,
+   * ciascun carattere è un <span class="page-hero-parallax__char"> in
+   * `_layouts/default.html`: così `-webkit-text-stroke` viene dipinto
+   * per ogni glifo separatamente, evitando l'effetto "saldatura".
+   */
+  /* Ogni carattere è un proprio "strato": stroke + fill per glifo */
+  /* Spazio tra parole: niente stroke, larghezza fissa indipendente dal letter-spacing */
+}
 .main-header .bg {
   top: 0;
   left: 0;
@@ -2154,18 +2108,35 @@ input {
 .main-header .page-hero-parallax__title {
   margin: 0;
   flex-shrink: 0;
-  font-size: clamp(1.85rem, 5.5vw, 3.1rem);
-  font-weight: bold;
+  font-family: "Gothic", "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: clamp(1.85rem, 5.4vw, 3.1rem);
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  /* Tracking molto stretto: ora le lettere POSSONO sovrapporsi senza far
+     sparire il bordo, perché ogni char ha il proprio paint-context. */
+  letter-spacing: -0.14em;
+  line-height: 0.94;
   color: #fff;
   -webkit-text-fill-color: #fff;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9), 0 4px 28px rgba(0, 0, 0, 0.75);
-  max-width: 18ch;
+  -webkit-text-stroke: 4px #000;
+  paint-order: stroke fill;
+  text-shadow: none;
+  max-width: min(96vw, 22ch);
+  overflow-wrap: anywhere;
+  hyphens: manual;
   position: relative;
   z-index: 3;
   transform: translate3d(0, var(--hero-title-parallax-y, 0px), 0);
   will-change: transform;
+}
+.main-header .page-hero-parallax__char {
+  display: inline-block;
+  line-height: inherit;
+}
+.main-header .page-hero-parallax__char--space {
+  width: 0.34em;
+  -webkit-text-stroke-width: 0;
 }
 .main-header .page-hero-parallax__img {
   position: absolute;
@@ -2200,6 +2171,17 @@ input {
  * ========================================================= */
 .post-header {
   text-align: center;
+}
+
+/* Titoli pagina (layout page senza hero + h1 Archivio): stesso Gothic e tracking del logo; colore tema su sfondo chiaro */
+article.post:not(.h-entry) > .post-header > .post-title,
+.archive-wrapper > .post-header:first-child > .post-title {
+  font-family: "Gothic", "Arial Black", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
 }
 
 .post-content {
@@ -2321,20 +2303,126 @@ tbody {
   height: 7rem;
 }
 
-/* Documenti di gara: lista PDF stampabili */
+/* =========================================================
+ *  DOCUMENTI DI GARA — griglia di card con anteprima PDF
+ * ========================================================= */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface) 94%, var(--background) 6%);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.doc-card:hover,
+.doc-card:focus-within {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--border) 40%);
+  box-shadow: 0 6px 24px -12px color-mix(in srgb, var(--color) 35%, transparent);
+}
+
+.doc-card__thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 566/800;
+  background: linear-gradient(180deg, transparent 70%, color-mix(in srgb, var(--color) 6%, transparent) 100%), #fff;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.doc-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.doc-card:hover .doc-card__thumb img,
+.doc-card:focus-within .doc-card__thumb img {
+  transform: scale(1.02);
+}
+
+.doc-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem 1.25rem 1.25rem;
+  flex: 1 1 auto;
+}
+
+.doc-card__title {
+  margin: 0;
+  font-size: var(--fs-4);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.doc-card__desc {
+  margin: 0;
+  font-size: var(--fs-1);
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.doc-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.doc-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--color);
+  font-size: var(--fs-1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.doc-card__btn:hover,
+.doc-card__btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.doc-card__btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--background);
+}
+
+.doc-card__btn--primary:hover,
+.doc-card__btn--primary:focus-visible {
+  background: color-mix(in srgb, var(--accent) 85%, var(--color) 15%);
+  border-color: color-mix(in srgb, var(--accent) 85%, var(--color) 15%);
+  color: var(--background);
+}
+
+/* Fallback: vecchia lista (mostrata se manca _data/documenti.yml) */
 .document-list li {
   list-style-type: none;
   background: url(/assets/img/strike.svg) no-repeat left center;
   background-size: 1.4rem;
   padding: 0 0 0.02rem 2rem;
-}
-
-.documents-img {
-  width: 200px;
-  background-color: var(--color);
-  padding: 0.3rem;
-  border: 1px solid var(--color);
-  border-radius: var(--radius-sm);
 }
 
 /* Archivio (titoli centrati) */

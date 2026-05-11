@@ -6,9 +6,9 @@ layout: default
   {%- assign hero_img = page.image | default: "" | strip -%}
   {%- comment -%} Titolo nell’hero (default.html) se c’è un’immagine hero non vuota {%- endcomment -%}
   {%- unless hero_img != "" -%}
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+    </header>
   {%- endunless -%}
     {%- if page.title == "Contatti" -%}
       <div class="contact-wrapper">
@@ -17,10 +17,6 @@ layout: default
     {%- endif -%}
   
     {{ content }}
-
-    {%- if page.title == "Statistiche Stagione Regolare" -%}
-      {%- include conferenze-statistiche.html -%}
-    {%- endif -%}
 
     {%- if page.title == "Documenti di gara" -%}
       {%- include documenti-di-gara.html -%}

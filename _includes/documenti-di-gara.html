@@ -1,11 +1,41 @@
-<div class="document-list">
-    <ul>
-        {% for pdf in site.static_files %}    
-            {% if pdf.path contains '/assets/docs' %}
-            <li>
-                <a href="{{ site.baseurl }}{{ pdf.path }}" target="_blank"> {{ pdf.basename }}</a>
-            </li>    
-            {% endif %}   
-        {% endfor %}
-    </ul>
+{%- assign documenti = site.data.documenti -%}
+{%- if documenti and documenti.size > 0 -%}
+<div class="doc-grid" role="list">
+  {%- for doc in documenti -%}
+    {%- assign href = doc.file | replace: ' ', '%20' | prepend: '/assets/docs/' | prepend: site.baseurl -%}
+    <article class="doc-card" role="listitem">
+      <a class="doc-card__thumb"
+         href="{{ href }}"
+         target="_blank"
+         rel="noopener"
+         aria-label="Apri «{{ doc.titolo | escape }}» (PDF) in una nuova scheda">
+        <img src="{{ doc.anteprima }}"
+             alt="Anteprima della prima pagina di {{ doc.titolo | escape }}"
+             width="566" height="800"
+             loading="lazy" decoding="async">
+      </a>
+      <div class="doc-card__body">
+        <h2 class="doc-card__title">{{ doc.titolo | escape }}</h2>
+        <p class="doc-card__desc">{{ doc.descrizione | escape }}</p>
+        <div class="doc-card__actions">
+          <a class="doc-card__btn doc-card__btn--primary"
+             href="{{ href }}"
+             target="_blank"
+             rel="noopener">Apri PDF</a>
+          <a class="doc-card__btn"
+             href="{{ href }}"
+             download>Scarica</a>
+        </div>
+      </div>
+    </article>
+  {%- endfor -%}
 </div>
+{%- else -%}
+<ul class="document-list">
+  {%- for pdf in site.static_files -%}
+    {%- if pdf.path contains '/assets/docs' -%}
+      <li><a href="{{ site.baseurl }}{{ pdf.path }}" target="_blank" rel="noopener">{{ pdf.basename }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+{%- endif -%}

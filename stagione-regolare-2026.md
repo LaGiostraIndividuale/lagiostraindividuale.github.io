@@ -1,18 +1,14 @@
 ---
-layout: stagione-regolare
+layout: page
 title: Stagione Regolare 2026
 permalink: /stagione-regolare-2026/
 description: Classifiche, podi e dettagli giocanti delle Conferenze della Stagione Regolare 2026.
-image:
+image: /assets/img/stagione-regolare.jpg
 published: true
 ---
 
 <section class="sr-page" data-season="2026">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-    <p>Classifiche, podi e dettagli giocanti delle conferenze.</p>
-  </header>
-
+  <p class="sr-intro">Classifiche, podi e dettagli giocanti delle conferenze.</p>
   <div id="stagione-regolare-app"></div>
 </section>
 
