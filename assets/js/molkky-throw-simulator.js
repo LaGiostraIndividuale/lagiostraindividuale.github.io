@@ -63,9 +63,15 @@ const POWER_METER_OMEGA = 3.85;
 const AIM_METER_OMEGA = 3.30;
 const LOB_METER_OMEGA = 3.25;
 
-/** Bersaglio z-target in funzione della potenza (start = mölkkyHome.z). */
+/**
+ * Bersaglio z-target in funzione della potenza (start = mölkkyHome.z = -5.5).
+ * - `TARGET_Z_NEAR`: power = 0 → impatto a ridosso della linea di tiro
+ * - `TARGET_Z_FAR`:  power = 1 → impatto vicino al fondo campo (PLAY_AREA.z = 16)
+ *   così a piena potenza si raggiungono anche i birilli che dopo i tiri
+ *   precedenti sono finiti dietro al cluster iniziale (4 ≤ z ≤ 6.55).
+ */
 const TARGET_Z_NEAR = -1.0;
-const TARGET_Z_FAR = 11.5;
+const TARGET_Z_FAR = 15.0;
 /** Estremo world-space di `targetX` a aim = ±1: forbice ampia (boost)
  *  così il fader Direzione copre quasi tutto il campo; il bersaglio può
  *  superare leggermente il bordo nominale — la fisica limita comunque i corpi.
