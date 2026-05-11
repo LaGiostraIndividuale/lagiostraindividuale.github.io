@@ -2109,7 +2109,8 @@ input {
   margin: 0;
   flex-shrink: 0;
   font-family: "Gothic", "Arial Black", "Helvetica Neue", sans-serif;
-  font-size: clamp(1.85rem, 5.4vw, 3.1rem);
+  /* Scala fluida: ~22px su iPhone mini, ~30px su tablet, fino a 49.6px su desktop. */
+  font-size: clamp(1.4rem, 5vw, 3.1rem);
   font-weight: 400;
   font-style: normal;
   text-transform: uppercase;
@@ -2182,6 +2183,9 @@ article.post:not(.h-entry) > .post-header > .post-title,
   text-transform: uppercase;
   letter-spacing: -0.05em;
   line-height: 0.98;
+  /* Sovrascrive la dimensione fissa di Minima (2.625rem) con una scala fluida:
+     ~24px su mobile small, ~30px su tablet, fino al cap di 2.625rem (~42px). */
+  font-size: clamp(1.5rem, 5vw, 2.625rem);
 }
 
 .post-content {
