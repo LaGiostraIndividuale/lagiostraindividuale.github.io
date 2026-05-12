@@ -32,6 +32,9 @@
     `molkky_simulator: true` nel front matter. Tieni Three.js fuori dalle altre pagine.
   {%- endcomment -%}
   {%- if page.molkky_simulator -%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
     <link rel="stylesheet" href="{{ '/assets/css/molkky-throw-simulator.css' | relative_url }}">
     <script type="importmap">
       {

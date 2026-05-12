@@ -55,7 +55,10 @@
 }
 </script>
 
-<link rel="stylesheet" href="/assets/css/molkky-throw-simulator.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="/assets/css/molkky-throw-simulator.css">
     <script type="importmap">
       {
         "imports": {
@@ -165,6 +168,22 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
         <h3 class="molkky-simulator__overlay-title" id="molkky-overlay-title" data-role="overlay-title">Fine partita</h3>
         <p class="molkky-simulator__overlay-text" data-role="overlay-text"></p>
         <p class="molkky-simulator__overlay-stats" data-role="overlay-stats"></p>
+
+        <div class="molkky-simulator__overlay-win-save" data-role="overlay-win-save" hidden="">
+          <p class="molkky-simulator__overlay-win-lede" data-role="overlay-win-lede">
+            Inserisci un nickname (max 8 caratteri, A–Z e 0–9). Usa <kbd>←</kbd> <kbd>→</kbd> per spostarti,
+            <kbd>↑</kbd> <kbd>↓</kbd> per cambiare lettera, <kbd>Invio</kbd> per salvare.
+          </p>
+          <div class="molkky-simulator__nick-slots" data-role="nick-slots" role="group" aria-label="Nickname da 1 a 8 caratteri" tabindex="0"></div>
+          <p class="molkky-simulator__nick-error" data-role="nick-error" hidden=""></p>
+          <div class="molkky-simulator__overlay-actions-row">
+            <button type="button" class="molkky-simulator__btn molkky-simulator__btn--primary" data-role="nick-save">
+              Salva in classifica
+            </button>
+            <button type="button" class="molkky-simulator__btn" data-role="nick-skip">Salta</button>
+          </div>
+        </div>
+
         <button type="button" class="molkky-simulator__btn molkky-simulator__btn--primary" data-role="overlay-action">
           Nuova partita
         </button>
@@ -215,6 +234,18 @@ Vuoi fondare una tua conferenza? [ Non esitare a contattarci.](/contatti "Contat
   <p class="molkky-simulator__result" data-role="result" aria-live="polite" aria-atomic="true">
     Pronto al primo lancio.
   </p>
+
+  <aside class="molkky-simulator__lb" aria-labelledby="molkky-lb-title">
+    <h3 id="molkky-lb-title" class="molkky-simulator__lb-title">Hall of fame</h3>
+    <p class="molkky-simulator__lb-lede">
+      I migliori tempi (meno tiri per arrivare a 50). Salvataggio solo sul tuo dispositivo.
+    </p>
+    <p class="molkky-simulator__lb-note">
+      Per cancellare tutti i record: strumenti per sviluppatori → Application → Local Storage →
+      <code>lagiostra.molkky.leaderboard</code>
+    </p>
+    <div class="molkky-simulator__lb-root" data-role="leaderboard-root"></div>
+  </aside>
 </section>
 
 <p class="icon-box"><img src="/assets/img/giostra-APP.png" alt="&quot;Icona dell'app de La Giostra Individuale&quot;" class="glowing" width="249" height="252" loading="lazy" decoding="async" />

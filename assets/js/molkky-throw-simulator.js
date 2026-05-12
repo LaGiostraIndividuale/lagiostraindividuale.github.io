@@ -89,6 +89,84 @@ const TARGET_SCORE = 50;
 const BUST_SCORE = 25;
 const MAX_CONSECUTIVE_MISSES = 3;
 
+/** Hall of fame: solo `localStorage` sul dispositivo (nessun backend).
+ *  Azzeramento: DevTools → Application → Local Storage → questa chiave. */
+const LB_STORAGE_KEY = "lagiostra.molkky.leaderboard";
+const LB_MAX_RANKS = 5;
+const LB_MAX_ENTRIES = 400;
+
+/** Lettere ciclabili (senza vuoto: `_` si ottiene solo con Backspace). */
+const NICK_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+function lbRead() {
+  try {
+    const raw = localStorage.getItem(LB_STORAGE_KEY);
+    if (!raw) return [];
+    const data = JSON.parse(raw);
+    if (!Array.isArray(data)) return [];
+    return data
+      .filter(
+        e =>
+          e &&
+          typeof e.nickname === "string" &&
+          typeof e.throws === "number" &&
+          Number.isFinite(e.throws) &&
+          typeof e.ts === "number",
+      )
+      .map(e => ({
+        nickname: String(e.nickname).slice(0, 16),
+        throws: Math.max(1, Math.round(e.throws)),
+        ts: e.ts,
+      }));
+  } catch {
+    return [];
+  }
+}
+
+function lbWrite(entries) {
+  try {
+    localStorage.setItem(LB_STORAGE_KEY, JSON.stringify(entries));
+  } catch (err) {
+    console.warn("[molkky] leaderboard write failed", err);
+  }
+}
+
+/**
+ * Mantiene solo i record nei migliori 5 ranghi (5 valori distinti di `throws`,
+ * dal più basso al più alto). Se restano troppe righe, taglia le più vecchie.
+ */
+function lbPrune(entries) {
+  if (entries.length === 0) return [];
+  const uniqThrows = [...new Set(entries.map(e => e.throws))].sort((a, b) => a - b);
+  const keepThrows = new Set(uniqThrows.slice(0, LB_MAX_RANKS));
+  let out = entries.filter(e => keepThrows.has(e.throws));
+  if (out.length > LB_MAX_ENTRIES) {
+    out = out
+      .slice()
+      .sort((a, b) => a.throws - b.throws || a.ts - b.ts)
+      .slice(-LB_MAX_ENTRIES);
+  }
+  return out;
+}
+
+function lbBuildRanks(entries) {
+  const uniqThrows = [...new Set(entries.map(e => e.throws))]
+    .sort((a, b) => a - b)
+    .slice(0, LB_MAX_RANKS);
+  return uniqThrows.map((throws, idx) => {
+    const list = entries.filter(e => e.throws === throws).sort((a, b) => a.ts - b.ts);
+    return { rank: idx + 1, throws, entries: list };
+  });
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 /** Wikipedia: quarta fila 7, 8, 9 (non 7, 9, 8). */
 const PIN_LAYOUT = [
   [1, 2],
@@ -392,6 +470,12 @@ class MolkkySimulator {
     this.overlayText = root.querySelector("[data-role=overlay-text]");
     this.overlayStats = root.querySelector("[data-role=overlay-stats]");
     this.overlayAction = root.querySelector("[data-role=overlay-action]");
+    this.overlayWinSave = root.querySelector("[data-role=overlay-win-save]");
+    this.nickSlotsEl = root.querySelector("[data-role=nick-slots]");
+    this.nickErrorEl = root.querySelector("[data-role=nick-error]");
+    this.nickSaveBtn = root.querySelector("[data-role=nick-save]");
+    this.nickSkipBtn = root.querySelector("[data-role=nick-skip]");
+    this.leaderboardRoot = root.querySelector("[data-role=leaderboard-root]");
 
     this.meterPowerWrap = root.querySelector("[data-role=meter-power-wrap]");
     this.meterAimWrap = root.querySelector("[data-role=meter-aim-wrap]");
@@ -448,11 +532,21 @@ class MolkkySimulator {
     this.throws = 0;
     this.consecutiveMisses = 0;
 
+    /** Nickname cabinato (8 slot, `_` = vuoto). */
+    this._nickChars = Array(8).fill("_");
+    this._nickCaret = 0;
+    this._nickKeydownBound = false;
+    this._onNickKeydown = this._onNickKeydown.bind(this);
+    this._onLbStorage = this._onLbStorage.bind(this);
+
     this._setupScene();
     this._buildBoard();
     this._buildAimVisuals();
     this._bindEvents();
     this._observeVisibility();
+    this._initNickUi();
+    this._renderLeaderboard();
+    window.addEventListener("storage", this._onLbStorage);
 
     this._applyMeterCss(this._lockedPower, 0, this._lockedLob);
     this._updateAimVisuals(this._lockedPower, 0, this._lockedLob);
@@ -672,6 +766,8 @@ class MolkkySimulator {
     this.throwBtn.addEventListener("click", () => this._onThrowClick());
     this.resetBtn.addEventListener("click", () => this._resetFullGame());
     this.overlayAction?.addEventListener("click", () => this._resetFullGame());
+    this.nickSaveBtn?.addEventListener("click", () => this._submitNickSave());
+    this.nickSkipBtn?.addEventListener("click", () => this._nickSkip());
 
     this._onResize = () => this._handleResize();
     window.addEventListener("resize", this._onResize, { passive: true });
@@ -810,15 +906,28 @@ class MolkkySimulator {
     if (this.overlayTitle) this.overlayTitle.textContent = "Partita vinta!";
     if (this.overlayText) {
       this.overlayText.textContent =
-        "Hai appena vinto una partita di Mölkky in solitaria, sei un* grande! 🎯🏆✨";
+        "Hai appena vinto una partita di Mölkky in solitaria, sei un* grande! Inserisci il nickname per la hall of fame.";
     }
     if (this.overlayStats) {
-      this.overlayStats.textContent = `Tiri totali: ${this.throws}.`;
+      this.overlayStats.textContent = `Tiri totali per la vittoria: ${this.throws}.`;
     }
+    if (this.overlayWinSave) {
+      this.overlayWinSave.hidden = false;
+      this._resetNickInput();
+      this._bindNickKeyListener();
+      queueMicrotask(() => {
+        this.nickSlotsEl?.focus();
+      });
+    }
+    if (this.overlayAction) this.overlayAction.hidden = true;
   }
 
   _showOverlayLostMisses() {
     if (!this.overlay) return;
+    this._unbindNickKeyListener();
+    if (this.overlayWinSave) this.overlayWinSave.hidden = true;
+    if (this.overlayAction) this.overlayAction.hidden = false;
+
     this.overlay.hidden = false;
     if (this.overlayTitle) this.overlayTitle.textContent = "Eliminato!";
     if (this.overlayText) {
@@ -832,6 +941,206 @@ class MolkkySimulator {
 
   _hideOverlay() {
     if (this.overlay) this.overlay.hidden = true;
+  }
+
+  _onLbStorage(e) {
+    if (e.key !== LB_STORAGE_KEY) return;
+    this._renderLeaderboard();
+  }
+
+  _initNickUi() {
+    if (!this.nickSlotsEl) return;
+    this.nickSlotsEl.innerHTML = "";
+    for (let i = 0; i < 8; i++) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "molkky-simulator__nick-slot";
+      btn.dataset.index = String(i);
+      btn.setAttribute("aria-label", `Lettera ${i + 1} di 8`);
+      btn.addEventListener("click", () => {
+        this._nickCaret = i;
+        this._clearNickError();
+        this._renderNickSlotsUi();
+        this.nickSlotsEl.focus();
+      });
+      this.nickSlotsEl.appendChild(btn);
+    }
+    this._resetNickInput();
+  }
+
+  _resetNickInput() {
+    this._nickChars.fill("_");
+    this._nickCaret = 0;
+    this._clearNickError();
+    this._renderNickSlotsUi();
+  }
+
+  _clearNickError() {
+    if (!this.nickErrorEl) return;
+    this.nickErrorEl.hidden = true;
+    this.nickErrorEl.textContent = "";
+  }
+
+  _setNickError(msg) {
+    if (!this.nickErrorEl) return;
+    this.nickErrorEl.hidden = false;
+    this.nickErrorEl.textContent = msg;
+  }
+
+  _renderNickSlotsUi() {
+    if (!this.nickSlotsEl) return;
+    const buttons = this.nickSlotsEl.querySelectorAll(".molkky-simulator__nick-slot");
+    buttons.forEach((btn, i) => {
+      const ch = this._nickChars[i];
+      btn.textContent = ch === "_" ? "·" : ch;
+      btn.classList.toggle("is-active", i === this._nickCaret);
+      btn.setAttribute("aria-current", i === this._nickCaret ? "true" : "false");
+    });
+  }
+
+  _bindNickKeyListener() {
+    if (this._nickKeydownBound) return;
+    window.addEventListener("keydown", this._onNickKeydown, true);
+    this._nickKeydownBound = true;
+  }
+
+  _unbindNickKeyListener() {
+    if (!this._nickKeydownBound) return;
+    window.removeEventListener("keydown", this._onNickKeydown, true);
+    this._nickKeydownBound = false;
+  }
+
+  _onNickKeydown(ev) {
+    if (!this.overlay || this.overlay.hidden) return;
+    if (!this.overlayWinSave || this.overlayWinSave.hidden) return;
+
+    const active = document.activeElement;
+    const nickFocused =
+      active === this.nickSlotsEl ||
+      (active instanceof HTMLElement && this.nickSlotsEl?.contains(active));
+
+    if (!nickFocused) return;
+    if (ev.key === "Tab") return;
+
+    let handled = false;
+    if (ev.key === "ArrowLeft") {
+      this._nickCaret = Math.max(0, this._nickCaret - 1);
+      handled = true;
+    } else if (ev.key === "ArrowRight") {
+      this._nickCaret = Math.min(7, this._nickCaret + 1);
+      handled = true;
+    } else if (ev.key === "ArrowUp") {
+      this._cycleNickAtCaret(-1);
+      handled = true;
+    } else if (ev.key === "ArrowDown") {
+      this._cycleNickAtCaret(1);
+      handled = true;
+    } else if (ev.key === "Enter") {
+      this._submitNickSave();
+      handled = true;
+    } else if (ev.key === "Backspace") {
+      this._nickChars[this._nickCaret] = "_";
+      this._nickCaret = Math.max(0, this._nickCaret - 1);
+      handled = true;
+    }
+
+    if (handled) {
+      ev.preventDefault();
+      this._clearNickError();
+      this._renderNickSlotsUi();
+    }
+  }
+
+  _cycleNickAtCaret(step) {
+    const i = this._nickCaret;
+    const ch = this._nickChars[i];
+    if (ch === "_") {
+      if (step > 0) this._nickChars[i] = "A";
+      return;
+    }
+    let u = NICK_LETTERS.indexOf(ch);
+    if (u < 0) u = 0;
+    u = (u + step + NICK_LETTERS.length) % NICK_LETTERS.length;
+    this._nickChars[i] = NICK_LETTERS[u];
+  }
+
+  _compactNickname() {
+    return this._nickChars.join("").replace(/^_+/, "").replace(/_+$/, "");
+  }
+
+  _submitNickSave() {
+    const raw = this._compactNickname();
+    if (raw.includes("_")) {
+      this._setNickError("Non lasciare buchi tra le lettere: riempi da sinistra o cancella con Backspace.");
+      return;
+    }
+    if (!/^[A-Z0-9]{1,8}$/.test(raw)) {
+      this._setNickError("Inserisci da 1 a 8 caratteri (A–Z, 0–9). Usa ↑ ↓ sulla lettera attiva.");
+      return;
+    }
+    const list = lbRead();
+    list.push({ nickname: raw, throws: this.throws, ts: Date.now() });
+    lbWrite(lbPrune(list));
+    this._renderLeaderboard();
+    this._unbindNickKeyListener();
+    if (this.overlayWinSave) this.overlayWinSave.hidden = true;
+    if (this.overlayAction) this.overlayAction.hidden = false;
+    if (this.overlayText) {
+      this.overlayText.textContent =
+        "Record salvato in hall of fame. Grande tiro!";
+    }
+  }
+
+  _nickSkip() {
+    this._unbindNickKeyListener();
+    if (this.overlayWinSave) this.overlayWinSave.hidden = true;
+    if (this.overlayAction) this.overlayAction.hidden = false;
+    if (this.overlayText) {
+      this.overlayText.textContent =
+        "Hai appena vinto una partita di Mölkky in solitaria, sei un* grande! 🎯🏆✨";
+    }
+    this._clearNickError();
+  }
+
+  _renderLeaderboard() {
+    const root = this.leaderboardRoot;
+    if (!root) return;
+    const ranks = lbBuildRanks(lbRead());
+    if (ranks.length === 0) {
+      root.innerHTML =
+        '<p class="molkky-simulator__lb-empty">Nessun record ancora: vinci a 50 per entrare in classifica.</p>';
+      return;
+    }
+    const parts = ['<ol class="molkky-simulator__lb-list">'];
+    for (const r of ranks) {
+      const n = r.entries.length;
+      if (r.rank === 1 && n > 1) {
+        parts.push(
+          '<li class="molkky-simulator__lb-row"><details class="molkky-simulator__lb-details">'
+            + '<summary class="molkky-simulator__lb-summary">'
+            + '<span class="molkky-simulator__lb-rank">1°</span>'
+            + `<span class="molkky-simulator__lb-metric">${r.throws} tiri</span>`
+            + `<span class="molkky-simulator__lb-meta">${n} record</span>`
+            + "</summary>"
+            + '<ul class="molkky-simulator__lb-names">'
+            + r.entries.map(e => `<li>${escapeHtml(e.nickname)}</li>`).join("")
+            + "</ul></details></li>",
+        );
+      } else {
+        const line =
+          n === 1
+            ? `<span class="molkky-simulator__lb-names-inline">${escapeHtml(r.entries[0].nickname)}</span>`
+            : `<span class="molkky-simulator__lb-names-inline">${r.entries.map(e => escapeHtml(e.nickname)).join(", ")}</span>`;
+        parts.push(
+          `<li class="molkky-simulator__lb-row molkky-simulator__lb-row--flat">`
+            + `<span class="molkky-simulator__lb-rank">${r.rank}°</span>`
+            + `<span class="molkky-simulator__lb-metric">${r.throws} tiri</span>`
+            + `${line}</li>`,
+        );
+      }
+    }
+    parts.push("</ol>");
+    root.innerHTML = parts.join("");
   }
 
   // --- Metri Neo Turf Masters -------------------------------------------------
@@ -1683,6 +1992,9 @@ class MolkkySimulator {
 
   _resetFullGame() {
     this._hideOverlay();
+    this._unbindNickKeyListener();
+    if (this.overlayWinSave) this.overlayWinSave.hidden = true;
+    if (this.overlayAction) this.overlayAction.hidden = false;
     this._stopMeterLoop();
     this.shotPhase = "idle";
     if (this.meterAimWrap) this.meterAimWrap.hidden = true;
@@ -1722,6 +2034,8 @@ class MolkkySimulator {
   destroy() {
     this.disposed = true;
     this._stopMeterLoop();
+    this._unbindNickKeyListener();
+    window.removeEventListener("storage", this._onLbStorage);
     this._stop();
     window.removeEventListener("resize", this._onResize);
     document.removeEventListener("visibilitychange", this._onVisibility);

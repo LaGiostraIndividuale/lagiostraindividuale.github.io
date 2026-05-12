@@ -18,6 +18,7 @@
   --molkky-meter-needle: #1a1a1a;
   --molkky-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   --molkky-radius: 12px;
+  --molkky-arcade: "Press Start 2P", "Courier New", Courier, monospace;
 
   display: grid;
   gap: 1.25rem;
@@ -137,7 +138,7 @@
   &__overlay-card {
     display: grid;
     gap: 0.85rem;
-    justify-items: center;
+    justify-items: stretch;
     text-align: center;
     max-width: 32rem;
     padding: 1.5rem 1.75rem;
@@ -167,6 +168,92 @@
     font-size: 0.95rem;
     color: var(--molkky-text-subtle);
     font-variant-numeric: tabular-nums;
+  }
+
+  &__overlay-win-save {
+    text-align: left;
+    width: 100%;
+  }
+
+  &__overlay-win-lede {
+    margin: 0;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--molkky-text-muted);
+
+    kbd {
+      display: inline-block;
+      padding: 0.08rem 0.28rem;
+      margin: 0 0.05rem;
+      font-family: inherit;
+      font-size: 0.68rem;
+      border: 1px solid var(--molkky-border);
+      border-radius: 4px;
+      background: var(--molkky-meter-fill);
+    }
+  }
+
+  &__nick-slots {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0.35rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    outline: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--molkky-text);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+  }
+
+  &__nick-slot {
+    appearance: none;
+    margin: 0;
+    padding: 0.35rem 0.1rem;
+    min-height: 2.5rem;
+    font-family: var(--molkky-arcade);
+    font-size: clamp(0.45rem, 2.1vw, 0.62rem);
+    line-height: 1.1;
+    letter-spacing: 0;
+    border: 2px solid var(--molkky-border);
+    border-radius: 6px;
+    background: #0f0f0f;
+    color: #ffcc33;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+
+    &.is-active {
+      border-color: #ffcc33;
+      box-shadow: 0 0 0 2px rgba(255, 204, 51, 0.35);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--molkky-text);
+      outline-offset: 2px;
+    }
+  }
+
+  &__nick-error {
+    margin: 0;
+    font-size: 0.78rem;
+    color: #b3380e;
+    font-weight: 600;
+  }
+
+  &__overlay-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    margin-top: 0.25rem;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
   &__canvas {
@@ -450,6 +537,147 @@
       text-align: right;
       border-top: none;
       padding-top: 0;
+    }
+  }
+
+  /* Hall of fame + font arcade (nickname / tabellone) */
+  &__lb {
+    padding: 1rem 0.85rem;
+    border-radius: var(--molkky-radius);
+    border: 1px solid var(--molkky-border);
+    background: var(--molkky-surface);
+  }
+
+  &__lb-title {
+    margin: 0 0 0.35rem;
+    font-family: var(--molkky-arcade);
+    font-size: clamp(0.55rem, 1.8vw, 0.72rem);
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    color: var(--molkky-text);
+  }
+
+  &__lb-lede {
+    margin: 0 0 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--molkky-text-muted);
+  }
+
+  &__lb-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    color: var(--molkky-text-subtle);
+
+    code {
+      font-size: 0.62rem;
+      word-break: break-all;
+    }
+  }
+
+  &__lb-root {
+    font-family: var(--molkky-arcade);
+    font-size: clamp(0.45rem, 1.65vw, 0.58rem);
+    line-height: 1.45;
+  }
+
+  &__lb-empty {
+    margin: 0;
+    font-family: inherit;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--molkky-text-muted);
+  }
+
+  &__lb-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__lb-row {
+    margin: 0;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--molkky-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__lb-row--flat {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.5rem 0.75rem;
+    align-items: baseline;
+    text-align: left;
+  }
+
+  &__lb-rank {
+    color: var(--molkky-accent-strong);
+    min-width: 2ch;
+  }
+
+  &__lb-metric {
+    color: var(--molkky-text-muted);
+    white-space: nowrap;
+  }
+
+  &__lb-details {
+    width: 100%;
+    text-align: left;
+  }
+
+  &__lb-names-inline {
+    grid-column: 1 / -1;
+    color: #ffcc33;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    word-break: break-word;
+  }
+
+  &__lb-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker,
+    &::marker {
+      display: none;
+      content: "";
+    }
+
+    &::after {
+      content: "▸";
+      margin-left: auto;
+      font-size: 0.85em;
+      color: var(--molkky-text-subtle);
+    }
+  }
+
+  &__lb-meta {
+    color: var(--molkky-text-subtle);
+    font-size: 0.9em;
+  }
+
+  &__lb-details[open] &__lb-summary::after {
+    content: "▾";
+  }
+
+  &__lb-names {
+    margin: 0.5rem 0 0;
+    padding: 0.35rem 0 0 1.25rem;
+    list-style: disc !important;
+    color: #ffcc33;
+    font-size: 0.95em;
+
+    li {
+      margin: 0.2rem 0;
+      list-style: disc !important;
     }
   }
 
