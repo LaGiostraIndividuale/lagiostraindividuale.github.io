@@ -564,18 +564,6 @@
     color: var(--molkky-text-muted);
   }
 
-  &__lb-note {
-    margin: 0.75rem 0 0;
-    font-size: 0.68rem;
-    line-height: 1.4;
-    color: var(--molkky-text-subtle);
-
-    code {
-      font-size: 0.62rem;
-      word-break: break-all;
-    }
-  }
-
   &__lb-root {
     font-family: var(--molkky-arcade);
     font-size: clamp(0.45rem, 1.65vw, 0.58rem);
