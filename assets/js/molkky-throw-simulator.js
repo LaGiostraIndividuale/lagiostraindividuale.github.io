@@ -89,35 +89,106 @@ const TARGET_SCORE = 50;
 const BUST_SCORE = 25;
 const MAX_CONSECUTIVE_MISSES = 3;
 
-/** Hall of fame: solo `localStorage` sul dispositivo (nessun backend).
- *  Azzeramento: DevTools → Application → Local Storage → questa chiave. */
+/**
+ * Hall of fame: classifica globale via Pantry (https://getpantry.cloud), con
+ * cache locale in `localStorage` per UI istantanea e fallback offline.
+ *
+ * Configurazione: vive in `_config.yml` → `molkky.pantry_id` e
+ * `molkky.pantry_basket`. Jekyll li renderizza come data-attribute
+ * sull'elemento root (vedi `_includes/molkky-throw-simulator.html`),
+ * `init()` li legge e li mette nelle variabili qui sotto. Conseguenza
+ * pratica: per cambiare l'ID o il basket basta editare `_config.yml`
+ * e ripubblicare — non serve ricompilare il bundle minificato.
+ *
+ * Con `pantry_id` vuoto il modulo funziona solo in locale.
+ *
+ * Cancellazione globale (DevTools, una volta sola):
+ *    const id = "..."; // valore da _config.yml
+ *    fetch(`https://getpantry.cloud/apiv1/pantry/${id}/basket/molkky-leaderboard`, { method: 'DELETE' })
+ */
+let PANTRY_ID = "";
+let PANTRY_BASKET = "molkky-leaderboard";
 const LB_STORAGE_KEY = "lagiostra.molkky.leaderboard";
+const LB_QUEUE_KEY = "lagiostra.molkky.leaderboard.queue";
 const LB_MAX_RANKS = 5;
 const LB_MAX_ENTRIES = 400;
+const LB_FETCH_TIMEOUT_MS = 8000;
 
 /** Lettere ciclabili (senza vuoto: `_` si ottiene solo con Backspace). */
 const NICK_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+function lbIsRemoteConfigured() {
+  return typeof PANTRY_ID === "string" && PANTRY_ID.length > 0;
+}
+
+function lbRemoteUrl() {
+  if (!lbIsRemoteConfigured()) return null;
+  return `https://getpantry.cloud/apiv1/pantry/${encodeURIComponent(PANTRY_ID)}/basket/${encodeURIComponent(PANTRY_BASKET)}`;
+}
+
+function lbWithTimeout(promise, ms, controller) {
+  const timer = setTimeout(() => controller.abort(), ms);
+  return promise.finally(() => clearTimeout(timer));
+}
+
+function lbNormalizeEntries(raw) {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .filter(
+      e =>
+        e &&
+        typeof e.nickname === "string" &&
+        typeof e.throws === "number" &&
+        Number.isFinite(e.throws) &&
+        typeof e.ts === "number" &&
+        Number.isFinite(e.ts),
+    )
+    .map(e => ({
+      nickname: String(e.nickname).slice(0, 16),
+      throws: Math.max(1, Math.round(e.throws)),
+      ts: e.ts,
+    }));
+}
+
+async function lbRemoteFetch() {
+  const url = lbRemoteUrl();
+  if (!url) return [];
+  const ctrl = new AbortController();
+  const res = await lbWithTimeout(
+    fetch(url, { method: "GET", cache: "no-store", signal: ctrl.signal }),
+    LB_FETCH_TIMEOUT_MS,
+    ctrl,
+  );
+  // Pantry restituisce 400 se il basket non esiste ancora: lo trattiamo
+  // come "documento vuoto", verrà creato alla prima scrittura.
+  if (res.status === 400) return [];
+  if (!res.ok) throw new Error(`Pantry GET ${res.status}`);
+  const data = await res.json().catch(() => null);
+  return lbNormalizeEntries(data?.entries);
+}
+
+async function lbRemotePost(entries) {
+  const url = lbRemoteUrl();
+  if (!url) throw new Error("Pantry non configurato");
+  const ctrl = new AbortController();
+  const res = await lbWithTimeout(
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ entries, updatedAt: Date.now() }),
+      signal: ctrl.signal,
+    }),
+    LB_FETCH_TIMEOUT_MS,
+    ctrl,
+  );
+  if (!res.ok) throw new Error(`Pantry POST ${res.status}`);
+}
 
 function lbRead() {
   try {
     const raw = localStorage.getItem(LB_STORAGE_KEY);
     if (!raw) return [];
-    const data = JSON.parse(raw);
-    if (!Array.isArray(data)) return [];
-    return data
-      .filter(
-        e =>
-          e &&
-          typeof e.nickname === "string" &&
-          typeof e.throws === "number" &&
-          Number.isFinite(e.throws) &&
-          typeof e.ts === "number",
-      )
-      .map(e => ({
-        nickname: String(e.nickname).slice(0, 16),
-        throws: Math.max(1, Math.round(e.throws)),
-        ts: e.ts,
-      }));
+    return lbNormalizeEntries(JSON.parse(raw));
   } catch {
     return [];
   }
@@ -127,8 +198,47 @@ function lbWrite(entries) {
   try {
     localStorage.setItem(LB_STORAGE_KEY, JSON.stringify(entries));
   } catch (err) {
-    console.warn("[molkky] leaderboard write failed", err);
+    console.warn("[molkky] leaderboard cache write failed", err);
   }
+}
+
+function lbQueueRead() {
+  try {
+    const raw = localStorage.getItem(LB_QUEUE_KEY);
+    if (!raw) return [];
+    return lbNormalizeEntries(JSON.parse(raw));
+  } catch {
+    return [];
+  }
+}
+
+function lbQueueWrite(items) {
+  try {
+    if (items.length === 0) {
+      localStorage.removeItem(LB_QUEUE_KEY);
+    } else {
+      localStorage.setItem(LB_QUEUE_KEY, JSON.stringify(items));
+    }
+  } catch (err) {
+    console.warn("[molkky] leaderboard queue write failed", err);
+  }
+}
+
+/** Unione deduplicata per chiave `nickname|throws|ts` (stabile, lossless). */
+function lbMergeUnique(...lists) {
+  const seen = new Set();
+  const out = [];
+  for (const list of lists) {
+    if (!Array.isArray(list)) continue;
+    for (const e of list) {
+      if (!e) continue;
+      const key = `${e.nickname}|${e.throws}|${e.ts}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(e);
+    }
+  }
+  return out;
 }
 
 /**
@@ -476,6 +586,7 @@ class MolkkySimulator {
     this.nickSaveBtn = root.querySelector("[data-role=nick-save]");
     this.nickSkipBtn = root.querySelector("[data-role=nick-skip]");
     this.leaderboardRoot = root.querySelector("[data-role=leaderboard-root]");
+    this.lbStatusEl = root.querySelector("[data-role=leaderboard-status]");
 
     this.meterPowerWrap = root.querySelector("[data-role=meter-power-wrap]");
     this.meterAimWrap = root.querySelector("[data-role=meter-aim-wrap]");
@@ -538,6 +649,7 @@ class MolkkySimulator {
     this._nickKeydownBound = false;
     this._onNickKeydown = this._onNickKeydown.bind(this);
     this._onLbStorage = this._onLbStorage.bind(this);
+    this._onLbOnline = () => this._initialLbSync();
 
     this._setupScene();
     this._buildBoard();
@@ -547,6 +659,8 @@ class MolkkySimulator {
     this._initNickUi();
     this._renderLeaderboard();
     window.addEventListener("storage", this._onLbStorage);
+    window.addEventListener("online", this._onLbOnline);
+    void this._initialLbSync();
 
     this._applyMeterCss(this._lockedPower, 0, this._lockedLob);
     this._updateAimVisuals(this._lockedPower, 0, this._lockedLob);
@@ -1069,6 +1183,7 @@ class MolkkySimulator {
   }
 
   _submitNickSave() {
+    if (this.nickSaveBtn?.disabled) return;
     const raw = this._compactNickname();
     if (raw.includes("_")) {
       this._setNickError("Non lasciare buchi tra le lettere: riempi da sinistra o cancella con Backspace.");
@@ -1078,17 +1193,104 @@ class MolkkySimulator {
       this._setNickError("Inserisci da 1 a 8 caratteri (A–Z, 0–9). Usa ↑ ↓ sulla lettera attiva.");
       return;
     }
-    const list = lbRead();
-    list.push({ nickname: raw, throws: this.throws, ts: Date.now() });
-    lbWrite(lbPrune(list));
+
+    const entry = { nickname: raw, throws: this.throws, ts: Date.now() };
+
+    // Aggiornamento ottimistico della cache locale: la UI mostra subito il
+    // record nuovo, anche se la sincronizzazione globale fallisce.
+    const localMerged = lbPrune(lbMergeUnique(lbRead(), [entry]));
+    lbWrite(localMerged);
     this._renderLeaderboard();
-    this._unbindNickKeyListener();
-    if (this.overlayWinSave) this.overlayWinSave.hidden = true;
-    if (this.overlayAction) this.overlayAction.hidden = false;
-    if (this.overlayText) {
-      this.overlayText.textContent =
-        "Record salvato in hall of fame. Grande tiro!";
+
+    if (!lbIsRemoteConfigured()) {
+      this._finishWinSave("Record salvato in hall of fame.");
+      return;
     }
+
+    void this._pushEntryRemote(entry);
+  }
+
+  async _pushEntryRemote(entry) {
+    if (this.nickSaveBtn) this.nickSaveBtn.disabled = true;
+    this._setLbStatus("syncing");
+    try {
+      const remote = await lbRemoteFetch();
+      const queue = lbQueueRead();
+      const merged = lbPrune(lbMergeUnique(remote, queue, [entry]));
+      await lbRemotePost(merged);
+      lbWrite(merged);
+      lbQueueWrite([]);
+      this._setLbStatus("online");
+      this._renderLeaderboard();
+      this._finishWinSave("Record salvato nella classifica globale.");
+    } catch (err) {
+      console.warn("[molkky] save remote failed, queued for retry", err);
+      const queue = lbQueueRead();
+      queue.push(entry);
+      lbQueueWrite(queue);
+      this._setLbStatus("offline");
+      this._finishWinSave(
+        "Connessione assente: il record è salvato in locale e verrà inviato al prossimo caricamento.",
+      );
+    } finally {
+      if (this.nickSaveBtn) this.nickSaveBtn.disabled = false;
+    }
+  }
+
+  async _initialLbSync() {
+    if (!lbIsRemoteConfigured()) {
+      this._setLbStatus("");
+      return;
+    }
+    this._setLbStatus("syncing");
+    try {
+      const remote = await lbRemoteFetch();
+      const local = lbRead();
+      const queue = lbQueueRead();
+
+      // Tutto ciò che vive solo in locale (record di test fatti senza rete,
+      // o queue di tentativi falliti) viene caricato sul remote in un colpo solo.
+      const merged = lbPrune(lbMergeUnique(remote, local, queue));
+      const needsPush =
+        queue.length > 0 ||
+        merged.length !== remote.length ||
+        merged.some((m, i) => {
+          const r = remote[i];
+          return !r || r.nickname !== m.nickname || r.throws !== m.throws || r.ts !== m.ts;
+        });
+
+      if (needsPush) {
+        await lbRemotePost(merged);
+        lbQueueWrite([]);
+      }
+      lbWrite(merged);
+      this._setLbStatus("online");
+      this._renderLeaderboard();
+    } catch (err) {
+      console.warn("[molkky] initial sync failed", err);
+      this._setLbStatus("offline");
+    }
+  }
+
+  _setLbStatus(state) {
+    if (!this.lbStatusEl) return;
+    this.lbStatusEl.classList.remove("is-syncing", "is-online", "is-offline");
+    if (!state) {
+      this.lbStatusEl.textContent = "";
+      this.lbStatusEl.hidden = true;
+      return;
+    }
+    const map = {
+      syncing: ["is-syncing", "Sincronizzazione classifica globale…"],
+      online: ["is-online", "Classifica globale aggiornata."],
+      offline: ["is-offline", "Offline: i record verranno sincronizzati appena possibile."],
+    };
+    const conf = map[state];
+    if (!conf) return;
+    const [cls, text] = conf;
+    this.lbStatusEl.classList.add(cls);
+    this.lbStatusEl.textContent = text;
+    this.lbStatusEl.hidden = false;
   }
 
   _nickSkip() {
@@ -1099,6 +1301,14 @@ class MolkkySimulator {
       this.overlayText.textContent =
         "Hai appena vinto una partita di Mölkky in solitaria, sei un* grande! 🎯🏆✨";
     }
+    this._clearNickError();
+  }
+
+  _finishWinSave(text) {
+    this._unbindNickKeyListener();
+    if (this.overlayWinSave) this.overlayWinSave.hidden = true;
+    if (this.overlayAction) this.overlayAction.hidden = false;
+    if (this.overlayText && text) this.overlayText.textContent = text;
     this._clearNickError();
   }
 
@@ -2036,6 +2246,7 @@ class MolkkySimulator {
     this._stopMeterLoop();
     this._unbindNickKeyListener();
     window.removeEventListener("storage", this._onLbStorage);
+    window.removeEventListener("online", this._onLbOnline);
     this._stop();
     window.removeEventListener("resize", this._onResize);
     document.removeEventListener("visibilitychange", this._onVisibility);
@@ -2063,6 +2274,14 @@ function showFallback(root) {
 function init() {
   const root = document.querySelector("[data-component=molkky-throw-simulator]");
   if (!root) return;
+
+  // Configurazione classifica: i valori arrivano da `_config.yml` via Liquid
+  // (vedi `_includes/molkky-throw-simulator.html`). Letti qui prima di
+  // istanziare il simulatore, così la sync parte già con i valori giusti.
+  const pid = (root.dataset.pantryId || "").trim();
+  const basket = (root.dataset.pantryBasket || "").trim();
+  if (pid) PANTRY_ID = pid;
+  if (basket) PANTRY_BASKET = basket;
 
   if (!hasWebGLSupport()) {
     showFallback(root);

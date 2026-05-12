@@ -564,6 +564,33 @@
     color: var(--molkky-text-muted);
   }
 
+  &__lb-status {
+    margin: 0 0 0.6rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    line-height: 1.35;
+    border: 1px solid var(--molkky-border);
+    background: var(--molkky-meter-fill);
+    color: var(--molkky-text-muted);
+
+    &.is-syncing {
+      color: var(--molkky-text);
+    }
+
+    &.is-online {
+      color: #0f6a2b;
+      border-color: rgba(15, 106, 43, 0.25);
+      background: rgba(15, 106, 43, 0.08);
+    }
+
+    &.is-offline {
+      color: #b3380e;
+      border-color: rgba(179, 56, 14, 0.3);
+      background: rgba(179, 56, 14, 0.08);
+    }
+  }
+
   &__lb-root {
     font-family: var(--molkky-arcade);
     font-size: clamp(0.45rem, 1.65vw, 0.58rem);

@@ -51,6 +51,15 @@ minima:
   social_links:
     - { platform: instagram,  user_url: "https://www.instagram.com/la_giostra_individuale/" }
 
+# Simulatore Mölkky — hall of fame globale via Pantry (https://getpantry.cloud).
+# - `pantry_id`: l'UUID ricevuto al signup (lascialo vuoto per disattivare la
+#   classifica globale: il modulo lavora in solo-locale finché non lo imposti).
+# - `pantry_basket`: nome della "stanza" dentro il pantry; cambialo (es. una
+#   nuova stagione) per ripartire da zero senza cancellare i record vecchi.
+molkky:
+  pantry_id: "0ba73e63-4ec5-46e9-9d31-c051efe482e3"
+  pantry_basket: "molkky-leaderboard"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

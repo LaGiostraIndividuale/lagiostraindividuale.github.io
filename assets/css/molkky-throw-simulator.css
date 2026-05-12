@@ -501,15 +501,28 @@
   line-height: 1.45;
   color: var(--molkky-text-muted);
 }
-.molkky-simulator__lb-note {
-  margin: 0.75rem 0 0;
-  font-size: 0.68rem;
-  line-height: 1.4;
-  color: var(--molkky-text-subtle);
+.molkky-simulator__lb-status {
+  margin: 0 0 0.6rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  border: 1px solid var(--molkky-border);
+  background: var(--molkky-meter-fill);
+  color: var(--molkky-text-muted);
 }
-.molkky-simulator__lb-note code {
-  font-size: 0.62rem;
-  word-break: break-all;
+.molkky-simulator__lb-status.is-syncing {
+  color: var(--molkky-text);
+}
+.molkky-simulator__lb-status.is-online {
+  color: #0f6a2b;
+  border-color: rgba(15, 106, 43, 0.25);
+  background: rgba(15, 106, 43, 0.08);
+}
+.molkky-simulator__lb-status.is-offline {
+  color: #b3380e;
+  border-color: rgba(179, 56, 14, 0.3);
+  background: rgba(179, 56, 14, 0.08);
 }
 .molkky-simulator__lb-root {
   font-family: var(--molkky-arcade);
