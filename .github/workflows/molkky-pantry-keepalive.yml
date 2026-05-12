@@ -1,0 +1,83 @@
+name: Mölkky leaderboard keepalive
+
+# Pantry cancella un basket dopo 30 giorni senza richieste: ogni GET/POST
+# resetta il timer. Una GET settimanale qui garantisce che la classifica
+# globale del simulatore non venga purgata anche durante periodi di traffico
+# nullo sul sito.
+#
+# Sicurezza: il pantry_id è già esposto lato client (data-attribute del DOM),
+# quindi non c'è nulla da nascondere in un secret; leggiamo il valore da
+# _config.yml per non duplicare la configurazione.
+
+on:
+  schedule:
+    # Ogni lunedì alle 03:17 UTC (orario "spalmato" per ridurre congestione
+    # con altri cron schedulati a inizio ora sui runner GitHub).
+    - cron: "17 3 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read Pantry config from _config.yml
+        id: cfg
+        run: |
+          set -euo pipefail
+          # yq (mikefarah) è preinstallato sui runner ubuntu-latest.
+          pid=$(yq -r '.molkky.pantry_id // ""' _config.yml)
+          basket=$(yq -r '.molkky.pantry_basket // ""' _config.yml)
+          if [ -z "$pid" ] || [ "$pid" = "null" ]; then
+            echo "::warning::molkky.pantry_id non configurato in _config.yml: salto il ping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ -z "$basket" ] || [ "$basket" = "null" ]; then
+            echo "::warning::molkky.pantry_basket non configurato: salto il ping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "pid=$pid" >> "$GITHUB_OUTPUT"
+          echo "basket=$basket" >> "$GITHUB_OUTPUT"
+
+      - name: Ping Pantry basket
+        if: steps.cfg.outputs.skip != 'true'
+        env:
+          PANTRY_ID: ${{ steps.cfg.outputs.pid }}
+          PANTRY_BASKET: ${{ steps.cfg.outputs.basket }}
+        run: |
+          set -euo pipefail
+          url="https://getpantry.cloud/apiv1/pantry/${PANTRY_ID}/basket/${PANTRY_BASKET}"
+          # Mascheriamo l'URL completo nei log per non stampare l'id in chiaro
+          # nel runner output (anche se il valore è pubblico via DOM, evitiamo
+          # di lasciare tracce comode da indicizzare).
+          echo "GET https://getpantry.cloud/apiv1/pantry/***/basket/${PANTRY_BASKET}"
+          status=$(curl -sS -o /tmp/pantry.out -w '%{http_code}' \
+            -H 'Accept: application/json' \
+            --retry 3 --retry-delay 5 --retry-connrefused \
+            --max-time 30 \
+            "$url")
+          echo "HTTP ${status}"
+          case "$status" in
+            200)
+              # Risposta normale: basket esiste, TTL rinnovato.
+              echo "Basket pingato: TTL Pantry resettato a 30 giorni."
+              ;;
+            400)
+              # Pantry risponde 400 quando il basket non esiste ancora
+              # (es. nessuno ha mai salvato un punteggio). Non è un errore:
+              # il keepalive è sostanzialmente un no-op finché non arrivano
+              # dati, ma la richiesta a livello account è comunque registrata.
+              echo "Basket non ancora creato (nessun POST). Nessuna azione necessaria."
+              ;;
+            *)
+              echo "Risposta inattesa da Pantry:"
+              cat /tmp/pantry.out || true
+              exit 1
+              ;;
+          esac
