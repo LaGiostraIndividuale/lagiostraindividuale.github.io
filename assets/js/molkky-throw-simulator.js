@@ -277,12 +277,18 @@ function escapeHtml(s) {
     .replace(/'/g, "&#39;");
 }
 
-/** Wikipedia: quarta fila 7, 8, 9 (non 7, 9, 8). */
+/** Disposizione ufficiale Mölkky vista dal lanciatore (front → back):
+ *  riga 1: 1, 2 — riga 2: 3, 10, 4 — riga 3: 5, 11, 12, 6 — riga 4: 7, 9, 8.
+ *  Le righe sono scritte "specchiate" perché la camera è dietro al lanciatore
+ *  (z negativa) e guarda verso +z: in Three.js (right-handed, up=+Y) il mondo
+ *  +X finisce a sinistra dello schermo, quindi per vedere "1 a sinistra, 2 a
+ *  destra" dal POV del lanciatore l'array deve scrivere `[2, 1]` ecc.
+ */
 const PIN_LAYOUT = [
-  [1, 2],
-  [3, 10, 4],
-  [5, 11, 12, 6],
-  [7, 8, 9],
+  [2, 1],
+  [4, 10, 3],
+  [6, 12, 11, 5],
+  [8, 9, 7],
 ];
 
 // --- Helpers fisica --------------------------------------------------------
