@@ -1330,30 +1330,17 @@ class MolkkySimulator {
     const parts = ['<ol class="molkky-simulator__lb-list">'];
     for (const r of ranks) {
       const n = r.entries.length;
-      if (r.rank === 1 && n > 1) {
-        parts.push(
-          '<li class="molkky-simulator__lb-row"><details class="molkky-simulator__lb-details">'
-            + '<summary class="molkky-simulator__lb-summary">'
-            + '<span class="molkky-simulator__lb-rank">1°</span>'
-            + `<span class="molkky-simulator__lb-metric">${r.throws} tiri</span>`
-            + `<span class="molkky-simulator__lb-meta">${n} record</span>`
-            + "</summary>"
-            + '<ul class="molkky-simulator__lb-names">'
-            + r.entries.map(e => `<li>${escapeHtml(e.nickname)}</li>`).join("")
-            + "</ul></details></li>",
-        );
-      } else {
-        const line =
-          n === 1
-            ? `<span class="molkky-simulator__lb-names-inline">${escapeHtml(r.entries[0].nickname)}</span>`
-            : `<span class="molkky-simulator__lb-names-inline">${r.entries.map(e => escapeHtml(e.nickname)).join(", ")}</span>`;
-        parts.push(
-          `<li class="molkky-simulator__lb-row molkky-simulator__lb-row--flat">`
-            + `<span class="molkky-simulator__lb-rank">${r.rank}°</span>`
-            + `<span class="molkky-simulator__lb-metric">${r.throws} tiri</span>`
-            + `${line}</li>`,
-        );
-      }
+      parts.push(
+        `<li class="molkky-simulator__lb-row"><details class="molkky-simulator__lb-details">`
+          + `<summary class="molkky-simulator__lb-summary">`
+          + `<span class="molkky-simulator__lb-rank">${r.rank}°</span>`
+          + `<span class="molkky-simulator__lb-metric">${r.throws} tiri</span>`
+          + (n > 1 ? `<span class="molkky-simulator__lb-meta">${n} record</span>` : "")
+          + `</summary>`
+          + `<ul class="molkky-simulator__lb-names">`
+          + r.entries.map(e => `<li>${escapeHtml(e.nickname)}</li>`).join("")
+          + `</ul></details></li>`,
+      );
     }
     parts.push("</ol>");
     root.innerHTML = parts.join("");
