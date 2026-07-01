@@ -180,7 +180,11 @@
     border-left: 1px solid var(--lp-border);
     border-right: none;
 
-    img { min-height: 50svh; }
+    img {
+      min-height: 50svh;
+      object-fit: contain;
+      object-position: center;
+    }
   }
 }
 

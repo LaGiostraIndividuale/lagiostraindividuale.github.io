@@ -13,7 +13,7 @@ molkky_simulator: true
       <div>
         <span class="lp-overline">Campionato nazionale · Stagione 2026</span>
         <h1 class="lp-title lp-title--hero">La&nbsp;Giostra<br>Individuale</h1>
-        <p style="font-size:var(--fs-2);color:var(--lp-muted);margin:1.5rem 0 0;max-width:38ch;line-height:1.55;">
+        <p style="font-size:var(--fs-4);font-weight:700;color:var(--lp-color);margin:1.5rem 0 0;line-height:1.3;">
           ovvero il campionato nazionale di Mölkky uno contro uno
         </p>
       </div>
