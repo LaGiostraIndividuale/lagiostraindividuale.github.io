@@ -63,7 +63,7 @@
     return imgs;
   }
 
-  function buildGallery(items) {
+  function buildGallery(items, loading) {
     const gallery = document.createElement("div");
     gallery.className = "archive-gallery";
 
@@ -75,7 +75,7 @@
       btn.setAttribute("aria-label", img.alt ? `Apri immagine: ${img.alt}` : "Apri immagine");
 
       const clone = img.cloneNode(true);
-      clone.loading = "lazy";
+      clone.loading = loading;
       clone.decoding = "async";
       btn.appendChild(clone);
 
@@ -217,8 +217,10 @@
 
     if (items.length < 2) return;
 
-    // Insert gallery before first image paragraph in this container
-    const gallery = buildGallery(items.map(({ img, caption }) => ({ img, caption })));
+    // Inside a closed <details> lazy images never load; use eager so they
+    // load on page init even while the accordion is hidden.
+    const loading = container.closest("details") ? "eager" : "lazy";
+    const gallery = buildGallery(items.map(({ img, caption }) => ({ img, caption })), loading);
     const firstP = items[0].p;
     firstP.parentNode.insertBefore(gallery, firstP);
 

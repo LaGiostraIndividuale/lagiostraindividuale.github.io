@@ -4,31 +4,26 @@
 ---
 
 .molkky-simulator {
-  /* Contrasto WCAG-friendly su fondo chiaro */
-  --molkky-bg: #faf7f2;
-  --molkky-surface: #ffffff;
-  --molkky-text: #141414;
-  --molkky-text-muted: #3d3d3d;
-  --molkky-text-subtle: #5c5c5c;
-  --molkky-border: rgba(20, 20, 20, 0.12);
-  --molkky-fg: var(--color, var(--molkky-text));
-  --molkky-accent: #8b6914;
-  --molkky-accent-strong: #3d2f08;
-  --molkky-meter-fill: #e8e6e1;
-  --molkky-meter-needle: #1a1a1a;
-  --molkky-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  --molkky-radius: 12px;
-  --molkky-arcade: "Press Start 2P", "Courier New", Courier, monospace;
+  /* Inherit section palette from landing --lp-* vars */
+  --molkky-bg:           transparent;
+  --molkky-surface:      rgba(0, 0, 0, 0.07);
+  --molkky-text:         var(--lp-color, #000);
+  --molkky-text-muted:   var(--lp-muted, rgba(0, 0, 0, 0.55));
+  --molkky-text-subtle:  var(--lp-muted, rgba(0, 0, 0, 0.55));
+  --molkky-border:       var(--lp-border, rgba(0, 0, 0, 0.14));
+  --molkky-accent:       var(--lp-color, #000);
+  --molkky-accent-strong: var(--lp-color, #000);
+  --molkky-meter-fill:   rgba(0, 0, 0, 0.1);
+  --molkky-meter-needle: var(--lp-color, #000);
+  --molkky-radius:       0;
+  --molkky-shadow:       none;
+  /* Typography: site font stack */
+  --molkky-gothic: "Gothic", "Arial Black", "Helvetica Neue", sans-serif;
 
   display: grid;
   gap: 1.25rem;
-  margin: 2.5rem 0;
-  padding: 1.5rem 1.35rem;
-  background: var(--molkky-bg);
+  background: transparent;
   color: var(--molkky-text);
-  border-radius: var(--molkky-radius);
-  border: 1px solid var(--molkky-border);
-  box-shadow: var(--molkky-shadow);
   font-size: 1rem;
 
   *,
@@ -37,44 +32,14 @@
     box-sizing: border-box;
   }
 
-  &__intro {
-    display: grid;
-    gap: 0.35rem;
-    margin: 0;
-  }
-
-  &__title {
-    font-family: "Gothic", inherit;
-    font-size: clamp(1.5rem, 2.4vw, 2rem);
-    margin: 0;
-    line-height: 1.12;
-    color: var(--molkky-text);
-    letter-spacing: -0.02em;
-  }
-
-  &__lead {
-    margin: 0;
-    max-width: 62ch;
-    color: var(--molkky-text-muted);
-    line-height: 1.55;
-    font-size: 0.97rem;
-
-    strong {
-      color: var(--molkky-text);
-      font-weight: 700;
-    }
-  }
-
   // HUD partita: punteggio / tiri / mancati
   &__hud {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.65rem;
     padding: 0.75rem 0.9rem;
-    border-radius: 10px;
     background: var(--molkky-surface);
     border: 1px solid var(--molkky-border);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
     color: var(--molkky-text);
   }
 
@@ -87,23 +52,26 @@
   }
 
   &__hud-label {
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-size: 0.62rem;
+    font-size: var(--fs-0, 0.62rem);
     color: var(--molkky-text-subtle);
   }
 
   &__hud-value {
-    font-family: "Gothic", inherit;
+    font-family: var(--molkky-gothic);
     font-size: clamp(1.45rem, 2.8vw, 2rem);
     font-variant-numeric: tabular-nums;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
     color: var(--molkky-text);
-    font-weight: 700;
   }
 
   &__hud-sub {
-    font-size: 0.68rem;
+    font-size: var(--fs-0, 0.68rem);
     color: var(--molkky-text-subtle);
     letter-spacing: 0.02em;
   }
@@ -115,11 +83,9 @@
   &__stage {
     position: relative;
     width: 100%;
-    height: clamp(360px, 60vh, 680px);
-    border-radius: var(--molkky-radius);
+    height: clamp(320px, 55vh, 560px);
     overflow: hidden;
     background: linear-gradient(180deg, #efe1c3 0%, #d8b986 100%);
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
   }
 
   // Overlay finale (vittoria / sconfitta)
@@ -130,7 +96,7 @@
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    background: rgba(250, 247, 242, 0.94);
+    background: rgba(0, 0, 0, 0.72);
     backdrop-filter: blur(4px);
     z-index: 2;
   }
@@ -142,31 +108,33 @@
     text-align: center;
     max-width: 32rem;
     padding: 1.5rem 1.75rem;
-    background: var(--molkky-surface);
-    border: 1px solid var(--molkky-border);
-    border-radius: var(--molkky-radius);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    background: #f2f0eb;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #000;
   }
 
   &__overlay-title {
     margin: 0;
-    font-family: "Gothic", inherit;
+    font-family: var(--molkky-gothic);
     font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: var(--molkky-text);
-    line-height: 1.1;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    color: #000;
   }
 
   &__overlay-text {
     margin: 0;
     font-size: 1.05rem;
     line-height: 1.45;
-    color: var(--molkky-text-muted);
+    color: rgba(0, 0, 0, 0.6);
   }
 
   &__overlay-stats {
     margin: 0;
     font-size: 0.95rem;
-    color: var(--molkky-text-subtle);
+    color: rgba(0, 0, 0, 0.5);
     font-variant-numeric: tabular-nums;
   }
 
@@ -179,7 +147,7 @@
     margin: 0;
     font-size: 0.72rem;
     line-height: 1.5;
-    color: var(--molkky-text-muted);
+    color: rgba(0, 0, 0, 0.6);
 
     kbd {
       display: inline-block;
@@ -187,9 +155,8 @@
       margin: 0 0.05rem;
       font-family: inherit;
       font-size: 0.68rem;
-      border: 1px solid var(--molkky-border);
-      border-radius: 4px;
-      background: var(--molkky-meter-fill);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.06);
     }
   }
 
@@ -202,9 +169,8 @@
     outline: none;
 
     &:focus-visible {
-      outline: 2px solid var(--molkky-text);
+      outline: 2px solid #000;
       outline-offset: 4px;
-      border-radius: 6px;
     }
   }
 
@@ -213,25 +179,24 @@
     margin: 0;
     padding: 0.35rem 0.1rem;
     min-height: 2.5rem;
-    font-family: var(--molkky-arcade);
-    font-size: clamp(0.45rem, 2.1vw, 0.62rem);
-    line-height: 1.1;
-    letter-spacing: 0;
-    border: 2px solid var(--molkky-border);
-    border-radius: 6px;
+    font-family: var(--molkky-gothic);
+    font-size: clamp(0.55rem, 2.1vw, 0.72rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    border: 2px solid rgba(0, 0, 0, 0.2);
     background: #0f0f0f;
     color: #ffcc33;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
     cursor: pointer;
-    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+    transition: border-color 0.12s ease;
 
     &.is-active {
       border-color: #ffcc33;
-      box-shadow: 0 0 0 2px rgba(255, 204, 51, 0.35);
     }
 
     &:focus-visible {
-      outline: 2px solid var(--molkky-text);
+      outline: 2px solid #000;
       outline-offset: 2px;
     }
   }
@@ -267,13 +232,13 @@
     position: absolute;
     inset: 0;
     margin: 0;
-    display: none; // visibile solo su .molkky-simulator--fallback
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    background: rgba(250, 247, 242, 0.97);
-    color: var(--molkky-text);
+    background: rgba(232, 97, 77, 0.97);
+    color: #000;
     font-size: 1rem;
     line-height: 1.5;
   }
@@ -286,7 +251,6 @@
     display: none;
   }
 
-  // Priorità su [hidden] in caso di toggle programmatico.
   [hidden] {
     display: none !important;
   }
@@ -303,9 +267,6 @@
     }
   }
 
-  /* Metri compatti: binario sottile + ago lineare (minimal, alta leggibilità).
-   * I tre fader stanno SEMPRE sulla stessa riga (anche su mobile) per non
-   * spingere il canvas fuori dalla viewport. */
   &__meters {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -314,7 +275,6 @@
     padding: 0.65rem 0.75rem;
     background: var(--molkky-surface);
     border: 1px solid var(--molkky-border);
-    border-radius: 10px;
   }
 
   &__meter {
@@ -334,8 +294,8 @@
     }
 
     &.is-active &__meter-track {
-      border-color: rgba(20, 20, 20, 0.22);
-      background: linear-gradient(180deg, #f3f2ef 0%, var(--molkky-meter-fill) 100%);
+      border-color: rgba(0, 0, 0, 0.22);
+      background: rgba(0, 0, 0, 0.12);
     }
 
     &.is-active &__meter-needle {
@@ -344,19 +304,17 @@
   }
 
   &__meter-label {
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-size: var(--fs-0, 0.7rem);
     color: var(--molkky-text-subtle);
-    text-transform: none;
+    text-transform: uppercase;
   }
 
   &__meter-track {
     position: relative;
     background: var(--molkky-meter-fill);
-    border-radius: 999px;
-    border: 1px solid rgba(20, 20, 20, 0.14);
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65);
+    border: 1px solid var(--molkky-border);
 
     &--vertical {
       width: 10px;
@@ -372,7 +330,6 @@
     }
   }
 
-  /* Zona “sweet” disattivata visivamente per UI più pulita */
   &__meter-zone--sweet {
     display: none;
   }
@@ -380,9 +337,7 @@
   &__meter-needle {
     position: absolute;
     background: var(--molkky-meter-needle);
-    border-radius: 999px;
     transition: none;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
 
     &--h {
       left: 2px;
@@ -410,7 +365,7 @@
   }
 
   &__meter-hint {
-    font-size: 0.72rem;
+    font-size: var(--fs-0, 0.72rem);
     max-width: 100%;
     text-align: center;
     line-height: 1.35;
@@ -421,8 +376,6 @@
     hyphens: auto;
   }
 
-  /* Su schermi stretti (mobile portrait): metri ancora più compatti
-   * — track più corte e hint nascosta sopra le track per dare aria. */
   @media (max-width: 480px) {
     &__meters {
       gap: 0.4rem;
@@ -443,7 +396,7 @@
     }
 
     &__meter-label {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
     }
 
     &__meter-hint {
@@ -459,9 +412,6 @@
     gap: 0.5rem;
     justify-content: flex-end;
 
-    /* Mobile: pulsante d'azione (Inizia tiro / Ferma potenza / Lancia!) a
-     * tutta larghezza per ridurre i tap mancati mentre l'occhio è sul campo;
-     * "Nuova partita" su una riga separata, larghezza naturale. */
     @media (max-width: 640px) {
       flex-direction: column;
       align-items: center;
@@ -474,10 +424,11 @@
     appearance: none;
     cursor: pointer;
     font: inherit;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: var(--fs-0, 0.8rem);
     padding: 0.55rem 1.1rem;
-    border-radius: 8px;
     border: 1px solid var(--molkky-text);
     background: transparent;
     color: var(--molkky-text);
@@ -486,7 +437,7 @@
     &:hover,
     &:focus-visible {
       background: var(--molkky-text);
-      color: var(--molkky-surface);
+      color: var(--lp-bg, #e8614d);
     }
 
     &:focus-visible {
@@ -506,26 +457,26 @@
 
     &--primary {
       background: var(--molkky-text);
-      color: var(--molkky-surface);
+      color: var(--lp-bg, #e8614d);
       border-color: var(--molkky-text);
 
       &:hover,
       &:focus-visible {
         background: #000;
         border-color: #000;
+        color: var(--lp-bg, #e8614d);
       }
 
       @media (max-width: 640px) {
         width: 100%;
         padding-block: 0.85rem;
-        font-size: 1.05rem;
       }
     }
   }
 
   &__result {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--fs-1, 0.9rem);
     min-height: 1.45em;
     text-align: left;
     font-variant-numeric: tabular-nums;
@@ -540,38 +491,63 @@
     }
   }
 
-  /* Hall of fame + font arcade (nickname / tabellone) */
-  &__lb {
-    padding: 1rem 0.85rem;
-    border-radius: var(--molkky-radius);
-    border: 1px solid var(--molkky-border);
-    background: var(--molkky-surface);
+  /* Hall of fame — accordion toggle */
+  &__lb-accordion {
+    border-top: 1px solid var(--molkky-border);
+
+    &[open] .molkky-simulator__lb-trigger-icon {
+      transform: rotate(45deg);
+    }
   }
 
-  &__lb-title {
-    margin: 0 0 0.35rem;
-    font-family: var(--molkky-arcade);
-    font-size: clamp(0.55rem, 1.8vw, 0.72rem);
-    line-height: 1.4;
-    letter-spacing: 0.04em;
+  &__lb-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--molkky-gothic);
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
     color: var(--molkky-text);
+
+    &::-webkit-details-marker { display: none; }
+    &::marker { display: none; content: ""; }
+
+    &:hover { opacity: 0.7; }
+  }
+
+  &__lb-trigger-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    transition: transform 0.25s ease;
+  }
+
+  &__lb {
+    padding: 0.75rem 0 0.25rem;
+    border-top: 1px solid var(--molkky-border);
   }
 
   &__lb-lede {
     margin: 0 0 0.75rem;
-    font-size: 0.78rem;
-    line-height: 1.45;
+    font-size: var(--fs-1, 0.78rem);
+    line-height: 1.55;
     color: var(--molkky-text-muted);
   }
 
   &__lb-status {
     margin: 0 0 0.6rem;
     padding: 0.35rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.7rem;
+    font-size: var(--fs-0, 0.7rem);
     line-height: 1.35;
     border: 1px solid var(--molkky-border);
-    background: var(--molkky-meter-fill);
+    background: var(--molkky-surface);
     color: var(--molkky-text-muted);
 
     &.is-syncing {
@@ -592,15 +568,14 @@
   }
 
   &__lb-root {
-    font-family: var(--molkky-arcade);
-    font-size: clamp(0.45rem, 1.65vw, 0.58rem);
+    font-family: inherit;
+    font-size: var(--fs-1, 0.85rem);
     line-height: 1.45;
   }
 
   &__lb-empty {
     margin: 0;
-    font-family: inherit;
-    font-size: 0.72rem;
+    font-size: var(--fs-1, 0.72rem);
     line-height: 1.5;
     color: var(--molkky-text-muted);
   }
@@ -609,12 +584,14 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: inherit;
   }
 
   &__lb-row {
     margin: 0;
     padding: 0.55rem 0;
     border-bottom: 1px solid var(--molkky-border);
+    font-family: inherit;
 
     &:last-child {
       border-bottom: none;
@@ -630,11 +607,14 @@
   }
 
   &__lb-rank {
-    color: var(--molkky-accent-strong);
+    font-family: inherit;
+    color: var(--molkky-text);
     min-width: 2ch;
+    font-weight: 700;
   }
 
   &__lb-metric {
+    font-family: inherit;
     color: var(--molkky-text-muted);
     white-space: nowrap;
   }
@@ -646,9 +626,9 @@
 
   &__lb-names-inline {
     grid-column: 1 / -1;
-    color: #ffcc33;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    color: var(--molkky-text);
     word-break: break-word;
+    font-weight: 600;
   }
 
   &__lb-summary {
@@ -687,8 +667,9 @@
     margin: 0.5rem 0 0;
     padding: 0.35rem 0 0 1.25rem;
     list-style: disc !important;
-    color: #ffcc33;
+    color: var(--molkky-text);
     font-size: 0.95em;
+    font-weight: 600;
 
     li {
       margin: 0.2rem 0;
@@ -698,6 +679,9 @@
 
   @media (prefers-reduced-motion: reduce) {
     &__btn {
+      transition: none;
+    }
+    &__lb-trigger-icon {
       transition: none;
     }
   }

@@ -1,24 +1,35 @@
-<footer class="site-footer h-card">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
+<footer class="site-footer lp-section">
+  <div class="lp-grid lp-grid--footer">
 
-      <div class="footer-col footer-col--info">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }} — {{ site.description | escape }}</p>
-        <a class="footer-link" href="{{ '/contatti/' | relative_url }}">Contatti</a>
-      </div>
+    <div class="lp-cell lp-footer-brand">
+      <a class="lp-footer-logo" rel="author" href="{{ "/" | relative_url }}">
+        {%- include logo.html -%}
+      </a>
+      <p class="lp-footer-copy">&copy; {{ site.time | date: '%Y' }} La Giostra Individuale</p>
+      <p class="lp-footer-desc">Campionato nazionale di Mölkky uno contro uno</p>
+    </div>
 
-      <div class="sponsor">
-        <p class="sponsor-credits">Powered by <a href="https://games.tactic.net/en/" target="_blank" rel="noopener">Tactic</a></p>
-        <div class="sponsor-logos">
+    <div class="lp-cell lp-footer-sponsor">
+      <span class="lp-footer-col-label">Con il supporto di</span>
+      <div class="sponsor-logos">
+        <div class="lp-footer-sponsor-item">
+          <span class="lp-sponsor-flag">🇫🇮</span>
           {%- include tactic-logo.svg -%}
+        </div>
+        <div class="lp-footer-sponsor-item">
+          <span class="lp-sponsor-flag">🇫🇮</span>
           {%- include molkky-logo.svg -%}
         </div>
       </div>
-
-      <div class="footer-col footer-col--social">
-        {%- include social.html -%}
-      </div>
-
     </div>
+
+    <div class="lp-cell lp-footer-cta">
+      <div>
+        <span class="lp-footer-col-label">Contatti</span>
+        <a class="lp-footer-email" href="mailto:lagiostraindividuale@gmail.com">lagiostraindividuale<wbr>@gmail.com</a>
+      </div>
+      {%- include social.html -%}
+    </div>
+
   </div>
 </footer>

@@ -1,0 +1,12 @@
+steps:
+  - num: "01"
+    title: "Stagione Regolare"
+    body: "Dal 20 Marzo al 31 Luglio, in conferenze locali. Ogni giocante sfida tuttз gli altri uno contro uno. I primi due classificati accedono direttamente al Torneo Finale."
+  - num: "02"
+    title: "Ripescaggio"
+    body: "Il terzo classificato di ogni conferenza si gioca l'accesso al Torneo in una giornata dedicata, il 19 Settembre a Pesaro. Solo un giocante viene ripescato."
+  - num: "03"
+    title: "Torneo Finale"
+    body: "Quattro gironi casuali, semifinali e finale alla meglio di cinque set. Il vincitore diventa Campione de La Giostra Individuale 2026."
+link: "/regolamento/"
+link_label: "Leggi il regolamento completo"

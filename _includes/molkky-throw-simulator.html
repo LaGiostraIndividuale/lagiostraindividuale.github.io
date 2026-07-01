@@ -5,15 +5,6 @@
   data-pantry-basket="{{ site.molkky.pantry_basket | default: 'molkky-leaderboard' }}"
   aria-label="Partita di Mölkky in solitaria"
 >
-  <header class="molkky-simulator__intro">
-    <h2 class="molkky-simulator__title">Mölkky — partita in solitaria</h2>
-    <p class="molkky-simulator__lead">
-      Vinci raggiungendo esattamente <strong>50 punti</strong>: se sfori, torni a 25.
-      Dopo ogni tiro i birilli abbattuti si rialzano sul campo. Tre tiri consecutivi senza prendere nessun birillo e la partita finisce. Conferma in tre tempi:
-      <strong>potenza</strong>, <strong>direzione</strong> e <strong>palombella</strong>.
-    </p>
-  </header>
-
   <div class="molkky-simulator__hud" data-role="hud" aria-live="polite" aria-atomic="true">
     <div class="molkky-simulator__hud-stat">
       <span class="molkky-simulator__hud-label">Punteggio</span>
@@ -144,12 +135,17 @@
     Pronto al primo lancio.
   </p>
 
-  <aside class="molkky-simulator__lb" aria-labelledby="molkky-lb-title">
-    <h3 id="molkky-lb-title" class="molkky-simulator__lb-title">Hall of fame</h3>
-    <p class="molkky-simulator__lb-lede">
-      I migliori tempi (meno tiri per arrivare a 50). Classifica globale condivisa fra tutti lз giocantз.
-    </p>
-    <p class="molkky-simulator__lb-status" data-role="leaderboard-status" aria-live="polite" hidden></p>
-    <div class="molkky-simulator__lb-root" data-role="leaderboard-root"></div>
-  </aside>
+  <details class="molkky-simulator__lb-accordion">
+    <summary class="molkky-simulator__lb-trigger">
+      Hall of fame
+      <span class="molkky-simulator__lb-trigger-icon" aria-hidden="true">+</span>
+    </summary>
+    <div class="molkky-simulator__lb">
+      <p class="molkky-simulator__lb-lede">
+        I migliori tempi (meno tiri per arrivare a 50). Classifica globale condivisa fra tutti lз giocantз.
+      </p>
+      <p class="molkky-simulator__lb-status" data-role="leaderboard-status" aria-live="polite" hidden></p>
+      <div class="molkky-simulator__lb-root" data-role="leaderboard-root"></div>
+    </div>
+  </details>
 </section>

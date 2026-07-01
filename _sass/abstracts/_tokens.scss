@@ -4,7 +4,8 @@
  * Sorgente unica per breakpoint, scala tipografica, colori,
  * raggi e spaziature usati in tutto il sito.
  * Le variabili Sass sono per i media query (servono al compile-time);
- * le custom properties vivono su :root e cambiano nel dark mode.
+ * le custom properties vivono su :root.
+ * Il sito è sempre dark (Enerblock-inspired: nero, bianco, giallo).
  * ===================================================== */
 
 // -- Breakpoints (Sass, compile-time) ------------------
@@ -26,17 +27,18 @@ $screen-xxl: 1600px;
   --fs-5: clamp(1.75rem, 4vw, 2.25rem);
   --fs-6: clamp(2.25rem, 5.5vw, 3.25rem);
 
-  /* Colore (light) */
-  --background: #ffffff;
-  --color: #000000;
-  --surface: #f4f4f4;
-  --surface-2: #ffffff;
-  --border: #d6d6d6;
-  /* Testo secondario con contrasto AA su sfondo chiaro */
-  --muted: #595959;
-  --muted-2: #525252;
+  /* Colori — sempre dark */
+  --background: #000000;
+  --color: #ffffff;
+  --surface: #0b0b0b;
+  --surface-2: #111111;
+  --border: #1f1f1f;
+  --muted: #bdbdbd;
+  --muted-2: #888888;
   --accent: #ffcc00;
   --accent-contrast: #000000;
+  --red: #e8614d;
+  --red-contrast: #000000;
 
   /* Aliases compat con codice legacy */
   --box-shadow: 10px 10px 5px black;
@@ -52,18 +54,4 @@ $screen-xxl: 1600px;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --color: #ffffff;
-    --surface: #0b0b0b;
-    --surface-2: #111111;
-    --border: #2a2a2a;
-    --muted: #bdbdbd;
-    --muted-2: #9f9f9f;
-    --accent: #ffcc00;
-    --accent-contrast: #000000;
-  }
 }

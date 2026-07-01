@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "it" }}">
+
+  {%- include head.html -%}
+
+  <body>
+    <a class="skip-link" href="#main-content">Vai al contenuto principale</a>
+
+    {%- include header.html -%}
+
+    <main id="main-content">
+      {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+
+    {%- if jekyll.environment == 'production' -%}
+      {%- assign js_ext = '.min.js' -%}
+    {%- else -%}
+      {%- assign js_ext = '.js' -%}
+    {%- endif -%}
+
+    <script src="{{ '/assets/js/site-header' | append: js_ext | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/archive-gallery' | append: js_ext | relative_url }}" defer></script>
+    <script type="module" src="{{ '/assets/js/molkky-throw-simulator' | append: js_ext | relative_url }}"></script>
+
+    {%- if jekyll.environment == 'production' -%}
+    <script src="{{ '/assets/js/stagione-regolare.min.js' | relative_url }}" defer></script>
+    {%- else -%}
+    <script src="{{ '/assets/js/stagione-regolare.js' | relative_url }}" defer></script>
+    {%- endif -%}
+
+  </body>
+
+</html>
