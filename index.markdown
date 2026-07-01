@@ -17,7 +17,7 @@ molkky_simulator: true
           ovvero il campionato nazionale di Mölkky uno contro uno
         </p>
       </div>
-      <a class="lp-cta" href="#stagione">Scopri la stagione &darr;</a>
+      <!-- <a class="lp-cta" href="#stagione">Scopri la stagione &darr;</a>-->
     </div>
     <div class="lp-cell lp-cell--image">
       <img
@@ -69,7 +69,7 @@ molkky_simulator: true
     </summary>
     <div class="lp-accordion__body">
       <section class="sr-page" data-season="2026">
-        <p class="sr-intro">Classifiche, podi e dettagli giocanti delle conferenze.</p>
+        <p class="sr-intro">Classifiche, podi e schede dellǝ giocantǝ per conferenza.</p>
         <div id="stagione-regolare-app"></div>
       </section>
     </div>
@@ -148,7 +148,7 @@ molkky_simulator: true
           width="249" height="252"
           loading="lazy" decoding="async"
         >
-        <p class="lp-app-desc">Segui classifiche, risultati e dettagli giocanti in tempo reale. Disponibile per iOS e Android.</p>
+        <p class="lp-app-desc">Segui classifiche, risultati e schede dellǝ giocantǝ in tempo reale. Disponibile per iOS e Android.</p>
         <div class="lp-app-badges">
           <a class="lp-app-badge" href="https://apps.apple.com/it/app/la-giostra-individuale/id6741768625" rel="noopener noreferrer">
             <img src="/assets/img/app-store.png" alt="Scarica su App Store" width="200" height="66" loading="lazy" decoding="async">
