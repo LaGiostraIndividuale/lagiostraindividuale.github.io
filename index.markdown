@@ -242,7 +242,7 @@ molkky_simulator: true
   </div>
   <div class="lp-grid--docs">
     {%- for doc in site.data.documenti -%}
-    <a class="lp-doc-card" href="/assets/docs/{{ doc.file | url_encode }}" target="_blank" rel="noopener noreferrer">
+    <a class="lp-doc-card" href="/assets/docs/{{ doc.file | replace: ' ', '%20' }}" target="_blank" rel="noopener noreferrer">
       <div class="lp-doc-preview">
         <img src="{{ doc.anteprima }}" alt="{{ doc.titolo }}" loading="lazy" decoding="async">
       </div>
