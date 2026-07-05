@@ -760,19 +760,20 @@ body { background-color: var(--background) !important; color: var(--color) !impo
 /* ── RESPONSIVE ───────────────────────────────────────── */
 
 @media (max-width: #{$screen-md}) {
-  /* All lp-grids go single column */
+  /* All lp-grids go single column.
+     Grids defined inside a section selector need matching specificity here. */
   .lp-section--hero .lp-grid,
   .lp-section--aggiornamenti .lp-grid,
   .lp-section--app .lp-grid,
   .lp-grid--footer,
-  .lp-grid--stagione-head,
-  .lp-grid--reg-head,
-  .lp-grid--reg-steps,
-  .lp-grid--sim-head,
-  .lp-grid--sim-body,
-  .lp-grid--arch-head,
-  .lp-grid--doc-head,
-  .lp-grid--docs,
+  .lp-section--stagione .lp-grid--stagione-head,
+  .lp-section--regolamento .lp-grid--reg-head,
+  .lp-section--regolamento .lp-grid--reg-steps,
+  .lp-section--simulatore .lp-grid--sim-head,
+  .lp-section--simulatore .lp-grid--sim-body,
+  .lp-section--archivio .lp-grid--arch-head,
+  .lp-section--documenti .lp-grid--doc-head,
+  .lp-section--documenti .lp-grid--docs,
   .lp-reg-full-grid,
   .lp-archive-content-grid,
   .lp-archive-content-grid:has(.lp-archive-video-cell) {
@@ -791,13 +792,20 @@ body { background-color: var(--background) !important; color: var(--color) !impo
     &:last-child { border-bottom: none; }
   }
 
+  /* Documenti cards: stack vertically */
+  .lp-doc-card {
+    border-right: none;
+    border-bottom: 1px solid var(--lp-border);
+
+    &:last-child { border-bottom: none; }
+  }
+
   .lp-cell--spacer { display: none; }
 
   .lp-section--hero .lp-cell--image { min-height: 60vw; }
   .lp-section--regolamento .lp-grid--reg-head { min-height: auto; }
   .lp-section--regolamento .lp-grid--reg-head .lp-cell--image { min-height: 55vw; }
   .lp-section--simulatore .lp-grid--sim-head { min-height: auto; }
-  .lp-section--simulatore .lp-grid--sim-body { grid-template-columns: 1fr; }
   .lp-section--simulatore .lp-grid--sim-body .lp-cell--image { min-height: 55vw; }
 }
 
