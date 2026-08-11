@@ -1,74 +1,74 @@
 [
   {
     "posizione": 1,
-    "giocante_id": "barbara",
-    "sv": 2,
-    "punti": 100,
-    "partite_giocate": 1,
+    "giocante_id": "dilegno",
+    "sv": 12,
+    "punti": 749,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 2,
-    "giocante_id": "kenzu",
-    "sv": 1,
-    "punti": 112,
-    "partite_giocate": 2,
+    "giocante_id": "sanjibbone",
+    "sv": 11,
+    "punti": 746,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 3,
-    "giocante_id": "anubi",
-    "sv": 1,
-    "punti": 92,
-    "partite_giocate": 1,
+    "giocante_id": "sempre",
+    "sv": 11,
+    "punti": 695,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 4,
-    "giocante_id": "dilegno",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "barbara",
+    "sv": 11,
+    "punti": 663,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 5,
-    "giocante_id": "armadilly",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "jonnino",
+    "sv": 10,
+    "punti": 656,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 6,
-    "giocante_id": "jonnino",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "kenzu",
+    "sv": 9,
+    "punti": 632,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 7,
-    "giocante_id": "sanjibbone",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "armadilly",
+    "sv": 4,
+    "punti": 555,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 8,
-    "giocante_id": "ka",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "anubi",
+    "sv": 3,
+    "punti": 457,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 9,
-    "giocante_id": "sempre",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "ka",
+    "sv": 1,
+    "punti": 197,
+    "partite_giocate": 8,
     "partite_totali": 8
   }
 ]
