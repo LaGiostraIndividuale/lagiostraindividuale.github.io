@@ -1,66 +1,66 @@
 [
   {
     "posizione": 1,
-    "giocante_id": "plastilino",
-    "sv": 7,
-    "punti": 360,
-    "partite_giocate": 4,
+    "giocante_id": "moz",
+    "sv": 11,
+    "punti": 661,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 2,
-    "giocante_id": "fileri",
-    "sv": 2,
-    "punti": 186,
-    "partite_giocate": 2,
+    "giocante_id": "plastilino",
+    "sv": 11,
+    "punti": 630,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 3,
-    "giocante_id": "el-diton",
-    "sv": 1,
-    "punti": 147,
-    "partite_giocate": 2,
+    "giocante_id": "fileri",
+    "sv": 10,
+    "punti": 653,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 4,
-    "giocante_id": "la-megghy",
-    "sv": 1,
-    "punti": 143,
-    "partite_giocate": 2,
+    "giocante_id": "luca",
+    "sv": 8,
+    "punti": 611,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 5,
-    "giocante_id": "moz",
-    "sv": 1,
-    "punti": 81,
-    "partite_giocate": 1,
+    "giocante_id": "la-megghy",
+    "sv": 7,
+    "punti": 551,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 6,
-    "giocante_id": "nick-lo-squartatore",
-    "sv": 0,
-    "punti": 21,
-    "partite_giocate": 1,
+    "giocante_id": "lalelale",
+    "sv": 5,
+    "punti": 557,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 7,
-    "giocante_id": "luca",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "el-diton",
+    "sv": 3,
+    "punti": 505,
+    "partite_giocate": 7,
     "partite_totali": 7
   },
   {
     "posizione": 8,
-    "giocante_id": "lalelale",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "nick-lo-squartatore",
+    "sv": 1,
+    "punti": 398,
+    "partite_giocate": 7,
     "partite_totali": 7
   }
 ]
