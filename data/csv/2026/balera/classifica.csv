@@ -1,11 +1,11 @@
 conferenza_id,posizione,giocante_id,sv,punti,partite_giocate,partite_totali
-balera,5,dinamitarda,8,704,8,9
+balera,6,dinamitarda,8,704,8,9
 balera,8,antide,4,585,8,9
-balera,7,pravda,6,535,6,9
+balera,4,pravda,9,711,8,9
 balera,10,uliano,0,0,0,9
 balera,2,johnny-the-great,10,704,8,9
 balera,3,ferra,10,700,8,9
-balera,4,trapstar,9,658,8,9
-balera,6,adnan,7,596,7,9
+balera,5,trapstar,9,658,8,9
+balera,7,adnan,8,686,8,9
 balera,1,gujar,12,735,8,9
-balera,9,polita,2,432,7,9
+balera,9,polita,2,502,8,9
