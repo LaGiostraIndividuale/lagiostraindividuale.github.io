@@ -1,82 +1,82 @@
 [
   {
-    "posizione": 1,
+    "posizione": 2,
     "giocante_id": "ricbardo",
-    "sv": 5,
-    "punti": 289,
-    "partite_giocate": 3,
+    "sv": 13,
+    "punti": 856,
+    "partite_giocate": 9,
     "partite_totali": 9
   },
   {
-    "posizione": 2,
+    "posizione": 1,
     "giocante_id": "santo",
-    "sv": 5,
-    "punti": 280,
-    "partite_giocate": 3,
+    "sv": 14,
+    "punti": 836,
+    "partite_giocate": 9,
     "partite_totali": 9
   },
   {
     "posizione": 3,
     "giocante_id": "jimbo-limbo",
-    "sv": 4,
-    "punti": 258,
-    "partite_giocate": 3,
+    "sv": 11,
+    "punti": 803,
+    "partite_giocate": 9,
     "partite_totali": 9
   },
   {
     "posizione": 4,
     "giocante_id": "craxi666",
-    "sv": 3,
-    "punti": 218,
-    "partite_giocate": 3,
+    "sv": 10,
+    "punti": 748,
+    "partite_giocate": 9,
     "partite_totali": 9
   },
   {
     "posizione": 5,
     "giocante_id": "pacmark",
-    "sv": 2,
-    "punti": 263,
-    "partite_giocate": 3,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 6,
-    "giocante_id": "jimmy",
-    "sv": 2,
-    "punti": 244,
-    "partite_giocate": 3,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 7,
-    "giocante_id": "lordus",
-    "sv": 2,
-    "punti": 229,
-    "partite_giocate": 3,
+    "sv": 8,
+    "punti": 760,
+    "partite_giocate": 9,
     "partite_totali": 9
   },
   {
     "posizione": 8,
-    "giocante_id": "buffalmacco",
-    "sv": 1,
-    "punti": 192,
-    "partite_giocate": 3,
+    "giocante_id": "jimmy",
+    "sv": 6,
+    "punti": 672,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
     "posizione": 9,
-    "giocante_id": "jihadista-dadaista",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "lordus",
+    "sv": 5,
+    "punti": 659,
+    "partite_giocate": 9,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 6,
+    "giocante_id": "buffalmacco",
+    "sv": 8,
+    "punti": 727,
+    "partite_giocate": 9,
     "partite_totali": 9
   },
   {
     "posizione": 10,
+    "giocante_id": "jihadista-dadaista",
+    "sv": 4,
+    "punti": 392,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 7,
     "giocante_id": "giuliezza",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 7,
+    "punti": 633,
+    "partite_giocate": 8,
     "partite_totali": 9
   }
 ]
