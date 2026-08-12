@@ -1,74 +1,74 @@
 [
   {
-    "posizione": 1,
-    "giocante_id": "ruco",
-    "sv": 7,
-    "punti": 366,
-    "partite_giocate": 4,
-    "partite_totali": 8
-  },
-  {
     "posizione": 2,
+    "giocante_id": "ruco",
+    "sv": 10,
+    "punti": 642,
+    "partite_giocate": 7,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 1,
     "giocante_id": "erminio",
-    "sv": 5,
-    "punti": 334,
-    "partite_giocate": 4,
-    "partite_totali": 8
-  },
-  {
-    "posizione": 3,
-    "giocante_id": "brt",
-    "sv": 1,
-    "punti": 162,
-    "partite_giocate": 2,
-    "partite_totali": 8
-  },
-  {
-    "posizione": 4,
-    "giocante_id": "jakpotpot",
-    "sv": 1,
-    "punti": 80,
-    "partite_giocate": 2,
+    "sv": 12,
+    "punti": 715,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 5,
-    "giocante_id": "gabrisky-point",
-    "sv": 0,
-    "punti": 102,
-    "partite_giocate": 2,
+    "giocante_id": "brt",
+    "sv": 6,
+    "punti": 611,
+    "partite_giocate": 7,
     "partite_totali": 8
   },
   {
     "posizione": 6,
+    "giocante_id": "jakpotpot",
+    "sv": 6,
+    "punti": 506,
+    "partite_giocate": 7,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 8,
+    "giocante_id": "gabrisky-point",
+    "sv": 4,
+    "punti": 464,
+    "partite_giocate": 6,
+    "partite_totali": 8
+  },
+  {
+    "posizione": 4,
     "giocante_id": "gerri",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 7,
+    "punti": 585,
+    "partite_giocate": 7,
     "partite_totali": 8
   },
   {
     "posizione": 7,
     "giocante_id": "nicola-crivis",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 5,
+    "punti": 558,
+    "partite_giocate": 7,
     "partite_totali": 8
   },
   {
-    "posizione": 8,
+    "posizione": 3,
     "giocante_id": "bender",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 8,
+    "punti": 662,
+    "partite_giocate": 8,
     "partite_totali": 8
   },
   {
     "posizione": 9,
     "giocante_id": "solo-franz",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 4,
+    "punti": 422,
+    "partite_giocate": 5,
     "partite_totali": 8
   }
 ]
