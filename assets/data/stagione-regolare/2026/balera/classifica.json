@@ -1,30 +1,30 @@
 [
   {
-    "posizione": 1,
+    "posizione": 5,
     "giocante_id": "dinamitarda",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 8,
+    "punti": 704,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
-    "posizione": 2,
+    "posizione": 8,
     "giocante_id": "antide",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 4,
+    "punti": 585,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
-    "posizione": 3,
+    "posizione": 7,
     "giocante_id": "pravda",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 6,
+    "punti": 535,
+    "partite_giocate": 6,
     "partite_totali": 9
   },
   {
-    "posizione": 4,
+    "posizione": 10,
     "giocante_id": "uliano",
     "sv": 0,
     "punti": 0,
@@ -32,51 +32,51 @@
     "partite_totali": 9
   },
   {
-    "posizione": 5,
+    "posizione": 2,
     "giocante_id": "johnny-the-great",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 10,
+    "punti": 704,
+    "partite_giocate": 8,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 3,
+    "giocante_id": "ferra",
+    "sv": 10,
+    "punti": 700,
+    "partite_giocate": 8,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 4,
+    "giocante_id": "trapstar",
+    "sv": 9,
+    "punti": 658,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
     "posizione": 6,
-    "giocante_id": "ferra",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 7,
-    "giocante_id": "trapstar",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 8,
     "giocante_id": "adnan",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 7,
+    "punti": 596,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 1,
+    "giocante_id": "gujar",
+    "sv": 12,
+    "punti": 735,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
     "posizione": 9,
-    "giocante_id": "gujar",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 10,
     "giocante_id": "polita",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 2,
+    "punti": 432,
+    "partite_giocate": 7,
     "partite_totali": 9
   }
 ]
