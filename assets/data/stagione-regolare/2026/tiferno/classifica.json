@@ -1,22 +1,22 @@
 [
   {
-    "posizione": 1,
-    "giocante_id": "il-presidente",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 2,
-    "giocante_id": "l-indiano",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
-    "partite_totali": 9
-  },
-  {
     "posizione": 3,
+    "giocante_id": "il-presidente",
+    "sv": 8,
+    "punti": 603,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "l-indiano",
+    "sv": 6,
+    "punti": 570,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 9,
     "giocante_id": "britanniko",
     "sv": 0,
     "punti": 0,
@@ -24,15 +24,15 @@
     "partite_totali": 9
   },
   {
-    "posizione": 4,
+    "posizione": 1,
     "giocante_id": "melkka",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 10,
+    "punti": 606,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
-    "posizione": 5,
+    "posizione": 10,
     "giocante_id": "lo-straniero",
     "sv": 0,
     "punti": 0,
@@ -42,41 +42,41 @@
   {
     "posizione": 6,
     "giocante_id": "pincanaglia",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 5,
+    "punti": 475,
+    "partite_giocate": 6,
     "partite_totali": 9
   },
   {
-    "posizione": 7,
+    "posizione": 2,
     "giocante_id": "cip-il-molkkysano",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 8,
+    "punti": 646,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
     "posizione": 8,
     "giocante_id": "pino-pal",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 4,
+    "punti": 426,
+    "partite_giocate": 5,
     "partite_totali": 9
   },
   {
-    "posizione": 9,
+    "posizione": 7,
     "giocante_id": "hank-scorpio",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 5,
+    "punti": 444,
+    "partite_giocate": 6,
     "partite_totali": 9
   },
   {
-    "posizione": 10,
+    "posizione": 4,
     "giocante_id": "pandu",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 6,
+    "punti": 587,
+    "partite_giocate": 7,
     "partite_totali": 9
   }
 ]
