@@ -1,46 +1,46 @@
 [
   {
-    "posizione": 1,
+    "posizione": 9,
     "giocante_id": "cola",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 3,
+    "punti": 497,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "latomo",
+    "sv": 6,
+    "punti": 384,
+    "partite_giocate": 4,
     "partite_totali": 9
   },
   {
     "posizione": 2,
-    "giocante_id": "latomo",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 3,
     "giocante_id": "nardu",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 12,
+    "punti": 732,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
     "posizione": 4,
     "giocante_id": "bang",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 8,
+    "punti": 584,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
-    "posizione": 5,
+    "posizione": 1,
     "giocante_id": "maic",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 12,
+    "punti": 770,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
-    "posizione": 6,
+    "posizione": 10,
     "giocante_id": "selvaggiosud",
     "sv": 0,
     "punti": 0,
@@ -48,35 +48,35 @@
     "partite_totali": 9
   },
   {
-    "posizione": 7,
+    "posizione": 3,
     "giocante_id": "ale-chieppa",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 9,
+    "punti": 679,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
     "posizione": 8,
     "giocante_id": "pascale",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 4,
+    "punti": 464,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
-    "posizione": 9,
+    "posizione": 7,
     "giocante_id": "tiroalvolo",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 4,
+    "punti": 481,
+    "partite_giocate": 6,
     "partite_totali": 9
   },
   {
-    "posizione": 10,
+    "posizione": 6,
     "giocante_id": "vinz",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 4,
+    "punti": 537,
+    "partite_giocate": 7,
     "partite_totali": 9
   }
 ]
