@@ -1,30 +1,30 @@
 [
   {
-    "posizione": 1,
+    "posizione": 3,
     "giocante_id": "njko",
+    "sv": 5,
+    "punti": 385,
+    "partite_giocate": 6,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 5,
+    "giocante_id": "malvasia",
     "sv": 3,
-    "punti": 221,
-    "partite_giocate": 3,
+    "punti": 406,
+    "partite_giocate": 5,
     "partite_totali": 9
   },
   {
     "posizione": 2,
-    "giocante_id": "malvasia",
-    "sv": 2,
-    "punti": 179,
-    "partite_giocate": 2,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 3,
     "giocante_id": "chardonnay",
-    "sv": 2,
-    "punti": 135,
-    "partite_giocate": 2,
+    "sv": 7,
+    "punti": 458,
+    "partite_giocate": 6,
     "partite_totali": 9
   },
   {
-    "posizione": 4,
+    "posizione": 8,
     "giocante_id": "barnag",
     "sv": 2,
     "punti": 125,
@@ -32,23 +32,23 @@
     "partite_totali": 9
   },
   {
-    "posizione": 5,
+    "posizione": 1,
     "giocante_id": "utopia",
-    "sv": 1,
-    "punti": 96,
-    "partite_giocate": 1,
+    "sv": 9,
+    "punti": 540,
+    "partite_giocate": 6,
     "partite_totali": 9
   },
   {
     "posizione": 6,
     "giocante_id": "spagna",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 3,
+    "punti": 330,
+    "partite_giocate": 4,
     "partite_totali": 9
   },
   {
-    "posizione": 7,
+    "posizione": 9,
     "giocante_id": "davide",
     "sv": 0,
     "punti": 0,
@@ -56,15 +56,15 @@
     "partite_totali": 9
   },
   {
-    "posizione": 8,
+    "posizione": 7,
     "giocante_id": "criu",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 2,
+    "punti": 186,
+    "partite_giocate": 3,
     "partite_totali": 9
   },
   {
-    "posizione": 9,
+    "posizione": 10,
     "giocante_id": "marshall",
     "sv": 0,
     "punti": 0,
@@ -72,11 +72,11 @@
     "partite_totali": 9
   },
   {
-    "posizione": 10,
+    "posizione": 4,
     "giocante_id": "ciaci",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 5,
+    "punti": 360,
+    "partite_giocate": 4,
     "partite_totali": 9
   }
 ]
