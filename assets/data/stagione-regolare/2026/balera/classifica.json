@@ -1,6 +1,6 @@
 [
   {
-    "posizione": 5,
+    "posizione": 6,
     "giocante_id": "dinamitarda",
     "sv": 8,
     "punti": 704,
@@ -16,11 +16,11 @@
     "partite_totali": 9
   },
   {
-    "posizione": 7,
+    "posizione": 4,
     "giocante_id": "pravda",
-    "sv": 6,
-    "punti": 535,
-    "partite_giocate": 6,
+    "sv": 9,
+    "punti": 711,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
@@ -48,7 +48,7 @@
     "partite_totali": 9
   },
   {
-    "posizione": 4,
+    "posizione": 5,
     "giocante_id": "trapstar",
     "sv": 9,
     "punti": 658,
@@ -56,11 +56,11 @@
     "partite_totali": 9
   },
   {
-    "posizione": 6,
+    "posizione": 7,
     "giocante_id": "adnan",
-    "sv": 7,
-    "punti": 596,
-    "partite_giocate": 7,
+    "sv": 8,
+    "punti": 686,
+    "partite_giocate": 8,
     "partite_totali": 9
   },
   {
@@ -75,8 +75,8 @@
     "posizione": 9,
     "giocante_id": "polita",
     "sv": 2,
-    "punti": 432,
-    "partite_giocate": 7,
+    "punti": 502,
+    "partite_giocate": 8,
     "partite_totali": 9
   }
 ]
