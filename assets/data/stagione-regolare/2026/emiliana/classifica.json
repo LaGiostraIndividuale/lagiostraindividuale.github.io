@@ -1,46 +1,46 @@
 [
   {
-    "posizione": 1,
-    "giocante_id": "eros",
-    "sv": 2,
-    "punti": 100,
-    "partite_giocate": 1,
-    "partite_totali": 9
-  },
-  {
     "posizione": 2,
-    "giocante_id": "despota",
-    "sv": 2,
-    "punti": 100,
-    "partite_giocate": 1,
-    "partite_totali": 9
-  },
-  {
-    "posizione": 3,
-    "giocante_id": "pier",
-    "sv": 0,
-    "punti": 73,
-    "partite_giocate": 1,
+    "giocante_id": "eros",
+    "sv": 10,
+    "punti": 651,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
     "posizione": 4,
-    "giocante_id": "stuglola",
-    "sv": 0,
-    "punti": 72,
-    "partite_giocate": 1,
+    "giocante_id": "despota",
+    "sv": 8,
+    "punti": 630,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
     "posizione": 5,
-    "giocante_id": "ahi-maria",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "giocante_id": "pier",
+    "sv": 7,
+    "punti": 593,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 7,
+    "giocante_id": "stuglola",
+    "sv": 4,
+    "punti": 547,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
     "posizione": 6,
+    "giocante_id": "ahi-maria",
+    "sv": 6,
+    "punti": 585,
+    "partite_giocate": 7,
+    "partite_totali": 9
+  },
+  {
+    "posizione": 9,
     "giocante_id": "fioreincoma",
     "sv": 0,
     "punti": 0,
@@ -48,15 +48,15 @@
     "partite_totali": 9
   },
   {
-    "posizione": 7,
+    "posizione": 3,
     "giocante_id": "codroipo",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 9,
+    "punti": 646,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
-    "posizione": 8,
+    "posizione": 10,
     "giocante_id": "lucia",
     "sv": 0,
     "punti": 0,
@@ -64,19 +64,19 @@
     "partite_totali": 9
   },
   {
-    "posizione": 9,
+    "posizione": 1,
     "giocante_id": "edo",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 11,
+    "punti": 626,
+    "partite_giocate": 7,
     "partite_totali": 9
   },
   {
-    "posizione": 10,
+    "posizione": 8,
     "giocante_id": "kamunia-paranoica",
-    "sv": 0,
-    "punti": 0,
-    "partite_giocate": 0,
+    "sv": 1,
+    "punti": 462,
+    "partite_giocate": 7,
     "partite_totali": 9
   }
 ]
