@@ -220,22 +220,30 @@ attive.each do |c|
   classifica_path = conf_dir.join("classifica.json")
   partite_path = conf_dir.join("partite.json")
 
-  unless giocanti_path.exist? && classifica_path.exist? && partite_path.exist?
-    warn_msg "Conferenza '#{conf_id}': file mancanti (attesi giocanti/classifica/partite)"
+  unless giocanti_path.exist? && classifica_path.exist?
+    warn_msg "Conferenza '#{conf_id}': file mancanti (attesi giocanti/classifica)"
     next
   end
 
   giocanti_map = validate_giocanti(giocanti_path)
   validate_classifica(classifica_path, giocanti_map)
-  partite = validate_partite(partite_path, giocanti_map)
-
   n = giocanti_map.size
-  expected = expected_round_robin_count(n)
-  if partite.size != expected
-    warn_msg "Conferenza '#{conf_id}': partite=#{partite.size}, attese=#{expected} per n=#{n} (formula n*(n-1)/2)"
-  end
 
-  ok_msg "Conferenza '#{conf_id}': giocanti=#{n}, partite=#{partite.size}"
+  # partite.json è dati legacy: il sito non la sincronizza né la mostra più
+  # (solo la classifica arriva da Google Drive), quindi il file è opzionale.
+  # Se è ancora presente (conferenze storiche) la validiamo comunque.
+  if partite_path.exist?
+    partite = validate_partite(partite_path, giocanti_map)
+
+    expected = expected_round_robin_count(n)
+    if partite.size != expected
+      warn_msg "Conferenza '#{conf_id}': partite=#{partite.size}, attese=#{expected} per n=#{n} (formula n*(n-1)/2)"
+    end
+
+    ok_msg "Conferenza '#{conf_id}': giocanti=#{n}, partite=#{partite.size}"
+  else
+    ok_msg "Conferenza '#{conf_id}': giocanti=#{n} (partite.json assente, ok: dato non più sincronizzato)"
+  end
 end
 
 ok_msg "Validazione completata."

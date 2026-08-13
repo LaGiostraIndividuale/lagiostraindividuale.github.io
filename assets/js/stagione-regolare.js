@@ -38,14 +38,11 @@ function conferenceLogo(conferenza) {
   `;
 }
 
-function getStats(classifica, partite, giocantiMap) {
+function getStats(classifica, giocantiMap) {
   const leader = classifica[0] ? giocantiMap[classifica[0].giocante_id] : null;
-  const giocate = partite.filter(p => p.stato === "giocata").length;
 
   return {
     leader,
-    giocate,
-    totali: partite.length,
     giocanti: Object.keys(giocantiMap).length
   };
 }
@@ -53,35 +50,23 @@ function getStats(classifica, partite, giocantiMap) {
 async function loadConferenceData(base, conferenzaId) {
   const confBase = `${base}/${conferenzaId}`;
 
-  const [giocanti, classifica, partite] = await Promise.all([
+  const [giocanti, classifica] = await Promise.all([
     loadJson(`${confBase}/giocanti.json`),
-    loadJson(`${confBase}/classifica.json`),
-    loadJson(`${confBase}/partite.json`)
+    loadJson(`${confBase}/classifica.json`)
   ]);
 
   const giocantiMap = Object.fromEntries(
     giocanti.map(giocante => [giocante.id, giocante])
   );
 
-  return { giocanti, classifica, partite, giocantiMap };
+  return { giocanti, classifica, giocantiMap };
 }
 
-function hasUsableConferenceData({ giocanti, classifica, partite }) {
+function isConferenceCardAvailable({ giocanti, classifica }) {
   return Array.isArray(giocanti) &&
     Array.isArray(classifica) &&
-    Array.isArray(partite) &&
     giocanti.length > 0 &&
-    classifica.length > 0 &&
-    partite.length > 0;
-}
-
-/** Card cliccabile solo se esiste almeno una partita già disputata (non solo calendario da giocare). */
-function hasPlayedMatch(partite) {
-  return Array.isArray(partite) && partite.some(p => p.stato === "giocata");
-}
-
-function isConferenceCardAvailable(data) {
-  return hasUsableConferenceData(data) && hasPlayedMatch(data.partite);
+    classifica.length > 0;
 }
 
 async function renderConferenceCards(conferenze, base) {
@@ -89,13 +74,13 @@ async function renderConferenceCards(conferenze, base) {
     conferenze.map(async conferenza => {
       try {
         const data = await loadConferenceData(base, conferenza.id);
-        const { classifica, partite, giocantiMap } = data;
-        const stats = getStats(classifica, partite, giocantiMap);
+        const { classifica, giocantiMap } = data;
+        const stats = getStats(classifica, giocantiMap);
         return { conferenza, stats, available: isConferenceCardAvailable(data) };
       } catch {
         return {
           conferenza,
-          stats: { leader: null, giocate: 0, totali: 0, giocanti: 0 },
+          stats: { leader: null, giocanti: 0 },
           available: false
         };
       }
@@ -121,7 +106,6 @@ async function renderConferenceCards(conferenze, base) {
 
                 <div class="sr-conference-stats">
                   <span>${stats.giocanti} giocanti</span>
-                  <span>${stats.giocate}/${stats.totali} partite</span>
                 </div>
 
                 <div class="sr-conference-leader">
@@ -210,89 +194,6 @@ function renderClassifica(conferenza, classifica, giocantiMap) {
   `;
 }
 
-function renderMatchScore(partita) {
-  if (partita.stato !== "giocata") return "";
-
-  return `
-    <div class="sr-match-results">
-      <div class="sr-match-set-score">
-        <span class="sr-set-label">Set</span>
-        <strong>${partita.set_a}</strong>
-        <span>-</span>
-        <strong>${partita.set_b}</strong>
-      </div>
-
-      <div class="sr-match-points">
-        <span>${partita.punti_a_set_1}</span>
-        <span>-</span>
-        <span>${partita.punti_b_set_1}</span>
-
-        <span>${partita.punti_a_set_2}</span>
-        <span>-</span>
-        <span>${partita.punti_b_set_2}</span>
-      </div>
-    </div>
-  `;
-}
-
-function renderMatchItem(partita, giocantiMap, statusClass) {
-  const a = giocantiMap[partita.giocante_a_id];
-  const b = giocantiMap[partita.giocante_b_id];
-
-  return `
-    <article class="sr-match sr-match-${statusClass}">
-      <div class="sr-match-main">
-        <strong>${a.nome}</strong>
-        <span class="sr-versus">⚔</span>
-        <strong>${b.nome}</strong>
-      </div>
-
-      ${renderMatchScore(partita)}
-    </article>
-  `;
-}
-
-function renderPartite(conferenza, partite, giocantiMap) {
-  const giocate = partite.filter(p => p.stato === "giocata");
-  const daGiocare = partite.filter(p => p.stato !== "giocata");
-
-  return `
-    <section class="sr-card sr-accordion">
-      <button class="sr-accordion-toggle" type="button" aria-expanded="false">
-        <span>
-          <small>Calendario e referti</small>
-          <strong>Partite ${conferenza.nome_breve}</strong>
-        </span>
-        <span class="sr-accordion-icon">+</span>
-      </button>
-
-      <div class="sr-accordion-panel" hidden>
-        <div class="sr-match-group">
-          <div class="sr-match-group-title">
-            <span>Giocate</span>
-            <strong>${giocate.length}</strong>
-          </div>
-
-          <div class="sr-matches">
-            ${giocate.map(partita => renderMatchItem(partita, giocantiMap, "played")).join("")}
-          </div>
-        </div>
-
-        <div class="sr-match-group">
-          <div class="sr-match-group-title">
-            <span>Da disputare</span>
-            <strong>${daGiocare.length}</strong>
-          </div>
-
-          <div class="sr-matches">
-            ${daGiocare.map(partita => renderMatchItem(partita, giocantiMap, "pending")).join("")}
-          </div>
-        </div>
-      </div>
-    </section>
-  `;
-}
-
 function renderPlayerModal(giocante) {
   const existing = document.querySelector(".sr-modal");
   if (existing) existing.remove();
@@ -335,22 +236,6 @@ function renderPlayerModal(giocante) {
   });
 }
 
-function initAccordion(container) {
-  const toggles = container.querySelectorAll(".sr-accordion-toggle");
-
-  toggles.forEach(toggle => {
-    toggle.addEventListener("click", () => {
-      const panel = toggle.nextElementSibling;
-      const icon = toggle.querySelector(".sr-accordion-icon");
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      panel.hidden = isOpen;
-      icon.textContent = isOpen ? "+" : "−";
-    });
-  });
-}
-
 async function showConferenceDetail(conferenza, detailContainer, base) {
   detailContainer.innerHTML = `
     <div class="sr-loading">
@@ -359,7 +244,7 @@ async function showConferenceDetail(conferenza, detailContainer, base) {
   `;
 
   try {
-    const { classifica, partite, giocantiMap } = await loadConferenceData(base, conferenza.id);
+    const { classifica, giocantiMap } = await loadConferenceData(base, conferenza.id);
 
     detailContainer.innerHTML = `
       <div class="sr-selected-heading">
@@ -369,7 +254,6 @@ async function showConferenceDetail(conferenza, detailContainer, base) {
 
       ${renderPodio(conferenza, classifica, giocantiMap)}
       ${renderClassifica(conferenza, classifica, giocantiMap)}
-      ${renderPartite(conferenza, partite, giocantiMap)}
     `;
 
     detailContainer.querySelectorAll("[data-player]").forEach(button => {
@@ -383,7 +267,6 @@ async function showConferenceDetail(conferenza, detailContainer, base) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    initAccordion(detailContainer);
     detailContainer.scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (error) {
     detailContainer.innerHTML = `
