@@ -116,7 +116,25 @@ def validate_classifica(classifica_path, giocanti_map)
     warn_msg "#{ctx}.giocante_id non trovato in giocanti.json: #{r[:giocante_id]}" unless giocanti_map.key?(r[:giocante_id])
   end
 
+  validate_posizioni(classifica, classifica_path)
+
   classifica
+end
+
+# Le posizione devono essere una permutazione di 1..N (N = numero di righe):
+# uniche e senza buchi. Duplicati o buchi sono esattamente il bug che ha
+# causato la classifica errata in bellomolchi-b (due giocanti con
+# posizione 7, nessuno con posizione 9): qualunque consumer che si fidi
+# del campo "posizione" così com'è finisce per mostrare un ordine sbagliato.
+def validate_posizioni(classifica, classifica_path)
+  posizioni = classifica.map { |r| r[:posizione] }
+  attese = (1..posizioni.size).to_a
+
+  duplicate = posizioni.tally.select { |_, count| count > 1 }.keys.sort
+  die "#{classifica_path}: posizione duplicata (#{duplicate.join(', ')}) — attese 1..#{attese.size} uniche" unless duplicate.empty?
+
+  mancanti = attese - posizioni
+  die "#{classifica_path}: posizione mancante (#{mancanti.join(', ')}) — attese 1..#{attese.size} senza buchi" unless mancanti.empty?
 end
 
 VALID_STATI = %w[giocata da_giocare rinviata annullata].freeze

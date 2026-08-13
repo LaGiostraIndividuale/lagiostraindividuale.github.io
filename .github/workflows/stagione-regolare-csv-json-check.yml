@@ -1,13 +1,21 @@
 # Fallisce se i JSON serviti dal sito non coincidono con la conversione dai CSV
 # (stesso algoritmo di import_csv_to_json.py). Evita drift Sheets ↔ sito dopo merge o push parziali.
+#
+# Trigger su workflow_run (non push): i commit "data(csv): sync ..." pushati
+# dall'Apps Script arrivano PRIMA che "Sheets CSV -> JSON" rigeneri il JSON,
+# quindi un trigger push su quei commit falliva quasi sempre confrontando CSV
+# nuovo contro JSON ancora vecchio. Il commit che rigenera il JSON (fatto con
+# il GITHUB_TOKEN di default) non riattiva altri workflow per le protezioni
+# anti-loop di Actions, quindi il push trigger non arrivava mai a vedere lo
+# stato coerente. Agganciandosi al completamento di "Sheets CSV -> JSON" il
+# checkout (senza ref esplicito, quindi HEAD del default branch) prende main
+# già aggiornato dal push del JSON, a sync riuscita.
 name: Stagione regolare — CSV vs JSON
 
 on:
-  push:
-    paths:
-      - "data/csv/**"
-      - "assets/data/stagione-regolare/**"
-      - "scripts/sheets_sync/**"
+  workflow_run:
+    workflows: ["Sheets CSV -> JSON"]
+    types: [completed]
   pull_request:
     paths:
       - "data/csv/**"
@@ -16,6 +24,7 @@ on:
 
 jobs:
   check:
+    if: github.event_name == 'pull_request' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
