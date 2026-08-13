@@ -47,13 +47,27 @@ function getStats(classifica, giocantiMap) {
   };
 }
 
+/**
+ * Il campo "posizione" arriva così com'è dal foglio Google Sheets e non è
+ * affidabile (es. pareggi risolti in ordine alfabetico invece che per
+ * criterio sportivo). Riordiniamo qui per set vinti, poi punti a parità di
+ * set, e ricalcoliamo la posizione di conseguenza.
+ */
+function sortClassifica(classifica) {
+  return [...classifica]
+    .sort((a, b) => b.sv - a.sv || b.punti - a.punti)
+    .map((item, i) => ({ ...item, posizione: i + 1 }));
+}
+
 async function loadConferenceData(base, conferenzaId) {
   const confBase = `${base}/${conferenzaId}`;
 
-  const [giocanti, classifica] = await Promise.all([
+  const [giocanti, classificaGrezza] = await Promise.all([
     loadJson(`${confBase}/giocanti.json`),
     loadJson(`${confBase}/classifica.json`)
   ]);
+
+  const classifica = sortClassifica(classificaGrezza);
 
   const giocantiMap = Object.fromEntries(
     giocanti.map(giocante => [giocante.id, giocante])
